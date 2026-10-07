@@ -1,0 +1,13 @@
+{
+  "name": "streakfit",
+  "version": "0.14.12",
+  "private": true,
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
