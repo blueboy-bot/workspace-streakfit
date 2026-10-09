@@ -1,0 +1,43 @@
+{
+  "project": "pqnkhbtbjukxlqpcwynv",
+  "database_deployed": true,
+  "registration_enabled": false,
+  "function": {
+    "name": "streakfit-account",
+    "slug": "streakfit-account",
+    "status": "ACTIVE",
+    "version": 1,
+    "verify_jwt": false
+  },
+  "auth": {
+    "site_url": "https://blueboy-bot.github.io/workspace-streakfit/",
+    "uri_allow_list": "https://blueboy-bot.github.io/workspace-streakfit/**",
+    "password_min_length": 11,
+    "password_required_characters": "abcdefghijklmnopqrstuvwxyz:ABCDEFGHIJKLMNOPQRSTUVWXYZ:0123456789:!@#$%^&*()_+-=[]{};'\\\\:\"|<>?,./`~",
+    "mailer_autoconfirm": false,
+    "sms_autoconfirm": false,
+    "mailer_otp_length": 6,
+    "sms_otp_length": 6,
+    "hook_before_user_created_enabled": true,
+    "hook_before_user_created_uri": "pg-functions://postgres/public/streakfit_before_user_created",
+    "external_email_enabled": true,
+    "external_phone_enabled": false,
+    "smtp_configured": false
+  },
+  "email_template_blocker": "Default email provider on free tier cannot edit OTP email templates; custom SMTP required",
+  "remote_database_checks": [
+    {
+      "result": "PASS: 15 remote PostgreSQL assertions; fixtures rolled back; no email or SMS sent"
+    }
+  ],
+  "hook_role_check": "Hook execution grant checked in catalog; management role cannot SET ROLE supabase_auth_admin",
+  "date": "2026-10-09",
+  "public_host_access": "pending environment draft publication",
+  "phone_provider": "not configured; phone disabled",
+  "real_otp_tests": "not run",
+  "post_test_counts": {
+    "users": 0,
+    "documents": 0,
+    "tickets": 0
+  }
+}

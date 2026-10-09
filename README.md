@@ -226,6 +226,6 @@ Duolingo常见的渐进式引导可作为设计参考；本次官方站点被网
 
 静态构建：`python scripts/build-pages.py`。浏览器测试：`node scripts/verify-pwa.cjs`。发布及原有数据迁移见 [GitHub Pages说明](docs/GITHUB-PAGES.md)。首次在线缓存成功后才支持离线；远程视频不预缓存。
 
-### v0.31.0：账号与同步（待配置后端，尚未发布）
+### v0.31.0：账号与同步（后端已部署，待配置发码服务）
 
-加入邮箱/手机号验证码注册、自选密码校验、登录与找回、按账号隔离的本机与云端记录，以及同步冲突预览和备份。Supabase数据库、Auth Hook、发信与短信供应商未部署，`account-config.json` 保持 `enabled:false`，正式网站仍为v0.30.5。配置与验证步骤见 [Supabase账号接入](docs/SUPABASE-ACCOUNTS.md)。
+加入邮箱/手机号验证码注册、自选密码校验、登录与找回、按账号隔离的本机与云端记录，以及同步冲突预览和备份。新Supabase项目的数据库、Auth Hook及Edge注册函数已部署；真实数据库15项事务检查通过。邮件SMTP和短信供应商尚未配置，`account-config.json` 保持 `enabled:false`，正式网站仍为v0.30.5。配置与验证步骤见 [Supabase账号接入](docs/SUPABASE-ACCOUNTS.md)。
