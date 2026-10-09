@@ -1,0 +1,5 @@
+project_id = "streakfit"
+
+[functions.streakfit-account]
+verify_jwt = false
+

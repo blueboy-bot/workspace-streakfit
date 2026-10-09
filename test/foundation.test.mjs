@@ -1,0 +1,47 @@
+import test from 'node:test';import assert from 'node:assert/strict';import{app}from'../test-support/helper.mjs';
+function ready(){const a=app();a.run(`state.onboarded=true;state.safety={status:'ready',symptoms:'no',review:'no'};state.profile={goal:'增肌与体型塑造',experience:'初学者',place:'家中',equipment:['无器械 / 徒手'],minutes:'30',split:'full',scheduleMode:'cycle',scheduleStart:dateKey(),trainDays:'1',restDays:'2'};`);return a;}
+test('screening requires explicit answers and routes uncertainty to review',()=>{const a=app();a.run(`setup.elements.namedItem=name=>({value:name==='safetySymptoms'?'': 'no'})`);assert.equal(a.run('readSafetyAnswers()'),null);a.run(`setup.elements.namedItem=name=>({value:name==='safetySymptoms'?'unsure':'no'})`);assert.equal(a.run('readSafetyAnswers().status'),'review');a.run(`setup.elements.namedItem=name=>({value:name==='safetySymptoms'?'yes':'no'})`);assert.equal(a.run('readSafetyAnswers().status'),'urgent');});
+test('pain and urgent discomfort pause recommendation and do not complete training',()=>{const a=ready();assert.equal(a.run('recordComfort("pain","膝盖疼")'),true);assert.equal(a.run('canTrainToday()'),false);assert.equal(a.run('prescription().ids.length'),0);assert.equal(a.run('previewTodayAdjustment({minutes:120,place:"健身房",readiness:"good"}).ids.length'),0);assert.equal(a.run('today().rest'),false);assert.equal(a.run('recordComfort("good")'),true);assert.equal(a.run('canTrainToday()'),true);a.run(`state.safety.status='review'`);assert.equal(a.run('canTrainToday()'),false);assert.equal(a.run('prescription().ids.length'),0);});
+test('participation rewards cap at 55 and habits or heavier weights add no XP',()=>{const a=ready();a.run('activateFoundationRewards();today().water=20;today().sleep=9;today().protein=true;today().vegetables=true');assert.equal(a.run('points(today())'),0);a.run('today().rest=true;today().learnedBasics=true;recordComfort("good")');assert.equal(a.run('points(today())'),55);a.run('recordComfort("sore");today().learnedMoves=["squat","push","bridge"];today().exerciseIds=["dbpress"];today().targets={dbpress:{sets:1,min:8,max:12}};today().logs={dbpress:[{weight:5,reps:8}]}');assert.equal(a.run('points(today())'),55);a.run('today().logs.dbpress.push({weight:50,reps:20});today().water=100');assert.equal(a.run('points(today())'),55);});
+test('legacy historical XP remains unchanged when policy activates',()=>{const a=ready();a.run(`const previousDate=new Date();previousDate.setDate(previousDate.getDate()-1);const previousKey=previousDate.toLocaleDateString('en-CA');state.history[previousKey]={sets:{},rest:true,water:8,protein:true,vegetables:true,sleep:8};`);assert.equal(a.run('points(state.history[previousKey])'),100);a.run('activateFoundationRewards()');assert.equal(a.run('points(state.history[previousKey])'),100);assert.equal(a.run('state.history[previousKey].legacyXP'),100);assert.equal(a.run('today().rewardPolicy'),2);});
+test('weekly growth counts training, not rest, excludes future records and stages do not depend on XP',()=>{const a=ready();a.run(`today().rest=true;state.weeklyGoal=2;state.learningStage='foundation';`);assert.equal(a.run('weeklyGrowth().completed'),0);a.run(`today().exerciseIds=['squat'];today().targets={squat:{sets:1,min:8,max:12}};today().logs={squat:[{weight:0,reps:8}]};const tomorrow=new Date();tomorrow.setDate(tomorrow.getDate()+1);state.history[tomorrow.toLocaleDateString('en-CA')]={exerciseIds:['squat'],targets:{squat:{sets:1,min:8,max:12}},logs:{squat:[{weight:0,reps:8}]}};`);assert.equal(a.run('weeklyGrowth().completed'),1);assert.equal(a.run('state.learningStage'),'foundation');});
+test('ten foundation movements share start error regression and stopping standards',()=>{const a=app();for(const id of ['squat','push','bridge','hinge','dbpress','chestmachine','pulldown','rdl','deadbug','row']){const text=a.run(`foundationTeaching('${id}')`);for(const word of ['开始前','常见错误','更容易的做法','停止条件'])assert.ok(text.includes(word));}});
+
+test('urgent feedback remains paused after a general good-state report',()=>{const a=ready();a.run('recordComfort("urgent")');assert.equal(a.run('state.safety.status'),'urgent');a.run('recordComfort("good")');assert.equal(a.run('canTrainToday()'),false);assert.equal(a.run('prescription().ids.length'),0);});
+
+test('deferring setup does not bypass screening before training',()=>{const a=app();a.run('state.onboarded=false;delete state.safety');assert.equal(a.run('canTrainToday()'),false);});
+
+test('previous-day pain persists through plan editing and is cleared only by updated feedback',()=>{const a=ready();a.run(`const prior=new Date();prior.setDate(prior.getDate()-1);state.history[prior.toLocaleDateString('en-CA')]={sets:{},discomfort:{kind:'pain',note:'肩痛'}};`);assert.equal(a.run('canTrainToday()'),false);assert.equal(a.run('prescription().ids.length'),0);assert.ok(a.run('safetyStatusPanel()').includes('先确认'));a.run(`today().exerciseIds=['push'];today().targets={push:{sets:4,min:8,max:12}};`);assert.equal(a.run('canTrainToday()'),false);a.run('recordComfort("good")');assert.equal(a.run('canTrainToday()'),true);assert.equal(a.run('Object.values(state.history).some(d=>d.discomfort?.note==="肩痛")'),true);});
+test('weekly recommendation follows calendar schedule and respects manual override',()=>{const a=ready();a.run(`state.profile.scheduleMode='weekly';state.profile.scheduleStart='2020-01-01';state.profile.weekdays=[0,2,4,6];delete state.weeklyGoal`);assert.equal(a.run('weeklyGrowth().suggested'),4);assert.equal(a.run('weeklyGrowth().target'),4);a.run('state.weeklyGoal=2');assert.equal(a.run('weeklyGrowth().target'),2);a.run(`delete state.weeklyGoal;state.profile.scheduleMode='cycle';state.profile.trainDays='1';state.profile.restDays='2'`);assert.ok([2,3].includes(a.run('weeklyGrowth().target')));a.run(`state.profile.scheduleStart='2099-01-01'`);assert.equal(a.run('weeklyGrowth().target'),0);});
+test('course progression requires correct understanding, persists independently of XP and never gates training',()=>{const a=ready();assert.equal(a.run('completeLearningCourse("progression",0)'),false);assert.equal(a.run('completeLearningCourse("control",1)'),false);assert.equal(a.run('completeLearningCourse("control",0)'),true);assert.equal(a.run('courseUnlocked(learningCourses()[1])'),true);for(const id of ['patterns','logging','recovery','progression','adaptation'])assert.equal(a.run(`completeLearningCourse('${id}',0)`),true);assert.equal(a.run('Object.keys(state.learningCourses).length'),6);assert.equal(a.run('canTrainToday()'),true);assert.equal(a.run('state.learningStage'),undefined);assert.ok(a.run('learningPathPanel()').includes('已完成基础理解课程'));});
+test('manual pause toggles recording permission without changing plans logs or XP',()=>{
+ const a=ready();a.run(`today().exerciseIds=['squat'];today().targets={squat:{sets:4,min:8,max:12}};today().logs={squat:[{weight:0,reps:8}]};const originalPlan=JSON.stringify(prescription().ids),originalLogs=JSON.stringify(today().logs),originalXP=points(today());`);
+ assert.equal(a.run('toggleWorkoutPause()'),true);assert.equal(a.run('isWorkoutPaused()'),true);
+ assert.equal(a.run('canTrainToday()'),true);assert.equal(a.run('canRecordWorkout()'),false);assert.equal(a.run('safetyStatusPanel()'),'');
+ assert.ok(a.run('comfortPanel()').includes('继续训练'));assert.equal(a.run('JSON.stringify(prescription().ids)===originalPlan'),true);
+ assert.equal(a.run('toggleWorkoutPause()'),true);assert.equal(a.run('canRecordWorkout()'),true);
+ assert.equal(a.run('JSON.stringify(today().logs)===originalLogs&&points(today())===originalXP'),true);
+ assert.equal(JSON.parse(a.saved()).history[a.run('dateKey()')].trainingPaused,false);
+});
+
+test('manual pause freezes an active rest but does not resume a previously paused timer',()=>{
+ const a=ready();a.run('startRest(90);toggleWorkoutPause()');assert.equal(a.run('restUntil'),0);assert.ok(a.run('restPausedMs>0'));
+ a.run('toggleWorkoutPause()');assert.ok(a.run('restUntil>Date.now()'));assert.equal(a.run('restPausedMs'),0);
+ a.run('restUntil=0;restPausedMs=42000;toggleWorkoutPause();toggleWorkoutPause()');
+ assert.equal(a.run('restUntil'),0);assert.equal(a.run('restPausedMs'),42000);
+});
+
+test('continue cannot dismiss pain or urgent feedback and discomfort clears held rest',()=>{
+ const a=ready();a.run('startRest(90);toggleWorkoutPause();recordComfort("pain")');
+ assert.equal(a.run('restHeldByWorkout'),false);assert.equal(a.run('restPausedMs'),0);
+ assert.equal(a.run('toggleWorkoutPause()'),false);assert.equal(a.run('isWorkoutPaused()'),true);assert.equal(a.run('canRecordWorkout()'),false);
+ a.run('recordComfort("good")');assert.equal(a.run('canRecordWorkout()'),true);
+ a.run('recordComfort("urgent");recordComfort("good")');assert.equal(a.run('toggleWorkoutPause()'),false);assert.equal(a.run('canRecordWorkout()'),false);
+});
+
+test('pause survives storage reload is scoped to the day and cannot alter a preview',()=>{
+ const a=ready();a.run('toggleWorkoutPause()');const restored=app(a.saved());assert.equal(restored.run('isWorkoutPaused()'),true);
+ restored.run('today().trainingPaused=false;const prior=new Date();prior.setDate(prior.getDate()-1);state.history[prior.toLocaleDateString("en-CA")]={sets:{},trainingPaused:true};');
+ assert.equal(restored.run('canRecordWorkout()'),true);
+ restored.run('selectedWorkoutDate="2099-01-01"');assert.equal(restored.run('toggleWorkoutPause()'),false);assert.equal(restored.run('isWorkoutPaused()'),false);
+});

@@ -1,0 +1,25 @@
+(node:94631) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/workspace-streakfit/modules/account-rules.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/workspace-streakfit/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ password boundaries and exact repeated-digit rule (2.776539ms)
+✔ identity uses normalized email or international phone; browser refuses private keys (1.704606ms)
+✔ workspace is account-bound; cloud snapshots omit photos and do not mutate originals (1.238945ms)
+✔ registration gateway validates password before issuing any ticket or provider request (41.524484ms)
+✔ valid signup passes only one-use ticket to provider and returns no secrets or session (10.037128ms)
+✔ gateway rejects unknown origins; password update authenticates user before forwarding (2.678406ms)
+✔ client uses verification endpoints, stores no passwords, and refuses another user write (2.716901ms)
+✔ offline writes remain pending and recover after reload (1.168476ms)
+✔ revision conflict keeps local edits and blocks repeat overwrite until explicit choice (0.657559ms)
+✔ edits during upload remain pending; closed account cannot apply a late reply (0.728995ms)
+✔ quota error and failed conflict read never claim synchronization success (0.42409ms)
+✔ JSONB key ordering cannot cause a false conflict; a clean baseline detects local edits (0.406531ms)
+✔ a late token refresh cannot restore a logged-out account session (0.976446ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 158.361619

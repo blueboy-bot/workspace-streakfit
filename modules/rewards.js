@@ -1,0 +1,1 @@
+export function participationPoints(d,trainingComplete,legacy){if(d.rewardPolicy!==2)return d.legacyXP??legacy;return Math.max(d.legacyCarryXP||0,(trainingComplete||d.rest?30:0)+(d.learnedBasics||d.learnedMoves?.length?15:0)+(d.recoveryFeedback?10:0));}
