@@ -1,0 +1,19 @@
+{
+  "status": "review_bundle_verified",
+  "proposed_repository": "blueboy-bot/workspace-streakfit",
+  "proposed_branch": "model-review-blue-v3",
+  "files": {
+    "model-three-view-review.jpg": {
+      "bytes": 150163,
+      "sha256": "50fae8dc9c8fcb756f455cfad4fb136a96d1dbe161a447aef78f55c056dcd259"
+    },
+    "preview.html": {
+      "bytes": 201051,
+      "sha256": "eee35456d403e7d165d1aba360ac79f0de37ea0bbd4a1c9aaa7cb734d850d659"
+    },
+    "STREAKFIT-blue-model-v3-review.zip": {
+      "bytes": 18020027,
+      "sha256": "19f8f0b14bd2fe342aa12224245f3cbb3446d77ca8f7373741aaa97632529427"
+    }
+  }
+}
