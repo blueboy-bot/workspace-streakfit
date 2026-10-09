@@ -115,7 +115,7 @@ export function startAccounts({readState,replaceState,validate,freshState,onWork
     if(action==='close'){if(['loading','import','conflict'].includes(view)){feedback('请先选择数据来源，或退出账号后继续使用访客记录。');return;}dialog.close();return;}
     if(['login','register','recover'].includes(action)){show(action);return;}
     if(action==='email'||action==='phone'){channel=action;identity='';display();return;}
-    if(action==='show-password'){dialog.querySelectorAll('input[name=password],input[name=confirm]').forEach(el=>el.type=el.type==='password'?'text':'password');event.target.textContent=event.target.textContent==='显示密码'?'隐藏密码':'显示密码';return;}
+    if(action==='show-password'){dialog.querySelectorAll('input[name=password],input[name=confirm]').forEach(el=>el.type=el.type==='password'?'text':'password');event.target.textContent=dialog.querySelector('input[name=password]').type==='text'?'隐藏密码':'显示密码';return;}
     try{
       setBusy(true);
       if(action==='resend'){if(Date.now()<resendUntil)throw Error('请等待 '+Math.ceil((resendUntil-Date.now())/1000)+' 秒后重试。');await (recovery?client.recover(identity):client.resend(identity));resendUntil=Date.now()+60000;feedback('验证码已重新发送，请检查邮箱或短信。');}
