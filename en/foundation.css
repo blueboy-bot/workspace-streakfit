@@ -1,0 +1,27 @@
+/* Foundation feedback stays visible in both experiences. */
+.weekly-growth{margin:20px 0}.weekly-growth h3{font-size:21px}.weekly-growth p{font-size:14px}.weekly-growth details label{margin-top:14px}.weekly-growth small{display:block;font-size:13px;line-height:1.6}.safety-paused{margin:16px 0}.safety-paused h3{margin-top:0}.comfort-bar{padding:14px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}.comfort-bar small{font-size:13px}.foundation-adjust{margin:12px 0}.foundation-adjust>summary{cursor:pointer;padding:14px}.foundation-standard{padding:16px 0;border-top:1px solid var(--border,#dce4d9)}#comfort-dialog{max-width:480px;width:calc(100% - 32px);border-radius:20px;padding:24px}#comfort-dialog textarea{min-height:90px}.focus-training .comfort-bar{display:block}.focus-training .comfort-bar small{display:block;margin-top:8px}
+#rest-clock{font-size:clamp(32px,9vw,56px);font-weight:800;font-variant-numeric:tabular-nums;margin:12px 0}.timer-controls{display:flex;flex-wrap:wrap;gap:8px}.rest-timer label{display:flex;align-items:center;gap:8px}.rest-timer input[type=checkbox]{width:auto}.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;text-align:center}.calendar-grid button{min-width:0;padding:9px 2px;font-size:15px}.calendar-grid small{display:block}.calendar-trained,.achievement.earned{background:var(--soft,#e5f3de)}.calendar-rest{border:2px solid var(--green,#6f9950)}.achievement{padding:12px;margin:8px 0;border-radius:12px}.achievement small{display:block;margin-top:6px}.photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.photo-grid figure{margin:0}.photo-grid img{width:100%;border-radius:12px}.backup-reminder{margin-bottom:20px}
+.comfort-bar{margin:0 0 22px;padding:16px;background:var(--paper);border:1px solid var(--line);border-radius:18px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center}
+.workout-control-heading{display:flex;align-items:center;gap:14px;justify-content:space-between;grid-column:1/-1}
+.workout-state{display:inline-flex;align-items:center;gap:9px;font-size:16px;font-weight:700;color:var(--ink);line-height:1.4}
+.workout-state-dot{width:10px;height:10px;border-radius:50%;background:var(--focus);flex-shrink:0}
+.workout-is-paused .workout-state-dot{background:var(--warning-text)}
+.comfort-bar .workout-pause-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;min-width:148px;padding:12px 16px;font-size:17px;white-space:nowrap}
+.control-icon{width:24px;height:24px;flex-shrink:0}
+.comfort-bar .comfort-feedback-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:10px 14px;background:var(--soft);border:1px solid var(--line);border-radius:12px;font-size:16px;color:var(--ink)}
+.comfort-bar small{font-size:14px;line-height:1.6;color:var(--subtle)}
+.comfort-bar.workout-is-paused{border-color:var(--focus)}
+.session-mode.workout-is-paused .workout-card{border-color:var(--line)}
+.session-mode>progress{height:10px}
+.rest-timer .timer-controls button,.rest-timer>button{min-height:48px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--soft);font-size:16px}
+.rest-timer>button{margin-top:12px;margin-right:8px}
+@media(max-width:650px){
+ .focus-training .comfort-bar{display:grid}
+ .comfort-bar{padding:14px;margin-bottom:20px;grid-template-columns:1fr;gap:10px}
+ .workout-control-heading{gap:10px;flex-wrap:wrap}
+ .comfort-bar .workout-pause-button{min-width:140px;flex-shrink:0}
+ .comfort-bar .comfort-feedback-button{justify-self:start}
+ .focus-training .comfort-bar small{margin:0}
+ .workout-state{font-size:15px}
+ .rest-timer .timer-controls{gap:10px}
+}
