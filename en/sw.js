@@ -1,7 +1,7 @@
 // URLs resolve within this app's scope, including a GitHub Pages repository path.
 const SCOPE = self.registration.scope;
 const PREFIX = 'streakfit-shell-' + new URL(SCOPE).pathname + '-';
-const CACHE = PREFIX + 'v0320';
+const CACHE = PREFIX + 'v0321';
 const SHELL = ['./', './index.html', './app.js', './style.css', './foundation.css', './accounts.css', './account-config.json',
   './manifest.webmanifest', './assets/icons/icon-192.png', './assets/icons/icon-512.png',
   './modules/localization.js', './modules/locales/en-ui.js', './modules/locales/en-movements.js', './modules/units.js', './modules/rewards.js', './modules/learning.js', './modules/backup.js',
