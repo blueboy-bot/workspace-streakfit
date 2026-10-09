@@ -1,0 +1,9 @@
+{
+  "url": "https://blueboy-bot.github.io/workspace-streakfit/",
+  "manifestURL": "https://blueboy-bot.github.io/workspace-streakfit/manifest.webmanifest",
+  "manifestErrors": [],
+  "installabilityErrors": [],
+  "secureContext": true,
+  "scope": "https://blueboy-bot.github.io/workspace-streakfit/",
+  "browserMode": "persistent-normal-profile"
+}

@@ -1,0 +1,53 @@
+{
+  "passed": 2,
+  "results": [
+    {
+      "base": "https://blueboy-bot.github.io/workspace-streakfit/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "passed": [
+        "onboarding",
+        "manifest-and-icons",
+        "scoped-service-worker",
+        "weight-hidden-by-default",
+        "weight-no-xp",
+        "weight-opt-in",
+        "json-export",
+        "restore-preview-cancel-and-confirm",
+        "pre-restore-copy",
+        "invalid-backup-rejection",
+        "offline-index-query",
+        "offline-navigation",
+        "offline-reload",
+        "no-horizontal-overflow"
+      ],
+      "errors": []
+    },
+    {
+      "base": "https://blueboy-bot.github.io/workspace-streakfit/",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "passed": [
+        "onboarding",
+        "manifest-and-icons",
+        "scoped-service-worker",
+        "weight-hidden-by-default",
+        "weight-no-xp",
+        "weight-opt-in",
+        "json-export",
+        "restore-preview-cancel-and-confirm",
+        "pre-restore-copy",
+        "invalid-backup-rejection",
+        "offline-index-query",
+        "offline-navigation",
+        "offline-reload",
+        "no-horizontal-overflow"
+      ],
+      "errors": []
+    }
+  ]
+}

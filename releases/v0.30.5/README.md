@@ -10,10 +10,12 @@
 
 打开文件后点击Raw或下载按钮。转发包解压后用浏览器打开HTML。PWA安装需要网站版的HTTPS地址，单文件HTML不提供PWA安装。
 
-发布分支已准备为 gh-pages；[Pages设置](https://github.com/blueboy-bot/workspace-streakfit/settings/pages)选择 Deploy from a branch → gh-pages → / (root)。保存并等待GitHub报告部署成功。上传分支不代表网站已启用。
+**正式网址：https://blueboy-bot.github.io/workspace-streakfit/**
+
+GitHub Pages已构建成功，HTTPS已启用。首次在线打开完成缓存后可离线使用核心页面与记录。iPhone可在Safari分享菜单添加到主屏幕；支持安装的桌面/Android浏览器可使用安装入口。
 
 旧预览/HTML的个人记录不会随软件文件转发或跨网址自动迁移。请在旧版导出完整JSON，再到新网址预览并确认恢复。
 
-76项相关功能测试通过，5组静态网站真实Chromium测试（手机/桌面、根目录/仓库子目录及缓存更新），以及2组npm服务器测试通过。实际HTTPS站点仍需开启Pages后复测。
+76项相关功能测试通过，5组静态网站真实Chromium测试（手机/桌面、根目录/仓库子目录及缓存更新），以及2组npm服务器测试通过。实际HTTPS站点手机与桌面两组流程复测通过，Chrome普通配置的安装条件检查无错误。
 
 详细步骤：[GitHub Pages与迁移说明](GITHUB-PAGES.md)。
