@@ -57,6 +57,7 @@ export function localizeDocument(){
 export function setLanguage(value){
  language=value==='en'?'en':'zh';
  try{localStorage.setItem('streakfit-language',language);}catch{/* Display changes still work without storage. */}
+ if(globalThis.history?.replaceState&&globalThis.location?.href){const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState(null,'',url);}
  localizeDocument();
 }
 export function initializeLanguage(){

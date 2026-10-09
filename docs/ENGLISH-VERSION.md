@@ -1,4 +1,4 @@
-# STREAKFIT v0.32.0 — English interface
+# STREAKFIT v0.32.1 — English interface
 
 English entry: https://blueboy-bot.github.io/workspace-streakfit/en/?lang=en
 
@@ -13,7 +13,7 @@ The existing Chinese Pages root is retained. This release is published in `/en/`
 - Backup/restore, CSV headings and exercise names, reminder text and share cards.
 - User-authored names, notes and exercise setups are preserved. Full JSON backups retain canonical data and remain compatible with the Chinese version.
 
-English does not select pounds automatically. Users keep control of kg/lb; stored masses remain in kg. English weight/repetition labels align at the bottom to accommodate longer text. Existing mobile audit findings, such as overly prominent pause controls, are otherwise retained for the user's separate review.
+English does not select pounds automatically. Users keep control of kg/lb; stored masses remain in kg. English phone statistics fit within their cards. A language selection also updates the URL without reloading, so a refresh retains that selection. English weight/repetition labels align at the bottom to accommodate longer text. Existing mobile audit findings, such as overly prominent pause controls, are otherwise retained for the user's separate review.
 
 ## Build and verification
 
