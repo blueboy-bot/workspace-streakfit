@@ -1,0 +1,33 @@
+{
+  "status": "review_bundle_verified",
+  "repository": "blueboy-bot/workspace-streakfit",
+  "branch": "model-review-blue-v4",
+  "path": "model-review/blue-v4",
+  "files": {
+    "model-three-view-review.jpg": {
+      "bytes": 149487,
+      "sha256": "f3e45fcb4d55150691b2a717c6f2dff350234a4dcf052b3bdaef8d6c7edd4cf8"
+    },
+    "preview.html": {
+      "bytes": 200147,
+      "sha256": "d17ef1236f8e476619d1a3cd1cadd760fba5ccb01d8914941ee5803cecbad86b"
+    },
+    "STREAKFIT-blue-model-v4-review.zip": {
+      "bytes": 18555152,
+      "sha256": "7819b69c39df5796412d39a09082cdf5d520616f8c8650bf650de62d9efabc71"
+    },
+    "STREAKFIT-blue-model-v4.blend": {
+      "bytes": 17594321,
+      "sha256": "6c20228b3ec93b84022da2818b666b0d05f72808c93afc7eb525fc9cb87ac27c"
+    },
+    "README.md": {
+      "bytes": 1880,
+      "sha256": "c9b2393e04310984c41765b5743af0a74a63af05ff32a9dc0a85da0e1e5f14b0"
+    }
+  },
+  "user_decisions": {
+    "colour": "blue",
+    "shorts": false
+  },
+  "scope": "Static appearance review; visual acceptance and animation pending"
+}
