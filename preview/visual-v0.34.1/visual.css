@@ -1,0 +1,183 @@
+/* v0.34.0 visual preview: quiet surfaces, clear actions and readable numbers. */
+:root {
+  --text-title:28px; --text-action:21px; --text-body:16px;
+  --text-detail:14px; --text-button:16px; --text-number:26px;
+  --visual-shadow:0 8px 30px #18382a06;
+}
+:root[data-theme="light-green"] {
+  --canvas:#f5f7f3; --paper:#fff; --ink:#19392d; --subtle:#52655b;
+  --line:#dce5dd; --soft:#f0f4ef; --selected:#e7f1dd;
+  --accent:#b6e86b; --accent-ink:#203819; --accent-edge:#99c756;
+  --hero:#1d4031; --focus:#40752c; --nav:#fafcf9;
+}
+:root[data-theme="dark-green"] {
+  --canvas:#111915; --paper:#1b2620; --ink:#f0f5f1; --subtle:#b4c3ba;
+  --line:#34463c; --soft:#243229; --selected:#2d4432;
+  --accent:#b6e86b; --accent-ink:#203819; --accent-edge:#91bc52;
+  --hero:#223b2d; --focus:#b6e86b; --nav:#151f19;
+}
+:root[data-theme="light-blue"] {
+  --canvas:#f4f7fa; --paper:#fff; --ink:#1c354b; --subtle:#50667b;
+  --line:#d8e2ec; --soft:#eef3f8; --selected:#e0eef9;
+  --accent:#b9ddf7; --accent-ink:#183a56; --accent-edge:#91bedf;
+  --hero:#234762; --focus:#2e6898; --nav:#fafcfe;
+}
+:root[data-theme="dark-blue"] {
+  --canvas:#111b26; --paper:#1c2a39; --ink:#eff5fb; --subtle:#b6c6d6;
+  --line:#35495e; --soft:#26394c; --selected:#2a455c;
+  --accent:#b4dcfa; --accent-ink:#183a56; --accent-edge:#85b7dc;
+  --hero:#24435c; --focus:#b4dcfa; --nav:#162332;
+}
+body {background:var(--canvas); font-size:16px; -webkit-font-smoothing:antialiased;}
+h1,h2,h3 {letter-spacing:-.3px; font-weight:750;}
+p {line-height:1.6;}
+.card {border-width:1px; border-radius:20px; box-shadow:var(--visual-shadow);}
+.primary {border-width:1px; border-bottom-width:2px; border-radius:13px; min-height:50px; font-weight:750; box-shadow:none;}
+.primary:active {transform:translateY(1px);}
+button,summary,a,input,select {touch-action:manipulation;}
+button:focus-visible,summary:focus-visible {outline:2px solid var(--focus); outline-offset:3px;}
+header {align-items:center; margin-bottom:24px; min-height:56px;}
+.header-brand {display:none; text-decoration:none; font-size:19px; font-weight:850; letter-spacing:-.7px; color:var(--ink); white-space:nowrap;}
+.header-brand svg {width:20px; height:20px; margin-right:5px; vertical-align:-3px;}
+.header-actions {display:flex; justify-content:flex-end; align-items:center; gap:10px; width:auto;}
+.header-actions .theme-picker {margin:0;}
+.header-actions .theme-picker select {width:auto; min-width:80px; border-radius:12px; background:var(--paper); font-size:14px; min-height:44px; padding:8px 10px;}
+.mode-caption {font-size:14px;}
+#appearance-open {display:grid; place-items:center; width:44px; height:44px; padding:10px; border:1px solid var(--line); border-radius:12px; background:var(--paper); color:var(--ink);}
+#appearance-open svg {width:22px; height:22px;}
+#appearance-dialog {width:min(440px,calc(100% - 32px)); max-height:85dvh; padding:24px; border:1px solid var(--line); border-radius:24px; box-shadow:0 24px 80px #0004;}
+#appearance-dialog::backdrop {background:#07120d70; backdrop-filter:blur(5px);}
+.appearance-heading {display:flex; gap:12px; align-items:center; justify-content:space-between; margin-bottom:22px;}
+.appearance-heading h2 {margin:0; font-size:24px;}
+.appearance-heading button {width:44px; height:44px; padding:8px; border-radius:12px; background:var(--soft); font-size:25px;}
+.appearance-fields {display:grid; gap:18px;}
+.appearance-fields .theme-picker {display:block; font-size:14px; margin:0;}
+.appearance-fields select {width:100%; margin-top:8px; font-size:16px; min-height:48px;}
+.appearance-actions {display:grid; gap:10px; margin-top:24px; padding-top:20px; border-top:1px solid var(--line);}
+.appearance-actions>button,.appearance-actions>div>button {width:100%; min-height:48px; text-align:left; padding:12px 14px; border:1px solid var(--line); border-radius:12px; background:var(--soft); font-size:16px;}
+.appearance-actions #profile {font-weight:650; background:var(--paper);}
+.hero {border:0; border-radius:24px; padding:28px; box-shadow:none;}
+.hero:after {font-size:145px; opacity:.09; top:0; right:10px;}
+.hero .primary {display:block; width:100%; text-align:center; margin-top:18px;}
+.hero>button:not(.primary) {display:block; margin:10px auto 0; min-height:44px; padding:8px; color:#e4eee8; font-size:14px; text-decoration:underline; text-underline-offset:4px;}
+.hero h2 {font-size:28px; max-width:100%;}
+.hero p {font-size:14px;}
+.pill {padding:5px 9px; font-size:12px; border-radius:8px; letter-spacing:.3px;}
+.badge {border-width:1px; border-radius:14px; background:var(--paper); color:var(--ink); font-variant-numeric:tabular-nums;}
+.badge+.badge {background:var(--soft); color:var(--ink);}
+.weekly-growth {border:0; background:var(--soft); box-shadow:none; padding:20px;}
+.weekly-growth h3 {font-size:21px;}
+.weekly-growth progress {height:7px;}
+.beginner-home .hero {margin:20px 0;}
+.journey-tasks {padding:20px;}
+.journey-tasks h3 {font-size:18px; align-items:center;}
+.journey-tasks h3 small {font-size:14px; font-variant-numeric:tabular-nums; color:var(--subtle);}
+.journey-tasks button {padding:12px 0; border-radius:0; border-top:1px solid var(--line); min-height:48px; margin:0;}
+.journey-tasks>p:first-of-type {padding:10px 0; margin:0;}
+.task .icon {color:var(--focus);}
+.task .icon svg {width:24px; height:24px;}
+.backup-reminder {background:var(--soft); color:var(--subtle); border:1px solid var(--line); padding:0 14px; border-radius:14px;}
+.backup-reminder summary {min-height:46px; align-content:center; font-size:14px;}
+.backup-reminder summary b {font-weight:600;}
+.backup-reminder details[open] {padding-bottom:14px;}
+.backup-reminder details p {font-size:14px; margin:6px 0 12px;}
+.backup-reminder button {min-height:44px;}
+.comfort-bar,.focus-training .comfort-bar {background:transparent; border:0; padding:0; margin:0 0 16px;}
+.workout-state {font-size:14px; font-weight:600;}
+.workout-state-dot {width:7px; height:7px;}
+.comfort-bar .workout-pause-button,.comfort-bar .comfort-feedback-button {background:transparent; border:1px solid var(--line); border-radius:11px; min-height:44px; font-size:14px;}
+.comfort-bar .workout-pause-button.primary {background:var(--accent); color:var(--accent-ink); border-color:var(--accent-edge);}
+.comfort-bar.workout-is-paused small {padding:8px 0 0;}
+.session-mode>.eyebrow {margin:0; font-size:12px; color:var(--subtle);}
+.session-mode .session-title {font-size:26px; margin:6px 0;}
+.session-mode .session-position {font-size:14px; margin:4px 0 12px;}
+.session-mode>progress {height:6px; margin:0 0 12px;}
+.beginner-cues>summary {font-size:14px;}
+.compact-workout .workout-card,.session-mode .workout-card {padding:20px; border-radius:20px;}
+.workout-card .exercise-heading h3,.session-mode .workout-card h3 {font-size:21px; line-height:1.4; margin:0; font-weight:750;}
+.workout-card .exercise-heading .muted {margin:5px 0 10px;}
+.load-comparison {background:transparent; border:0; border-bottom:1px solid var(--line); border-radius:0; padding:0 0 14px; margin:12px 0 16px; gap:18px;}
+.session-mode .load-comparison {padding:0 0 14px; margin:12px 0 16px;}
+.load-comparison strong {font-size:16px; font-weight:650; line-height:1.5; margin-top:5px;}
+.load-comparison span {font-size:14px;}
+.set-input {column-gap:12px; row-gap:12px;}
+.compact-workout .set-input label,.session-mode .set-input label {margin:0; font-size:14px; line-height:1.5;}
+.compact-workout .set-input input,.session-mode .set-input input {font-size:26px; font-variant-numeric:tabular-nums; min-height:62px; padding:12px; border-radius:12px; background:var(--canvas);}
+.compact-workout .set-input input::placeholder,.session-mode .set-input input::placeholder {font-size:16px;}
+.compact-workout .set-input select,.session-mode .set-input select {min-height:48px; font-size:16px; padding:10px 12px; border-radius:12px;}
+.load-help {font-size:14px; margin:10px 0 14px;}
+.load-intro {font-size:14px;}
+.record-actions {display:grid; grid-template-columns:minmax(0,1fr) auto; gap:8px; align-items:center; margin-top:14px;}
+.record-actions>button {min-height:48px; padding:10px 14px; font-size:16px;}
+.record-actions>button[data-remove-log] {font-size:14px; color:var(--subtle); border-radius:12px;}
+.record-actions>button.secondary {background:var(--soft); border:1px solid var(--line); border-radius:12px;}
+.recorded-sets {margin-top:16px; border-top:1px solid var(--line);}
+.workout-card .recorded-sets .set-row {margin:0; padding:10px 0; min-height:42px; background:transparent; border:0; border-bottom:1px solid var(--line); border-radius:0; color:var(--subtle); font-size:14px; line-height:1.5; font-variant-numeric:tabular-nums;}
+.recorded-sets .set-row:last-child {border-bottom:0;}
+.exercise-edit {margin-top:12px; border-top:1px solid var(--line); padding-top:8px;}
+.exercise-order button {border-radius:9px;}
+.session-completion {margin:14px 0;}
+.session-completion p {font-size:14px; margin:8px 0;}
+.session-navigation button {background:transparent; border:1px solid var(--line); border-radius:11px; font-size:14px; padding:10px 12px;}
+.rest-timer {padding:18px; border:0; background:var(--soft); box-shadow:none;}
+.rest-timer .eyebrow {display:none;}
+.rest-timer h3 {font-size:18px;}
+#rest-clock {font-variant-numeric:tabular-nums;}
+.rest-timer .timer-controls {display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px;}
+.rest-timer .timer-controls button {font-size:14px; padding:6px 2px; min-height:44px; background:transparent; border:1px solid var(--line); border-radius:10px;}
+.rest-timer>button {font-size:14px; min-height:44px; background:var(--paper); margin-top:10px; padding:9px 12px; border-radius:10px;}
+.rest-preferences summary {font-size:14px;}
+.compact-day {border-width:1px; border-radius:16px; padding:16px; margin:10px 0; gap:14px;}
+.route-today {border-color:var(--focus)!important; background:var(--paper)!important; box-shadow:inset 3px 0 var(--focus);}
+.compact-day>span:first-child {min-width:44px; padding:8px 0; font-size:14px; text-align:center; font-variant-numeric:tabular-nums; background:var(--soft); border-radius:11px;}
+.compact-day b {font-size:16px; line-height:1.4;}
+.compact-day small {font-size:14px; line-height:1.4; margin-top:4px;}
+.route-week {position:relative;}
+.learn-grid {gap:16px;}
+.learn-grid .card {padding:20px;}
+nav button.active {background:var(--soft); color:var(--focus); border:0; box-shadow:none;}
+nav svg {stroke-width:1.8;}
+footer {font-size:12px; line-height:1.6; opacity:.8;}
+@media(max-width:650px) {
+  aside {padding:0; height:0; border:0;}
+  aside>.brand {display:none;}
+  main {padding:16px 20px calc(92px + env(safe-area-inset-bottom));}
+  header {display:flex; margin-bottom:22px; min-height:48px; justify-content:space-between; gap:8px;}
+  header>.header-brand {display:block;}
+  .header-actions,html[lang="en"] .header-actions {display:flex; width:auto; align-items:center; gap:8px;}
+  .header-actions .theme-picker,html[lang="en"] .header-actions .theme-picker {display:block; width:auto;}
+  .mode-caption {display:none;}
+  .header-actions .theme-picker select,html[lang="en"] .header-actions .theme-picker select {min-width:76px; width:auto; max-width:114px; padding:8px; font-size:14px;}
+  .header-actions>button,html[lang="en"] .header-actions>button {grid-column:auto;}
+  .greeting h1,.beginner-home h1,.compact-route>h1,.compact-workout>h1 {font-size:28px; line-height:1.3;}
+  .hero {padding:22px;}
+  .hero h2 {font-size:26px;}
+  .beginner-home>.eyebrow {margin:0 0 8px; font-size:12px;}
+  .compact-workout .workout-card,.session-mode .workout-card {padding:18px;}
+  .session-mode .workout-card h3,.compact-workout .workout-card h3 {font-size:21px;}
+  .session-mode .set-input,.compact-workout .set-input {gap:12px;}
+  .compact-workout .set-input input,.session-mode .set-input input {font-size:26px;}
+  .comfort-bar .comfort-feedback-button {margin-left:auto;}
+  .workout-control-heading {gap:6px;}
+  .workout-state {font-size:14px;}
+  .session-mode .workout-card>.eyebrow {margin:6px 0;}
+  nav {padding:8px 10px calc(8px + env(safe-area-inset-bottom)); border-top:1px solid var(--line); background:var(--nav); gap:4px;}
+  nav button,html[lang="en"] nav button {display:flex; flex-direction:column; justify-content:center; gap:5px; border-radius:12px; flex:1; min-height:56px; padding:7px 2px; font-size:12px; line-height:1.3;}
+  nav svg {width:22px; height:22px;}
+  .focus-training aside {display:none;}
+  .focus-training main {padding-top:16px;}
+  .focus-training header {display:none;}
+}
+@media(max-width:350px) {
+  main {padding-left:16px; padding-right:16px;}
+  .header-brand {font-size:17px;}
+  .header-brand svg {width:16px; height:16px; margin-right:2px;}
+  .header-actions {gap:6px;}
+  .header-actions .theme-picker select,html[lang="en"] .header-actions .theme-picker select {min-width:64px; max-width:102px;}
+  .compact-workout .workout-card,.session-mode .workout-card {padding:14px;}
+  .comfort-bar .comfort-feedback-button {margin-left:0;}
+  .workout-control-heading {justify-content:space-between;}
+  .record-actions {grid-template-columns:1fr;}
+  .record-actions>button[data-remove-log] {justify-self:start; padding-left:0;}
+}
+@media(prefers-reduced-motion:reduce) {button {transition:none!important;} .primary:active {transform:none;}}
