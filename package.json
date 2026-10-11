@@ -1,11 +1,11 @@
 {
   "name": "streakfit",
-  "version": "0.32.1",
+  "version": "0.33.0",
   "private": true,
   "scripts": {
     "dev": "node server.mjs",
     "start": "node server.mjs",
-    "test": "node --test"
+    "test": "node --import ./test-support/fixed-clock.mjs --test"
   },
   "engines": {
     "node": ">=22"

@@ -1,0 +1,414 @@
+{
+  "version": "0.33.0",
+  "regressionTests": 197,
+  "targetedTests": 16,
+  "copyTests": 6,
+  "phone": {
+    "checks": [
+      "Required screening focuses the unanswered field",
+      "32 combinations: aligned inputs, secondary pause, compact rest, no horizontal overflow",
+      "Drafts survive exercise, teaching, pause and edit views",
+      "Blank load rejected; five actual sets retained; completion CTA primary",
+      "Remove and undo preserve order; editing does not display premature pause",
+      "Pain state shows update action and keeps logging disabled",
+      "Guided wall-push-up draft retained; final set stops rest and finishes to Today",
+      "Recent logs before calendar; optional body records and backup settings collapsed"
+    ],
+    "metrics": [
+      {
+        "width": 320,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 320,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 320,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 320,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 360,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 360,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 360,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 360,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 360,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 360,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 360,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 360,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 430,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 430,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 430,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 430,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 430,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 430,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 430,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 57
+      },
+      {
+        "width": 430,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 57
+      }
+    ],
+    "errors": []
+  },
+  "recovery": {
+    "checks": [
+      "Recovery is recorded once, collapsed afterward, and can be explicitly edited"
+    ],
+    "errors": []
+  },
+  "pwa": {
+    "passed": 5,
+    "results": [
+      {
+        "base": "http://127.0.0.1:40095/",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "passed": [
+          "onboarding",
+          "manifest-and-icons",
+          "scoped-service-worker",
+          "weight-hidden-by-default",
+          "weight-no-xp",
+          "weight-opt-in",
+          "json-export",
+          "restore-preview-cancel-and-confirm",
+          "pre-restore-copy",
+          "invalid-backup-rejection",
+          "offline-index-query",
+          "offline-navigation",
+          "offline-reload",
+          "no-horizontal-overflow"
+        ],
+        "errors": []
+      },
+      {
+        "base": "http://127.0.0.1:40095/",
+        "viewport": {
+          "width": 1366,
+          "height": 900
+        },
+        "passed": [
+          "onboarding",
+          "manifest-and-icons",
+          "scoped-service-worker",
+          "weight-hidden-by-default",
+          "weight-no-xp",
+          "weight-opt-in",
+          "json-export",
+          "restore-preview-cancel-and-confirm",
+          "pre-restore-copy",
+          "invalid-backup-rejection",
+          "offline-index-query",
+          "offline-navigation",
+          "offline-reload",
+          "no-horizontal-overflow"
+        ],
+        "errors": []
+      },
+      {
+        "base": "http://127.0.0.1:40095/workspace-streakfit/",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "passed": [
+          "onboarding",
+          "manifest-and-icons",
+          "scoped-service-worker",
+          "weight-hidden-by-default",
+          "weight-no-xp",
+          "weight-opt-in",
+          "json-export",
+          "restore-preview-cancel-and-confirm",
+          "pre-restore-copy",
+          "invalid-backup-rejection",
+          "offline-index-query",
+          "offline-navigation",
+          "offline-reload",
+          "no-horizontal-overflow"
+        ],
+        "errors": []
+      },
+      {
+        "base": "http://127.0.0.1:40095/workspace-streakfit/",
+        "viewport": {
+          "width": 1366,
+          "height": 900
+        },
+        "passed": [
+          "onboarding",
+          "manifest-and-icons",
+          "scoped-service-worker",
+          "weight-hidden-by-default",
+          "weight-no-xp",
+          "weight-opt-in",
+          "json-export",
+          "restore-preview-cancel-and-confirm",
+          "pre-restore-copy",
+          "invalid-backup-rejection",
+          "offline-index-query",
+          "offline-navigation",
+          "offline-reload",
+          "no-horizontal-overflow"
+        ],
+        "errors": []
+      },
+      {
+        "base": "http://127.0.0.1:40095/update-check/",
+        "passed": [
+          "update-waits-for-open-windows",
+          "new-version-after-close",
+          "old-version-cache-cleanup",
+          "other-app-cache-preserved",
+          "incomplete-update-not-activated",
+          "offline-keeps-working-version"
+        ]
+      }
+    ]
+  },
+  "english": {
+    "checks": [
+      "English onboarding and safety validation",
+      "Canonical Chinese values and lb preference retained",
+      "Language switch preserves unsaved input and reverses labels",
+      "English weight and rep fields aligned",
+      "Five sets recorded and lb stored canonically in kg",
+      "Pause / resume labels",
+      "Rest timer pause / resume",
+      "Pain feedback still blocks logging",
+      "All four phone pages without horizontal overflow",
+      "JSON export, preview and restore",
+      "Reload preserves English and logs",
+      "Language selection remains after reloading the shared link"
+    ],
+    "errors": [],
+    "unknown": []
+  },
+  "physicalIPhoneTested": false
+}
