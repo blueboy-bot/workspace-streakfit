@@ -20,7 +20,7 @@ export const englishUI = {
   "使用 1 只哑铃，填写这只的重量。": "Use one dumbbell; enter its weight.",
   "使用 2 只哑铃，填写每只的重量。": "Use two dumbbells; enter the weight of each.",
   "填写实际负重，包含杠铃或器械空载。": "Enter the actual load, including the bar or unloaded machine.",
-  "填写实际重量": "Enter actual weight",
+  "填写实际重量": "Enter weight",
   "首次或重新评估：先轻重量试做，再填写实际负重。": "First session or reassessment: try a light load, then enter the actual weight.",
   "动作设置可选，不将体重换算为训练负重。": "Setup is optional; body weight is not converted into training load.",
   "离墙距离 cm": "Wall distance (cm)",

@@ -1,0 +1,422 @@
+{
+  "version": "0.34.1",
+  "baseline": "0.34.0",
+  "date": "2026-10-11",
+  "fonts": {
+    "results": [
+      {
+        "width": 390,
+        "lang": "zh",
+        "fonts": [
+          {
+            "familyName": "Streakfit Han",
+            "postScriptName": "StreakfitHan-Preview0341",
+            "isCustomFont": true,
+            "glyphCount": 6
+          }
+        ],
+        "selectStyle": {
+          "family": "\"Streakfit UI\", \"Streakfit Han\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+          "weight": "400"
+        }
+      },
+      {
+        "width": 390,
+        "lang": "en",
+        "fonts": [
+          {
+            "familyName": "Streakfit Display",
+            "postScriptName": "StreakfitDisplay-Preview0341",
+            "isCustomFont": true,
+            "glyphCount": 23
+          }
+        ],
+        "selectStyle": {
+          "family": "\"Streakfit UI\", \"Streakfit Han\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+          "weight": "400"
+        }
+      },
+      {
+        "width": 390,
+        "numeric": [
+          {
+            "familyName": "Streakfit UI",
+            "postScriptName": "StreakfitUI-Preview0341",
+            "isCustomFont": true,
+            "glyphCount": 17
+          }
+        ],
+        "widths": [
+          67.4375,
+          67.4375
+        ]
+      },
+      {
+        "width": 390,
+        "offline_custom_fonts": [
+          {
+            "familyName": "Streakfit Display",
+            "postScriptName": "StreakfitDisplay-Preview0341",
+            "isCustomFont": true,
+            "glyphCount": 23
+          }
+        ]
+      },
+      {
+        "width": 1366,
+        "lang": "zh",
+        "fonts": [
+          {
+            "familyName": "Streakfit Han",
+            "postScriptName": "StreakfitHan-Preview0341",
+            "isCustomFont": true,
+            "glyphCount": 6
+          }
+        ],
+        "selectStyle": {
+          "family": "\"Streakfit UI\", \"Streakfit Han\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+          "weight": "400"
+        }
+      },
+      {
+        "width": 1366,
+        "lang": "en",
+        "fonts": [
+          {
+            "familyName": "Streakfit Display",
+            "postScriptName": "StreakfitDisplay-Preview0341",
+            "isCustomFont": true,
+            "glyphCount": 23
+          }
+        ],
+        "selectStyle": {
+          "family": "\"Streakfit UI\", \"Streakfit Han\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+          "weight": "400"
+        }
+      },
+      {
+        "width": 1366,
+        "numeric": [
+          {
+            "familyName": "Streakfit UI",
+            "postScriptName": "StreakfitUI-Preview0341",
+            "isCustomFont": true,
+            "glyphCount": 18
+          }
+        ],
+        "widths": [
+          67.4375,
+          67.4375
+        ]
+      },
+      {
+        "width": 1366,
+        "offline_custom_fonts": [
+          {
+            "familyName": "Streakfit Display",
+            "postScriptName": "StreakfitDisplay-Preview0341",
+            "isCustomFont": true,
+            "glyphCount": 23
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "standalone_fonts_embedded": true
+  },
+  "coverage": {
+    "UI_Han_characters": 941,
+    "missing": 0
+  },
+  "mobile": {
+    "checks": [
+      "Required screening focuses the unanswered field",
+      "32 combinations: aligned inputs, secondary pause, compact rest, no horizontal overflow",
+      "Drafts survive exercise, teaching, pause and edit views",
+      "Blank load rejected; five actual sets retained; completion CTA primary",
+      "Remove and undo preserve order; editing does not display premature pause",
+      "Pain state shows update action and keeps logging disabled",
+      "Guided wall-push-up draft retained; final set stops rest and finishes to Today",
+      "Recent logs before calendar; optional body records and backup settings collapsed",
+      "Recovery is recorded once, collapsed afterward, and can be explicitly edited"
+    ],
+    "metrics": [
+      {
+        "width": 320,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      }
+    ],
+    "errors": []
+  },
+  "english_scope": {
+    "checks": [
+      "Settings, language, palette, Escape, profile and account modal",
+      "Four navigation pages in Chinese and English without overflow",
+      "Collapsed backup remains functional and downloadable",
+      "No untranslated Chinese labels in English",
+      "Offline reload loads new style and settings module"
+    ],
+    "errors": []
+  },
+  "localization_tests": {
+    "passed": 4,
+    "failed": 0
+  },
+  "limitations": [
+    "Chromium mobile emulation; physical iPhone not tested",
+    "Standalone font embedding tested over local HTTP; file:// navigation is disabled by the test browser policy",
+    "Rare user-authored CJK characters outside the shipped common subset use system CJK fonts"
+  ]
+}
