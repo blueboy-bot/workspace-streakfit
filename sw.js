@@ -1,12 +1,12 @@
 // URLs resolve within this app's scope, including a GitHub Pages repository path.
 const SCOPE = self.registration.scope;
 const PREFIX = 'streakfit-shell-' + new URL(SCOPE).pathname + '-';
-const CACHE = PREFIX + 'v0305';
-const SHELL = ['./', './index.html', './app.js', './style.css', './foundation.css',
+const CACHE = PREFIX + 'v0330';
+const SHELL = ['./', './index.html', './app.js', './style.css', './foundation.css', './accounts.css', './account-config.json',
   './manifest.webmanifest', './assets/icons/icon-192.png', './assets/icons/icon-512.png',
-  './modules/units.js', './modules/rewards.js', './modules/learning.js', './modules/backup.js',
+  './modules/localization.js', './modules/locales/en-ui.js', './modules/locales/en-movements.js', './modules/units.js', './modules/rewards.js', './modules/learning.js', './modules/backup.js',
   './modules/planning.js', './modules/insights.js', './modules/local-integrity.js',
-  './modules/experience-toolkit.js'].map(path => new URL(path, SCOPE).href);
+  './modules/experience-toolkit.js', './modules/account-rules.js', './modules/account-data.js', './modules/account-client.js', './modules/account-sync.js', './modules/accounts-ui.js'].map(path => new URL(path, SCOPE).href);
 
 self.addEventListener('install', event => {
   // A failed download must not activate an incomplete shell. Updates wait until

@@ -25,3 +25,6 @@
  .workout-state{font-size:15px}
  .rest-timer .timer-controls{gap:10px}
 }
+/* A pause is secondary; only a voluntary resume is primary. */
+.comfort-bar,.focus-training .comfort-bar{padding:10px 12px;margin-bottom:12px;display:block}.workout-control-heading{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.comfort-bar .workout-pause-button{min-width:0;min-height:44px;font-size:14px;padding:8px 12px;gap:6px;margin:0}.comfort-bar .comfort-feedback-button{min-height:44px;font-size:14px;padding:8px 10px;gap:6px;margin:0;margin-left:auto}.comfort-bar .control-icon{width:20px;height:20px}.comfort-bar small{display:block;margin:4px 0 0;font-size:14px}.workout-state{font-size:14px}.workout-control-heading{grid-column:auto}#rest-clock.rest-idle{font-size:17px;font-weight:500;line-height:1.5;margin:8px 0}
+@media(max-width:350px){.comfort-bar .comfort-feedback-button{margin-left:0}.comfort-bar{padding:8px}.workout-control-heading{gap:6px}}
