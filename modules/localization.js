@@ -14,6 +14,9 @@ export function translateText(source){
  const text=String(source);if(!han.test(text))return text;
  const trimmed=text.trim();if(phrases[trimmed])return text.replace(trimmed,phrases[trimmed]);
  let result=text.replace(/第\s*(\d+)\s*步\s*\/\s*共\s*(\d+)\s*步/g,'Step $1 of $2')
+ .replace(/目标 (\d+) 组 × (\d+)–(\d+) (次 \/ 侧|次)/g,(_,sets,min,max,unit)=>`Target ${sets} sets × ${min}–${max} reps${unit==='次 / 侧'?' / side':''}`)
+ .replace(/已记录 (\d+) 组/g,'Logged $1 sets').replace(/(?:保)?留约 (\d+) 次余力/g,'Leave ~ $1 reps in reserve')
+ .replace(/余力目标：完成一组后，预计还能做 (\d+) 次。/g,'Reps in reserve: after a set, aim to have about $1 reps left. ')
  .replace(/第\s*(\d+)\s*周/g,'Week $1').replace(/第\s*(\d+)\s*个动作/g,'Exercise $1')
  .replace(/练\s*(\d+)\s*天，休\s*(\d+)\s*天/g,'Train $1 days, rest $2 days')
  .replace(/每周\s*(\d+)\s*天/g,'$1 days/week');

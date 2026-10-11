@@ -181,3 +181,23 @@ footer {font-size:12px; line-height:1.6; opacity:.8;}
   .record-actions>button[data-remove-log] {justify-self:start; padding-left:0;}
 }
 @media(prefers-reduced-motion:reduce) {button {transition:none!important;} .primary:active {transform:none;}}
+
+/* v0.34.2: fewer default lines, with guidance and editing still available. */
+.exercise-goal {display:flex; flex-wrap:wrap; gap:6px 16px; justify-content:space-between; font-size:16px; line-height:1.5; font-variant-numeric:tabular-nums;}
+.exercise-goal span:last-child {color:var(--subtle); font-size:14px; align-self:center;}
+.workout-card .exercise-recovery {font-size:14px; color:var(--subtle); margin:6px 0 16px; line-height:1.5;}
+.workout-card .load-comparison {display:block; padding:10px 0; margin:0 0 14px;}
+.workout-card .load-comparison span {display:flex; flex-wrap:wrap; align-items:center; gap:4px 12px;}
+.workout-card .load-comparison strong {margin:0;}
+.workout-card .load-intro {font-size:14px; line-height:1.6; margin:0 0 12px;}
+.workout-card .field-feedback:empty {display:none;}
+.workout-card .exercise-details {display:flex; flex-wrap:wrap; gap:0 20px; border-top:1px solid var(--line); margin-top:14px; padding-top:4px;}
+.workout-card .exercise-details>details {flex:1 1 150px; min-width:0; margin:0; border:0; padding:0;}
+.workout-card .exercise-details>details[open] {flex-basis:100%;}
+.workout-card .exercise-details summary {font-size:14px; min-height:44px; align-content:center; line-height:1.5;}
+.workout-card .exercise-details p {font-size:14px; line-height:1.65;}
+.session-mode .workout-card .card-notes {display:block;}
+.session-mode .exercise-details .exercise-edit {display:none;}
+.workout-card .record-actions:has(>button:only-child) {grid-template-columns:1fr;}
+.workout-card .load-help {margin:8px 0; line-height:1.5;}
+
