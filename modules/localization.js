@@ -1,3 +1,4 @@
+const languageStorage=()=>globalThis.STREAKFIT_STORAGE||globalThis.localStorage;
 import {englishUI} from './locales/en-ui.js';
 import {movementPhrases} from './locales/en-movements.js';
 const phrases={...englishUI,...movementPhrases};
@@ -56,13 +57,13 @@ export function localizeDocument(){
 }
 export function setLanguage(value){
  language=value==='en'?'en':'zh';
- try{localStorage.setItem('streakfit-language',language);}catch{/* Display changes still work without storage. */}
+ try{languageStorage().setItem('streakfit-language',language);}catch{/* Display changes still work without storage. */}
  if(globalThis.history?.replaceState&&globalThis.location?.href){const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState(null,'',url);}
  localizeDocument();
 }
 export function initializeLanguage(){
  if(!globalThis.document?.documentElement)return;
- let saved;try{saved=localStorage.getItem('streakfit-language');}catch{}
+ let saved;try{saved=languageStorage().getItem('streakfit-language');}catch{}
  const requested=new URL(globalThis.location.href).searchParams.get('lang');
  language=(requested||saved||globalThis.STREAKFIT_LANGUAGE)==='en'?'en':'zh';
  document.querySelector('#language-select')?.addEventListener('change',event=>setLanguage(event.target.value));

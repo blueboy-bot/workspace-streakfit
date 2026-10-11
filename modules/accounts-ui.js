@@ -15,7 +15,7 @@ export function accountCloudData(value) {
 export function startAccounts({readState,replaceState,validate,freshState,onWorkspaceReady=()=>{},storage=localStorage,configPromise}) {
   const escape=value=>String(value||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const button=document.createElement('button');button.id='account-entry';button.textContent='登录 / 注册';
-  document.querySelector('.header-actions')?.append(button);
+  (document.querySelector('#appearance-account')||document.querySelector('.header-actions'))?.append(button);
   const dialog=document.createElement('dialog');dialog.id='account-dialog';dialog.className='account-dialog';document.body.append(dialog);
   let client=null,sync=null,activeUid=null,workspaceKey=initialWorkspaceKey(storage),view='login',channel='email',identity='',recovery=false,busy=false,available=false;
   let status='本机保存',statusDetail='',remoteConflict=null,debounce=null,resendUntil=0,configError='',generation=0;

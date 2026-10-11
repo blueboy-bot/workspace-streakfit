@@ -9,7 +9,7 @@ parser.add_argument('--language',choices=['zh','en'],default='zh')
 args = parser.parse_args()
 out = Path(args.output).resolve()
 out.mkdir(parents=True, exist_ok=True)
-for name in ['index.html', 'app.js', 'style.css', 'foundation.css', 'accounts.css', 'account-config.json', 'manifest.webmanifest', 'sw.js']:
+for name in ['index.html', 'app.js', 'style.css', 'foundation.css', 'accounts.css', 'visual.css', 'visual-refresh.js', 'preview-storage.js', 'account-config.json', 'manifest.webmanifest', 'sw.js']:
     shutil.copyfile(root / name, out / name)
 for name in ['modules', 'assets']:
     shutil.copytree(root / name, out / name, dirs_exist_ok=True)

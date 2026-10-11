@@ -1,0 +1,317 @@
+{
+  "version": "0.34.0",
+  "baseline": "0.33.0",
+  "date": "2026-10-11",
+  "unit_tests": {
+    "passed": 26,
+    "failed": 0,
+    "command": "node --import ./test-support/fixed-clock.mjs --test test/mobile-fixes.test.mjs test/localization.test.mjs test/recording.test.mjs test/foundation.test.mjs"
+  },
+  "mobile": {
+    "checks": [
+      "Required screening focuses the unanswered field",
+      "32 combinations: aligned inputs, secondary pause, compact rest, no horizontal overflow",
+      "Drafts survive exercise, teaching, pause and edit views",
+      "Blank load rejected; five actual sets retained; completion CTA primary",
+      "Remove and undo preserve order; editing does not display premature pause",
+      "Pain state shows update action and keeps logging disabled",
+      "Guided wall-push-up draft retained; final set stops rest and finishes to Today",
+      "Recent logs before calendar; optional body records and backup settings collapsed",
+      "Recovery is recorded once, collapsed afterward, and can be explicitly edited"
+    ],
+    "metrics": [
+      {
+        "width": 320,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      }
+    ],
+    "errors": []
+  },
+  "root_scope": {
+    "checks": [
+      "Settings, language, palette, Escape, profile and account modal",
+      "Four navigation pages in Chinese and English without overflow",
+      "Collapsed backup remains functional and downloadable",
+      "No untranslated Chinese labels in English",
+      "Offline reload loads new style and settings module"
+    ],
+    "errors": []
+  },
+  "english_scope": {
+    "checks": [
+      "Settings, language, palette, Escape, profile and account modal",
+      "Four navigation pages in Chinese and English without overflow",
+      "Collapsed backup remains functional and downloadable",
+      "No untranslated Chinese labels in English",
+      "Offline reload loads new style and settings module"
+    ],
+    "errors": []
+  },
+  "storage_isolation": {
+    "checks": [
+      "Existing original plan imports into preview",
+      "Actual set and preference changes persist only in preview namespace",
+      "Original records and language remain byte-for-byte unchanged",
+      "Reload retains preview records",
+      "Original account session is not inherited"
+    ],
+    "errors": []
+  },
+  "limitations": [
+    "Chromium mobile viewport emulation; no physical iPhone test",
+    "Account registration remains disabled while email/SMS delivery is unconfigured",
+    "No new video assets or training algorithms in this visual preview"
+  ]
+}

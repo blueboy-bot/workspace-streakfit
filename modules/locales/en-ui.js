@@ -1,4 +1,11 @@
 export const englishUI = {
+  "我已成功保存文件": "I saved the file successfully",
+  "关闭账号窗口": "Close account window",
+  "打开设置": "Open settings",
+  "关闭设置": "Close settings",
+  "偏好与设置": "Preferences",
+  "美术预览": "Visual preview",
+  "完成训练 · 返回今日": "Finish workout · Back to Today",
   "更多历史记录": "Older records",
   "开始休息": "Start rest",
   "训练日：": "Training days: ",
