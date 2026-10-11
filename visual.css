@@ -201,3 +201,18 @@ footer {font-size:12px; line-height:1.6; opacity:.8;}
 .workout-card .record-actions:has(>button:only-child) {grid-template-columns:1fr;}
 .workout-card .load-help {margin:8px 0; line-height:1.5;}
 
+
+/* v0.34.3: compact guidance stays accessible in both experience modes. */
+html[data-mode="beginner"] .session-mode .exercise-guidance.card-notes{display:block}
+.set-input input::placeholder{color:var(--subtle);opacity:1}
+.session-mode .exercise-heading{scroll-margin-top:20px}
+.rest-inline{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink);padding:10px 0;margin:0}
+.record-status:empty{display:none}
+.record-status{font-size:.875rem;margin:8px 0}
+.session-mode .session-completion{margin:12px 0;padding:12px 0}
+.today-movements{margin:16px 0}.today-movements button{margin:4px 8px 4px 0;min-height:44px}
+#comfort-dialog button,.calendar-controls button{min-height:44px;min-width:44px}
+#classroom-path{padding:16px}#classroom-path>.learning-path{box-shadow:none;border:0;margin-bottom:0;padding:12px 0}
+
+.set-input input,.set-input select{border-color:var(--subtle)}
+.training-calendar>button{min-height:44px;min-width:44px;margin:4px 8px 4px 0}

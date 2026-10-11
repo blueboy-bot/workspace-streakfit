@@ -1,0 +1,329 @@
+{
+  "version": "0.34.3",
+  "targeted_tests": {
+    "passed": 46,
+    "failed": 0
+  },
+  "phone_matrix": {
+    "checks": [
+      "Required screening focuses the unanswered field",
+      "32 combinations: aligned inputs, secondary pause, compact rest, no horizontal overflow",
+      "Drafts survive exercise, teaching, pause and edit views",
+      "Blank load rejected; five actual sets retained; completion CTA primary",
+      "Remove and undo preserve order; editing does not display premature pause",
+      "Pain state shows update action and keeps logging disabled",
+      "Guided wall-push-up draft retained; final set stops rest and finishes to Today",
+      "Recent logs before calendar; optional body records and backup settings collapsed",
+      "Recovery is recorded once, collapsed afterward, and can be explicitly edited"
+    ],
+    "metrics": [
+      {
+        "width": 320,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 360,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "beginner",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "beginner",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "experienced",
+        "color": "green",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "zh",
+        "difference": 0,
+        "weightHeight": 66
+      },
+      {
+        "width": 430,
+        "mode": "experienced",
+        "color": "blue",
+        "lang": "en",
+        "difference": 0,
+        "weightHeight": 66
+      }
+    ],
+    "errors": []
+  },
+  "new_flows": {
+    "results": [
+      {
+        "width": 320,
+        "lang": "zh",
+        "checks": "empty data, near-hero adjustment, guided notes, explicit resume, accessible feedback title, exercise focus, saved record focus, compact rest, collapsed logs, contextual lesson return, returning load reassessment"
+      },
+      {
+        "width": 320,
+        "lang": "en",
+        "checks": "empty data, near-hero adjustment, guided notes, explicit resume, accessible feedback title, exercise focus, saved record focus, compact rest, collapsed logs, contextual lesson return, returning load reassessment"
+      },
+      {
+        "width": 390,
+        "lang": "zh",
+        "checks": "empty data, near-hero adjustment, guided notes, explicit resume, accessible feedback title, exercise focus, saved record focus, compact rest, collapsed logs, contextual lesson return, returning load reassessment"
+      },
+      {
+        "width": 390,
+        "lang": "en",
+        "checks": "empty data, near-hero adjustment, guided notes, explicit resume, accessible feedback title, exercise focus, saved record focus, compact rest, collapsed logs, contextual lesson return, returning load reassessment"
+      }
+    ],
+    "errors": []
+  },
+  "card_checks": {
+    "checks": [
+      "Empty history hidden; notes and sorting collapsed; genuine reorder works",
+      "Weight conventions and per-side reps kept; real history and undo appear only after recording",
+      "Expanded exercise notes, targets and editing translated in English",
+      "Stale or ambiguous history prompts reassessment visibly and leaves load blank",
+      "Guidance accessible in focused recording view"
+    ],
+    "errors": []
+  },
+  "settings_offline_backup": {
+    "checks": [
+      "Settings, language, palette, Escape, profile and account modal",
+      "Four navigation pages in Chinese and English without overflow",
+      "Collapsed backup remains functional and downloadable",
+      "No untranslated Chinese labels in English",
+      "Offline reload loads new style and settings module"
+    ],
+    "errors": []
+  },
+  "limits": [
+    "Chromium phone emulation; no physical iPhone/Safari or screen reader test",
+    "Broad full-suite planning matrix was stopped before completion; not counted as passed"
+  ],
+  "old_source_unchanged": true
+}

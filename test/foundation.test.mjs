@@ -35,7 +35,7 @@ test('continue cannot dismiss pain or urgent feedback and discomfort clears held
  const a=ready();a.run('startRest(90);toggleWorkoutPause();recordComfort("pain")');
  assert.equal(a.run('restHeldByWorkout'),false);assert.equal(a.run('restPausedMs'),0);
  assert.equal(a.run('toggleWorkoutPause()'),false);assert.equal(a.run('isWorkoutPaused()'),true);assert.equal(a.run('canRecordWorkout()'),false);
- a.run('recordComfort("good")');assert.equal(a.run('canRecordWorkout()'),true);
+ a.run('recordComfort("good")');assert.equal(a.run('canRecordWorkout()'),false);a.run('toggleWorkoutPause()');assert.equal(a.run('canRecordWorkout()'),true);
  a.run('recordComfort("urgent");recordComfort("good")');assert.equal(a.run('toggleWorkoutPause()'),false);assert.equal(a.run('canRecordWorkout()'),false);
 });
 

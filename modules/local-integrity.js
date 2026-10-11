@@ -22,7 +22,7 @@ export function isolateLocalRecords(source,catalog){
  for(const name of ['water','sleep','waterTarget','sleepTarget','bodyweight','legacyXP','legacyCarryXP'])if(d[name]!==undefined&&!finite(d[name])){bad(prefix+'.'+name,'数值无效');delete d[name];}
  if(d.trainingPreferences!==undefined&&!plain(d.trainingPreferences)){bad(prefix+'.trainingPreferences','偏好无效');delete d.trainingPreferences;}
  if(d.personalRecord!==undefined&&(!plain(d.personalRecord)||typeof d.personalRecord.note!=='string'||d.personalRecord.waist!==undefined&&(!finite(d.personalRecord.waist)||d.personalRecord.waist<20||d.personalRecord.waist>300))){bad(prefix+'.personalRecord','个人记录无效');delete d.personalRecord;}
- if(d.targetSets!==undefined&&(!Number.isInteger(d.targetSets)||d.targetSets<1||d.targetSets>10)){bad(prefix+'.targetSets','目标组数无效');delete d.targetSets;}for(const name of ['protein','vegetables','rest','learnedBasics','recoveryFeedback','trainingPaused'])if(d[name]!==undefined&&typeof d[name]!=='boolean'){bad(prefix+'.'+name,'状态不是布尔值');delete d[name];}result[date]=d;
+ if(d.targetSets!==undefined&&(!Number.isInteger(d.targetSets)||d.targetSets<1||d.targetSets>10)){bad(prefix+'.targetSets','目标组数无效');delete d.targetSets;}for(const name of ['protein','vegetables','rest','learnedBasics','recoveryFeedback','trainingPaused','sleepRecorded'])if(d[name]!==undefined&&typeof d[name]!=='boolean'){bad(prefix+'.'+name,'状态不是布尔值');delete d[name];}result[date]=d;
  }return result;}
  return {history:collection(source.history,'history'),plannedWorkouts:collection(source.plannedWorkouts,'plannedWorkouts'),issues};
 }

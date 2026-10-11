@@ -49,8 +49,11 @@ function refreshTrainingPresentation() {
     }
     const rows = [...card.querySelectorAll(':scope > .set-row')];
     if (rows.length) {
-      const list = document.createElement('div');
+      const list = document.createElement('details');
       list.className = 'recorded-sets';
+      const summary = document.createElement('summary');
+      summary.textContent = document.documentElement.lang==='en'?'Set details · '+rows.length:'组明细 · '+rows.length;
+      list.append(summary);
       rows[0].before(list);
       for (const row of rows) list.append(row);
     }
