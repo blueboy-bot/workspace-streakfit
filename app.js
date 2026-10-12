@@ -881,24 +881,26 @@ function strengthWorkoutCard(id,d,plan){
  const mode=recordingMode(id),rest=entry?.rest||90,role=exerciseRoleText(id,d,plan);
  const previousRecord=previous(id);
  // Reassessment and ambiguous old units must remain visible, not buried in notes.
- const loadNotice=mode==='weighted'&&hint.weight===''?(previousRecord?hint.text:id==='assistpull'?'首次练习：先选择能稳定完成的辅助设置。':'首次练习：先轻重量试做，热身不计工作组。'):'';
+ const loadNotice=mode==='weighted'&&hint.weight===''&&previousRecord?hint.text:'';
+ const loadHelp=mode==='weighted'?(id==='assistpull'?'辅助越大，通常越容易。':usesDumbbells(id)?'':'含杠铃或器械空载重量。'):'';
  return `<section class="card workout-card">
  <button class="exercise-heading" data-lesson="${id}"><h3>${esc(m.name)} ▷</h3><span class="muted">${esc(m.muscle)}</span></button>
  <div class="exercise-goal"><span>目标 ${target.sets} 组 × ${target.min}–${target.max} ${target.quality||target.perSide?'次 / 侧':'次'}</span><span>已记录 ${logs.length} 组</span></div>
- <p class="exercise-recovery">休息 ${rest} 秒${target.rir?(beginnerExperience()?' · 留约 '+target.rir+' 次余力':' · RIR '+target.rir):''}</p>
+ <p class="exercise-recovery">休息 ${rest} 秒</p>
  ${target.timeAdjusted?'<p class="load-help">已按时间预算缩减组数。</p>':''}
  ${target.timeWarning?'<p class="notice">自定义训练量超过可用时间，请调整。</p>':''}
  ${!supports(id,workoutEquipment())?'<p class="notice">此动作不符合当前器械或模式，可在调整动作中替换；原记录保留。</p>':''}
  ${recentSetSummary(id,hint)}
  ${loadNotice?`<p class="load-intro">${esc(loadNotice)}</p>`:''}
- <div class="set-input">${recordingMode(id)==='weighted'?`<label>${weightLabel(id)}<input id="weight-${id}" type="number" required inputmode="decimal" min="0" max="${massInput(500)}" step="any" placeholder="填写实际重量" aria-describedby="load-help-${id}" value="${massInput(hint.weight)}"></label>`:`<label>${setupLabel(id)}<input id="setup-${id}" ${['push','closepush'].includes(id)?'type="number" min="0" max="300" step="1"':'type="text" maxlength="80"'} value="${esc(hint.setup||'')}"></label>`}<label>${target.quality||target.perSide?'实际次数 / 侧':'实际次数'}<input id="reps-${id}" type="number" required inputmode="numeric" min="1" max="100" value="${hint.reps}"></label><label>这组感觉<select id="effort-${id}"><option value="unreported">暂不记录</option><option value="normal">适中 / 较难</option><option value="easy">轻松、动作稳定</option></select></label></div>
- <p id="load-help-${id}" class="load-help">${mode==='weighted'?esc(weightHelp(id)):mode==='band'?'规格可选，不换算成公斤。':m.perSide?'次数按每侧填写；动作版本可选。':['push','closepush'].includes(id)?'双脚更靠近墙面，通常更容易。':'动作设置可选。'}</p>
+ <div class="set-input">${recordingMode(id)==='weighted'?`<label>${weightLabel(id)}<input id="weight-${id}" type="number" required inputmode="decimal" min="0" max="${massInput(500)}" step="any" placeholder="填写实际重量" ${loadHelp?`aria-describedby="load-help-${id}"`:""} value="${massInput(hint.weight)}"></label>`:`<label>${setupLabel(id)}<input id="setup-${id}" ${['push','closepush'].includes(id)?'type="number" min="0" max="300" step="1"':'type="text" maxlength="80"'} value="${esc(hint.setup||'')}"></label>`}<label>${target.quality||target.perSide?'实际次数 / 侧':'实际次数'}<input id="reps-${id}" type="number" required inputmode="numeric" min="1" max="100" value="${hint.reps}"></label><label>这组感觉<select id="effort-${id}"><option value="unreported">暂不记录</option><option value="normal">适中 / 较难</option><option value="easy">轻松、动作稳定</option></select></label></div>
+ ${loadHelp?`<p id="load-help-${id}" class="load-help">${esc(loadHelp)}</p>`:''}
  <button class="primary" data-log="${id}" ${isPreview()||!supports(id,workoutEquipment())?'disabled':''}>${logs.length>=target.sets?'记录额外一组':'记录一组'}</button>
  ${logs.length?`<button data-remove-log="${id}" ${isPreview()?'disabled':''}>撤回最后一组</button>`:''}
  <p id="log-feedback-${id}" role="alert" class="field-feedback"></p><p id="record-status-${id}" role="status" aria-live="polite" class="record-status"></p>
  <div class="exercise-details">
  <details class="exercise-guidance card-notes"><summary>动作说明</summary>
  <p>${m.cues.slice(0,2).map(esc).join(' · ')}</p>
+ <p>${mode==='weighted'?esc(weightHelp(id)):mode==='band'?'规格可选，不换算成公斤。':m.perSide?'次数按每侧填写；动作版本可选。':['push','closepush'].includes(id)?'双脚更靠近墙面，通常更容易。':'动作设置可选。'}</p>
  <p>${esc(hint.text)}</p>
  ${target.rir?`<p>余力目标：完成一组后，预计还能做 ${target.rir} 次。感受反馈不等同于精确余力测量。</p>`:''}
  ${entry?.label?`<p>${esc(entry.label)}</p>`:''}${role?`<p>${esc(role)}</p>`:''}
@@ -1117,5 +1119,36 @@ if(typeof document.createElement==='function') {
 function focusCurrentExercise(){const heading=content.querySelector?.('.session-mode .exercise-heading, .session-mode .workout-card h3');if(!heading)return;heading.setAttribute?.('tabindex','-1');heading.focus?.({preventScroll:true});heading.scrollIntoView?.({block:'start',behavior:'instant'});}
 function announceRecord(id,persisted){const status=document.querySelector('#record-status-'+id);if(status)status.textContent=uiText(persisted?'这组已保存。':'仅暂存在页面，尚未保存。');const restoreFocus=()=>{if(page==='workout')document.querySelector('[data-log="'+id+'"]')?.focus?.({preventScroll:true});};if(globalThis.requestAnimationFrame)requestAnimationFrame(restoreFocus);else restoreFocus();}
 function hasSleepRecord(d){return d.sleepRecorded===true||Number(d.sleep)>0;}
+
+// One short briefing per training date and account workspace, without creating a log.
+const briefingSeen=new Set();
+let briefingTrigger=null;
+function briefingKey(){return key+':training-briefing-day';}
+function briefingReviewed(){const marker=briefingKey()+':'+dateKey();if(briefingSeen.has(marker))return true;try{return appStorage.getItem(briefingKey())===dateKey();}catch{return false;}}
+function markBriefingReviewed(){briefingSeen.add(briefingKey()+':'+dateKey());try{appStorage.setItem(briefingKey(),dateKey());}catch{/* In-memory acknowledgement still avoids repeated prompts this visit. */}}
+onContentClick(event=>{
+ if(event.defaultPrevented)return;
+ const button=event.target.closest('button');if(!button||button.disabled)return;
+ const starts=button.hasAttribute('data-start-session')||button.hasAttribute('data-beginner-start')||(button.dataset.action==='workout'&&page!=='lesson');
+ const records=button.matches?.('[data-log],[data-log-cardio],[data-log-mobility]');
+ if(!(starts||records)||isPreview()||briefingReviewed())return;
+ event.preventDefault();event.stopImmediatePropagation();
+ if(!canRecordWorkout()){showSafetyOrComfort();return;}
+ const modal=document.querySelector('#training-briefing');if(!modal)return;
+ briefingTrigger=button;
+ modal.querySelector('[data-confirm-briefing]').textContent=uiText(records?'继续记录':'开始训练');
+ localizeDocument();modal.showModal();modal.querySelector('[data-confirm-briefing]').focus();
+},true);
+if(typeof document.createElement==='function'){
+ const modal=document.querySelector('#training-briefing');
+ modal?.addEventListener('click',event=>{
+  if(event.target.closest('[data-cancel-briefing]'))modal.close();
+  if(!event.target.closest('[data-confirm-briefing]'))return;
+  if(!canRecordWorkout()){briefingTrigger=null;modal.close();showSafetyOrComfort();return;}
+  const trigger=briefingTrigger;briefingTrigger=null;markBriefingReviewed();modal.close();
+  if(trigger?.isConnected){trigger.click();if(page==='workout'&&trainingMode==='train')focusCurrentExercise();}
+ });
+ modal?.addEventListener('close',()=>{const trigger=briefingTrigger;briefingTrigger=null;trigger?.focus?.({preventScroll:true});});
+}
 function hasActualDailyRecord(d){return !!(Object.values(d.logs||{}).some(logs=>Array.isArray(logs)&&logs.length)||Object.values(d.sets||{}).some(n=>Number(n)>0)||d.rest||d.recoveryFeedback||d.discomfort||d.learnedBasics||d.learnedMoves?.length||d.meals?.length||Number(d.water)>0||d.protein||d.vegetables||hasSleepRecord(d)||Number(d.bodyweight)>0);}
 onContentClick(event=>{const button=event.target.closest('button');if(!button)return;if(button.hasAttribute('data-return-lesson')){page=['workout','today','learn'].includes(lessonSource)?lessonSource:'learn';render();}if(button.dataset.openCourse){page='learn';render();const path=document.querySelector('#classroom-path');if(path)path.open=true;const course=content.querySelector?.('[data-course-id="'+button.dataset.openCourse+'"]');if(course){course.open=true;course.querySelector('summary')?.focus?.({preventScroll:true});course.scrollIntoView?.({block:'center'});}}});

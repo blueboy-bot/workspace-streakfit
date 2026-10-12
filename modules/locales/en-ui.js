@@ -1,4 +1,12 @@
 export const englishUI = {
+"开始前，记住三点":"Three quick reminders",
+"先热身，从能控制的强度开始。":"Warm up. Start at an intensity you can control.",
+"按实际完成记录，热身不计工作组。":"Log what you actually do. Warm-ups are not working sets.",
+"疼痛或明显不适时停止。":"Stop if you feel pain or significant discomfort.",
+"稍后再开始":"Not now",
+"继续记录":"Continue logging",
+"含杠铃或器械空载重量。":"Include the bar or unloaded machine weight.",
+"辅助越大，通常越容易。":"More assistance usually makes it easier.",
 "；随计划自动更新。目标不自动增加排课。": "; updated with your plan. This goal does not add scheduled workouts.",
 "；当前使用手动目标。目标不自动增加排课。": "; using your custom goal. This goal does not add scheduled workouts.",
 "第 1 周熟悉动作 · 第 2–3 周练习巩固 · 第 4 周减量恢复":"Week 1: learn the movements · Weeks 2–3: practise and consolidate · Week 4: deload and recover",

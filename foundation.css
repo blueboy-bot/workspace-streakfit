@@ -28,3 +28,7 @@
 /* A pause is secondary; only a voluntary resume is primary. */
 .comfort-bar,.focus-training .comfort-bar{padding:10px 12px;margin-bottom:12px;display:block}.workout-control-heading{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.comfort-bar .workout-pause-button{min-width:0;min-height:44px;font-size:14px;padding:8px 12px;gap:6px;margin:0}.comfort-bar .comfort-feedback-button{min-height:44px;font-size:14px;padding:8px 10px;gap:6px;margin:0;margin-left:auto}.comfort-bar .control-icon{width:20px;height:20px}.comfort-bar small{display:block;margin:4px 0 0;font-size:14px}.workout-state{font-size:14px}.workout-control-heading{grid-column:auto}#rest-clock.rest-idle{font-size:17px;font-weight:500;line-height:1.5;margin:8px 0}
 @media(max-width:350px){.comfort-bar .comfort-feedback-button{margin-left:0}.comfort-bar{padding:8px}.workout-control-heading{gap:6px}}
+
+/* Brief reminders before the first workout of the day. */
+#training-briefing{box-sizing:border-box;width:calc(100% - 32px);max-width:440px;padding:24px;border:1px solid var(--line);border-radius:22px;background:var(--paper);color:var(--ink)}
+#training-briefing h2{font-size:22px;line-height:1.35;margin:0 0 18px}#training-briefing ul{padding-left:22px;margin:0 0 22px}#training-briefing li{font-size:16px;line-height:1.6;margin:10px 0}#training-briefing .briefing-actions{display:grid;gap:8px}#training-briefing button{margin:0;min-height:48px;font-size:16px}#training-briefing::backdrop{background:rgb(0 0 0 / .55)}

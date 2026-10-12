@@ -1,0 +1,125 @@
+{
+  "version": "0.34.4",
+  "targeted_tests": {
+    "passed": 27,
+    "failed": 0,
+    "files": [
+      "recording",
+      "foundation",
+      "persistence-integrity",
+      "localization"
+    ]
+  },
+  "phone": {
+    "matrix": [
+      {
+        "width": 320,
+        "mode": "beginner",
+        "lang": "zh",
+        "cancelFocus": true,
+        "oncePerDay": true,
+        "logging": true,
+        "pause": true,
+        "aligned": true,
+        "noOverflow": true
+      },
+      {
+        "width": 320,
+        "mode": "beginner",
+        "lang": "en",
+        "cancelFocus": true,
+        "oncePerDay": true,
+        "logging": true,
+        "pause": true,
+        "aligned": true,
+        "noOverflow": true
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "lang": "zh",
+        "cancelFocus": true,
+        "oncePerDay": true,
+        "logging": true,
+        "pause": true,
+        "aligned": true,
+        "noOverflow": true
+      },
+      {
+        "width": 320,
+        "mode": "experienced",
+        "lang": "en",
+        "cancelFocus": true,
+        "oncePerDay": true,
+        "logging": true,
+        "pause": true,
+        "aligned": true,
+        "noOverflow": true
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "lang": "zh",
+        "cancelFocus": true,
+        "oncePerDay": true,
+        "logging": true,
+        "pause": true,
+        "aligned": true,
+        "noOverflow": true
+      },
+      {
+        "width": 390,
+        "mode": "beginner",
+        "lang": "en",
+        "cancelFocus": true,
+        "oncePerDay": true,
+        "logging": true,
+        "pause": true,
+        "aligned": true,
+        "noOverflow": true
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "lang": "zh",
+        "cancelFocus": true,
+        "oncePerDay": true,
+        "logging": true,
+        "pause": true,
+        "aligned": true,
+        "noOverflow": true
+      },
+      {
+        "width": 390,
+        "mode": "experienced",
+        "lang": "en",
+        "cancelFocus": true,
+        "oncePerDay": true,
+        "logging": true,
+        "pause": true,
+        "aligned": true,
+        "noOverflow": true
+      }
+    ],
+    "checks": [
+      "8 phone combinations: short bilingual briefing; cancel leaves records unchanged; confirmation enters and focuses training; no repeat on lesson/pause/edit/reload; logs retained",
+      "Direct edit recording is guarded; cancellation logs nothing; explicit continue logs exactly once",
+      "Pain still blocks training before briefing"
+    ],
+    "errors": []
+  },
+  "edge": {
+    "checks": [
+      "Blue theme and Escape cancellation work",
+      "Acknowledgement is scoped to date; previous date does not suppress briefing",
+      "Old-load reassessment remains visible; uncertain historic load is not prefilled",
+      "Installed service worker opens updated recording flow offline"
+    ],
+    "errors": []
+  },
+  "limits": [
+    "Chromium mobile emulation, not physical iPhone/Safari",
+    "No real screen-reader, background alert or cloud account test"
+  ],
+  "original_preserved": true
+}
