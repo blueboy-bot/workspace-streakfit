@@ -1,4 +1,8 @@
 export const englishUI = {
+"设置":"Settings",
+"跳过":"Skip",
+"休息结束":"Finished",
+"未开始":"Not started",
 "重量":"Weight",
 "感受（可选）":"How it felt (optional)",
 "填写重量":"Enter weight",
@@ -1246,7 +1250,7 @@ export const englishUI = {
   "腹直肌": "Rectus abdominis",
   "卧推": "Bench press",
   "准备好开始了吗？": "Ready to get started?",
-  "开始": "start",
+  "开始": "Start",
   "暂未填写": "Not provided",
   "。可在下面核对实际可用设备。": ". Check the equipment actually available below.",
   "确认后才保存设置；已记录的训练保留。年龄、体重不用于自动推算训练重量。": "Settings are saved only after confirmation. Workout logs are retained. Age and body weight are not used to automatically assign lifting loads.",

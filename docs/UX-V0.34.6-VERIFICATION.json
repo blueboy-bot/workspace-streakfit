@@ -1,0 +1,245 @@
+{
+  "version": "0.34.6",
+  "targeted_tests": {
+    "passed": 20,
+    "failed": 0
+  },
+  "browser": {
+    "results": [
+      {
+        "width": 320,
+        "lang": "zh",
+        "dimensions": {
+          "height": 150,
+          "lines": [
+            {
+              "height": 44,
+              "scroll": 288,
+              "width": 288
+            },
+            {
+              "height": 44,
+              "scroll": 288,
+              "width": 288
+            },
+            {
+              "height": 44,
+              "scroll": 288,
+              "width": 288
+            }
+          ],
+          "controls": [
+            44,
+            44,
+            44,
+            44,
+            44
+          ]
+        },
+        "started": true,
+        "pauseResume": true,
+        "adjust": true,
+        "settings": true,
+        "workoutPauseProtected": true,
+        "automaticRest": true
+      },
+      {
+        "width": 320,
+        "lang": "en",
+        "dimensions": {
+          "height": 150,
+          "lines": [
+            {
+              "height": 44,
+              "scroll": 288,
+              "width": 288
+            },
+            {
+              "height": 44,
+              "scroll": 288,
+              "width": 288
+            },
+            {
+              "height": 44,
+              "scroll": 288,
+              "width": 288
+            }
+          ],
+          "controls": [
+            44,
+            44,
+            44,
+            44,
+            44
+          ]
+        },
+        "started": true,
+        "pauseResume": true,
+        "adjust": true,
+        "settings": true,
+        "workoutPauseProtected": true,
+        "automaticRest": true
+      },
+      {
+        "width": 390,
+        "lang": "zh",
+        "dimensions": {
+          "height": 150,
+          "lines": [
+            {
+              "height": 44,
+              "scroll": 350,
+              "width": 350
+            },
+            {
+              "height": 44,
+              "scroll": 350,
+              "width": 350
+            },
+            {
+              "height": 44,
+              "scroll": 350,
+              "width": 350
+            }
+          ],
+          "controls": [
+            44,
+            44,
+            44,
+            44,
+            44
+          ]
+        },
+        "started": true,
+        "pauseResume": true,
+        "adjust": true,
+        "settings": true,
+        "workoutPauseProtected": true,
+        "automaticRest": true
+      },
+      {
+        "width": 390,
+        "lang": "en",
+        "dimensions": {
+          "height": 150,
+          "lines": [
+            {
+              "height": 44,
+              "scroll": 350,
+              "width": 350
+            },
+            {
+              "height": 44,
+              "scroll": 350,
+              "width": 350
+            },
+            {
+              "height": 44,
+              "scroll": 350,
+              "width": 350
+            }
+          ],
+          "controls": [
+            44,
+            44,
+            44,
+            44,
+            44
+          ]
+        },
+        "started": true,
+        "pauseResume": true,
+        "adjust": true,
+        "settings": true,
+        "workoutPauseProtected": true,
+        "automaticRest": true
+      },
+      {
+        "width": 1280,
+        "lang": "zh",
+        "dimensions": {
+          "height": 150,
+          "lines": [
+            {
+              "height": 44,
+              "scroll": 948,
+              "width": 948
+            },
+            {
+              "height": 44,
+              "scroll": 948,
+              "width": 948
+            },
+            {
+              "height": 44,
+              "scroll": 948,
+              "width": 948
+            }
+          ],
+          "controls": [
+            44,
+            44,
+            44,
+            44,
+            44
+          ]
+        },
+        "started": true,
+        "pauseResume": true,
+        "adjust": true,
+        "settings": true,
+        "workoutPauseProtected": true,
+        "automaticRest": true
+      },
+      {
+        "width": 1280,
+        "lang": "en",
+        "dimensions": {
+          "height": 150,
+          "lines": [
+            {
+              "height": 44,
+              "scroll": 948,
+              "width": 948
+            },
+            {
+              "height": 44,
+              "scroll": 948,
+              "width": 948
+            },
+            {
+              "height": 44,
+              "scroll": 948,
+              "width": 948
+            }
+          ],
+          "controls": [
+            44,
+            44,
+            44,
+            44,
+            44
+          ]
+        },
+        "started": true,
+        "pauseResume": true,
+        "adjust": true,
+        "settings": true,
+        "workoutPauseProtected": true,
+        "automaticRest": true
+      }
+    ],
+    "errors": []
+  },
+  "expiry_offline": {
+    "expiry": "finished",
+    "restart": true,
+    "offlineThreeRows": true,
+    "clockSimulated": true
+  },
+  "old_source_unchanged": true,
+  "limits": [
+    "Chromium viewport emulation; no physical iPhone/Safari/VoiceOver",
+    "Expiry uses controlled browser clock; real locked-screen alerts not tested"
+  ]
+}

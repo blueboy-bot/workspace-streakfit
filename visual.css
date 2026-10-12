@@ -223,3 +223,14 @@ html[data-mode="beginner"] .session-mode .exercise-guidance.card-notes{display:b
 .set-feedback label{margin:0 0 12px;font-size:14px}.set-feedback select{width:100%;min-height:48px;font-size:16px;margin-top:6px}
 
 .compact-workout .workout-card>.strength-input>label,.session-mode .workout-card>.strength-input>label{grid-column:auto}
+/* Three compact text rows replace the large rest card. */
+.rest-timer.rest-compact{padding:8px 0;margin:12px 0;background:transparent;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0}
+.rest-compact .rest-line{display:flex;align-items:center;gap:12px;min-height:44px;flex-wrap:nowrap;line-height:1.4}
+.rest-compact .rest-title{font-size:16px;color:var(--ink)}
+.rest-compact #rest-clock,.rest-compact #rest-clock.rest-idle{font-size:18px;font-weight:650;line-height:1.4;margin:0;padding:0;font-variant-numeric:tabular-nums;white-space:nowrap}
+.rest-timer.rest-compact .rest-line>button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:8px 4px;margin:0;background:transparent;border:0;box-shadow:none;border-radius:6px;font-size:16px;line-height:1.4;color:var(--ink)}
+.rest-timer.rest-compact .rest-line>button[hidden],.rest-compact .rest-settings[hidden]{display:none}
+.rest-compact .rest-settings{padding:12px 0;border-top:1px solid var(--line)}
+.rest-compact .rest-settings>button{margin:0 0 8px;min-height:44px;font-size:16px}
+.rest-compact .rest-settings label{min-height:44px;margin:0;font-size:15px}
+.rest-compact .rest-settings p{font-size:14px;line-height:1.5;margin:8px 0}

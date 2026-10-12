@@ -8,7 +8,7 @@ test('rest pause freezes time, resumes the remaining duration, and survives pane
  assert.equal(runtime.restUntil,0);assert.equal(runtime.restPausedMs,77500);
  now+=600000;assert.match(kit.restTimerPanel('bench'),/01:18/);assert.match(kit.restTimerPanel('bench'),/data-pause-rest >继续/);
  kit.toggleRestPause();assert.equal(runtime.restPausedMs,0);assert.equal(runtime.restUntil,now+77500);
- now+=77501;kit.toggleRestPause();assert.equal(runtime.restPausedMs,0);assert.match(kit.restTimerPanel('bench'),/data-pause-rest disabled>暂停/);
+ now+=77501;kit.toggleRestPause();assert.equal(runtime.restPausedMs,0);assert.match(kit.restTimerPanel('bench'),/data-pause-rest disabled hidden>暂停/);assert.match(kit.restTimerPanel('bench'),/>开始<\/button>/);
  assert.equal(updates,4);
 });
 
