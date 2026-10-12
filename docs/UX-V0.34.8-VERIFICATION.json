@@ -1,0 +1,129 @@
+{
+  "version": "0.34.8",
+  "unit_tests": {
+    "passed": 34,
+    "failed": 0
+  },
+  "mobile_matrix": {
+    "results": [
+      {
+        "width": 320,
+        "lang": "zh",
+        "unit": "kg",
+        "clickable": true,
+        "cancel": true,
+        "blankRejected": true,
+        "editAddRemove": true,
+        "dateRetained": true,
+        "xpPreserved": true,
+        "reloadUndo": true
+      },
+      {
+        "width": 320,
+        "lang": "zh",
+        "unit": "lb",
+        "clickable": true,
+        "cancel": true,
+        "blankRejected": true,
+        "editAddRemove": true,
+        "dateRetained": true,
+        "xpPreserved": true,
+        "reloadUndo": true
+      },
+      {
+        "width": 320,
+        "lang": "en",
+        "unit": "kg",
+        "clickable": true,
+        "cancel": true,
+        "blankRejected": true,
+        "editAddRemove": true,
+        "dateRetained": true,
+        "xpPreserved": true,
+        "reloadUndo": true
+      },
+      {
+        "width": 320,
+        "lang": "en",
+        "unit": "lb",
+        "clickable": true,
+        "cancel": true,
+        "blankRejected": true,
+        "editAddRemove": true,
+        "dateRetained": true,
+        "xpPreserved": true,
+        "reloadUndo": true
+      },
+      {
+        "width": 390,
+        "lang": "zh",
+        "unit": "kg",
+        "clickable": true,
+        "cancel": true,
+        "blankRejected": true,
+        "editAddRemove": true,
+        "dateRetained": true,
+        "xpPreserved": true,
+        "reloadUndo": true
+      },
+      {
+        "width": 390,
+        "lang": "zh",
+        "unit": "lb",
+        "clickable": true,
+        "cancel": true,
+        "blankRejected": true,
+        "editAddRemove": true,
+        "dateRetained": true,
+        "xpPreserved": true,
+        "reloadUndo": true
+      },
+      {
+        "width": 390,
+        "lang": "en",
+        "unit": "kg",
+        "clickable": true,
+        "cancel": true,
+        "blankRejected": true,
+        "editAddRemove": true,
+        "dateRetained": true,
+        "xpPreserved": true,
+        "reloadUndo": true
+      },
+      {
+        "width": 390,
+        "lang": "en",
+        "unit": "lb",
+        "clickable": true,
+        "cancel": true,
+        "blankRejected": true,
+        "editAddRemove": true,
+        "dateRetained": true,
+        "xpPreserved": true,
+        "reloadUndo": true
+      }
+    ],
+    "errors": []
+  },
+  "edge": {
+    "saveFailurePreservesDiskAndInput": true,
+    "retryNotDuplicated": true,
+    "previousUndoRetained": true,
+    "snapshotFailureBlocksSave": true,
+    "xpPreservedAtTarget": true,
+    "staleUndoBlocked": true,
+    "offline": true
+  },
+  "record_types": {
+    "bodyweight": true,
+    "cardio": true,
+    "mobility": true,
+    "legacyDumbbellConvention": true,
+    "deleteAllUndoEntry": true
+  },
+  "old_source_preserved": true,
+  "limitations": [
+    "Chromium mobile emulation; physical iPhone/Safari and screen reader untested",
+    "Only latest historical edit undo is kept locally per workspace; no server version history"
+  ]
+}

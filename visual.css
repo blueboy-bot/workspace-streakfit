@@ -234,3 +234,14 @@ html[data-mode="beginner"] .session-mode .exercise-guidance.card-notes{display:b
 .rest-compact .rest-settings>button{margin:0 0 8px;min-height:44px;font-size:16px}
 .rest-compact .rest-settings label{min-height:44px;margin:0;font-size:15px}
 .rest-compact .rest-settings p{font-size:14px;line-height:1.5;margin:8px 0}
+/* Recorded movements offer a clear correction entry, separate from a workout. */
+.history-edit-entry,.history-day-entry{display:block;width:100%;padding:0;margin:0;text-align:left;background:transparent;border:0;box-shadow:none;color:var(--ink)}
+.history-edit-entry h3,.history-day-entry h3{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;margin:0 0 10px;line-height:1.4}
+.history-edit-entry h3 span,.history-day-entry h3 span{font-size:14px;white-space:nowrap;font-weight:500;color:var(--subtle)}
+.history-edit-entry p{font-size:16px;line-height:1.5;margin:10px 0}
+#history-edit-dialog{box-sizing:border-box;width:calc(100% - 28px);max-width:520px;max-height:85dvh;padding:22px;border:1px solid var(--line);border-radius:20px;background:var(--paper);color:var(--ink);overflow:auto}
+#history-edit-dialog h2{font-size:22px;line-height:1.35;margin:0 0 8px}#history-edit-subtitle{font-size:14px;line-height:1.5;color:var(--subtle);margin:0 0 16px}
+.history-edit-row{border-top:1px solid var(--line);padding:12px 0}.history-row-heading{display:flex;justify-content:space-between;align-items:center;min-height:44px;font-size:15px}.history-row-heading button{min-height:44px;font-size:14px;padding:8px;margin:0;color:var(--subtle);background:transparent;border:0}
+.history-row-inputs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:end}.history-row-inputs label{font-size:14px;line-height:1.5;min-width:0;margin:0;display:flex;flex-direction:column}.history-row-inputs input{box-sizing:border-box;width:100%;min-height:52px;font-size:22px;padding:10px;border-radius:12px;margin-top:5px}.history-row-inputs input[type=text]{font-size:16px}
+#history-edit-dialog [data-add-history-row]{min-height:44px;font-size:15px;margin:8px 0;padding:8px 0;background:transparent;border:0;color:var(--ink)}
+.history-editor-actions{display:grid;grid-template-columns:1fr auto;gap:10px;padding-top:12px}.history-editor-actions button{margin:0;min-height:48px;font-size:16px}#history-edit-feedback{font-size:14px;line-height:1.5;color:var(--warning-text);margin:8px 0}
