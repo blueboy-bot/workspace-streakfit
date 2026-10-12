@@ -4921,7 +4921,7 @@ function hasSleepRecord(d){return d.sleepRecorded===true||Number(d.sleep)>0;}
 // One short briefing per training date and account workspace, without creating a log.
 const briefingSeen=new Set();
 let briefingTrigger=null;
-function briefingKey(){return key+':training-briefing-day';}
+function briefingKey(){return key+':training-briefing-day:v2';}
 function briefingReviewed(){const marker=briefingKey()+':'+dateKey();if(briefingSeen.has(marker))return true;try{return appStorage.getItem(briefingKey())===dateKey();}catch{return false;}}
 function markBriefingReviewed(){briefingSeen.add(briefingKey()+':'+dateKey());try{appStorage.setItem(briefingKey(),dateKey());}catch{/* In-memory acknowledgement still avoids repeated prompts this visit. */}}
 onContentClick(event=>{

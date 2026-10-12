@@ -134,5 +134,31 @@
   "limits": [
     "Browser emulation only; no physical iPhone/Safari/VoiceOver",
     "Focused layout/record tests use controlled dumbbell plan fixtures; not real-user research"
-  ]
+  ],
+  "upgrade_checks": {
+    "results": [
+      {
+        "width": 390,
+        "lang": "zh",
+        "unit": "kg",
+        "aligned": true,
+        "twoFields": true,
+        "optionalEffort": true,
+        "unitsPreserved": true,
+        "logs": 3
+      },
+      {
+        "width": 390,
+        "lang": "en",
+        "unit": "kg",
+        "aligned": true,
+        "twoFields": true,
+        "optionalEffort": true,
+        "unitsPreserved": true,
+        "logs": 3
+      }
+    ],
+    "bodyweight": true,
+    "errors": []
+  }
 }
