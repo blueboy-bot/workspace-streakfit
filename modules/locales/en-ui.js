@@ -1,4 +1,10 @@
 export const englishUI = {
+"重量":"Weight",
+"感受（可选）":"How it felt (optional)",
+"填写重量":"Enter weight",
+"先热身试做，热身不计工作组。":"Warm up first. Warm-ups are not working sets.",
+"哑铃记单只；杠铃或器械重量含空载。":"Log each dumbbell; include the bar or unloaded machine weight.",
+"按实际完成记录，不必练满建议量。":"Log what you actually do. You do not need to reach every target.",
 "开始前，记住三点":"Three quick reminders",
 "先热身，从能控制的强度开始。":"Warm up. Start at an intensity you can control.",
 "按实际完成记录，热身不计工作组。":"Log what you actually do. Warm-ups are not working sets.",
