@@ -2,7 +2,7 @@ import re, json, base64
 from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 root=Path(__file__).resolve().parent.parent
-out=Path('/workspace/streakfit-preview/visual-v0.37.0-download');out.mkdir(exist_ok=True)
+out=Path('/workspace/streakfit-preview/visual-v0.37.1-download');out.mkdir(exist_ok=True)
 version=json.loads((root/'package.json').read_text())['version']
 font_css=(root/'typography.css').read_text()
 for file in (root/'assets/fonts').glob('*.woff2'):
@@ -12,6 +12,12 @@ modules='\n'.join(re.sub(r'^import .*;$','',(root/'modules'/f'{name}.js').read_t
 app=modules+'\n'+re.sub(r'^import .*;$', '', (root/'app.js').read_text(),flags=re.M)
 app="globalThis.STREAKFIT_ACCOUNT_CONFIG="+json.dumps(json.loads((root/'account-config.json').read_text()))+";\n"+app
 visual_css=(root/'visual.css').read_text().replace('./assets/exercises/recovery-walk.png','data:image/png;base64,'+base64.b64encode((root/'assets/exercises/recovery-walk.png').read_bytes()).decode()).replace('./assets/exercises/overview-atlas.png','data:image/png;base64,'+base64.b64encode((root/'assets/exercises/overview-atlas.png').read_bytes()).decode()).replace('./assets/exercises/overview-atlas-2.png','data:image/png;base64,'+base64.b64encode((root/'assets/exercises/overview-atlas-2.png').read_bytes()).decode()).replace('./assets/exercises/overview-atlas-3.png','data:image/png;base64,'+base64.b64encode((root/'assets/exercises/overview-atlas-3.png').read_bytes()).decode()).replace('./assets/exercises/teaching-keyframes.png','data:image/png;base64,'+base64.b64encode((root/'assets/exercises/teaching-keyframes.png').read_bytes()).decode())
+bundled_artwork={}
+for file in ['pulldown-reviewed.png','equipment-reviewed.png','positions-reviewed.png','setups-reviewed.png']:
+ data_uri='data:image/png;base64,'+base64.b64encode((root/'assets/exercises'/file).read_bytes()).decode()
+ visual_css=visual_css.replace('./assets/exercises/'+file,data_uri)
+ bundled_artwork[file]=data_uri
+app="const bundledArtwork="+json.dumps(bundled_artwork)+";\n"+app.replace("./assets/exercises/${reviewed.file}","${bundledArtwork[reviewed.file]}")
 html=(root/'index.html').read_text().replace('<link rel="stylesheet" href="./style.css">','<style>'+(root/'style.css').read_text()+'</style>').replace('<link rel="stylesheet" href="./foundation.css">','<style>'+(root/'foundation.css').read_text()+'</style>').replace('<link rel="stylesheet" href="./accounts.css">','<style>'+(root/'accounts.css').read_text()+'</style>').replace('<link rel="stylesheet" href="./visual.css">','<style>'+visual_css+'</style>').replace('<script src="./preview-storage.js"></script>','<script>'+(root/'preview-storage.js').read_text()+'</script>').replace('<script type="module" src="./app.js"></script>','<script>'+app+'</script>').replace('<script type="module" src="./visual-refresh.js"></script>','<script>'+(root/'visual-refresh.js').read_text()+'</script>')
 html=html.replace('<link rel="stylesheet" href="./typography.css">','<style>'+font_css+'</style>').replace('<link rel="preload" href="./assets/fonts/streakfit-han.woff2" as="font" type="font/woff2" crossorigin>','').replace('<link rel="preload" href="./assets/fonts/streakfit-ui.woff2" as="font" type="font/woff2" crossorigin>','').replace('</head>','<!-- Bundled font licenses\n'+font_licenses+'\n--></head>')
 (out/'STREAKFIT.html').write_text(html)

@@ -403,3 +403,7 @@ button.plan-edit-link {margin:5px auto;text-align:center;}
  .route-weekly-progress b{font-size:17px;}
 }
 @media(prefers-reduced-motion:reduce){.route-visual-day{transition:none;}}
+
+/* Reviewed exact-movement art takes precedence over retired atlas cells. */
+.plan-art-reviewed{background-image:var(--reviewed-art);}
+.teaching-frame-pulldown-reviewed{background-image:url('./assets/exercises/pulldown-reviewed.png');background-size:200% 100%;}

@@ -1,4 +1,7 @@
 export const englishUI = {
+"准备姿势":"Setup position",
+"动作图待更新":"Illustration pending",
+"面向器械，大腿固定，双臂向上伸展。":"Face the machine, secure your thighs and reach your arms overhead.",
 "选择计划周":"Choose a plan week",
 "选择日期":"Choose a date",
 "计划设置与说明":"Plan settings and details",
