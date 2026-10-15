@@ -31,9 +31,10 @@
   },
   "reviewedPulldown": {
     "file": "pulldown-reviewed.png",
-    "source": "Original AI-generated image, appearance edited to blue mannequin",
-    "use": "Standard overhand pulldown only; two side views facing the tower; bar remains in front of upper chest",
-    "review": "Manual image inspection for machine orientation, thigh restraint, bar path and visible cable/stack state; not a professional biomechanics certification"
+    "source": "Original AI-edited candidate exec-05d43c64-a8a3-4c1e-8e11-b2454c0cb0d5.png",
+    "use": "Standard overhand grip only; two positions on the same longer bar, facing tower, bar in front of upper chest.",
+    "review": "Both hands inspected enlarged in start and pull frames; consistent finger-over-bar/closed-thumb grip and hand-forearm continuity. Prior v0.37.1 grip review retracted. Not professionally certified.",
+    "reviewRecord": "REVIEW.json"
   },
   "reviewedEquipment": {
     "file": "equipment-reviewed.png",

@@ -1,4 +1,6 @@
 export const englishUI = {
+"面向器械，双手正握、拇指环握。":"Face the machine. Use an overhand grip with thumbs wrapped around the bar.",
+"握距不变，拉向上胸，肘部向下。":"Keep the same grip width. Pull toward the upper chest with elbows down.",
 "准备姿势":"Setup position",
 "动作图待更新":"Illustration pending",
 "面向器械，大腿固定，双臂向上伸展。":"Face the machine, secure your thighs and reach your arms overhead.",

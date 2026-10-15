@@ -1,5 +1,5 @@
 {
-  "version": "0.37.1",
+  "version": "0.37.2",
   "date": "2026-10-15",
   "movementIdsChecked": 34,
   "decisions": {
@@ -28,7 +28,7 @@
       "name": "高位下拉（常规正握）",
       "decision": "replaced",
       "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
-      "notes": "Replaced rear-facing/ambiguous tower geometry in thumbnail and both teaching positions with side view facing tower; cable/bar stay in front of upper chest."
+      "notes": "v0.37.1 hand-grip review retracted after user correction. Replaced with long-bar candidate; manually inspected enlarged near/far hands in both frames for consistent closed overhand grip and wrist alignment."
     },
     {
       "id": "row",
@@ -253,7 +253,7 @@
       "id": "pulldown",
       "decision": "replaced",
       "positions": 2,
-      "reason": "Replaced rear-facing/ambiguous tower geometry in thumbnail and both teaching positions with side view facing tower; cable/bar stay in front of upper chest."
+      "reason": "Same new long-bar candidate used for both teaching positions. Thumb-wrap and unchanged-grip cues added; current illustration has manual hand-detail inspection, not expert certification."
     },
     {
       "id": "chestsupported",
@@ -275,5 +275,24 @@
     "equipment-reviewed.png:top left and bottom right (unapproved)",
     "positions-reviewed.png:bottom row (unapproved)",
     "setups-reviewed.png:top left (unapproved)"
+  ],
+  "correctionHistory": [
+    {
+      "version": "0.37.2",
+      "movement": "pulldown",
+      "trigger": "User identified grip problems in v0.37.1. Previous positive visual review was incomplete.",
+      "retiredImage": "v0.37.1 pulldown-reviewed.png",
+      "change": "Longer bar; same overhand grip on both hands and both positions. New candidate manually inspected in four enlarged hand regions.",
+      "evidence": "docs/illustration-review/pulldown-hand-inspection.png",
+      "scope": "Assistant visual review only; software tests cannot validate anatomy.",
+      "assetSHA256": "eb0edf92d6a81de8986718aae30927ff72c3cfc2f85845a75ace4b8b5ffb6ce0"
+    }
+  ],
+  "handAcceptanceCriteria": [
+    "Identify exact intended grip: pronated, supinated, neutral or other. Do not infer it from exercise name alone.",
+    "Inspect both hands enlarged: palms and backs agree with intended grip, thumb wraps opposite fingers, no bar penetration, implausible digits or abrupt wrist bend.",
+    "Compare both positions: same attachment, hand spacing and grip; inspect hand-to-forearm continuity.",
+    "Occluded or ambiguous contact is not evidence of a correct grip. Withhold when the grip cannot be reasonably assessed.",
+    "Image generation and software tests are not anatomical approval. Record rejected alternatives and retain limitations."
   ]
 }

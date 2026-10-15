@@ -11,7 +11,7 @@ test('reviewed art is assigned only to exact catalog IDs with valid individual f
 });
 
 test('all pulldown positions and thumbnails bypass the retired machine-facing image',()=>{
- const a=app();assert.match(a.run(`overviewGraphic('pulldown')`),/pulldown-reviewed\.png/);assert.match(a.run(`keyframeTile('pulldown',0)`),/teaching-frame-pulldown-reviewed/);assert.match(a.run(`keyframeTile('pulldown',1)`),/background-position:100% 0%/);assert.match(a.run(`keyframeTeaching('pulldown')`),/面向器械/);assert.doesNotMatch(a.run(`keyframeTile('chestsupported',0)`),/pulldown-reviewed/);
+ const a=app();assert.match(a.run(`overviewGraphic('pulldown')`),/pulldown-reviewed\.png/);assert.match(a.run(`keyframeTile('pulldown',0)`),/teaching-frame-pulldown-reviewed/);assert.match(a.run(`keyframeTile('pulldown',1)`),/background-position:100% 0%/);assert.match(a.run(`keyframeTeaching('pulldown')`),/双手正握、拇指环握/);assert.doesNotMatch(a.run(`keyframeTile('chestsupported',0)`),/pulldown-reviewed/);
 });
 
 test('single arm rowing uses its D-handle picture without changing records or other variation thumbnails',()=>{
@@ -19,7 +19,7 @@ test('single arm rowing uses its D-handle picture without changing records or ot
 });
 
 test('reviewed illustrations are cached for offline use and new cue is translated',()=>{
- const shell=readFileSync(new URL('../sw.js',import.meta.url),'utf8');for(const file of new Set(Object.values(reviewedArtwork).map(a=>a.file)))assert(shell.includes('./assets/exercises/'+file),file);assert(!/[\u3400-\u9fff]/.test(translateText('面向器械，大腿固定，双臂向上伸展。')));
+ const shell=readFileSync(new URL('../sw.js',import.meta.url),'utf8');for(const file of new Set(Object.values(reviewedArtwork).map(a=>a.file)))assert(shell.includes('./assets/exercises/'+file),file);assert(!/[\u3400-\u9fff]/.test(translateText('面向器械，双手正握、拇指环握。')));
 });
 
 test('all previously illustrated movements have an audit outcome and unapproved leg curl is visibly withheld',()=>{
