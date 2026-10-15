@@ -16,5 +16,12 @@
       15
     ]
   },
-  "review": "Visual inspection for recognizability; specialist biomechanical certification not performed."
+  "review": "Visual inspection for recognizability; specialist biomechanical certification not performed.",
+  "teaching-keyframes": {
+    "file": "teaching-keyframes.png",
+    "layout": "2 x 2; upper row standard overhand pulldown, lower row chest-supported dumbbell row",
+    "source": "Original OpenAI image generation",
+    "use": "Two illustrative key positions only; no grip-variant inheritance, no muscle activation claim",
+    "review": "Visually checked for bar in front of upper chest, chest support and coherent poses; not certified by a qualified trainer; does not replace full instruction or live supervision."
+  }
 }

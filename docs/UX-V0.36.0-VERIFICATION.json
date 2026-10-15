@@ -1,0 +1,237 @@
+{
+  "version": "0.36.0",
+  "unit_tests": {
+    "passed": 46,
+    "failed": 0
+  },
+  "mobile": {
+    "results": [
+      {
+        "width": 390,
+        "lang": "en",
+        "mode": "beginner",
+        "color": "green",
+        "progressActual": true,
+        "keyframeZoom": true,
+        "previewReadOnly": true,
+        "inputInvalidates": true,
+        "applyMatchesPreview": true,
+        "logsRetained": true,
+        "overTargetRecording": true
+      },
+      {
+        "width": 390,
+        "lang": "en",
+        "mode": "beginner",
+        "color": "blue",
+        "progressActual": true,
+        "keyframeZoom": true,
+        "previewReadOnly": true,
+        "inputInvalidates": true,
+        "applyMatchesPreview": true,
+        "logsRetained": true,
+        "overTargetRecording": true
+      },
+      {
+        "width": 390,
+        "lang": "en",
+        "mode": "experienced",
+        "color": "green",
+        "progressActual": true,
+        "keyframeZoom": true,
+        "previewReadOnly": true,
+        "inputInvalidates": true,
+        "applyMatchesPreview": true,
+        "logsRetained": true,
+        "overTargetRecording": true
+      },
+      {
+        "width": 390,
+        "lang": "en",
+        "mode": "experienced",
+        "color": "blue",
+        "progressActual": true,
+        "keyframeZoom": true,
+        "previewReadOnly": true,
+        "inputInvalidates": true,
+        "applyMatchesPreview": true,
+        "logsRetained": true,
+        "overTargetRecording": true
+      },
+      {
+        "width": 390,
+        "lang": "zh",
+        "mode": "beginner",
+        "color": "green",
+        "progressActual": true,
+        "keyframeZoom": true,
+        "previewReadOnly": true,
+        "inputInvalidates": true,
+        "applyMatchesPreview": true,
+        "logsRetained": true,
+        "overTargetRecording": true
+      },
+      {
+        "width": 390,
+        "lang": "zh",
+        "mode": "beginner",
+        "color": "blue",
+        "progressActual": true,
+        "keyframeZoom": true,
+        "previewReadOnly": true,
+        "inputInvalidates": true,
+        "applyMatchesPreview": true,
+        "logsRetained": true,
+        "overTargetRecording": true
+      },
+      {
+        "width": 390,
+        "lang": "zh",
+        "mode": "experienced",
+        "color": "green",
+        "progressActual": true,
+        "keyframeZoom": true,
+        "previewReadOnly": true,
+        "inputInvalidates": true,
+        "applyMatchesPreview": true,
+        "logsRetained": true,
+        "overTargetRecording": true
+      },
+      {
+        "width": 390,
+        "lang": "zh",
+        "mode": "experienced",
+        "color": "blue",
+        "progressActual": true,
+        "keyframeZoom": true,
+        "previewReadOnly": true,
+        "inputInvalidates": true,
+        "applyMatchesPreview": true,
+        "logsRetained": true,
+        "overTargetRecording": true
+      },
+      {
+        "width": 320,
+        "lang": "en",
+        "mode": "beginner",
+        "color": "green",
+        "progressActual": true,
+        "keyframeZoom": true,
+        "previewReadOnly": true,
+        "inputInvalidates": true,
+        "applyMatchesPreview": true,
+        "logsRetained": true,
+        "overTargetRecording": true
+      },
+      {
+        "width": 320,
+        "lang": "en",
+        "mode": "beginner",
+        "color": "blue",
+        "progressActual": true,
+        "keyframeZoom": true,
+        "previewReadOnly": true,
+        "inputInvalidates": true,
+        "applyMatchesPreview": true,
+        "logsRetained": true,
+        "overTargetRecording": true
+      },
+      {
+        "width": 320,
+        "lang": "en",
+        "mode": "experienced",
+        "color": "green",
+        "progressActual": true,
+        "keyframeZoom": true,
+        "previewReadOnly": true,
+        "inputInvalidates": true,
+        "applyMatchesPreview": true,
+        "logsRetained": true,
+        "overTargetRecording": true
+      },
+      {
+        "width": 320,
+        "lang": "en",
+        "mode": "experienced",
+        "color": "blue",
+        "progressActual": true,
+        "keyframeZoom": true,
+        "previewReadOnly": true,
+        "inputInvalidates": true,
+        "applyMatchesPreview": true,
+        "logsRetained": true,
+        "overTargetRecording": true
+      },
+      {
+        "width": 320,
+        "lang": "zh",
+        "mode": "beginner",
+        "color": "green",
+        "progressActual": true,
+        "keyframeZoom": true,
+        "previewReadOnly": true,
+        "inputInvalidates": true,
+        "applyMatchesPreview": true,
+        "logsRetained": true,
+        "overTargetRecording": true
+      },
+      {
+        "width": 320,
+        "lang": "zh",
+        "mode": "beginner",
+        "color": "blue",
+        "progressActual": true,
+        "keyframeZoom": true,
+        "previewReadOnly": true,
+        "inputInvalidates": true,
+        "applyMatchesPreview": true,
+        "logsRetained": true,
+        "overTargetRecording": true
+      },
+      {
+        "width": 320,
+        "lang": "zh",
+        "mode": "experienced",
+        "color": "green",
+        "progressActual": true,
+        "keyframeZoom": true,
+        "previewReadOnly": true,
+        "inputInvalidates": true,
+        "applyMatchesPreview": true,
+        "logsRetained": true,
+        "overTargetRecording": true
+      },
+      {
+        "width": 320,
+        "lang": "zh",
+        "mode": "experienced",
+        "color": "blue",
+        "progressActual": true,
+        "keyframeZoom": true,
+        "previewReadOnly": true,
+        "inputInvalidates": true,
+        "applyMatchesPreview": true,
+        "logsRetained": true,
+        "overTargetRecording": true
+      }
+    ],
+    "errors": []
+  },
+  "edge": {
+    "results": {
+      "failedApplyKeepsOriginalAndRetriesOnce": true,
+      "futurePlansUnchanged": true,
+      "cardioAndMobilityRecordsPreserved": true,
+      "tiredDoesNotCompleteRecovery": true,
+      "standardPulldownHasCorrectFrames": true,
+      "offlineTeachingAndProgress": true
+    },
+    "errors": []
+  },
+  "old_versions_preserved": true,
+  "limits": [
+    "Chromium mobile emulation, not physical iOS or screen reader validation",
+    "AI key positions visually inspected, not professionally certified; full guidance retained",
+    "This release implements the three agreed first-stage priorities"
+  ]
+}

@@ -15,7 +15,7 @@ export function translateText(source){
  const trimmed=text.trim();if(phrases[trimmed])return text.replace(trimmed,phrases[trimmed]);
  let result=text.replace(/本周训练 (\d+) \/ (\d+) 次/g,'Workouts this week $1 / $2').replace(/完成训练 (\d+) 次 · 本周目标 (\d+) 次/g,'Workouts completed $1 · Weekly goal $2').replace(/本周排课建议 (\d+) 次/g,'Scheduled workouts this week $1').replace(/上周完整周：(\d+) 次/g,'Last full week: $1 workouts').replace(/(恢复反馈|阅读动作要点|实际记录动作) (\d+) (天|个)/g,(_,label,n)=>`${{'恢复反馈':'Recovery check-ins','阅读动作要点':'Movement tips read','实际记录动作':'Movements logged'}[label]} ${n}`).replace(/未记录：次数请填写 1–100 的整数，负重请填写 0–([\d.]+) (kg|lb)。/g,'Not recorded: enter 1–100 whole reps and a load of 0–$1 $2.').replace(/第\s*(\d+)\s*步\s*\/\s*共\s*(\d+)\s*步/g,'Step $1 of $2')
  .replace(/目标 (\d+) 组 × (\d+)–(\d+) (次 \/ 侧|次)/g,(_,sets,min,max,unit)=>`Target ${sets} sets × ${min}–${max} reps${unit==='次 / 侧'?' / side':''}`)
- .replace(/已记录 (\d+) 组/g,'Logged $1 sets').replace(/(?:保)?留约 (\d+) 次余力/g,'Leave ~ $1 reps in reserve')
+ .replace(/已记录 (\d+) \/ (\d+) (组|分钟)/g,(_,done,goal,unit)=>`Logged ${done} / ${goal} ${unit==='组'?'sets':'min'}`).replace(/已记录 (\d+) 组/g,'Logged $1 sets').replace(/(?:保)?留约 (\d+) 次余力/g,'Leave ~ $1 reps in reserve')
  .replace(/余力目标：完成一组后，预计还能做 (\d+) 次。/g,'Reps in reserve: after a set, aim to have about $1 reps left. ')
  .replace(/第\s*(\d+)\s*周/g,'Week $1').replace(/第\s*(\d+)\s*个动作/g,'Exercise $1')
  .replace(/练\s*(\d+)\s*天，休\s*(\d+)\s*天/g,'Train $1 days, rest $2 days')

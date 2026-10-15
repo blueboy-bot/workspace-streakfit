@@ -290,3 +290,59 @@ button.plan-edit-link {margin:5px auto;text-align:center;}
 .plan-art-second {background-image:url('./assets/exercises/overview-atlas-2.png');}
 
 .plan-art-third {background-image:url('./assets/exercises/overview-atlas-3.png');background-size:200% 200%;}
+
+/* v0.36.0: use shapes for progress and pictures for explanations. */
+.plan-progress-visual,.workout-progress-visual {display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
+.set-pips {display:inline-flex;align-items:center;gap:3px;min-height:14px;max-width:100%;}
+.set-pips i {display:block;width:7px;height:7px;border:1px solid var(--subtle);border-radius:50%;background:transparent;}
+.set-pips .pip-filled {background:var(--focus);border-color:var(--focus);}
+.plan-progress-visual .plan-movement-progress {font-size:14px;}
+.workout-progress-visual {font-size:14px;color:var(--subtle);}
+.adjustment-time-options {display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+.adjustment-time-options button {min-height:44px;min-width:76px;margin:0;padding:8px 12px;background:var(--paper);border:1px solid var(--line);font-size:14px;}
+.adjustment-time-options button[aria-pressed=true] {border-color:var(--focus);background:var(--selected);color:var(--ink);}
+.adjustment-comparison {display:grid;grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr);gap:8px;align-items:start;margin:18px 0 8px;}
+.comparison-summary {min-width:0;background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:14px;}
+.comparison-after {background:var(--paper);border-color:var(--focus);}
+.comparison-summary h4,.comparison-result h4 {font-size:15px;margin:0 0 8px;line-height:1.4;}
+.comparison-summary .comparison-time {font-size:21px;font-weight:750;color:var(--ink);margin:0;line-height:1.3;overflow-wrap:anywhere;font-variant-numeric:tabular-nums;}
+.comparison-summary .comparison-count {font-size:14px;color:var(--subtle);margin:5px 0 10px;}
+.comparison-arrow {font-size:22px;padding-top:40px;text-align:center;color:var(--subtle);}
+.comparison-thumbnails {display:flex;flex-wrap:wrap;gap:5px;}
+.comparison-thumbnails .plan-thumbnail {width:38px;border-radius:7px;}
+.comparison-thumbnails .plan-art-label {display:none;}
+.comparison-current-details>summary,.comparison-omitted>summary {min-height:44px;align-content:center;font-size:14px;color:var(--subtle);}
+.comparison-result {margin-top:10px;}
+.comparison-movement {display:flex;align-items:center;gap:10px;border-top:1px solid var(--line);padding:10px 0;min-width:0;}
+.comparison-movement>.plan-thumbnail {width:52px;flex:0 0 52px;border-radius:8px;}
+.comparison-movement>div {display:grid;gap:3px;min-width:0;}
+.comparison-movement b {font-size:15px;line-height:1.4;overflow-wrap:anywhere;}
+.comparison-movement span:not(.plan-thumbnail,.plan-art,.plan-art-label) {font-size:14px;line-height:1.4;color:var(--subtle);}
+.comparison-movement small {font-size:13px;color:var(--focus);line-height:1.3;}
+.comparison-preserved {font-size:14px;color:var(--focus);}
+.comparison-note,.comparison-omitted p {font-size:14px;color:var(--subtle);}
+.keyframe-teaching {margin-top:22px;}
+.keyframe-teaching>h3 {font-size:18px;margin-bottom:12px;}
+.keyframe-teaching>h3>span {color:var(--subtle);font-weight:400;}
+.keyframe-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+.keyframe-grid figure {margin:0;min-width:0;}
+.keyframe-grid figure>button {display:block;position:relative;margin:0;width:100%;padding:0;border-radius:14px;background:#14241c;border:1px solid var(--line);overflow:hidden;}
+.teaching-frame-image {display:block;width:100%;aspect-ratio:1;background-color:#14241c;background-image:url('./assets/exercises/teaching-keyframes.png');background-size:200% 200%;background-repeat:no-repeat;}
+.keyframe-zoom {position:absolute;bottom:0;left:0;right:0;background:#08150dca;color:#edf4ef;text-align:center;font-size:13px;padding:5px;}
+.keyframe-grid figcaption {display:grid;gap:5px;margin-top:8px;font-size:14px;line-height:1.5;}
+.keyframe-grid figcaption span {color:var(--subtle);}
+.keyframe-note {font-size:14px;color:var(--subtle);}
+.keyframe-more {border-top:1px solid var(--line);margin-top:18px;}
+.keyframe-more>summary {min-height:48px;align-content:center;font-size:15px;}
+.keyframe-safety {font-size:14px;color:var(--subtle);}
+#keyframe-dialog {width:min(520px,calc(100% - 28px));max-height:88dvh;overflow:auto;border:1px solid var(--line);border-radius:20px;padding:20px;background:var(--paper);color:var(--ink);}
+#keyframe-dialog::backdrop {background:#07110caa;backdrop-filter:blur(4px);}
+.keyframe-dialog-heading {display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;}
+.keyframe-dialog-heading h2 {font-size:20px;line-height:1.4;margin:0;}
+.keyframe-dialog-heading button {flex:0 0 44px;min-height:44px;padding:0;font-size:28px;margin:0;background:var(--soft);color:var(--ink);}
+#keyframe-dialog-body .teaching-frame-image {border-radius:14px;}
+#keyframe-dialog-body p {font-size:16px;margin:8px 0;}
+.keyframe-dialog-controls {display:flex;gap:10px;margin-top:18px;}
+.keyframe-dialog-controls button {flex:1;min-height:46px;font-size:15px;margin:0;background:var(--soft);}
+.keyframe-dialog-controls button[aria-pressed=true] {background:var(--selected);border:1px solid var(--focus);color:var(--ink);}
+@media(max-width:400px){.comparison-summary{padding:10px}.comparison-summary .comparison-time{font-size:18px}.comparison-thumbnails .plan-thumbnail{width:32px}.keyframe-grid{gap:9px}}
