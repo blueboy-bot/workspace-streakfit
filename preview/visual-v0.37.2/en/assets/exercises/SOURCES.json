@@ -1,0 +1,55 @@
+{
+  "purpose": "Decorative exercise identification thumbnails, not a movement tutorial or validated anatomical reference",
+  "created": "2026-10-15",
+  "source": "OpenAI image generation, original assets",
+  "atlases": [
+    "overview-atlas.png",
+    "overview-atlas-2.png",
+    "overview-atlas-3.png"
+  ],
+  "layout": "Atlases 1 and 2: 4 x 4; atlas 3: 2 x 2. CSS sprite coordinates, no external image requests.",
+  "mapping": "modules/daily-overview.js:overviewArtwork",
+  "fallback": "Neutral standing body illustration labelled Body reference. No inheritance of a base movement illustration for unmapped grip or equipment variations.",
+  "excluded_cells": {
+    "overview-atlas-2.png": [
+      7,
+      15
+    ]
+  },
+  "review": "Visual inspection for recognizability; specialist biomechanical certification not performed.",
+  "teaching-keyframes": {
+    "file": "teaching-keyframes.png",
+    "layout": "2 x 2; upper row standard overhand pulldown, lower row chest-supported dumbbell row",
+    "source": "Original OpenAI image generation",
+    "use": "Two illustrative key positions only; no grip-variant inheritance, no muscle activation claim",
+    "review": "Only bottom row chest-supported dumbbell row remains in use. Top pulldown row retired in v0.37.1 because the athlete faced away from tower."
+  },
+  "routeRecovery": {
+    "file": "recovery-walk.png",
+    "origin": "AI-generated original illustration, 2026-10-15",
+    "purpose": "Decorative recovery walking thumbnail, not an exercise tutorial"
+  },
+  "reviewedPulldown": {
+    "file": "pulldown-reviewed.png",
+    "source": "Original AI-edited candidate exec-05d43c64-a8a3-4c1e-8e11-b2454c0cb0d5.png",
+    "use": "Standard overhand grip only; two positions on the same longer bar, facing tower, bar in front of upper chest.",
+    "review": "Both hands inspected enlarged in start and pull frames; consistent finger-over-bar/closed-thumb grip and hand-forearm continuity. Prior v0.37.1 grip review retracted. Not professionally certified.",
+    "reviewRecord": "REVIEW.json"
+  },
+  "reviewedEquipment": {
+    "file": "equipment-reviewed.png",
+    "source": "Original AI-generated image",
+    "use": "Only approved cells selected by exact movement ID. Unapproved cells must not be displayed."
+  },
+  "reviewedPositions": {
+    "file": "positions-reviewed.png",
+    "source": "Original AI-generated image",
+    "use": "Only approved exact-movement cells; the lower row was not accepted as contralateral instruction."
+  },
+  "reviewedSetups": {
+    "file": "setups-reviewed.png",
+    "source": "Original AI-generated image",
+    "use": "Top right hip thrust, bottom left dead bug setup, bottom right bird dog setup. Top-left leg curl NOT accepted and not mapped."
+  },
+  "auditFile": "REVIEW.json"
+}

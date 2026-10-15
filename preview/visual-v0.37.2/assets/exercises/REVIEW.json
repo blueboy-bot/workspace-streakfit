@@ -1,0 +1,298 @@
+{
+  "version": "0.37.2",
+  "date": "2026-10-15",
+  "movementIdsChecked": 34,
+  "decisions": {
+    "withheld": 1,
+    "retained": 25,
+    "replaced": 8
+  },
+  "reviewer": "Assistant visual inspection against catalog movement cues and common machine structure; no qualified trainer review",
+  "rows": [
+    {
+      "id": "legcurl",
+      "name": "坐姿腿弯举",
+      "decision": "withheld",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "Removed exact-movement mapping. Both original and regenerated rollers remained ambiguous; neutral labelled placeholder until accurate material available."
+    },
+    {
+      "id": "bench",
+      "name": "Bench Press · 卧推",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "pulldown",
+      "name": "高位下拉（常规正握）",
+      "decision": "replaced",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "v0.37.1 hand-grip review retracted after user correction. Replaced with long-bar candidate; manually inspected enlarged near/far hands in both frames for consistent closed overhand grip and wrist alignment."
+    },
+    {
+      "id": "row",
+      "name": "哑铃划船",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "lateral",
+      "name": "哑铃侧平举",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "shoulderpress",
+      "name": "哑铃肩推",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "goblet",
+      "name": "哑铃杯式深蹲",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "barRdl",
+      "name": "杠铃罗马尼亚硬拉",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "curl",
+      "name": "哑铃弯举",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "altcurl",
+      "name": "哑铃交替弯举",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "ropepush",
+      "name": "绳索三头下压",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "pushup",
+      "name": "标准俯卧撑",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "bridge",
+      "name": "臀桥",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "facepull",
+      "name": "绳索面拉",
+      "decision": "replaced",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "Side view shows face toward pulley and rope approaching front of face, not from behind neck."
+    },
+    {
+      "id": "chestsupported",
+      "name": "胸托哑铃划船",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "pulldownNeutral",
+      "name": "高位下拉（窄距中立握）",
+      "decision": "replaced",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "Replaced ambiguous orientation with side view facing tower using close parallel handle."
+    },
+    {
+      "id": "cablerow",
+      "name": "坐姿绳索划船（窄距中立握）",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "dbbench",
+      "name": "哑铃卧推",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "incline",
+      "name": "Incline DB Press · 上斜哑铃卧推",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "fly",
+      "name": "绳索夹胸（Cable Fly）",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "push",
+      "name": "墙壁俯卧撑",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "legpress",
+      "name": "腿举",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "legextension",
+      "name": "坐姿腿屈伸",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "deadlift",
+      "name": "杠铃硬拉",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "rdl",
+      "name": "哑铃罗马尼亚硬拉",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "splitSquat",
+      "name": "哑铃分腿蹲",
+      "decision": "replaced",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "Replaced unweighted lunge image with grounded split stance and dumbbells at sides."
+    },
+    {
+      "id": "barhip",
+      "name": "杠铃臀推",
+      "decision": "replaced",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "Replaced uncertain bench support with shoulder-blade support at edge, padded bar across hips and feet grounded."
+    },
+    {
+      "id": "dbcalf",
+      "name": "哑铃提踵",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "deadbug",
+      "name": "死虫式",
+      "decision": "replaced",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "Retired uncertain limb pairing. Thumbnail shows symmetric arms-up/hips-and-knees-90-degree setup only."
+    },
+    {
+      "id": "bird",
+      "name": "鸟狗式",
+      "decision": "replaced",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "Retired uncertain limb pairing. Thumbnail shows neutral hands-and-knees setup only."
+    },
+    {
+      "id": "straightpull",
+      "name": "绳索直臂下拉",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "cablerowSingle",
+      "name": "单臂坐姿绳索划船",
+      "decision": "replaced",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "Replaced incorrect two-hand V-handle with one hand on D-handle; other hand rests on thigh."
+    },
+    {
+      "id": "squat",
+      "name": "椅子深蹲",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    },
+    {
+      "id": "dbpress",
+      "name": "哑铃地板卧推",
+      "decision": "retained",
+      "scope": "Static thumbnail visual check: common setup, equipment facing/attachments, visible body support and position only. Not a validation of full motion or an expert certification.",
+      "notes": "No clear mismatch found between the visible static pose, assigned movement name and ordinary gym setup."
+    }
+  ],
+  "teaching": [
+    {
+      "id": "pulldown",
+      "decision": "replaced",
+      "positions": 2,
+      "reason": "Same new long-bar candidate used for both teaching positions. Thumb-wrap and unchanged-grip cues added; current illustration has manual hand-detail inspection, not expert certification."
+    },
+    {
+      "id": "chestsupported",
+      "decision": "retained",
+      "positions": 2,
+      "reason": "Chest supported on incline bench in both positions, hands hold dumbbells and feet grounded."
+    }
+  ],
+  "recovery": {
+    "file": "recovery-walk.png",
+    "decision": "retained",
+    "scope": "Decorative walking image only; not a mandatory recovery activity"
+  },
+  "retiredCells": [
+    "overview-atlas.png:1,11,13",
+    "overview-atlas-2.png:local cells 5,10,11,13,14 (zero based)",
+    "overview-atlas-3.png:local cell 1 (zero based)",
+    "teaching-keyframes.png:top row",
+    "equipment-reviewed.png:top left and bottom right (unapproved)",
+    "positions-reviewed.png:bottom row (unapproved)",
+    "setups-reviewed.png:top left (unapproved)"
+  ],
+  "correctionHistory": [
+    {
+      "version": "0.37.2",
+      "movement": "pulldown",
+      "trigger": "User identified grip problems in v0.37.1. Previous positive visual review was incomplete.",
+      "retiredImage": "v0.37.1 pulldown-reviewed.png",
+      "change": "Longer bar; same overhand grip on both hands and both positions. New candidate manually inspected in four enlarged hand regions.",
+      "evidence": "docs/illustration-review/pulldown-hand-inspection.png",
+      "scope": "Assistant visual review only; software tests cannot validate anatomy.",
+      "assetSHA256": "eb0edf92d6a81de8986718aae30927ff72c3cfc2f85845a75ace4b8b5ffb6ce0"
+    }
+  ],
+  "handAcceptanceCriteria": [
+    "Identify exact intended grip: pronated, supinated, neutral or other. Do not infer it from exercise name alone.",
+    "Inspect both hands enlarged: palms and backs agree with intended grip, thumb wraps opposite fingers, no bar penetration, implausible digits or abrupt wrist bend.",
+    "Compare both positions: same attachment, hand spacing and grip; inspect hand-to-forearm continuity.",
+    "Occluded or ambiguous contact is not evidence of a correct grip. Withhold when the grip cannot be reasonably assessed.",
+    "Image generation and software tests are not anatomical approval. Record rejected alternatives and retain limitations."
+  ]
+}
