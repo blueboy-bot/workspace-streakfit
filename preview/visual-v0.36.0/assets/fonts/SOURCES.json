@@ -1,0 +1,65 @@
+{
+  "commit": "bd8f81ddb5c74d5c8897b36ad88b440266245103",
+  "files": [
+    {
+      "name": "NotoSansSC.ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/bd8f81ddb5c74d5c8897b36ad88b440266245103/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf",
+      "bytes": 17772300,
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "name": "Barlow-SemiBold.ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/bd8f81ddb5c74d5c8897b36ad88b440266245103/ofl/barlow/Barlow-SemiBold.ttf",
+      "bytes": 108348,
+      "sha256": "86577cb32f8abe3673db53ca0f4221e6856751a4f6730c867e00f720f8bb1fc5"
+    },
+    {
+      "name": "Inter.ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/bd8f81ddb5c74d5c8897b36ad88b440266245103/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
+      "bytes": 876576,
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031"
+    },
+    {
+      "name": "NotoSansSC-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/bd8f81ddb5c74d5c8897b36ad88b440266245103/ofl/notosanssc/OFL.txt",
+      "bytes": 4388,
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+    },
+    {
+      "name": "Barlow-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/bd8f81ddb5c74d5c8897b36ad88b440266245103/ofl/barlow/OFL.txt",
+      "bytes": 4377,
+      "sha256": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f"
+    },
+    {
+      "name": "Inter-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/bd8f81ddb5c74d5c8897b36ad88b440266245103/ofl/inter/OFL.txt",
+      "bytes": 4377,
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Streakfit Han",
+      "file": "streakfit-han.woff2",
+      "bytes": 1958848,
+      "glyphs": 7780,
+      "sha256": "3326f789a41743dea29b82bd9725036507fd0a71af2fb383145657bceaee75af"
+    },
+    {
+      "name": "Streakfit UI",
+      "file": "streakfit-ui.woff2",
+      "bytes": 80864,
+      "glyphs": 857,
+      "sha256": "349e2e519da1d53a3679f8959877b1e34ebfb47e403d01a393e03fa80e69f6fc"
+    },
+    {
+      "name": "Streakfit Display",
+      "file": "streakfit-display.woff2",
+      "bytes": 31116,
+      "glyphs": 448,
+      "sha256": "b52f7bad4291ef217781690e6059936a39a16cf44e344b3bf5c0b1db905ad531"
+    }
+  ],
+  "coverage": "UI corpus plus GB2312 common simplified Chinese; Latin and punctuation. System CJK fallback for rare user text."
+}

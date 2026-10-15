@@ -1,0 +1,27 @@
+{
+  "purpose": "Decorative exercise identification thumbnails, not a movement tutorial or validated anatomical reference",
+  "created": "2026-10-15",
+  "source": "OpenAI image generation, original assets",
+  "atlases": [
+    "overview-atlas.png",
+    "overview-atlas-2.png",
+    "overview-atlas-3.png"
+  ],
+  "layout": "Atlases 1 and 2: 4 x 4; atlas 3: 2 x 2. CSS sprite coordinates, no external image requests.",
+  "mapping": "modules/daily-overview.js:overviewArtwork",
+  "fallback": "Neutral standing body illustration labelled Body reference. No inheritance of a base movement illustration for unmapped grip or equipment variations.",
+  "excluded_cells": {
+    "overview-atlas-2.png": [
+      7,
+      15
+    ]
+  },
+  "review": "Visual inspection for recognizability; specialist biomechanical certification not performed.",
+  "teaching-keyframes": {
+    "file": "teaching-keyframes.png",
+    "layout": "2 x 2; upper row standard overhand pulldown, lower row chest-supported dumbbell row",
+    "source": "Original OpenAI image generation",
+    "use": "Two illustrative key positions only; no grip-variant inheritance, no muscle activation claim",
+    "review": "Visually checked for bar in front of upper chest, chest support and coherent poses; not certified by a qualified trainer; does not replace full instruction or live supervision."
+  }
+}
