@@ -23,5 +23,10 @@
     "source": "Original OpenAI image generation",
     "use": "Two illustrative key positions only; no grip-variant inheritance, no muscle activation claim",
     "review": "Visually checked for bar in front of upper chest, chest support and coherent poses; not certified by a qualified trainer; does not replace full instruction or live supervision."
+  },
+  "routeRecovery": {
+    "file": "recovery-walk.png",
+    "origin": "AI-generated original illustration, 2026-10-15",
+    "purpose": "Decorative recovery walking thumbnail, not an exercise tutorial"
   }
 }

@@ -1,4 +1,16 @@
 export const englishUI = {
+"选择计划周":"Choose a plan week",
+"选择日期":"Choose a date",
+"计划设置与说明":"Plan settings and details",
+"已记录恢复":"Recovery logged",
+"按自己的节奏休息":"Rest at your own pace",
+"可查看或调整计划":"View or adjust your plan",
+"查看今日计划 →":"View today’s plan →",
+"查看计划":"View plan",
+"未记录":"No record",
+"臀腿":"Glutes and legs",
+"下肢":"Lower body",
+
 "快捷选择时长":"Quick duration choices",
 "当前安排":"Current plan",
 "调整后":"After adjustment",

@@ -346,3 +346,60 @@ button.plan-edit-link {margin:5px auto;text-align:center;}
 .keyframe-dialog-controls button {flex:1;min-height:46px;font-size:15px;margin:0;background:var(--soft);}
 .keyframe-dialog-controls button[aria-pressed=true] {background:var(--selected);border:1px solid var(--focus);color:var(--ink);}
 @media(max-width:400px){.comparison-summary{padding:10px}.comparison-summary .comparison-time{font-size:18px}.comparison-thumbnails .plan-thumbnail{width:32px}.keyframe-grid{gap:9px}}
+
+/* v0.37: illustrated route overview. Dates and progress remain real text. */
+.visual-route{max-width:800px;margin:0 auto;}
+.visual-route>h1{font-size:32px;margin:6px 0 20px;}
+.visual-route>.eyebrow{margin:0;}
+.route-week-switch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;background:var(--soft);border-radius:14px;padding:5px;}
+.route-week-switch button{min-height:44px;background:transparent;border:1px solid transparent;border-radius:10px;padding:8px 4px;font-size:14px;color:var(--subtle);}
+.route-week-switch button[aria-pressed="true"]{background:var(--paper);border-color:var(--line);color:var(--ink);font-weight:750;}
+.route-range{font-size:14px;margin:16px 0 8px;color:var(--subtle);font-variant-numeric:tabular-nums;}
+.route-date-strip{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;margin:8px 0 16px;}
+.route-date-strip button{display:flex;flex-direction:column;align-items:center;gap:7px;min-height:86px;padding:8px 0;background:transparent;border:1px solid transparent;color:var(--ink);border-radius:12px;}
+.route-date-strip button>span{font-size:12px;color:var(--subtle);}
+.route-date-strip button>b{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;font-size:17px;font-weight:650;font-variant-numeric:tabular-nums;}
+.route-date-strip button[aria-current="date"]>b{background:var(--accent);color:var(--accent-ink);font-weight:800;}
+.route-date-strip button[aria-pressed="true"]{border-color:var(--line);background:var(--soft);}
+.route-date-strip i{width:5px;height:5px;border:1px solid var(--line);border-radius:50%;}
+.route-date-strip .route-dot-complete{background:var(--focus);border-color:var(--focus);}
+.route-date-strip .route-dot-recovery{background:var(--subtle);border-color:var(--subtle);}
+.route-weekly-progress{display:flex;align-items:center;gap:20px;border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:14px 16px;margin-bottom:16px;}
+.route-weekly-progress>span{font-size:14px;white-space:nowrap;color:var(--subtle);}
+.route-weekly-progress b{color:var(--ink);font-size:18px;margin-left:6px;font-variant-numeric:tabular-nums;}
+.route-weekly-progress progress{height:6px;flex:1;min-width:0;margin:0;}
+.route-visual-list{display:grid;gap:12px;}
+.route-visual-day{display:grid;grid-template-columns:148px minmax(0,1fr);gap:20px;width:100%;padding:12px;border:1px solid var(--line);border-radius:20px;background:var(--paper);text-align:left;box-shadow:none;}
+.route-visual-day:hover{border-color:var(--subtle);}
+.route-visual-day.route-visual-selected{border-color:var(--focus);}
+.route-visual-day.route-visual-today{border:2px solid var(--focus);padding:11px;}
+.route-visual-day>.plan-thumbnail,.route-recovery-art,.route-empty-art{display:block;width:148px;min-height:148px;height:100%;border-radius:12px;overflow:hidden;align-self:stretch;}
+.route-visual-day>.plan-thumbnail{background:#e1e5e7;}
+.route-visual-day>.plan-thumbnail .plan-art{position:absolute;aspect-ratio:1;top:50%;left:0;transform:translateY(-50%);height:auto;}
+.route-recovery-art{background:#e2e6e8 url('./assets/exercises/recovery-walk.png') center/cover no-repeat;}
+.route-empty-art{background:var(--soft);color:var(--subtle);display:grid;place-items:center;font-size:38px;}
+.route-card-copy{display:flex;flex-direction:column;min-width:0;padding:4px 0;gap:5px;}
+.route-card-date{font-size:13px;color:var(--subtle);}
+.route-card-title{font-size:22px;line-height:1.35;font-weight:750;color:var(--ink);overflow-wrap:anywhere;}
+.route-card-meta{font-size:14px;line-height:1.5;color:var(--subtle);}
+.route-card-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:10px;}
+.route-record-status{font-size:13px;color:var(--subtle);}
+.route-recorded{color:var(--focus);font-weight:650;}
+.route-card-chevron{font-size:26px;line-height:1;color:var(--subtle);}
+.route-card-cta{display:block;font-size:14px;font-weight:750;background:var(--accent);color:var(--accent-ink);padding:10px 12px;border-radius:10px;text-align:center;min-height:44px;align-content:center;}
+.visual-route>.today-support{margin-top:20px;}
+@media(max-width:650px){
+ .visual-route>h1{font-size:28px;margin-bottom:16px;}
+ .route-visual-day{grid-template-columns:100px minmax(0,1fr);gap:12px;padding:10px;border-radius:17px;}
+ .route-visual-day.route-visual-today{padding:9px;}
+ .route-visual-day>.plan-thumbnail,.route-recovery-art,.route-empty-art{width:100px;min-height:116px;border-radius:10px;}
+ .route-card-copy{padding:2px 0;gap:4px;}
+ .route-card-title{font-size:18px;}
+ .route-card-date,.route-record-status{font-size:12px;}
+ .route-card-meta{font-size:13px;}
+ .route-card-footer{gap:5px;padding-top:8px;}
+ .route-card-cta{width:100%;font-size:14px;padding:9px 6px;}
+ .route-weekly-progress{gap:12px;padding:12px;}
+ .route-weekly-progress b{font-size:17px;}
+}
+@media(prefers-reduced-motion:reduce){.route-visual-day{transition:none;}}

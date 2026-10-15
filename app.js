@@ -879,7 +879,52 @@ function refreshScheduleForm(){const split=setup.elements.namedItem('split');if(
 setup.addEventListener('change',e=>{if(e.target.name==='scheduleMode'||e.target.name==='goal')refreshScheduleForm();if(e.target.name==='cyclePreset'&&e.target.value!=='custom'){const [train,rest]=e.target.value.split('/');setup.elements.trainDays.value=train;setup.elements.restDays.value=rest;}if(e.target.name==='trainDays'||e.target.name==='restDays')setup.elements.cyclePreset.value='custom';});
 setup.addEventListener('click',e=>{const b=e.target.closest('[data-weekdays]');if(!b)return;document.querySelectorAll('[name=weekdays]').forEach(input=>input.checked=b.dataset.weekdays==='work'?Number(input.value)<5:b.dataset.weekdays==='weekend'?Number(input.value)>=5:false);});
 function dailyRouteTitle(plan){return today().workoutTitle||plan.title;}
-function compactRoute(plan,recovery){const start=new Date(anchorDate()+'T12:00:00');const weeks=Array.from({length:4},(_,week)=>`<details class="route-week" ${week===Math.max(0,Math.min(3,Math.floor((Date.parse(dateKey())-Date.parse(anchorDate()))/604800000)))?'open':''}><summary>第 ${week+1} 周<span>查看课程</span></summary>${Array.from({length:7},(_,offset)=>{const dt=new Date(start);dt.setDate(dt.getDate()+week*7+offset);const day=dt.toLocaleDateString('en-CA'),kind=schedule(dt),draft=state.plannedWorkouts?.[day],record=state.history[day],p=kind==='training'&&!lightDay(dt)?prescription(dt):null;const title=record?.workoutTitle||draft?.workoutTitle||p?.title||(kind==='pending'?'尚未开始':'恢复日');const count=(record?.exerciseIds||draft?.exerciseIds||p?.ids||[]).length;return `<button class="route-day compact-day ${day===dateKey()?'route-today':''}" data-open-day="${day}"><span>${dt.toLocaleDateString('zh-CN',{month:'numeric',day:'numeric'})}<small>${dt.toLocaleDateString('zh-CN',{weekday:'short'})}</small></span><div><b>${esc(title)}</b><small>${kind==='training'?count+' 个动作':'休息 / 轻松活动'}${points(record||{sets:{}})>0?' · 已有记录':draft?' · 已调整':''}</small></div><span>${day===dateKey()?'今天':record&&completedRecordedWorkout(record)?'已完成':kind==='training'?(day>dateKey()?'待训练':'查看'):'恢复'}</span></button>`;}).join('')}</details>`).join('');return `<div class="compact-route"><p class="eyebrow">YOUR PATH · 4 WEEK PLAN</p><h1>我的路线</h1><p class="route-today-summary">今天 · ${recovery?'恢复日':esc(dailyRouteTitle(plan))}</p><p>${esc(state.profile.goal)} · 每次 ${esc(state.profile.minutes)} 分钟</p><button class="primary" data-action="${recovery?'home':'workout'}">${recovery?'今日恢复任务':'开始今日训练'} →</button><details class="plan-notes"><summary>计划说明与器械</summary><p>${esc(scheduleSummary())}</p><p>${esc(equipmentSummary())}</p>${cyclePanel(plan.cycle)}<p>可用时间是上限；按实际训练与恢复调整，不要求练满。</p></details>${weeks}<details class="plan-notes"><summary>后续阶段</summary><p>当前开放四周周期，后续进阶阶段尚未开放。</p></details></div>`;}
+// View state is local to this workspace and date. Browsing never writes a workout.
+let routeWeekIndex=null,routeSelectedDate=null,routeViewContext='';
+function routeBlockStart(){const start=new Date(anchorDate()+'T12:00:00'),elapsed=dayIndex(new Date())-dayIndex(start);start.setDate(start.getDate()+Math.max(0,Math.floor(elapsed/28))*28);return start;}
+function routeDayPresentation(at){
+ const date=at.toLocaleDateString('en-CA'),past=date<dateKey(),future=date>dateKey(),kind=schedule(at);
+ const plan=kind==='training'&&!lightDay(at)?prescription(at):{ids:[],entries:[],targets:{},title:'恢复日'};
+ const record=future?null:state.history[date],draft=past?null:state.plannedWorkouts?.[date];
+ const hasLogs=Object.values(record?.logs||{}).some(logs=>Array.isArray(logs)&&logs.length);
+ const source=future?(draft||{}):!past&&draft&&!hasLogs?{...record,...draft}:(record||{});
+ const ordered=displayedWorkoutIds(past&&hasLogs&&!source.exerciseIds?{...source,exerciseIds:Object.keys(source.logs)}:source,plan);
+ const ids=[...new Set([...ordered,...(past?Object.keys(source.logs||{}).filter(id=>source.logs[id]?.length):[])])].filter(id=>catalog[id]);
+ const targets=Object.fromEntries(ids.filter(id=>catalog[id].kind!=='cardio').map(id=>[id,source.targets?.[id]||(source.targetSets?{sets:source.targetSets,min:8,max:12}:past&&record?.exerciseIds?legacyTarget(id,record):state.exerciseTargets?.[id]||plan.targets?.[id]||defaultExerciseTarget(id))]));
+ const day={...source,targets,cardioTargets:{...plan.durations,...source.cardioTargets},mobilityTargets:{...source.mobilityTargets}};
+ const progress=Object.fromEntries(ids.map(id=>[id,overviewProgress(id,day,{catalog,target:()=>targets[id]||defaultExerciseTarget(id),minutes:()=>day.cardioTargets[id]||15})]));
+ const complete=!future&&hasLogs&&ids.length>0&&ids.every(id=>progress[id].complete),restRecorded=!future&&!!record?.rest;
+ const recovery=!ids.length&&(kind!=='training'||lightDay(at)||source.rest||plan.recoveryRecommended);
+ const rawTitle=source.workoutTitle||plan.title;
+ const titles={'今天练胸':'胸部','今天练背':'背部','今天练肩':'肩部','今天练手臂':'手臂','今天练腿':'下肢','今天练臀腿':'臀腿','今天练小腿':'小腿','今天练核心':'核心','今天练心肺':'心肺','今天练活动度':'活动度'};
+ const title=recovery?'恢复日':ids.length?(titles[overviewTitle(ids,catalog,rawTitle)]||overviewTitle(ids,catalog,rawTitle)):rawTitle;
+ const status=complete?'已完成':restRecorded?'已记录恢复':hasLogs?'已有记录':future?'查看计划':past?'未记录':recovery?'恢复日':'今日计划';
+ return {date,ids,title,progress,complete,recovery,restRecorded,hasLogs,status,representative:ids.find(id=>Object.hasOwn(overviewArtwork,id))||ids[0],estimate:estimateOverviewMinutes(ids,progress,source.sessionEntries||plan.entries||[])};
+}
+function routeDayCard(model){
+ const at=new Date(model.date+'T12:00:00'),isToday=model.date===dateKey(),weekday=at.toLocaleDateString('zh-CN',{weekday:'short'}),label=isToday?'今天':weekday;
+ const graphic=model.recovery?'<span class="route-recovery-art" aria-hidden="true"></span>':model.ids.length?overviewGraphic(model.representative):'<span class="route-empty-art" aria-hidden="true">○</span>';
+ const meta=model.ids.length?`${model.ids.length} 个动作 · 约 ${model.estimate} 分钟`:model.recovery?'按自己的节奏休息':'可查看或调整计划';
+ const status=model.complete?'✓ '+model.status:model.restRecorded?'✓ '+model.status:model.status;
+ return `<button class="route-visual-day ${isToday?'route-visual-today':''} ${model.date===routeSelectedDate?'route-visual-selected':''}" data-route-open="${model.date}" data-route-card="${model.date}" aria-label="${model.date} · ${esc(model.title)} · ${status}">${graphic}<span class="route-card-copy"><span class="route-card-date">${at.toLocaleDateString('zh-CN',{month:'numeric',day:'numeric'})} · ${label}</span><span class="route-card-title">${esc(model.title)}</span><span class="route-card-meta">${esc(meta)}</span><span class="route-card-footer"><span class="route-record-status ${model.complete||model.restRecorded?'route-recorded':''}">${esc(status)}</span><span class="${isToday?'route-card-cta':'route-card-chevron'}" aria-hidden="true">${isToday?'查看今日计划 →':'›'}</span></span></span></button>`;
+}
+function compactRoute(plan,recovery){
+ const start=routeBlockStart(),context=key+':'+anchorDate()+':'+dateKey();
+ if(routeViewContext!==context){routeViewContext=context;routeWeekIndex=Math.max(0,Math.min(3,Math.floor((dayIndex(new Date())-dayIndex(start))/7)));routeSelectedDate=dateKey();}
+ const weekStart=new Date(start);weekStart.setDate(weekStart.getDate()+routeWeekIndex*7);
+ const days=Array.from({length:7},(_,i)=>{const at=new Date(weekStart);at.setDate(at.getDate()+i);return routeDayPresentation(at);});
+ if(!days.some(d=>d.date===routeSelectedDate))routeSelectedDate=days.find(d=>d.date===dateKey())?.date||days[0].date;
+ const end=new Date(days[6].date+'T12:00:00'),w=weeklyGrowth();
+ const tabs=Array.from({length:4},(_,i)=>{const dt=new Date(start);dt.setDate(dt.getDate()+i*7);const week=Math.floor((dayIndex(dt)-dayIndex(anchorDate()))/7)+1;return `<button data-route-week="${i}" aria-pressed="${i===routeWeekIndex}">第 ${week} 周</button>`;}).join('');
+ const strip=days.map(model=>{const at=new Date(model.date+'T12:00:00');return `<button data-route-select="${model.date}" aria-pressed="${model.date===routeSelectedDate}" ${model.date===dateKey()?'aria-current="date"':''} aria-label="${model.date} · ${esc(model.title)} · ${esc(model.status)}"><span>${at.toLocaleDateString('zh-CN',{weekday:'short'})}</span><b>${at.getDate()}</b><i class="${model.complete?'route-dot-complete':model.restRecorded?'route-dot-recovery':''}" aria-hidden="true"></i></button>`;}).join('');
+ return `<section class="visual-route"><p class="eyebrow">YOUR PATH</p><h1>我的路线</h1><div class="route-week-switch" role="group" aria-label="选择计划周">${tabs}</div><p class="route-range">${weekStart.toLocaleDateString('zh-CN',{month:'numeric',day:'numeric'})} — ${end.toLocaleDateString('zh-CN',{month:'numeric',day:'numeric'})}</p><div class="route-date-strip" role="group" aria-label="选择日期">${strip}</div><section class="route-weekly-progress" aria-label="本周训练"><span>本周训练 <b>${w.completed} / ${w.target}</b></span><progress value="${Math.min(w.completed,w.target)}" max="${Math.max(1,w.target)}" aria-label="本周训练 ${w.completed} / ${w.target} 次"></progress></section><div class="route-visual-list">${days.map(routeDayCard).join('')}</div><details class="today-support"><summary>计划设置与说明</summary>${weeklyGoalPanel()}<p>${esc(scheduleSummary())}</p><p>${esc(equipmentSummary())}</p>${cyclePanel(plan.cycle)}<p>可用时间是上限；按实际训练与恢复调整，不要求练满。</p></details></section>`;
+}
+onContentClick(event=>{
+ const button=event.target.closest('button');if(!button)return;
+ if(button.hasAttribute('data-route-week')){const week=Number(button.dataset.routeWeek);if(!Number.isInteger(week)||week<0||week>3)return;routeWeekIndex=week;routeSelectedDate=null;render();content.querySelector(`[data-route-week="${week}"]`)?.focus?.({preventScroll:true});}
+ if(button.dataset.routeSelect){routeSelectedDate=button.dataset.routeSelect;render();content.querySelector(`[data-route-select="${routeSelectedDate}"]`)?.focus?.({preventScroll:true});content.querySelector(`[data-route-card="${routeSelectedDate}"]`)?.scrollIntoView?.({block:'nearest',behavior:'smooth'});}
+ if(button.dataset.routeOpen){if(button.dataset.routeOpen===dateKey()){const at=new Date(),p=prescription(at),optional=routeDayPresentation(at).ids.length&&(schedule(at)!=='training'||lightDay(at)||today().rest||p.recoveryRecommended);if(optional){openWorkoutDay(dateKey());trainingMode='edit';render();}else{selectedWorkoutDate=null;page='today';render();globalThis.scrollTo?.(0,0);}}else openWorkoutDay(button.dataset.routeOpen);}
+});
 
 // Compact presentation shared by the plan and the focused recording view.
 function strengthWorkoutCard(id,d,plan){
