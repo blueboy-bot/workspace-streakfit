@@ -22,18 +22,22 @@ export function overviewTitle(ids,catalog,fallback){
  return String(fallback||'今日计划').replace(/ · (增肌重点|力量重点)$/,'');
 }
 // Each mapped image depicts this movement, not every grip or equipment variant.
-export const overviewArtwork={bench:0,pulldown:1,row:2,lateral:3,shoulderpress:4,goblet:5,barRdl:6,curl:7,altcurl:7,ropepush:8,pushup:9,bridge:10,facepull:11,chestsupported:12,pulldownNeutral:13,cablerow:14,dbbench:16,incline:17,fly:18,push:19,legpress:20,legextension:22,deadlift:24,rdl:25,splitSquat:26,barhip:27,dbcalf:28,deadbug:29,bird:30,straightpull:32,cablerowSingle:33,squat:34,dbpress:35};
+export const overviewArtwork={pulldown:1,row:2,lateral:3,shoulderpress:4,goblet:5,barRdl:6,curl:7,altcurl:7,ropepush:8,pushup:9,bridge:10,facepull:11,chestsupported:12,pulldownNeutral:13,cablerow:14,dbbench:16,fly:18,push:19,legpress:20,legextension:22,deadlift:24,rdl:25,splitSquat:26,barhip:27,dbcalf:28,deadbug:29,bird:30,straightpull:32,cablerowSingle:33,squat:34,dbpress:35};
 // Exact IDs only. Do not apply a reviewed grip or attachment to other variants.
 export const reviewedArtwork={
- pulldown:{file:'pulldown-reviewed.png',columns:2,rows:1,column:1,row:0},
+ pulldown:{file:'pulldown-reviewed.png',columns:2,rows:1,column:0,row:0,setup:true},
  cablerowSingle:{file:'equipment-reviewed.png',columns:2,rows:2,column:1,row:0},
  splitSquat:{file:'equipment-reviewed.png',columns:2,rows:2,column:0,row:1},
- barhip:{file:'setups-reviewed.png',columns:2,rows:2,column:1,row:0},
+ barhip:{file:'posture-reviewed.png',columns:2,rows:2,column:0,row:0,crop:{x:3,y:3,width:621,height:540,sourceWidth:1254,sourceHeight:1254}},
  pulldownNeutral:{file:'positions-reviewed.png',columns:2,rows:2,column:0,row:0},
  facepull:{file:'positions-reviewed.png',columns:2,rows:2,column:1,row:0},
  deadbug:{file:'setups-reviewed.png',columns:2,rows:2,column:0,row:1,setup:true},
- bird:{file:'setups-reviewed.png',columns:2,rows:2,column:1,row:1,setup:true}
+ bird:{file:'posture-reviewed.png',columns:2,rows:2,column:1,row:0,setup:true,crop:{x:630,y:3,width:621,height:540,sourceWidth:1254,sourceHeight:1254}},
+ dbcalf:{file:'posture-reviewed.png',columns:2,rows:2,column:0,row:1,crop:{x:3,y:550,width:621,height:700,sourceWidth:1254,sourceHeight:1254}},
+ pushup:{file:'posture-reviewed.png',columns:2,rows:2,column:1,row:1,crop:{x:630,y:550,width:621,height:700,sourceWidth:1254,sourceHeight:1254}},
+ deadlift:{file:'overview-atlas-2.png',columns:4,rows:4,column:0,row:2,crop:{x:1,y:630,width:310,height:277,sourceWidth:1254,sourceHeight:1254}},
+ rdl:{file:'overview-atlas-2.png',columns:4,rows:4,column:1,row:2,crop:{x:316,y:630,width:309,height:277,sourceWidth:1254,sourceHeight:1254}}
 };
 
 // Retired ambiguous machine drawing; use a labelled neutral placeholder.
-export const withheldArtwork=['legcurl'];
+export const withheldArtwork=['legcurl','bench','incline'];

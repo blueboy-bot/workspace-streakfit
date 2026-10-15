@@ -1,0 +1,1527 @@
+{
+  "version": "0.38.0",
+  "date": "2026-10-15",
+  "movementCount": 138,
+  "cueCount": 414,
+  "limits": "All cue texts inspected; only existing selected artwork inspected, not complete motion or every 3D angle. No exact illustration is invented for unmapped variants. See REFERENCES.md for actual source access and gaps.",
+  "rows": [
+    {
+      "name": "椅子深蹲",
+      "cues": [
+        "髋部向后坐",
+        "膝盖朝脚尖",
+        "缓慢站起"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "墙壁俯卧撑",
+      "cues": [
+        "双手撑墙",
+        "身体保持直线",
+        "缓慢屈肘再推回"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "臀桥",
+      "cues": [
+        "脚掌贴地",
+        "收紧臀部抬髋",
+        "避免腰部过度后仰"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃地板卧推",
+      "cues": [
+        "上臂轻触地面",
+        "手腕保持中立",
+        "控制下降速度"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃划船",
+      "cues": [
+        "保持背部中立",
+        "肘部向髋部移动",
+        "避免甩动身体"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "Bench Press · 卧推",
+      "cues": [
+        "肩胛稳定贴凳",
+        "双脚稳固支撑",
+        "使用保护架或保护者"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "Incline DB Press · 上斜哑铃卧推",
+      "cues": [
+        "凳面适度倾斜",
+        "手腕保持稳定",
+        "控制下降幅度"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "绳索夹胸（Cable Fly）",
+      "cues": [
+        "肘部轻微弯曲",
+        "缓慢合拢双臂",
+        "避免过度拉伸"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "直杆三头下压（正握）",
+      "cues": [
+        "上臂靠近身体",
+        "肘部保持稳定",
+        "缓慢回到起点"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃反向飞鸟",
+      "cues": [
+        "髋部后移保持背部中立",
+        "肘部微屈向两侧打开",
+        "轻重量避免甩动"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "高位下拉（常规正握）",
+      "cues": [
+        "大腿固定在垫下",
+        "拉向上胸而非颈后",
+        "缓慢回放"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "弹力带坐姿划船",
+      "cues": [
+        "确认弹力带牢固且无破损",
+        "肘部向后拉",
+        "避免耸肩"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "俯卧 W 提拉",
+      "cues": [
+        "俯卧双臂呈 W 形",
+        "轻抬手臂收拢肩胛",
+        "不抬头挤压颈部"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃肩推",
+      "cues": [
+        "躯干稳定，肩胛随抬臂自然上转",
+        "手腕位于肘部上方",
+        "避免腰部过度后仰"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃侧平举",
+      "cues": [
+        "轻重量开始",
+        "肘部微屈",
+        "抬至舒适高度，避免缩颈耸肩"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "靠墙滑臂",
+      "cues": [
+        "背部轻靠墙",
+        "缓慢向上滑臂",
+        "保持无痛范围"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃弯举",
+      "cues": [
+        "上臂靠近身体",
+        "不借力摆动",
+        "缓慢伸展肘部"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "弹力带弯举",
+      "cues": [
+        "确认踩住弹力带",
+        "保持肘部稳定",
+        "缓慢下放"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "自阻力弯举",
+      "cues": [
+        "另一只手提供轻阻力",
+        "缓慢屈肘",
+        "两侧分别完成"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "窄距墙壁俯卧撑",
+      "cues": [
+        "手距略窄于肩",
+        "肘部靠近身体",
+        "保持身体直线"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃三头后伸",
+      "cues": [
+        "轻重量俯身",
+        "上臂保持稳定",
+        "缓慢伸肘不甩动"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃杯式深蹲",
+      "cues": [
+        "哑铃靠近胸前",
+        "膝盖跟随脚尖",
+        "下蹲至舒适深度"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "腿举",
+      "cues": [
+        "腰背贴住靠垫",
+        "膝盖朝脚尖方向",
+        "控制伸膝，不用重量冲击关节末端"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "后撤箭步蹲",
+      "cues": [
+        "可扶墙保持平衡",
+        "向后迈至能稳定下蹲的步幅",
+        "前脚稳定支撑"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃罗马尼亚硬拉",
+      "cues": [
+        "膝盖微屈",
+        "髋部向后推",
+        "背部中立、哑铃靠近腿"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "徒手髋铰链",
+      "cues": [
+        "膝盖微屈",
+        "臀部向后移",
+        "保持背部中立"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "杠铃硬拉",
+      "cues": [
+        "杠铃贴近身体",
+        "躯干保持稳定",
+        "不熟悉动作时寻求现场指导"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃臀桥",
+      "cues": [
+        "哑铃稳定垫在髋部",
+        "脚掌贴地",
+        "收紧臀部而非过伸腰部"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "站姿提踵",
+      "cues": [
+        "扶墙保持平衡",
+        "缓慢抬起脚跟",
+        "控制下落"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃提踵",
+      "cues": [
+        "一手持哑铃，另一手扶稳",
+        "脚跟缓慢上抬，前脚掌稳固支撑",
+        "避免弹跳或脚踝向内外歪斜"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "死虫式",
+      "cues": [
+        "仰卧保持躯干稳定",
+        "交替伸展对侧手脚",
+        "腰部不明显离地"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "鸟狗式",
+      "cues": [
+        "双手与双膝稳固支撑，颈部顺着背部",
+        "缓慢伸展对侧手脚",
+        "骨盆保持稳定"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃卧推",
+      "cues": [
+        "肩胛稳定贴凳",
+        "手腕保持中立",
+        "控制下降速度，避免过度拉伸"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "牧师凳杠铃弯举",
+      "cues": [
+        "上臂贴住斜垫",
+        "控制伸肘，不反弹或强压关节",
+        "缓慢下放"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "牧师凳哑铃弯举",
+      "cues": [
+        "上臂贴垫",
+        "不借力摆动",
+        "两侧分别完成"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃交替弯举",
+      "cues": [
+        "上臂靠近身体",
+        "交替屈肘转掌",
+        "不摆动躯干"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "绳索弯举",
+      "cues": [
+        "低位滑轮",
+        "固定肘部位置",
+        "控制回程"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "上斜哑铃弯举",
+      "cues": [
+        "背部贴凳",
+        "肘部不向前甩",
+        "避免过度伸展"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃集中弯举",
+      "cues": [
+        "上臂靠大腿内侧",
+        "不借力",
+        "两侧分别练习"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "杠铃弯举",
+      "cues": [
+        "肘部稳定",
+        "手腕保持舒适",
+        "避免摆动"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "绳索锤式弯举",
+      "cues": [
+        "使用绳索把手",
+        "掌心相对",
+        "上臂稳定"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "绳索三头下压",
+      "cues": [
+        "上臂靠近身体",
+        "缓慢伸肘",
+        "不耸肩"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "绳索过顶臂屈伸",
+      "cues": [
+        "固定上臂",
+        "收紧躯干",
+        "无痛范围屈伸"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "仰卧哑铃臂屈伸",
+      "cues": [
+        "上臂稳定",
+        "控制下降",
+        "避免砸向头部"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "窄握杠铃卧推",
+      "cues": [
+        "握距与肩接近",
+        "肘部靠近躯干",
+        "使用保护"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃飞鸟",
+      "cues": [
+        "肘部微屈",
+        "轻重量开始",
+        "避免过深拉伸"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "坐姿器械推胸",
+      "cues": [
+        "调整座椅，使把手约在胸部高度",
+        "肩胛稳定",
+        "控制回程"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "蝴蝶机夹胸",
+      "cues": [
+        "调整把手",
+        "肩部保持舒适",
+        "不借力撞击"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "史密斯卧推",
+      "cues": [
+        "确认安全限位",
+        "肩胛稳定",
+        "选择舒适握距"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "上斜杠铃卧推",
+      "cues": [
+        "适度倾斜凳面",
+        "肩胛稳定",
+        "使用保护"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "标准俯卧撑",
+      "cues": [
+        "躯干稳定，颈部自然，视线看向地面",
+        "肘部不完全外张",
+        "控制下降，不塌腰或撅髋"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "杠铃俯身划船",
+      "cues": [
+        "髋部后移",
+        "背部中立",
+        "不甩动杠铃"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "胸托哑铃划船",
+      "cues": [
+        "胸部贴斜凳",
+        "肘部向后拉",
+        "不耸肩"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "引体向上",
+      "cues": [
+        "稳定肩胛",
+        "不摆动借力",
+        "控制下降"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "辅助引体向上",
+      "cues": [
+        "调整辅助重量",
+        "保持躯干稳定",
+        "控制下放"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "绳索直臂下拉",
+      "cues": [
+        "肘部微屈固定",
+        "肩部向下拉",
+        "不甩腰"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "坐姿器械划船",
+      "cues": [
+        "胸部稳定",
+        "肘部向后拉",
+        "控制回程"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "站姿杠铃推举",
+      "cues": [
+        "收紧腹部",
+        "不后仰借力",
+        "无痛范围推起"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "绳索侧平举",
+      "cues": [
+        "低位滑轮",
+        "肘部微屈",
+        "抬至舒适高度"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "绳索面拉",
+      "cues": [
+        "拉向面部两侧",
+        "不耸肩",
+        "轻重量控制"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "反向蝴蝶机",
+      "cues": [
+        "胸贴靠垫",
+        "轻重量外展",
+        "肩部保持舒适"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "器械肩推",
+      "cues": [
+        "调整座椅高度",
+        "背部贴垫",
+        "控制伸肘，不猛顶关节末端"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "杠铃背蹲",
+      "cues": [
+        "设置安全杆",
+        "膝盖朝脚尖",
+        "保持躯干稳定"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "杠铃前蹲",
+      "cues": [
+        "肘部抬起",
+        "杠铃稳定在肩前",
+        "不熟悉时寻求指导"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "保加利亚分腿蹲",
+      "cues": [
+        "后脚轻放凳面",
+        "前脚稳定",
+        "两侧分别完成"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "坐姿腿屈伸",
+      "cues": [
+        "调整关节轴线",
+        "控制伸膝",
+        "不甩动"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哈克深蹲",
+      "cues": [
+        "肩背贴垫",
+        "设置限位",
+        "膝盖朝脚尖"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "史密斯深蹲",
+      "cues": [
+        "设置安全限位",
+        "保持脚掌稳定",
+        "选择舒适站位"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "坐姿腿弯举",
+      "cues": [
+        "固定大腿",
+        "缓慢屈膝",
+        "控制回程"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "杠铃罗马尼亚硬拉",
+      "cues": [
+        "髋部后移",
+        "背部中立",
+        "杠铃贴近腿"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "杠铃臀推",
+      "cues": [
+        "杠铃垫稳髋部",
+        "上背靠稳凳沿，颈部保持自然",
+        "伸髋至可控制位置，避免用腰部后仰顶高"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "绳索后踢腿",
+      "cues": [
+        "使用脚踝绑带",
+        "骨盆稳定",
+        "不甩腰"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "器械髋外展",
+      "cues": [
+        "调整靠垫",
+        "控制外展",
+        "不弹震"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "坐姿提踵",
+      "cues": [
+        "前脚掌稳定",
+        "缓慢抬跟",
+        "控制下降"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "绳索卷腹",
+      "cues": [
+        "缓慢卷曲躯干",
+        "不靠手臂拉绳",
+        "控制回程"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "徒手卷腹",
+      "cues": [
+        "轻抬肩胛",
+        "不拉扯颈部",
+        "缓慢回落"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "反向卷腹",
+      "cues": [
+        "骨盆缓慢卷起",
+        "不甩腿借力",
+        "控制下降"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "暂停卧推",
+      "cues": [
+        "轻于常规卧推的重量开始",
+        "杠铃轻触胸部后稳定暂停 1–2 秒，不反弹",
+        "保持肩胛与脚部支撑，设置保护"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "节奏卧推",
+      "cues": [
+        "用轻重量练习",
+        "约 3 秒控制下放，不憋气拖延",
+        "保持稳定支撑，设置保护"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "暂停深蹲",
+      "cues": [
+        "设置安全杆，使用轻于常规深蹲的重量",
+        "在可控制的底部暂停 1–2 秒，不松掉躯干",
+        "保持脚掌支撑后稳定起身"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "节奏深蹲",
+      "cues": [
+        "先使用轻重量和安全杆",
+        "约 3 秒控制下降，保持躯干稳定",
+        "在可控制的深度起身，不追求额外深度"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "离地暂停硬拉",
+      "cues": [
+        "使用明显轻于常规硬拉的重量",
+        "离地数厘米暂停约 1 秒，杠铃贴近腿",
+        "背部与髋位稳定后继续拉起，不猛拽"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "绳索 Pallof 抗旋转推",
+      "cues": [
+        "滑轮约胸高，侧对器械站稳",
+        "缓慢推出双手，躯干保持朝前",
+        "每侧分别练习，不能稳定就减轻阻力"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "弹力带 Pallof 抗旋转推",
+      "cues": [
+        "固定在可靠锚点，检查弹力带",
+        "侧对锚点，推出双手时保持躯干稳定",
+        "每侧分别练习，不把阻力换算成公斤"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃分腿蹲",
+      "cues": [
+        "分腿站稳，后脚留在地面",
+        "控制下降，前膝与脚尖方向一致",
+        "两侧分别完成，先使用可控制负重"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃过顶臂屈伸",
+      "cues": [
+        "轻重量双手握稳",
+        "上臂保持稳定",
+        "在无痛范围内屈伸肘部"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃锤式弯举",
+      "cues": [
+        "掌心相对",
+        "上臂保持稳定",
+        "不摆动身体借力"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "坐姿绳索划船（窄距中立握）",
+      "cues": [
+        "双脚稳定支撑",
+        "肘部向后拉",
+        "避免躯干前后甩动"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "弹力带夹胸",
+      "cues": [
+        "确认固定点牢固",
+        "肘部微屈",
+        "控制回程幅度"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "弹力带三头下压",
+      "cues": [
+        "确认上方固定点牢固",
+        "上臂靠近身体",
+        "缓慢伸肘回放"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "高位下拉（宽距正握）",
+      "cues": [
+        "采用舒适的较宽正握，不追求极宽",
+        "肘部向身体两侧下拉至上胸附近",
+        "避免颈后下拉及大幅后仰"
+      ],
+      "variantOf": "pulldown",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "高位下拉（窄距中立握）",
+      "cues": [
+        "使用窄距中立握把手，掌心相对",
+        "肘部向髋部方向下拉",
+        "保持躯干稳定，控制回放"
+      ],
+      "variantOf": "pulldown",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "高位下拉（反握）",
+      "cues": [
+        "掌心朝向自己，握距约肩宽",
+        "保持手腕舒适，肘部靠近躯干",
+        "先减轻重量，不靠甩动拉下"
+      ],
+      "variantOf": "pulldown",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "单臂绳索高位下拉",
+      "cues": [
+        "使用高位滑轮与单手把手",
+        "保持肩胛和躯干稳定，肘向髋部拉",
+        "左右分别完成，不侧屈借力"
+      ],
+      "variantOf": "pulldown",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "坐姿绳索划船（宽距正握）",
+      "cues": [
+        "使用宽直杆，选择肩部舒适的握距",
+        "肘部适度外展，拉向上腹至下胸",
+        "控制肩胛回收，不耸肩或甩腰"
+      ],
+      "variantOf": "cablerow",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "坐姿绳索划船（反握）",
+      "cues": [
+        "约肩宽反握，保持手腕舒适",
+        "肘部贴近躯干，拉向下腹",
+        "不靠大幅前后摇摆完成"
+      ],
+      "variantOf": "cablerow",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "单臂坐姿绳索划船",
+      "cues": [
+        "使用单手把手，双脚稳固支撑",
+        "肘部向髋部方向移动",
+        "左右分别完成，避免扭转躯干"
+      ],
+      "variantOf": "cablerow",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "杠铃俯身划船（反握）",
+      "cues": [
+        "反握约肩宽，先使用轻负重",
+        "髋铰链俯身，肘部贴近躯干",
+        "不猛拽杠铃或过度伸展手腕"
+      ],
+      "variantOf": "barrow",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "胸托哑铃划船（正握宽肘）",
+      "cues": [
+        "胸部贴稳斜凳，掌心向后",
+        "肘部适度外展，不追求极宽",
+        "不耸肩，控制回放"
+      ],
+      "variantOf": "chestsupported",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "引体向上（宽距正握）",
+      "cues": [
+        "选择可控制的较宽正握",
+        "不摆动借力，向胸前方向拉起",
+        "不强求下巴高度或颈后路径"
+      ],
+      "variantOf": "pullup",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "反握引体向上",
+      "cues": [
+        "反握约肩宽，保持手腕舒适",
+        "稳定肩胛与躯干后拉起",
+        "控制下降，避免摆动"
+      ],
+      "variantOf": "pullup",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "杠铃卧推（宽握）",
+      "cues": [
+        "较常规稍宽即可，不追求极宽",
+        "保持肩胛支撑，在舒适范围下降",
+        "设置安全杆或使用保护者"
+      ],
+      "variantOf": "bench",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃卧推（中立握）",
+      "cues": [
+        "掌心相对，哑铃位于胸部两侧",
+        "保持手腕与前臂稳定",
+        "在肩部舒适范围控制下降"
+      ],
+      "variantOf": "dbbench",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "上斜哑铃卧推（中立握）",
+      "cues": [
+        "使用适度倾斜凳面，掌心相对",
+        "肩胛贴稳靠背，不耸肩",
+        "控制下降，不追求额外深度"
+      ],
+      "variantOf": "incline",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "绳索夹胸（低位向上）",
+      "cues": [
+        "滑轮设置在较低位置，肘部微屈",
+        "双手沿斜向上弧线合拢",
+        "不用肩部前甩带动重量"
+      ],
+      "variantOf": "fly",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "绳索夹胸（高位向下）",
+      "cues": [
+        "滑轮设置在较高位置，肘部微屈",
+        "双手沿斜向下弧线合拢",
+        "躯干稳定，不靠俯身压下重量"
+      ],
+      "variantOf": "fly",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "哑铃肩推（中立握）",
+      "cues": [
+        "掌心相对，选择肩部舒适路径",
+        "收紧躯干，不后仰借力",
+        "控制下降，避免强压肩部活动范围"
+      ],
+      "variantOf": "shoulderpress",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "绳索侧平举（身后起始）",
+      "cues": [
+        "低位滑轮位于身后侧，使用轻重量",
+        "肘部微屈，在舒适范围抬臂",
+        "不强行拉向身后，避免用力缩颈，允许肩胛自然运动"
+      ],
+      "variantOf": "cablelateral",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "杠铃弯举（宽握）",
+      "cues": [
+        "采用舒适的较宽握距",
+        "上臂稳定，不借力摆动",
+        "握距不等同于单独隔离某一头"
+      ],
+      "variantOf": "barcurl",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "杠铃弯举（窄握）",
+      "cues": [
+        "采用舒适的较窄握距，不挤压手腕",
+        "上臂稳定，控制屈伸",
+        "握距不等同于单独隔离某一头"
+      ],
+      "variantOf": "barcurl",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "杠铃反握弯举",
+      "cues": [
+        "掌心向下，明显减轻重量",
+        "手腕保持稳定，不过度背伸",
+        "固定上臂，控制下放"
+      ],
+      "variantOf": "barcurl",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "绳索反握弯举",
+      "cues": [
+        "低位滑轮配直杆，掌心向下",
+        "先用轻阻力，保持手腕舒适",
+        "不抬肘或摆动借力"
+      ],
+      "variantOf": "cablecurl",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "身后绳索弯举（贝叶斯弯举）",
+      "cues": [
+        "低位滑轮位于身后，使用单手把手",
+        "上臂略在身后，不强求拉伸深度",
+        "左右分别完成，不前后摆动身体"
+      ],
+      "variantOf": "cablecurl",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "V形杆三头下压",
+      "cues": [
+        "使用V形杆，选择舒适的半中立握法",
+        "上臂贴近躯干，缓慢伸肘",
+        "不靠体重压下杆件"
+      ],
+      "variantOf": "triceps",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "反握直杆三头下压",
+      "cues": [
+        "掌心向上，明显减轻重量",
+        "固定上臂和手腕，控制伸肘",
+        "握法不能单独隔离某一头"
+      ],
+      "variantOf": "triceps",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "腿举（窄距常规脚位）",
+      "cues": [
+        "采用舒适的较窄站距，不并拢双膝",
+        "全脚掌贴板，膝盖跟随脚尖",
+        "腰背贴垫，不追求过深屈髋"
+      ],
+      "variantOf": "legpress",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "腿举（较高脚位）",
+      "cues": [
+        "双脚位置略高，按髋踝活动度调整",
+        "全脚掌贴板，不让骨盆卷起离垫",
+        "控制下降；脚位不能完全排除股四头肌"
+      ],
+      "variantOf": "legpress",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "单腿坐姿腿屈伸",
+      "cues": [
+        "调整座椅与膝关节轴线",
+        "左右分别轻负重伸膝",
+        "控制回程，不甩动"
+      ],
+      "variantOf": "legextension",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "单腿坐姿腿弯举",
+      "cues": [
+        "固定大腿与骨盆",
+        "左右分别完成屈膝",
+        "轻负重开始，控制回程"
+      ],
+      "variantOf": "legcurl",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "单腿哑铃提踵",
+      "cues": [
+        "一手持哑铃，另一手扶稳",
+        "左右分别缓慢抬跟",
+        "控制下降，不弹跳"
+      ],
+      "variantOf": "dbcalf",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "单腿臀桥",
+      "cues": [
+        "一脚稳固支撑，另一腿离地",
+        "保持骨盆水平，控制抬髋",
+        "左右分别完成，不过伸腰部"
+      ],
+      "variantOf": "bridge",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "站姿绳索卷腹",
+      "cues": [
+        "使用高位绳索，保持站位稳定",
+        "缓慢卷曲躯干，不只做髋铰链",
+        "不靠手臂下拉或屏息完成"
+      ],
+      "variantOf": "cablecrunch",
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "俯卧 Y 字上举",
+      "cues": [
+        "俯卧双臂呈舒适的 Y 形，额头可垫毛巾",
+        "轻抬手臂，颈部放松，允许肩胛随抬臂自然运动",
+        "控制抬起与放下，腰部不借力，不强求高度"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "轻松走 · 热身",
+      "cues": [
+        "从轻松速度开始",
+        "逐渐增加步频",
+        "保持自然呼吸"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "快走",
+      "cues": [
+        "选择平坦安全路线",
+        "保持能说完整句子的强度",
+        "疲劳时降低步频"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "原地踏步",
+      "cues": [
+        "选择防滑地面",
+        "自然摆臂",
+        "不必追求高抬腿"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "跑步机快走",
+      "cues": [
+        "熟悉急停装置",
+        "从慢速开始",
+        "先调速度再考虑坡度"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "动感单车 · 稳态骑行",
+      "cues": [
+        "调整座椅高度",
+        "低阻力热身",
+        "保持能说话的节奏"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "椭圆机",
+      "cues": [
+        "先用低阻力",
+        "身体直立",
+        "控制节奏不冲刺"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "划船机 · 稳态",
+      "cues": [
+        "先蹬腿再拉手柄",
+        "回程先伸臂再屈膝",
+        "保持背部中立"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "慢走 · 放松",
+      "cues": [
+        "逐渐减速",
+        "呼吸缓慢恢复",
+        "不突然停止"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "胸椎旋转 · 活动度",
+      "cues": [
+        "四点支撑稳定骨盆",
+        "缓慢转动上背",
+        "保持无痛活动范围"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "踝关节前移 · 活动度",
+      "cues": [
+        "脚跟保持贴地",
+        "膝盖朝脚尖方向前移",
+        "两侧分别完成"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "坐姿髋部旋转",
+      "cues": [
+        "坐稳可用手支撑",
+        "缓慢向两侧转动膝盖",
+        "不强压关节"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "肩部墙面滑臂 · 活动度",
+      "cues": [
+        "背部稳定轻靠墙",
+        "缓慢滑臂",
+        "避免腰部过伸"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "坐姿腿后侧伸展",
+      "cues": [
+        "坐稳伸展一侧腿",
+        "髋部轻微前倾",
+        "只到轻微牵拉感"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "扶墙小腿伸展",
+      "cues": [
+        "双手扶墙",
+        "后脚脚跟贴地",
+        "缓慢前移身体"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    },
+    {
+      "name": "半跪姿髋前侧伸展",
+      "cues": [
+        "膝下垫软垫",
+        "轻收骨盆",
+        "避免过伸腰部"
+      ],
+      "variantOf": null,
+      "image": "no-exact-image",
+      "teachingPair": false
+    }
+  ]
+}

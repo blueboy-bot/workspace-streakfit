@@ -32,7 +32,7 @@
   "reviewedPulldown": {
     "file": "pulldown-reviewed.png",
     "source": "Original AI-edited candidate exec-05d43c64-a8a3-4c1e-8e11-b2454c0cb0d5.png",
-    "use": "Standard overhand grip only; two positions on the same longer bar, facing tower, bar in front of upper chest.",
+    "use": "First panel only as explicitly labelled setup thumbnail. Dynamic two-position pair withheld after trunk-inclination review.",
     "review": "Both hands inspected enlarged in start and pull frames; consistent finger-over-bar/closed-thumb grip and hand-forearm continuity. Prior v0.37.1 grip review retracted. Not professionally certified.",
     "reviewRecord": "REVIEW.json"
   },
@@ -49,7 +49,14 @@
   "reviewedSetups": {
     "file": "setups-reviewed.png",
     "source": "Original AI-generated image",
-    "use": "Top right hip thrust, bottom left dead bug setup, bottom right bird dog setup. Top-left leg curl NOT accepted and not mapped."
+    "use": "Bottom-left dead bug setup only. Other cells retired, superseded or unapproved."
   },
-  "auditFile": "REVIEW.json"
+  "auditFile": "REVIEW.json",
+  "postureReview": {
+    "file": "posture-reviewed.png",
+    "source": "Original AI-generated candidate exec-8a9ea68d-b09d-4421-9793-d21fab9e5733.png",
+    "use": "Selected exact-ID crops: hip thrust endpoint, bird-dog setup, single-dumbbell supported calf raise, push-up upper position. Independently rechecked after crop fixes; not full motion approval.",
+    "review": "Static positions only; no fixed-angle prescription or professional certification.",
+    "status": "Independent AI visual/cue review completed; unsupported images/pairs withheld, no professional certification"
+  }
 }

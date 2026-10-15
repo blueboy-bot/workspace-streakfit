@@ -106,7 +106,7 @@ export const englishMovements = {
   "shoulderpress": {
     "name": "Dumbbell shoulder press",
     "cues": [
-      "Brace your abdomen",
+      "Keep the trunk steady and let the shoulder blades rotate upward as the arms rise.",
       "Keep your wrists above your elbows",
       "Avoid arching your lower back"
     ]
@@ -116,7 +116,7 @@ export const englishMovements = {
     "cues": [
       "Start light",
       "Keep a slight elbow bend",
-      "Raise to a comfortable height without shrugging"
+      "Raise to a comfortable height without shrugging into your neck."
     ]
   },
   "wallslide": {
@@ -163,7 +163,7 @@ export const englishMovements = {
     "name": "Dumbbell triceps kickback",
     "cues": [
       "Hinge forward with a light weight",
-      "Keep your upper arm still",
+      "Keep your upper arms stable",
       "Extend your elbow slowly without swinging"
     ]
   },
@@ -180,14 +180,14 @@ export const englishMovements = {
     "cues": [
       "Keep your back against the pad",
       "Track your knees over your toes",
-      "Avoid locking your knees"
+      "Extend the knees with control; do not slam into the end range."
     ]
   },
   "lunge": {
     "name": "Reverse lunge",
     "cues": [
       "Use a wall for balance if needed",
-      "Take a small step back",
+      "Step back far enough for a stable, controlled lunge.",
       "Keep your front foot stable"
     ]
   },
@@ -234,9 +234,9 @@ export const englishMovements = {
   "dbcalf": {
     "name": "Dumbbell calf raise",
     "cues": [
-      "Use a light load and stable support",
-      "Lift your heels slowly",
-      "Avoid bouncing"
+      "Hold a dumbbell in one hand and a support with the other",
+      "Raise the heels slowly while keeping the balls of the feet supported.",
+      "Avoid bouncing or rolling the ankles inward or outward."
     ]
   },
   "deadbug": {
@@ -250,7 +250,7 @@ export const englishMovements = {
   "bird": {
     "name": "Bird dog",
     "cues": [
-      "Start on your hands and knees",
+      "Support yourself on both hands and knees, with your neck following your upper back.",
       "Slowly extend the opposite arm and leg",
       "Keep your pelvis stable"
     ]
@@ -267,7 +267,7 @@ export const englishMovements = {
     "name": "Barbell preacher curl",
     "cues": [
       "Rest your upper arms against the pad",
-      "Avoid locking your elbows",
+      "Extend the elbows with control; do not bounce or force the joint.",
       "Lower slowly"
     ]
   },
@@ -370,7 +370,7 @@ export const englishMovements = {
   "chestmachine": {
     "name": "Seated machine chest press",
     "cues": [
-      "Set the seat so the handles are at chest height",
+      "Adjust the seat so the handles are around chest height.",
       "Keep your shoulder blades stable",
       "Control the return"
     ]
@@ -402,9 +402,9 @@ export const englishMovements = {
   "pushup": {
     "name": "Push-up",
     "cues": [
-      "Keep your trunk in a straight line",
+      "Keep the trunk steady and the neck comfortable, looking toward the floor.",
       "Avoid flaring your elbows straight out",
-      "Lower with control"
+      "Lower with control without sagging or piking the hips."
     ]
   },
   "barrow": {
@@ -492,7 +492,7 @@ export const englishMovements = {
     "cues": [
       "Adjust the seat height",
       "Keep your back against the pad",
-      "Avoid locking your elbows"
+      "Extend the elbows with control rather than forcefully snapping them straight."
     ]
   },
   "barsquat": {
@@ -563,8 +563,8 @@ export const englishMovements = {
     "name": "Barbell hip thrust",
     "cues": [
       "Pad and secure the bar over your hips",
-      "Keep your upper-back support stable",
-      "Avoid arching your lower back"
+      "Support your upper back on the bench edge and keep your neck comfortable.",
+      "Extend the hips within control; avoid finishing by arching the lower back."
     ]
   },
   "cablekick": {
@@ -860,7 +860,7 @@ export const englishMovements = {
     "cues": [
       "Place the low pulley behind your side and start light",
       "Raise your arm in a comfortable range with a slight elbow bend",
-      "Do not force your arm back or shrug"
+      "Do not force the arm behind you; avoid tensing the neck and let the shoulder blade move naturally."
     ]
   },
   "barcurlWide": {
@@ -979,7 +979,7 @@ export const englishMovements = {
     "name": "Prone Y raise",
     "cues": [
       "Lie face down with your arms in a comfortable Y; support your forehead with a towel if needed",
-      "Gently lift your arms with a relaxed neck and no shrugging",
+      "Gently raise the arms; keep the neck relaxed and let the shoulder blades move naturally.",
       "Lift and lower with control without using your lower back or forcing height"
     ]
   },
@@ -1105,6 +1105,23 @@ export const englishMovements = {
   }
 };
 export const movementPhrases = {
+"躯干稳定，肩胛随抬臂自然上转":"Keep the trunk steady and let the shoulder blades rotate upward as the arms rise.",
+"抬至舒适高度，避免缩颈耸肩":"Raise to a comfortable height without shrugging into your neck.",
+"控制伸膝，不用重量冲击关节末端":"Extend the knees with control; do not slam into the end range.",
+"向后迈至能稳定下蹲的步幅":"Step back far enough for a stable, controlled lunge.",
+"脚跟缓慢上抬，前脚掌稳固支撑":"Raise the heels slowly while keeping the balls of the feet supported.",
+"避免弹跳或脚踝向内外歪斜":"Avoid bouncing or rolling the ankles inward or outward.",
+"双手与双膝稳固支撑，颈部顺着背部":"Support yourself on both hands and knees, with your neck following your upper back.",
+"控制伸肘，不反弹或强压关节":"Extend the elbows with control; do not bounce or force the joint.",
+"调整座椅，使把手约在胸部高度":"Adjust the seat so the handles are around chest height.",
+"躯干稳定，颈部自然，视线看向地面":"Keep the trunk steady and the neck comfortable, looking toward the floor.",
+"控制下降，不塌腰或撅髋":"Lower with control without sagging or piking the hips.",
+"控制伸肘，不猛顶关节末端":"Extend the elbows with control rather than forcefully snapping them straight.",
+"上背靠稳凳沿，颈部保持自然":"Support your upper back on the bench edge and keep your neck comfortable.",
+"伸髋至可控制位置，避免用腰部后仰顶高":"Extend the hips within control; avoid finishing by arching the lower back.",
+"不强行拉向身后，避免用力缩颈，允许肩胛自然运动":"Do not force the arm behind you; avoid tensing the neck and let the shoulder blade move naturally.",
+"轻抬手臂，颈部放松，允许肩胛随抬臂自然运动":"Gently raise the arms; keep the neck relaxed and let the shoulder blades move naturally.",
+
   "椅子深蹲": "Chair squat",
   "髋部向后坐": "Sit your hips back",
   "膝盖朝脚尖": "Track your knees over your toes",

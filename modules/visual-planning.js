@@ -21,6 +21,5 @@ export function setProgressMarkup(done,goal){
 }
 
 export const teachingKeyframes={
- pulldown:{row:0,frames:[{label:'起始位置',cue:'面向器械，双手正握、拇指环握。'},{label:'下拉位置',cue:'握距不变，拉向上胸，肘部向下。'}]},
  chestsupported:{row:1,frames:[{label:'起始位置',cue:'胸部贴垫，手臂自然下垂。'},{label:'划船位置',cue:'肘部沿躯干向后，胸部不离垫。'}]}
 };
