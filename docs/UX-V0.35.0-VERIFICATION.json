@@ -1,0 +1,240 @@
+{
+  "version": "0.35.0",
+  "unit_tests": {
+    "passed": 18,
+    "failed": 0
+  },
+  "mobile": {
+    "results": [
+      {
+        "width": 320,
+        "lang": "zh",
+        "mode": "beginner",
+        "color": "green",
+        "realProgress": true,
+        "lessonReturn": true,
+        "noLogOrXPFromBrowsing": true,
+        "continuePosition": true,
+        "draftRetained": true,
+        "record": true,
+        "reloadPosition": true
+      },
+      {
+        "width": 320,
+        "lang": "zh",
+        "mode": "beginner",
+        "color": "blue",
+        "realProgress": true,
+        "lessonReturn": true,
+        "noLogOrXPFromBrowsing": true,
+        "continuePosition": true,
+        "draftRetained": true,
+        "record": true,
+        "reloadPosition": true
+      },
+      {
+        "width": 320,
+        "lang": "zh",
+        "mode": "experienced",
+        "color": "green",
+        "realProgress": true,
+        "lessonReturn": true,
+        "noLogOrXPFromBrowsing": true,
+        "continuePosition": true,
+        "draftRetained": true,
+        "record": true,
+        "reloadPosition": true
+      },
+      {
+        "width": 320,
+        "lang": "zh",
+        "mode": "experienced",
+        "color": "blue",
+        "realProgress": true,
+        "lessonReturn": true,
+        "noLogOrXPFromBrowsing": true,
+        "continuePosition": true,
+        "draftRetained": true,
+        "record": true,
+        "reloadPosition": true
+      },
+      {
+        "width": 320,
+        "lang": "en",
+        "mode": "beginner",
+        "color": "green",
+        "realProgress": true,
+        "lessonReturn": true,
+        "noLogOrXPFromBrowsing": true,
+        "continuePosition": true,
+        "draftRetained": true,
+        "record": true,
+        "reloadPosition": true
+      },
+      {
+        "width": 320,
+        "lang": "en",
+        "mode": "beginner",
+        "color": "blue",
+        "realProgress": true,
+        "lessonReturn": true,
+        "noLogOrXPFromBrowsing": true,
+        "continuePosition": true,
+        "draftRetained": true,
+        "record": true,
+        "reloadPosition": true
+      },
+      {
+        "width": 320,
+        "lang": "en",
+        "mode": "experienced",
+        "color": "green",
+        "realProgress": true,
+        "lessonReturn": true,
+        "noLogOrXPFromBrowsing": true,
+        "continuePosition": true,
+        "draftRetained": true,
+        "record": true,
+        "reloadPosition": true
+      },
+      {
+        "width": 320,
+        "lang": "en",
+        "mode": "experienced",
+        "color": "blue",
+        "realProgress": true,
+        "lessonReturn": true,
+        "noLogOrXPFromBrowsing": true,
+        "continuePosition": true,
+        "draftRetained": true,
+        "record": true,
+        "reloadPosition": true
+      },
+      {
+        "width": 390,
+        "lang": "zh",
+        "mode": "beginner",
+        "color": "green",
+        "realProgress": true,
+        "lessonReturn": true,
+        "noLogOrXPFromBrowsing": true,
+        "continuePosition": true,
+        "draftRetained": true,
+        "record": true,
+        "reloadPosition": true
+      },
+      {
+        "width": 390,
+        "lang": "zh",
+        "mode": "beginner",
+        "color": "blue",
+        "realProgress": true,
+        "lessonReturn": true,
+        "noLogOrXPFromBrowsing": true,
+        "continuePosition": true,
+        "draftRetained": true,
+        "record": true,
+        "reloadPosition": true
+      },
+      {
+        "width": 390,
+        "lang": "zh",
+        "mode": "experienced",
+        "color": "green",
+        "realProgress": true,
+        "lessonReturn": true,
+        "noLogOrXPFromBrowsing": true,
+        "continuePosition": true,
+        "draftRetained": true,
+        "record": true,
+        "reloadPosition": true
+      },
+      {
+        "width": 390,
+        "lang": "zh",
+        "mode": "experienced",
+        "color": "blue",
+        "realProgress": true,
+        "lessonReturn": true,
+        "noLogOrXPFromBrowsing": true,
+        "continuePosition": true,
+        "draftRetained": true,
+        "record": true,
+        "reloadPosition": true
+      },
+      {
+        "width": 390,
+        "lang": "en",
+        "mode": "beginner",
+        "color": "green",
+        "realProgress": true,
+        "lessonReturn": true,
+        "noLogOrXPFromBrowsing": true,
+        "continuePosition": true,
+        "draftRetained": true,
+        "record": true,
+        "reloadPosition": true
+      },
+      {
+        "width": 390,
+        "lang": "en",
+        "mode": "beginner",
+        "color": "blue",
+        "realProgress": true,
+        "lessonReturn": true,
+        "noLogOrXPFromBrowsing": true,
+        "continuePosition": true,
+        "draftRetained": true,
+        "record": true,
+        "reloadPosition": true
+      },
+      {
+        "width": 390,
+        "lang": "en",
+        "mode": "experienced",
+        "color": "green",
+        "realProgress": true,
+        "lessonReturn": true,
+        "noLogOrXPFromBrowsing": true,
+        "continuePosition": true,
+        "draftRetained": true,
+        "record": true,
+        "reloadPosition": true
+      },
+      {
+        "width": 390,
+        "lang": "en",
+        "mode": "experienced",
+        "color": "blue",
+        "realProgress": true,
+        "lessonReturn": true,
+        "noLogOrXPFromBrowsing": true,
+        "continuePosition": true,
+        "draftRetained": true,
+        "record": true,
+        "reloadPosition": true
+      }
+    ],
+    "errors": []
+  },
+  "edge": {
+    "results": {
+      "briefingAndNoFakeCompletion": true,
+      "explicitResumeFromPause": true,
+      "previousPainStillBlocks": true,
+      "recoveryKept": true,
+      "emptyPlanKept": true,
+      "cardioUsesMinutes": true,
+      "mobilityUsesSets": true,
+      "imageFailureKeepsTextAndActions": true,
+      "habitInputsRemainWorking": true,
+      "offlineImagesAndOverview": true
+    },
+    "errors": []
+  },
+  "limitations": [
+    "Chromium mobile emulation, not physical iOS or screen reader testing",
+    "AI artwork is decorative, not professionally validated instruction",
+    "Unsubmitted drafts survive navigation during this visit, not refresh; action position can survive refresh"
+  ]
+}
