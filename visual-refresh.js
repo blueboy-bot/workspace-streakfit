@@ -2,7 +2,7 @@
 const visualSettings = document.querySelector('#appearance-dialog');
 document.querySelector('#appearance-open')?.addEventListener('click', () => visualSettings.showModal());
 document.querySelector('[data-close-appearance]')?.addEventListener('click', () => visualSettings.close());
-document.querySelector('[data-open-privacy]')?.addEventListener('click', () => {visualSettings.showModal();const details=document.querySelector('#privacy-settings');details.open=true;details.querySelector('summary').focus();});
+document.querySelector('[data-open-privacy]')?.addEventListener('click', () => {visualSettings.showModal();const details=document.querySelector('#privacy-settings');details.open=false;details.querySelector('summary').focus();});
 document.querySelector('[data-header-home]')?.addEventListener('click', event => {
   event.preventDefault();
   document.querySelector('nav [data-page="today"]')?.click();

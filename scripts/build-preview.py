@@ -2,7 +2,7 @@ import re, json, base64
 from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 root=Path(__file__).resolve().parent.parent
-out=Path('/workspace/streakfit-preview/visual-v0.38.3-download');out.mkdir(exist_ok=True)
+out=Path('/workspace/streakfit-preview/visual-v0.38.4-download');out.mkdir(exist_ok=True)
 version=json.loads((root/'package.json').read_text())['version']
 font_css=(root/'typography.css').read_text()
 for file in (root/'assets/fonts').glob('*.woff2'):

@@ -1,0 +1,192 @@
+{
+  "before": {
+    "metrics": {
+      "startClicks": 2,
+      "repeatActualSetClicks": 1,
+      "resumeClicks": 1,
+      "onboardingSteps": 6,
+      "onboardingAutomationSeconds": 1.7,
+      "humanSetupTime": "not measured",
+      "startBounds": {
+        "x": 33,
+        "y": 634.109375,
+        "width": 324,
+        "height": 62.890625
+      },
+      "thumbReachAtOpen": true,
+      "setupQuestions": [
+        "你想怎么健身？",
+        "先确认适合开始运动",
+        "你之前有没有训练过？",
+        "你通常在哪里训练？",
+        "每次能留多少时间？",
+        "准备好开始了吗？"
+      ],
+      "visibleFields": [
+        [],
+        [
+          "safetySymptoms",
+          "safetyReview"
+        ],
+        [],
+        [],
+        [
+          "minutes"
+        ],
+        []
+      ],
+      "recordPrefillAfterReload": "5",
+      "noOverflow": true
+    },
+    "errors": []
+  },
+  "after": {
+    "metrics": {
+      "startClicks": 2,
+      "repeatActualSetClicks": 1,
+      "resumeClicks": 1,
+      "onboardingSteps": 5,
+      "onboardingAutomationSeconds": 1.2,
+      "humanSetupTime": "not measured",
+      "startBounds": {
+        "x": 33,
+        "y": 634.109375,
+        "width": 324,
+        "height": 62.890625
+      },
+      "thumbReachAtOpen": true,
+      "setupQuestions": [
+        "先确认适合开始运动",
+        "你想怎么健身？",
+        "你之前有没有训练过？",
+        "你通常在哪里训练？",
+        "每周能留多少时间？"
+      ],
+      "visibleFields": [
+        [
+          "safetySymptoms",
+          "safetyReview"
+        ],
+        [],
+        [],
+        [],
+        [
+          "days",
+          "minutes"
+        ]
+      ],
+      "recordPrefillAfterReload": "5",
+      "noOverflow": true
+    },
+    "errors": []
+  },
+  "browser": {
+    "results": [
+      {
+        "lang": "zh",
+        "screens": 5,
+        "frequencyPersisted": true,
+        "trainingXP": 30,
+        "weeklyCompleted": 1,
+        "refreshRetained": true,
+        "bodyAndPhotosOptIn": true,
+        "disableHidesRetains": true,
+        "backupRoundTrip": true,
+        "unitsChangeRetainsCanonicalLogs": true,
+        "shortEditor": true
+      },
+      {
+        "lang": "en",
+        "screens": 5,
+        "frequencyPersisted": true,
+        "trainingXP": 30,
+        "weeklyCompleted": 1,
+        "refreshRetained": true,
+        "bodyAndPhotosOptIn": true,
+        "disableHidesRetains": true,
+        "backupRoundTrip": true,
+        "unitsChangeRetainsCanonicalLogs": true,
+        "shortEditor": true
+      },
+      {
+        "symptoms": "yes",
+        "review": "no",
+        "blockedAfterReload": true,
+        "noLightActivityRecommended": true
+      },
+      {
+        "symptoms": "no",
+        "review": "yes",
+        "blockedAfterReload": true,
+        "noLightActivityRecommended": true
+      },
+      {
+        "symptoms": "unsure",
+        "review": "no",
+        "blockedAfterReload": true,
+        "noLightActivityRecommended": true
+      },
+      {
+        "symptoms": "no",
+        "review": "unsure",
+        "blockedAfterReload": true,
+        "noLightActivityRecommended": true
+      },
+      {
+        "width": 320,
+        "legacyProfileAndLogsRetained": true,
+        "sensitiveControlsDefaultOff": true,
+        "noOverflow": true
+      },
+      {
+        "width": 390,
+        "legacyProfileAndLogsRetained": true,
+        "sensitiveControlsDefaultOff": true,
+        "noOverflow": true
+      },
+      {
+        "width": 1280,
+        "legacyProfileAndLogsRetained": true,
+        "sensitiveControlsDefaultOff": true,
+        "noOverflow": true
+      }
+    ],
+    "errors": [],
+    "externalRequests": []
+  },
+  "preservation": {
+    "oldSource177FilesUnchanged": true,
+    "old43TestFilesUnchanged": true,
+    "planningModuleUnchanged": true,
+    "locations": {
+      "app.js": {
+        "const setupSteps=": 1059,
+        "function generatePlan": 1079,
+        "function dailyAdjustmentPanel": 1150,
+        "function guidedRecoveryPanel": 1195,
+        "function safetyStatusPanel": 1211
+      },
+      "modules/experience-toolkit.js": {
+        "function personalRecordsPanel": 25,
+        "data-toggle-records": 25,
+        "progress-photo": 25
+      },
+      "index.html": {
+        "id=\"privacy-settings\"": 1
+      }
+    }
+  },
+  "tests": {
+    "baseline": {
+      "total": 242,
+      "pass": 233,
+      "fail": 9
+    },
+    "candidate": {
+      "total": 248,
+      "pass": 238,
+      "fail": 10
+    },
+    "originalTestsUnchanged": true
+  }
+}
