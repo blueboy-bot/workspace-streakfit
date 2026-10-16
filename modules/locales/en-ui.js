@@ -1,4 +1,10 @@
 export const englishUI = {
+ "按实际记录调整":"Adjust from actual records",
+ "目标不随日历自动增加。根据实际完成情况给出建议，由你确认后调整；已保存的手动目标优先。":"Targets do not increase with the calendar. Suggestions use actual records; you confirm any changes. Saved manual targets take priority.",
+ "轻松完成后可手动调整目标；系统不自动增加时长，较吃力或未完成则保持或缩短。":"After comfortable completion, you can change the target yourself. Duration never increases automatically; keep or shorten it when it feels hard or is unfinished.",
+ "保持力量训练与有氧，目标按实际记录评估，不随日历自动加量。":"Combine strength and cardio; assess targets from actual records, without calendar-driven increases.",
+ "保留主项与相关辅助，依据实际记录提出建议，调整需手动确认":"Keep the main lift and relevant assistance; suggestions use actual records and changes require your confirmation",
+ "目标不随日历自动增加，调整前先确认实际完成情况。":"Targets do not increase with the calendar. Confirm actual performance before making changes.",
  "先轻重量试做，确认动作控制后再开始工作组。":"Try a light load first and check control before starting working sets.",
  "训练侧重：背阔肌侧重":"Training emphasis: lats",
  '轻抬手臂，颈部放松，允许肩胛随抬臂自然运动':'Gently raise the arms; keep the neck relaxed and let the shoulder blades move naturally.',
