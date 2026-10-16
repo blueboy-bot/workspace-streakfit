@@ -1,0 +1,55 @@
+/* Self-hosted OFL fonts: Noto Sans SC, Inter and Barlow. See assets/fonts. */
+@font-face {
+  font-family:"Streakfit Han";
+  src:url("./assets/fonts/streakfit-han.woff2") format("woff2");
+  font-style:normal; font-weight:400 700; font-display:swap;
+}
+@font-face {
+  font-family:"Streakfit UI";
+  src:url("./assets/fonts/streakfit-ui.woff2") format("woff2");
+  font-style:normal; font-weight:400 700; font-display:swap;
+  unicode-range:U+0020-024F,U+1E00-1EFF,U+2000-206F,U+2212;
+}
+@font-face {
+  font-family:"Streakfit Display";
+  src:url("./assets/fonts/streakfit-display.woff2") format("woff2");
+  font-style:normal; font-weight:600; font-display:swap;
+  unicode-range:U+0020-024F,U+1E00-1EFF,U+2000-206F,U+2212;
+}
+:root {
+  --font-ui:"Streakfit UI","Streakfit Han","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-display:"Streakfit Display","Streakfit Han","PingFang SC","Microsoft YaHei",sans-serif;
+  font-family:var(--font-ui);
+  font-synthesis:none;
+}
+body {font-family:var(--font-ui); font-weight:400; line-height:1.55; letter-spacing:0;}
+button,input,select,option,textarea {font-family:var(--font-ui);}
+button,input,select,textarea {letter-spacing:0;}
+h1,h2,h3,.brand,.header-brand {font-family:var(--font-display); font-weight:600; line-height:1.3;}
+h1 {font-size:34px; letter-spacing:-.45px;}
+h2 {letter-spacing:-.25px;}
+h3 {letter-spacing:0;}
+html[lang^="zh"] h1,html[lang^="zh"] h2,html[lang^="zh"] h3 {letter-spacing:0;}
+.brand,.header-brand {font-weight:600; letter-spacing:.25px;}
+.brand {font-size:27px;}
+.header-brand {font-size:20px;}
+.primary,.appearance-actions #profile {font-weight:600;}
+.workout-card .exercise-heading h3,.session-mode .workout-card h3 {font-weight:600; line-height:1.4;}
+.workout-card .eyebrow,.eyebrow,.pill {font-weight:500; letter-spacing:.7px;}
+.learn-grid h3 {font-size:21px; font-weight:600; line-height:1.45;}
+.learn-grid .eyebrow {font-size:12px; letter-spacing:.5px;}
+.library-filters label {font-weight:500; line-height:1.5;}
+.library-filters select,.library-filters option {font-size:16px; font-weight:400;}
+nav button,html[lang="en"] nav button {font-weight:500;}
+.set-input input,#rest-clock,.load-comparison strong,.stat strong,.badge {
+  font-family:var(--font-ui); font-variant-numeric:tabular-nums lining-nums;
+}
+.set-input input,.compact-workout .set-input input,.session-mode .set-input input {font-weight:500;}
+.load-comparison strong {font-weight:600;}
+#rest-clock:not(.rest-idle) {font-weight:600; letter-spacing:-1px;}
+input::placeholder,textarea::placeholder {font-weight:400;}
+@media(max-width:650px) {
+  .greeting h1,.beginner-home h1,.compact-route>h1,.compact-workout>h1 {font-size:28px; line-height:1.35;}
+  .header-brand {font-size:20px;}
+}
+@media(max-width:350px) {.header-brand {font-size:17px;}}
