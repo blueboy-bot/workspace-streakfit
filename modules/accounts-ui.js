@@ -22,7 +22,7 @@ export function startAccounts({readState,replaceState,validate,freshState,onWork
   const describe=()=>client?.user?.email||client?.user?.phone||'登录 / 注册';
   function updateStatus(kind,message='') {
     status={synced:'已同步到账号',pending:'已保存本机 · 待同步',conflict:'其他设备有更新',offline:'离线使用本机记录'}[kind]||kind;
-    statusDetail=message;button.textContent=activeUid?'我的账号':workspaceKey==='streakfit-v1'?'登录 / 注册':'账号 · 离线';
+    statusDetail=message;button.textContent=!available&&!activeUid?'账号同步 · 未开放':activeUid?'我的账号':workspaceKey==='streakfit-v1'?'登录 / 注册':'账号 · 离线';
     const el=dialog.querySelector('[data-sync-status]');if(el)el.textContent=status+(message?'：'+message:'');
   }
   const closeButton='<button type="button" class="account-close" data-account="close" aria-label="关闭账号窗口">×</button>';
@@ -31,7 +31,8 @@ export function startAccounts({readState,replaceState,validate,freshState,onWork
     const error='<p id="account-feedback" role="alert"></p>';
     const syncText=escape(status+(statusDetail?'：'+statusDetail:''));
     let html='';
-    if(view==='loading')html='<h2>正在读取账号记录…</h2><p>本机记录与账号空间独立保存，请稍候。</p>';
+    if(!available&&['login','register','recover'].includes(view))html='<h2>账号同步尚未开放</h2><p>当前版本无需注册即可使用。记录保存在当前浏览器，换设备请通过JSON备份迁移。</p><p>邮箱、短信验证和跨设备同步尚未开放。详情见“偏好与设置 → 数据与隐私”。</p>';
+    else if(view==='loading')html='<h2>正在读取账号记录…</h2><p>本机记录与账号空间独立保存，请稍候。</p>';
     else if(view==='home')html=`<h2>我的账号</h2><p class="account-identity">${escape(describe())}</p><p data-sync-status role="status">${syncText}</p><p class="muted">资料、计划、训练与学习记录随账号同步。进度照保留在本机，JSON备份包含照片。</p><button class="primary" data-account="sync">立即同步</button><button data-account="change">修改密码</button><button data-account="logout">退出此设备</button>${error}`;
     else if(view==='import')html=`<h2>从哪里开始？</h2><p>这个账号还没有云端记录。是否把当前设备的访客记录导入账号？访客原始记录会保留。</p><button class="primary" data-account="import">导入本机访客记录</button><button data-account="fresh">建立新的账号计划</button>${error}`;
     else if(view==='conflict')html=`<h2>两台设备的记录有变化</h2><p>请先导出本机备份，再选择需要保留的版本。云端记录时间：${escape(remoteConflict?.updated_at||'未知')}。选择前不会覆盖本机训练。</p><button data-account="backup">导出本机备份</button><button data-account="use-cloud">使用云端记录</button><button data-account="use-local">用本机记录更新云端</button>${error}`;
@@ -138,12 +139,11 @@ export function startAccounts({readState,replaceState,validate,freshState,onWork
     try{
       const raw=await configPromise;publicAccountConfig(raw);available=raw?.enabled===true;
       client=createAccountClient(raw,{storage});
-      if(client.user){try{await client.restore();await bindUser({cached:true});}catch(error){if(error.status===401){await logout();}else{activeUid=client.user.id;createSync(activeUid);sync.attach(accountCloudData(readState()));updateStatus('offline',error.message);}}}
+      if(available&&client.user){try{await client.restore();await bindUser({cached:true});}catch(error){if(error.status===401){await logout();}else{activeUid=client.user.id;createSync(activeUid);sync.attach(accountCloudData(readState()));updateStatus('offline',error.message);}}}
     }catch(error){configError='账号服务尚未连接：'+error.message;}
     updateStatus(status,statusDetail);
     if(dialog.open&&['login','register','recover'].includes(view)){
-      const submit=dialog.querySelector('[type=submit]');if(submit)submit.disabled=!available;
-      const note=dialog.querySelector('.notice');if(note){if(available)note.remove();else if(configError)note.textContent=configError;}
+      display();
     }
   }
   const ready=bootstrap();

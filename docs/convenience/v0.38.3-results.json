@@ -1,0 +1,581 @@
+{
+  "before_metrics": {
+    "metrics": {
+      "postSetupPage": "path",
+      "startClicks": 2,
+      "repeatActualSetClicks": 1,
+      "resumeClicks": 1,
+      "onboardingSteps": 6,
+      "onboardingAutomationSeconds": 1.3,
+      "humanSetupTime": "not measured; browser automation time is not a human usability time",
+      "startBounds": {
+        "x": 20,
+        "y": 428.984375,
+        "width": 350,
+        "height": 62.890625
+      },
+      "thumbReachAtOpen": true,
+      "setupQuestions": [
+        "你想怎么健身？",
+        "先确认适合开始运动",
+        "你之前有没有训练过？",
+        "你通常在哪里训练？",
+        "每次能留多少时间？",
+        "准备好开始了吗？"
+      ],
+      "recordPrefillAfterReload": "5",
+      "firstWeightedLoad": "must be supplied from actual equipment; never fabricated"
+    },
+    "errors": []
+  },
+  "after_metrics": {
+    "metrics": {
+      "postSetupPage": "path",
+      "startClicks": 2,
+      "repeatActualSetClicks": 1,
+      "resumeClicks": 1,
+      "onboardingSteps": 6,
+      "onboardingAutomationSeconds": 3.1,
+      "humanSetupTime": "not measured; browser automation time is not a human usability time",
+      "startBounds": {
+        "x": 33,
+        "y": 634.109375,
+        "width": 324,
+        "height": 62.890625
+      },
+      "thumbReachAtOpen": true,
+      "setupQuestions": [
+        "你想怎么健身？",
+        "先确认适合开始运动",
+        "你之前有没有训练过？",
+        "你通常在哪里训练？",
+        "每次能留多少时间？",
+        "准备好开始了吗？"
+      ],
+      "recordPrefillAfterReload": "5",
+      "firstWeightedLoad": "must be supplied from actual equipment; never fabricated"
+    },
+    "errors": []
+  },
+  "before_mobile": {
+    "rows": [
+      {
+        "lang": "zh",
+        "case": "long-plan",
+        "moves": 5,
+        "start": {
+          "x": 20,
+          "y": 844.984375,
+          "width": 350,
+          "height": 62.890625
+        },
+        "nav": {
+          "x": 0,
+          "y": 768.40625,
+          "width": 390,
+          "height": 75.59375
+        },
+        "firstScreen": false,
+        "thumbReach": false,
+        "firstText": "给记录留一份备份"
+      },
+      {
+        "lang": "zh",
+        "case": "return-14-days",
+        "title": "开始前，记住三点",
+        "weight": "35",
+        "loadNotice": []
+      },
+      {
+        "lang": "en",
+        "case": "long-plan",
+        "moves": 5,
+        "start": {
+          "x": 20,
+          "y": 887.109375,
+          "width": 350,
+          "height": 62.890625
+        },
+        "nav": {
+          "x": 0,
+          "y": 768.40625,
+          "width": 390,
+          "height": 75.59375
+        },
+        "firstScreen": false,
+        "thumbReach": false,
+        "firstText": "Keep a backup of your records"
+      },
+      {
+        "lang": "en",
+        "case": "return-14-days",
+        "title": "Three quick reminders",
+        "weight": "35",
+        "loadNotice": []
+      }
+    ],
+    "errors": []
+  },
+  "after_mobile": {
+    "rows": [
+      {
+        "lang": "zh",
+        "case": "long-plan",
+        "moves": 5,
+        "start": {
+          "x": 33,
+          "y": 634.109375,
+          "width": 324,
+          "height": 62.890625
+        },
+        "nav": {
+          "x": 0,
+          "y": 768.40625,
+          "width": 390,
+          "height": 75.59375
+        },
+        "firstScreen": true,
+        "thumbReach": true,
+        "firstText": "今日计划",
+        "unavailableAccountHasNoInputs": true,
+        "privacyAccessible": true
+      },
+      {
+        "lang": "zh",
+        "case": "return-14-days",
+        "title": "按今天的状态重新开始",
+        "weight": "",
+        "loadNotice": [
+          "上次记录 2026-10-02：35 kg × 10，仅作参考。这个动作一段时间未练：先用容易控制的难度热身试做，重新评估并填写本次实际负重，不直接沿用旧值或加量。"
+        ]
+      },
+      {
+        "lang": "en",
+        "case": "long-plan",
+        "moves": 5,
+        "start": {
+          "x": 33,
+          "y": 634.109375,
+          "width": 324,
+          "height": 62.890625
+        },
+        "nav": {
+          "x": 0,
+          "y": 768.40625,
+          "width": 390,
+          "height": 75.59375
+        },
+        "firstScreen": true,
+        "thumbReach": true,
+        "firstText": "Today's plan",
+        "unavailableAccountHasNoInputs": true,
+        "privacyAccessible": true
+      },
+      {
+        "lang": "en",
+        "case": "return-14-days",
+        "title": "Restart at a pace that suits you today",
+        "weight": "",
+        "loadNotice": [
+          "Last logged 2026-10-02: 35 kg × 10, For reference only. You have not logged this movement for a while. Warm up at an easy, controlled level and enter today's actual load. Do not automatically reuse or increase the old value."
+        ]
+      },
+      {
+        "width": 320,
+        "noOverflow": true,
+        "startVisible": true
+      }
+    ],
+    "errors": []
+  },
+  "required_flows": {
+    "checks": {
+      "trainingCompletion": {
+        "xp": 30,
+        "weeklyCompleted": 1,
+        "refreshLogs": true
+      },
+      "noOverflow": true,
+      "bodyRecordsCollapsed": true,
+      "weightTrendCollapsed": true,
+      "backupRoundTrip": true,
+      "evidenceVisiblePR": false,
+      "safetyAbnormalBlocked": true
+    },
+    "errors": []
+  },
+  "onboarding": {
+    "rows": [
+      {
+        "lang": "zh",
+        "screens": [
+          {
+            "question": "你想怎么健身？",
+            "visibleFields": []
+          },
+          {
+            "question": "先确认适合开始运动",
+            "visibleFields": [
+              "safetySymptoms",
+              "safetyReview"
+            ]
+          },
+          {
+            "question": "你之前有没有训练过？",
+            "visibleFields": []
+          },
+          {
+            "question": "你通常在哪里训练？",
+            "visibleFields": []
+          },
+          {
+            "question": "每次能留多少时间？",
+            "visibleFields": [
+              "minutes"
+            ]
+          },
+          {
+            "question": "准备好开始了吗？",
+            "visibleFields": []
+          }
+        ],
+        "unsupportedFieldsInForm": 0,
+        "optionalGatewaysOnFirstReview": 0,
+        "quickEditExposedOnFirstUse": false,
+        "review": "建立运动习惯 · 初学者\n\n家中 · 每次 15 分钟\n\n每周 3 天\n\n器材、个人资料与具体排期可以之后再设置。",
+        "schedule": {
+          "mode": "weekly",
+          "days": "3",
+          "weekdays": [
+            1,
+            4,
+            6
+          ]
+        },
+        "collectedUnsupported": [],
+        "laterGroups": [
+          {
+            "id": "advanced-setup",
+            "label": "器材",
+            "nested": false
+          },
+          {
+            "id": "training-settings",
+            "label": "训练安排",
+            "nested": false
+          },
+          {
+            "id": "personal-settings",
+            "label": "个人资料（可选）",
+            "nested": false
+          }
+        ]
+      },
+      {
+        "lang": "en",
+        "screens": [
+          {
+            "question": "What would you like to work toward?",
+            "visibleFields": []
+          },
+          {
+            "question": "Before you begin",
+            "visibleFields": [
+              "safetySymptoms",
+              "safetyReview"
+            ]
+          },
+          {
+            "question": "Have you trained before?",
+            "visibleFields": []
+          },
+          {
+            "question": "Where do you usually train?",
+            "visibleFields": []
+          },
+          {
+            "question": "How much time do you have per session?",
+            "visibleFields": [
+              "minutes"
+            ]
+          },
+          {
+            "question": "Ready to get started?",
+            "visibleFields": []
+          }
+        ],
+        "unsupportedFieldsInForm": 0,
+        "optionalGatewaysOnFirstReview": 0,
+        "quickEditExposedOnFirstUse": false,
+        "review": "Build an exercise habit · Getting started\n\nHome · per session 15 min\n\n3 days/week\n\nYou can set equipment, personal details and training days later.",
+        "schedule": {
+          "mode": "weekly",
+          "days": "3",
+          "weekdays": [
+            1,
+            4,
+            6
+          ]
+        },
+        "collectedUnsupported": [],
+        "laterGroups": [
+          {
+            "id": "advanced-setup",
+            "label": "Equipment",
+            "nested": false
+          },
+          {
+            "id": "training-settings",
+            "label": "Training schedule",
+            "nested": false
+          },
+          {
+            "id": "personal-settings",
+            "label": "Personal details (optional)",
+            "nested": false
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "negative_paths": {
+    "restartUnwellBranchBlocksTraining": true,
+    "noLogsCreated": true,
+    "disabledAccountMakesNoCloudRequestsWithCachedSession": true,
+    "cachedWorkspacePreserved": true,
+    "noPageErrors": true
+  },
+  "legacy": {
+    "legacyCycleAndEquipmentRetained": true,
+    "unitsAgeWeightRetained": true,
+    "legacyDietSleepValuesRetainedButNotCollected": true,
+    "historicalLogsAndCustomTargetsRetained": true,
+    "noErrors": true
+  },
+  "principles": {
+    "emptyHistoryTargets": [
+      {
+        "date": "2026-10-05",
+        "targets": {
+          "dbpress": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "legpress": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "pulldown": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rdl": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "deadbug": {
+            "sets": 3,
+            "min": 6,
+            "max": 8,
+            "quality": true
+          }
+        }
+      },
+      {
+        "date": "2026-10-12",
+        "targets": {
+          "rdl": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "dbpress": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "legpress": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "pulldown": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "deadbug": {
+            "sets": 3,
+            "min": 6,
+            "max": 8,
+            "quality": true
+          }
+        }
+      },
+      {
+        "date": "2026-10-26",
+        "targets": {
+          "legpress": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "pulldown": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rdl": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "dbpress": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "deadbug": {
+            "sets": 3,
+            "min": 6,
+            "max": 8,
+            "quality": true
+          }
+        }
+      },
+      {
+        "date": "2026-11-02",
+        "targets": {
+          "dbpress": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "legpress": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "pulldown": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rdl": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "deadbug": {
+            "sets": 3,
+            "min": 6,
+            "max": 8,
+            "quality": true
+          }
+        }
+      },
+      {
+        "date": "2026-12-07",
+        "targets": {
+          "rdl": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "dbpress": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "legpress": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "pulldown": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "deadbug": {
+            "sets": 3,
+            "min": 6,
+            "max": 8,
+            "quality": true
+          }
+        }
+      }
+    ],
+    "noCalendarProgression": true,
+    "confirmedTargetHeld": true,
+    "explicitManualOverride": true,
+    "cardioNoAutoIncrease": true,
+    "participationXPOnly": true,
+    "recoveryEqualBaseXP": true,
+    "actualDefaultNotInventedWeight": true,
+    "noBestComparisonUI": true
+  },
+  "standalone": {
+    "rows": [
+      {
+        "lang": "zh",
+        "sixStepSetup": true,
+        "threeDaysWeekly": true,
+        "recordRefresh": true,
+        "noOverflow390": true
+      },
+      {
+        "lang": "en",
+        "sixStepSetup": true,
+        "threeDaysWeekly": true,
+        "recordRefresh": true,
+        "noOverflow390": true
+      }
+    ],
+    "errors": []
+  },
+  "tests": {
+    "initial_full": {
+      "tests": 245,
+      "pass": 235,
+      "fail": 10
+    },
+    "matrix_configurations": 18144,
+    "dates_per_configuration": 4,
+    "matrix_file_tests_passed": 3,
+    "final_nonmatrix": {
+      "tests": 242,
+      "pass": 233,
+      "fail": 9
+    },
+    "original_test_files_unchanged": 42,
+    "new_regression_tests": 7,
+    "existing_failures_not_hidden": true
+  },
+  "old_source_files_unchanged": 174
+}

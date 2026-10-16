@@ -2,7 +2,7 @@ import re, json, base64
 from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 root=Path(__file__).resolve().parent.parent
-out=Path('/workspace/streakfit-preview/visual-v0.38.2-download');out.mkdir(exist_ok=True)
+out=Path('/workspace/streakfit-preview/visual-v0.38.3-download');out.mkdir(exist_ok=True)
 version=json.loads((root/'package.json').read_text())['version']
 font_css=(root/'typography.css').read_text()
 for file in (root/'assets/fonts').glob('*.woff2'):
@@ -25,7 +25,7 @@ english=html.replace('<script>'+app, '<script>globalThis.STREAKFIT_LANGUAGE="en"
 (out/f'STREAKFIT-v{version}-English.html').write_text(english)
 (out/f'STREAKFIT-v{version}.html').write_text(html)
 with ZipFile(out/'streakfit-website.zip','w',ZIP_DEFLATED) as z:
- for file in ['index.html','app.js','style.css','foundation.css','accounts.css','visual.css','typography.css','visual-refresh.js','preview-storage.js','account-config.json','manifest.webmanifest','sw.js','server.mjs','package.json','README.md']:
+ for file in ['index.html','app.js','style.css','foundation.css','accounts.css','visual.css','typography.css','visual-refresh.js','preview-storage.js','account-config.json','manifest.webmanifest','sw.js','server.mjs','package.json','README.md','使用说明.txt']:
   z.write(root/file,arcname=file)
  for folder in ['modules','assets','docs']:
   for file in (root/folder).rglob('*'):
