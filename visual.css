@@ -423,3 +423,18 @@ footer [data-open-privacy]{background:transparent;border:0;box-shadow:none;color
 
 /* Inline, optional movement context; never a blocking questionnaire. */
 .progressive-coach{margin:12px 0;min-width:0}.coach-question{border-left:3px solid var(--accent,#b9ed68);padding:4px 0 8px 12px}.coach-question p{margin:0 0 8px;font-size:16px}.coach-options{display:flex;flex-wrap:wrap;gap:8px}.coach-options button,.coach-preferences button{min-height:44px;font-size:15px;padding:8px 12px}.coach-preferences{margin-top:10px;font-size:15px}.coach-preferences p,.coach-hint{font-size:14px;line-height:1.5}.coach-hint button{min-height:44px}.coach-question small{display:block;margin-top:8px;font-size:13px;line-height:1.5}
+
+/* v0.38.8: show the next adjustment action, without competing with the workout dock. */
+.illustrated-today>.daily-adjustment>summary{font-size:16px;font-weight:650;color:var(--ink);}
+.daily-adjustment .adjustment-scope{font-size:14px;color:var(--subtle);margin:14px 0 10px;}
+.daily-adjustment .adjustment-preview,.daily-adjustment .adjustment-apply{display:block;width:100%;min-height:54px;font-size:17px;font-weight:700;margin:12px 0;}
+.daily-adjustment .adjustment-preview:not(.primary){min-height:44px;font-size:15px;background:transparent;border:1px solid var(--line);box-shadow:none;color:var(--ink);}
+.daily-adjustment .adjustment-apply[hidden]{display:none;}
+.daily-adjustment #today-adjustment-feedback:not(:empty){margin:12px 0;font-size:15px;line-height:1.5;}
+.comparison-decision{font-size:15px;color:var(--ink);margin:12px 0;line-height:1.5;}
+.comparison-extra{display:flex;align-items:center;justify-content:center;min-width:24px;font-size:13px;font-weight:650;color:var(--subtle);}
+.daily-adjustment .adjustment-change-details>summary,.daily-adjustment .adjustment-more>summary{min-height:44px;align-content:center;font-size:14px;color:var(--subtle);}
+.daily-adjustment .adjustment-more p{font-size:14px;line-height:1.5;color:var(--subtle);}
+@media(max-width:650px){
+ .illustrated-today:has(.daily-adjustment[open]) .plan-start-area{position:static;margin:16px 0;padding:0;border:0;border-radius:0;box-shadow:none;background:transparent;}
+}

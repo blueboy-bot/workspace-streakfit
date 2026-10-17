@@ -1,0 +1,138 @@
+{
+  "rows": [
+    {
+      "lang": "zh",
+      "width": 320,
+      "previewButtonHeight": 61.34375,
+      "applyButtonHeight": 61.34375,
+      "readOnlyPreview": true,
+      "onlyNextActionPrimary": true,
+      "detailsCollapsed": true,
+      "dockStaticWhileAdjusting": true,
+      "buttonsUncovered": true,
+      "changingInputInvalidates": true,
+      "successReturnsToPlan": true,
+      "savedAfterRefresh": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "previewButtonHeight": 61.34375,
+      "applyButtonHeight": 61.34375,
+      "readOnlyPreview": true,
+      "onlyNextActionPrimary": true,
+      "detailsCollapsed": true,
+      "dockStaticWhileAdjusting": true,
+      "buttonsUncovered": true,
+      "changingInputInvalidates": true,
+      "successReturnsToPlan": true,
+      "savedAfterRefresh": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "previewButtonHeight": 61.34375,
+      "applyButtonHeight": 61.34375,
+      "readOnlyPreview": true,
+      "onlyNextActionPrimary": true,
+      "detailsCollapsed": true,
+      "dockStaticWhileAdjusting": false,
+      "buttonsUncovered": true,
+      "changingInputInvalidates": true,
+      "successReturnsToPlan": true,
+      "savedAfterRefresh": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "previewButtonHeight": 61.34375,
+      "applyButtonHeight": 61.34375,
+      "readOnlyPreview": true,
+      "onlyNextActionPrimary": true,
+      "detailsCollapsed": true,
+      "dockStaticWhileAdjusting": true,
+      "buttonsUncovered": true,
+      "changingInputInvalidates": true,
+      "successReturnsToPlan": true,
+      "savedAfterRefresh": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "previewButtonHeight": 61.34375,
+      "applyButtonHeight": 61.34375,
+      "readOnlyPreview": true,
+      "onlyNextActionPrimary": true,
+      "detailsCollapsed": true,
+      "dockStaticWhileAdjusting": true,
+      "buttonsUncovered": true,
+      "changingInputInvalidates": true,
+      "successReturnsToPlan": true,
+      "savedAfterRefresh": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "previewButtonHeight": 61.34375,
+      "applyButtonHeight": 61.34375,
+      "readOnlyPreview": true,
+      "onlyNextActionPrimary": true,
+      "detailsCollapsed": true,
+      "dockStaticWhileAdjusting": false,
+      "buttonsUncovered": true,
+      "changingInputInvalidates": true,
+      "successReturnsToPlan": true,
+      "savedAfterRefresh": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "zh",
+      "logs": false,
+      "fatigueRecommendsRecovery": true,
+      "logsPreserved": true,
+      "noAutomaticXP": true,
+      "backupRoundTrip": true,
+      "offline": true
+    },
+    {
+      "lang": "zh",
+      "logs": true,
+      "fatigueRecommendsRecovery": true,
+      "logsPreserved": true,
+      "noAutomaticXP": true,
+      "backupRoundTrip": true,
+      "offline": true
+    },
+    {
+      "lang": "en",
+      "logs": false,
+      "fatigueRecommendsRecovery": true,
+      "logsPreserved": true,
+      "noAutomaticXP": true,
+      "backupRoundTrip": true,
+      "offline": true
+    },
+    {
+      "lang": "en",
+      "logs": true,
+      "fatigueRecommendsRecovery": true,
+      "logsPreserved": true,
+      "noAutomaticXP": true,
+      "backupRoundTrip": true,
+      "offline": true
+    },
+    {
+      "quotaRetainsOriginalPlan": true,
+      "retryWorks": true
+    },
+    {
+      "safetyNotBypassed": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,72 @@
+{
+  "rows": [
+    {
+      "lang": "zh",
+      "skipClick": 1,
+      "defaultPlanSaved": true,
+      "unconfirmedCannotTrain": true,
+      "safetyOnlySelects": 2,
+      "answersPreserved": true,
+      "pendingBackupRoundTrip": true,
+      "offlinePendingPreview": true,
+      "completeWorkoutXP": 30,
+      "weeklyCount": 1,
+      "completeBackupRoundTrip": true,
+      "noOverflow390": true
+    },
+    {
+      "lang": "en",
+      "skipClick": 1,
+      "defaultPlanSaved": true,
+      "unconfirmedCannotTrain": true,
+      "safetyOnlySelects": 2,
+      "answersPreserved": true,
+      "pendingBackupRoundTrip": true,
+      "offlinePendingPreview": true,
+      "completeWorkoutXP": 30,
+      "weeklyCount": 1,
+      "completeBackupRoundTrip": true,
+      "noOverflow390": true
+    },
+    {
+      "symptoms": "yes",
+      "review": "",
+      "status": "urgent",
+      "partialRiskRetained": true,
+      "noTrainingRecommendation": true,
+      "safetyOnlyReentry": true
+    },
+    {
+      "symptoms": "",
+      "review": "unsure",
+      "status": "review",
+      "partialRiskRetained": true,
+      "noTrainingRecommendation": true,
+      "safetyOnlyReentry": true
+    },
+    {
+      "symptoms": "no",
+      "review": "yes",
+      "status": "review",
+      "partialRiskRetained": true,
+      "noTrainingRecommendation": true,
+      "safetyOnlyReentry": true
+    },
+    {
+      "quotaDeferralStaysOpen": true,
+      "quotaConfirmationCannotClearSafety": true,
+      "retryWorks": true
+    },
+    {
+      "lang": "zh",
+      "normalFiveScreens": true,
+      "optionalSettingsHidden": true
+    },
+    {
+      "lang": "en",
+      "normalFiveScreens": true,
+      "optionalSettingsHidden": true
+    }
+  ],
+  "errors": []
+}
