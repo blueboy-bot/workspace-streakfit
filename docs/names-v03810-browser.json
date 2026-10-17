@@ -1,0 +1,89 @@
+{
+  "rows": [
+    {
+      "lang": "zh",
+      "width": 320,
+      "libraryMovements": 138,
+      "languageRoundTrip": true,
+      "todayNames": true,
+      "lessonSamples": 3,
+      "historicalNames": true,
+      "editorName": true,
+      "csvNames": true,
+      "userNotesAndMassUnchanged": true,
+      "historyUnchanged": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "libraryMovements": 138,
+      "languageRoundTrip": true,
+      "todayNames": true,
+      "lessonSamples": 3,
+      "historicalNames": true,
+      "editorName": true,
+      "csvNames": true,
+      "userNotesAndMassUnchanged": true,
+      "historyUnchanged": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "libraryMovements": 138,
+      "languageRoundTrip": true,
+      "todayNames": true,
+      "lessonSamples": 3,
+      "historicalNames": true,
+      "editorName": true,
+      "csvNames": true,
+      "userNotesAndMassUnchanged": true,
+      "historyUnchanged": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "libraryMovements": 138,
+      "languageRoundTrip": true,
+      "todayNames": true,
+      "lessonSamples": 3,
+      "historicalNames": true,
+      "editorName": true,
+      "csvNames": true,
+      "userNotesAndMassUnchanged": true,
+      "historyUnchanged": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "libraryMovements": 138,
+      "languageRoundTrip": true,
+      "todayNames": true,
+      "lessonSamples": 3,
+      "historicalNames": true,
+      "editorName": true,
+      "csvNames": true,
+      "userNotesAndMassUnchanged": true,
+      "historyUnchanged": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "libraryMovements": 138,
+      "languageRoundTrip": true,
+      "todayNames": true,
+      "lessonSamples": 3,
+      "historicalNames": true,
+      "editorName": true,
+      "csvNames": true,
+      "userNotesAndMassUnchanged": true,
+      "historyUnchanged": true,
+      "noOverflow": true
+    }
+  ],
+  "errors": []
+}

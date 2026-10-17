@@ -1,7 +1,9 @@
 const languageStorage=()=>globalThis.STREAKFIT_STORAGE||globalThis.localStorage;
 import {englishUI} from './locales/en-ui.js';
-import {movementPhrases} from './locales/en-movements.js';
-const phrases={...englishUI,...movementPhrases};
+import {movementPhrases,englishMovements,chineseMovementNames} from './locales/en-movements.js';
+const bilingualMovementPhrases=Object.fromEntries(Object.entries(chineseMovementNames).map(([id,zh])=>[zh+' · '+englishMovements[id].name,englishMovements[id].name]));
+export function applyMovementDisplayNames(catalog){for(const [id,movement] of Object.entries(catalog)){if(chineseMovementNames[id]&&englishMovements[id])movement.displayName=chineseMovementNames[id]+' · '+englishMovements[id].name;}}
+const phrases={...englishUI,...movementPhrases,...bilingualMovementPhrases};
 const han=/[\u3400-\u9fff]/;
 const escapePattern=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 const phrasePattern=new RegExp(Object.keys(phrases).sort((a,b)=>b.length-a.length).map(escapePattern).join('|'),'g');

@@ -1,6 +1,6 @@
 {
   "name": "streakfit",
-  "version": "0.38.9",
+  "version": "0.38.10",
   "private": true,
   "scripts": {
     "dev": "node server.mjs",

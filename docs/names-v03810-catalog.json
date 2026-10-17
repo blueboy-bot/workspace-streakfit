@@ -1,0 +1,834 @@
+{
+  "count": 138,
+  "rows": [
+    {
+      "id": "squat",
+      "zh": "椅子深蹲 · Chair squat",
+      "en": "Chair squat",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "push",
+      "zh": "墙壁俯卧撑 · Wall push-up",
+      "en": "Wall push-up",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "bridge",
+      "zh": "臀桥 · Glute bridge",
+      "en": "Glute bridge",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "dbpress",
+      "zh": "哑铃地板卧推 · Dumbbell floor press",
+      "en": "Dumbbell floor press",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "row",
+      "zh": "哑铃划船 · Dumbbell row",
+      "en": "Dumbbell row",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "bench",
+      "zh": "卧推 · Barbell bench press",
+      "en": "Barbell bench press",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "incline",
+      "zh": "上斜哑铃卧推 · Incline dumbbell press",
+      "en": "Incline dumbbell press",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "fly",
+      "zh": "绳索夹胸 · Cable chest fly",
+      "en": "Cable chest fly",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "triceps",
+      "zh": "直杆三头下压（正握） · Straight-bar triceps pushdown (overhand)",
+      "en": "Straight-bar triceps pushdown (overhand)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "reversefly",
+      "zh": "哑铃反向飞鸟 · Dumbbell reverse fly",
+      "en": "Dumbbell reverse fly",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "pulldown",
+      "zh": "高位下拉（常规正握） · Lat pulldown (standard overhand)",
+      "en": "Lat pulldown (standard overhand)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "bandrow",
+      "zh": "弹力带坐姿划船 · Seated resistance-band row",
+      "en": "Seated resistance-band row",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "proneW",
+      "zh": "俯卧 W 提拉 · Prone W raise",
+      "en": "Prone W raise",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "shoulderpress",
+      "zh": "哑铃肩推 · Dumbbell shoulder press",
+      "en": "Dumbbell shoulder press",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "lateral",
+      "zh": "哑铃侧平举 · Dumbbell lateral raise",
+      "en": "Dumbbell lateral raise",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "wallslide",
+      "zh": "靠墙滑臂 · Wall slide",
+      "en": "Wall slide",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "curl",
+      "zh": "哑铃弯举 · Dumbbell biceps curl",
+      "en": "Dumbbell biceps curl",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "bandcurl",
+      "zh": "弹力带弯举 · Resistance-band biceps curl",
+      "en": "Resistance-band biceps curl",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "selfcurl",
+      "zh": "自阻力弯举 · Self-resisted biceps curl",
+      "en": "Self-resisted biceps curl",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "closepush",
+      "zh": "窄距墙壁俯卧撑 · Close-grip wall push-up",
+      "en": "Close-grip wall push-up",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "dbtriceps",
+      "zh": "哑铃三头后伸 · Dumbbell triceps kickback",
+      "en": "Dumbbell triceps kickback",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "goblet",
+      "zh": "哑铃杯式深蹲 · Dumbbell goblet squat",
+      "en": "Dumbbell goblet squat",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "legpress",
+      "zh": "腿举 · Leg press",
+      "en": "Leg press",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "lunge",
+      "zh": "后撤箭步蹲 · Reverse lunge",
+      "en": "Reverse lunge",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "rdl",
+      "zh": "哑铃罗马尼亚硬拉 · Dumbbell Romanian deadlift",
+      "en": "Dumbbell Romanian deadlift",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "hinge",
+      "zh": "徒手髋铰链 · Bodyweight hip hinge",
+      "en": "Bodyweight hip hinge",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "deadlift",
+      "zh": "杠铃硬拉 · Barbell deadlift",
+      "en": "Barbell deadlift",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "hipthrust",
+      "zh": "哑铃臀桥 · Weighted glute bridge",
+      "en": "Weighted glute bridge",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "calf",
+      "zh": "站姿提踵 · Standing calf raise",
+      "en": "Standing calf raise",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "dbcalf",
+      "zh": "哑铃提踵 · Dumbbell calf raise",
+      "en": "Dumbbell calf raise",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "deadbug",
+      "zh": "死虫式 · Dead bug",
+      "en": "Dead bug",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "bird",
+      "zh": "鸟狗式 · Bird dog",
+      "en": "Bird dog",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "dbbench",
+      "zh": "哑铃卧推 · Dumbbell bench press",
+      "en": "Dumbbell bench press",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "preacher",
+      "zh": "牧师凳杠铃弯举 · Barbell preacher curl",
+      "en": "Barbell preacher curl",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "dbpreacher",
+      "zh": "牧师凳哑铃弯举 · Dumbbell preacher curl",
+      "en": "Dumbbell preacher curl",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "altcurl",
+      "zh": "哑铃交替弯举 · Alternating dumbbell curl",
+      "en": "Alternating dumbbell curl",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "cablecurl",
+      "zh": "绳索弯举 · Cable biceps curl",
+      "en": "Cable biceps curl",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "inclinecurl",
+      "zh": "上斜哑铃弯举 · Incline dumbbell curl",
+      "en": "Incline dumbbell curl",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "concentration",
+      "zh": "哑铃集中弯举 · Dumbbell concentration curl",
+      "en": "Dumbbell concentration curl",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "barcurl",
+      "zh": "杠铃弯举 · Barbell biceps curl",
+      "en": "Barbell biceps curl",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "ropehammer",
+      "zh": "绳索锤式弯举 · Rope hammer curl",
+      "en": "Rope hammer curl",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "ropepush",
+      "zh": "绳索三头下压 · Rope triceps pushdown",
+      "en": "Rope triceps pushdown",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "cableoverhead",
+      "zh": "绳索过顶臂屈伸 · Overhead cable triceps extension",
+      "en": "Overhead cable triceps extension",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "skullcrusher",
+      "zh": "仰卧哑铃臂屈伸 · Lying dumbbell triceps extension",
+      "en": "Lying dumbbell triceps extension",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "closebench",
+      "zh": "窄握杠铃卧推 · Close-grip barbell bench press",
+      "en": "Close-grip barbell bench press",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "dbfly",
+      "zh": "哑铃飞鸟 · Dumbbell chest fly",
+      "en": "Dumbbell chest fly",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "chestmachine",
+      "zh": "坐姿器械推胸 · Seated machine chest press",
+      "en": "Seated machine chest press",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "pecdeck",
+      "zh": "蝴蝶机夹胸 · Pec-deck chest fly",
+      "en": "Pec-deck chest fly",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "smithbench",
+      "zh": "史密斯卧推 · Smith machine bench press",
+      "en": "Smith machine bench press",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "inclinebar",
+      "zh": "上斜杠铃卧推 · Incline barbell bench press",
+      "en": "Incline barbell bench press",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "pushup",
+      "zh": "标准俯卧撑 · Push-up",
+      "en": "Push-up",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "barrow",
+      "zh": "杠铃俯身划船 · Bent-over barbell row",
+      "en": "Bent-over barbell row",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "chestsupported",
+      "zh": "胸托哑铃划船 · Chest-supported dumbbell row",
+      "en": "Chest-supported dumbbell row",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "pullup",
+      "zh": "引体向上 · Pull-up",
+      "en": "Pull-up",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "assistpull",
+      "zh": "辅助引体向上 · Assisted pull-up",
+      "en": "Assisted pull-up",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "straightpull",
+      "zh": "绳索直臂下拉 · Straight-arm cable pulldown",
+      "en": "Straight-arm cable pulldown",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "machinerow",
+      "zh": "坐姿器械划船 · Seated machine row",
+      "en": "Seated machine row",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "barohp",
+      "zh": "站姿杠铃推举 · Standing barbell overhead press",
+      "en": "Standing barbell overhead press",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "cablelateral",
+      "zh": "绳索侧平举 · Cable lateral raise",
+      "en": "Cable lateral raise",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "facepull",
+      "zh": "绳索面拉 · Cable face pull",
+      "en": "Cable face pull",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "rearpec",
+      "zh": "反向蝴蝶机 · Reverse pec deck",
+      "en": "Reverse pec deck",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "shouldermachine",
+      "zh": "器械肩推 · Machine shoulder press",
+      "en": "Machine shoulder press",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "barsquat",
+      "zh": "杠铃背蹲 · Barbell back squat",
+      "en": "Barbell back squat",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "frontsquat",
+      "zh": "杠铃前蹲 · Barbell front squat",
+      "en": "Barbell front squat",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "bulgarian",
+      "zh": "保加利亚分腿蹲 · Bulgarian split squat",
+      "en": "Bulgarian split squat",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "legextension",
+      "zh": "坐姿腿屈伸 · Seated leg extension",
+      "en": "Seated leg extension",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "hack",
+      "zh": "哈克深蹲 · Hack squat",
+      "en": "Hack squat",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "smithsquat",
+      "zh": "史密斯深蹲 · Smith machine squat",
+      "en": "Smith machine squat",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "legcurl",
+      "zh": "坐姿腿弯举 · Seated leg curl",
+      "en": "Seated leg curl",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "barRdl",
+      "zh": "杠铃罗马尼亚硬拉 · Barbell Romanian deadlift",
+      "en": "Barbell Romanian deadlift",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "barhip",
+      "zh": "杠铃臀推 · Barbell hip thrust",
+      "en": "Barbell hip thrust",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "cablekick",
+      "zh": "绳索后踢腿 · Cable glute kickback",
+      "en": "Cable glute kickback",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "abduction",
+      "zh": "器械髋外展 · Machine hip abduction",
+      "en": "Machine hip abduction",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "seatedcalf",
+      "zh": "坐姿提踵 · Seated calf raise",
+      "en": "Seated calf raise",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "cablecrunch",
+      "zh": "绳索卷腹 · Cable crunch",
+      "en": "Cable crunch",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "crunch",
+      "zh": "徒手卷腹 · Bodyweight crunch",
+      "en": "Bodyweight crunch",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "reversecrunch",
+      "zh": "反向卷腹 · Reverse crunch",
+      "en": "Reverse crunch",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "pausebench",
+      "zh": "暂停卧推 · Paused bench press",
+      "en": "Paused bench press",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "tempobench",
+      "zh": "节奏卧推 · Tempo bench press",
+      "en": "Tempo bench press",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "pausesquat",
+      "zh": "暂停深蹲 · Paused squat",
+      "en": "Paused squat",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "temposquat",
+      "zh": "节奏深蹲 · Tempo squat",
+      "en": "Tempo squat",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "pausedeadlift",
+      "zh": "离地暂停硬拉 · Paused deadlift",
+      "en": "Paused deadlift",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "pallof",
+      "zh": "绳索 Pallof 抗旋转推 · Cable Pallof press",
+      "en": "Cable Pallof press",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "bandpallof",
+      "zh": "弹力带 Pallof 抗旋转推 · Resistance-band Pallof press",
+      "en": "Resistance-band Pallof press",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "splitSquat",
+      "zh": "哑铃分腿蹲 · Dumbbell split squat",
+      "en": "Dumbbell split squat",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "overheadtriceps",
+      "zh": "哑铃过顶臂屈伸 · Overhead dumbbell triceps extension",
+      "en": "Overhead dumbbell triceps extension",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "hammer",
+      "zh": "哑铃锤式弯举 · Dumbbell hammer curl",
+      "en": "Dumbbell hammer curl",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "cablerow",
+      "zh": "坐姿绳索划船（窄距中立握） · Seated cable row (close neutral grip)",
+      "en": "Seated cable row (close neutral grip)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "bandfly",
+      "zh": "弹力带夹胸 · Resistance-band chest fly",
+      "en": "Resistance-band chest fly",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "bandtriceps",
+      "zh": "弹力带三头下压 · Resistance-band triceps pushdown",
+      "en": "Resistance-band triceps pushdown",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "pulldownWide",
+      "zh": "高位下拉（宽距正握） · Lat pulldown (wide overhand grip)",
+      "en": "Lat pulldown (wide overhand grip)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "pulldownNeutral",
+      "zh": "高位下拉（窄距中立握） · Lat pulldown (close neutral grip)",
+      "en": "Lat pulldown (close neutral grip)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "pulldownSupinated",
+      "zh": "高位下拉（反握） · Lat pulldown (underhand grip)",
+      "en": "Lat pulldown (underhand grip)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "pulldownSingle",
+      "zh": "单臂绳索高位下拉 · Single-arm cable pulldown",
+      "en": "Single-arm cable pulldown",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "cablerowWide",
+      "zh": "坐姿绳索划船（宽距正握） · Seated cable row (wide overhand grip)",
+      "en": "Seated cable row (wide overhand grip)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "cablerowSupinated",
+      "zh": "坐姿绳索划船（反握） · Seated cable row (underhand grip)",
+      "en": "Seated cable row (underhand grip)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "cablerowSingle",
+      "zh": "单臂坐姿绳索划船 · Single-arm seated cable row",
+      "en": "Single-arm seated cable row",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "barrowSupinated",
+      "zh": "杠铃俯身划船（反握） · Bent-over barbell row (underhand grip)",
+      "en": "Bent-over barbell row (underhand grip)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "chestsupportedWide",
+      "zh": "胸托哑铃划船（正握宽肘） · Chest-supported dumbbell row (wide elbows)",
+      "en": "Chest-supported dumbbell row (wide elbows)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "pullupWide",
+      "zh": "引体向上（宽距正握） · Pull-up (wide overhand grip)",
+      "en": "Pull-up (wide overhand grip)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "chinup",
+      "zh": "反握引体向上 · Chin-up",
+      "en": "Chin-up",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "benchWide",
+      "zh": "杠铃卧推（宽握） · Barbell bench press (wide grip)",
+      "en": "Barbell bench press (wide grip)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "dbbenchNeutral",
+      "zh": "哑铃卧推（中立握） · Dumbbell bench press (neutral grip)",
+      "en": "Dumbbell bench press (neutral grip)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "inclineNeutral",
+      "zh": "上斜哑铃卧推（中立握） · Incline dumbbell press (neutral grip)",
+      "en": "Incline dumbbell press (neutral grip)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "flyLow",
+      "zh": "绳索夹胸（低位向上） · Low-to-high cable chest fly",
+      "en": "Low-to-high cable chest fly",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "flyHigh",
+      "zh": "绳索夹胸（高位向下） · High-to-low cable chest fly",
+      "en": "High-to-low cable chest fly",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "shoulderpressNeutral",
+      "zh": "哑铃肩推（中立握） · Dumbbell shoulder press (neutral grip)",
+      "en": "Dumbbell shoulder press (neutral grip)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "cablelateralBehind",
+      "zh": "绳索侧平举（身后起始） · Behind-the-body cable lateral raise",
+      "en": "Behind-the-body cable lateral raise",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "barcurlWide",
+      "zh": "杠铃弯举（宽握） · Barbell curl (wide grip)",
+      "en": "Barbell curl (wide grip)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "barcurlNarrow",
+      "zh": "杠铃弯举（窄握） · Barbell curl (close grip)",
+      "en": "Barbell curl (close grip)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "reversecurl",
+      "zh": "杠铃反握弯举 · Reverse barbell curl",
+      "en": "Reverse barbell curl",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "reversecablecurl",
+      "zh": "绳索反握弯举 · Reverse cable curl",
+      "en": "Reverse cable curl",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "cablecurlBehind",
+      "zh": "身后绳索弯举（贝叶斯弯举） · Behind-the-body cable curl (Bayesian curl)",
+      "en": "Behind-the-body cable curl (Bayesian curl)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "tricepsV",
+      "zh": "V形杆三头下压 · V-bar triceps pushdown",
+      "en": "V-bar triceps pushdown",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "tricepsSupinated",
+      "zh": "反握直杆三头下压 · Underhand straight-bar triceps pushdown",
+      "en": "Underhand straight-bar triceps pushdown",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "legpressNarrow",
+      "zh": "腿举（窄距常规脚位） · Leg press (narrow stance)",
+      "en": "Leg press (narrow stance)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "legpressHigh",
+      "zh": "腿举（较高脚位） · Leg press (higher foot placement)",
+      "en": "Leg press (higher foot placement)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "legextensionSingle",
+      "zh": "单腿坐姿腿屈伸 · Single-leg seated leg extension",
+      "en": "Single-leg seated leg extension",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "legcurlSingle",
+      "zh": "单腿坐姿腿弯举 · Single-leg seated leg curl",
+      "en": "Single-leg seated leg curl",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "dbcalfSingle",
+      "zh": "单腿哑铃提踵 · Single-leg dumbbell calf raise",
+      "en": "Single-leg dumbbell calf raise",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "bridgeSingle",
+      "zh": "单腿臀桥 · Single-leg glute bridge",
+      "en": "Single-leg glute bridge",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "cablecrunchStanding",
+      "zh": "站姿绳索卷腹 · Standing cable crunch",
+      "en": "Standing cable crunch",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "proneY",
+      "zh": "俯卧 Y 字上举 · Prone Y raise",
+      "en": "Prone Y raise",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "warmwalk",
+      "zh": "轻松走 · 热身 · Easy walk (warm-up)",
+      "en": "Easy walk (warm-up)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "briskwalk",
+      "zh": "快走 · Brisk walk",
+      "en": "Brisk walk",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "march",
+      "zh": "原地踏步 · March in place",
+      "en": "March in place",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "treadmill",
+      "zh": "跑步机快走 · Treadmill brisk walk",
+      "en": "Treadmill brisk walk",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "bike",
+      "zh": "动感单车 · 稳态骑行 · Stationary cycling (steady state)",
+      "en": "Stationary cycling (steady state)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "elliptical",
+      "zh": "椭圆机 · Elliptical",
+      "en": "Elliptical",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "rowing",
+      "zh": "划船机 · 稳态 · Rowing machine (steady state)",
+      "en": "Rowing machine (steady state)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "cooldown",
+      "zh": "慢走 · 放松 · Slow walk (cool-down)",
+      "en": "Slow walk (cool-down)",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "thoracic",
+      "zh": "胸椎旋转 · 活动度 · Thoracic rotation",
+      "en": "Thoracic rotation",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "ankle",
+      "zh": "踝关节前移 · 活动度 · Ankle dorsiflexion drill",
+      "en": "Ankle dorsiflexion drill",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "hipmob",
+      "zh": "坐姿髋部旋转 · Seated hip rotation",
+      "en": "Seated hip rotation",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "shoulderMob",
+      "zh": "肩部墙面滑臂 · 活动度 · Shoulder wall slide",
+      "en": "Shoulder wall slide",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "hamStretch",
+      "zh": "坐姿腿后侧伸展 · Seated hamstring stretch",
+      "en": "Seated hamstring stretch",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "calfStretch",
+      "zh": "扶墙小腿伸展 · Standing wall calf stretch",
+      "en": "Standing wall calf stretch",
+      "canonicalDataUnchanged": true
+    },
+    {
+      "id": "hipFlexor",
+      "zh": "半跪姿髋前侧伸展 · Half-kneeling hip-flexor stretch",
+      "en": "Half-kneeling hip-flexor stretch",
+      "canonicalDataUnchanged": true
+    }
+  ],
+  "stateUnchanged": true
+}
