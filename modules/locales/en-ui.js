@@ -1,4 +1,18 @@
 export const englishUI = {
+ "默认计划预览":"Default plan preview",
+ "答案已填写，保存后才完成确认。":"Answers entered. Save to complete the check.",
+ "稍后设置会在本机保存默认计划和已填写的运动前确认草稿；草稿不代表已确认适合运动。":"Setting up later saves the default plan and any pre-exercise check draft on this device. A draft does not confirm that exercise is suitable for you.",
+ "先看看默认计划":"Preview the default plan",
+ "家中徒手 · 每周 3 天 · 每次 15 分钟。仅供浏览，完成运动前确认后才能开始。":"Bodyweight at home · 3 days a week · 15 minutes per session. Preview only; complete the pre-exercise check before starting.",
+ "完成运动前确认":"Complete the pre-exercise check",
+ "开始前，确认身体情况":"Check how you feel before starting",
+ "保存运动前确认":"Save pre-exercise check",
+ "返回计划":"Back to plan",
+ "运动前确认未保存，请重试；尚不能开始训练。":"The pre-exercise check was not saved. Try again before starting a workout.",
+ "默认计划未保存，请重试；当前输入仍保留。":"The default plan was not saved. Try again; your inputs are still here.",
+ "默认计划状态无效":"Invalid default plan status",
+ "运动前确认草稿无效":"Invalid pre-exercise check draft",
+
  "从开始日期依次安排。可填 0，但不能同时为 0。":"Schedule in order from the start date. Either value may be 0, but not both.",
  "训练和休息天数请输入 0–7 的整数，且不能同时为 0。":"Enter whole numbers from 0 to 7 for training and rest days; they cannot both be 0.",
  "训练和休息天数不能同时为 0":"Training and rest days cannot both be 0",
