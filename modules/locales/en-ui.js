@@ -1,4 +1,7 @@
 export const englishUI = {
+ "从开始日期依次安排。可填 0，但不能同时为 0。":"Schedule in order from the start date. Either value may be 0, but not both.",
+ "训练和休息天数请输入 0–7 的整数，且不能同时为 0。":"Enter whole numbers from 0 to 7 for training and rest days; they cannot both be 0.",
+ "训练和休息天数不能同时为 0":"Training and rest days cannot both be 0",
  "单只重量":"per dumbbell",
  "动作了解":"Movement check-in",
  "这个动作你熟悉吗？":"How familiar are you with this movement?",

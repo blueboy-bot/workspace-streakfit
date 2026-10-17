@@ -1,0 +1,46 @@
+[
+  {
+    "version": "0.38.5",
+    "startClicks": 2,
+    "recordSetClicksWithValidPrefill": 1,
+    "firstLoadNeedsManualWeight": false,
+    "setupScreens": 5,
+    "setupQuestions": [
+      "先确认适合开始运动",
+      "你想怎么健身？",
+      "你之前有没有训练过？",
+      "你通常在哪里训练？",
+      "每周能留多少时间？"
+    ],
+    "automatedSetupMs": 867,
+    "resumeClicks": 1,
+    "noOverflow390": true,
+    "startButton": {
+      "height": 62.890625,
+      "bottom": 697
+    },
+    "errors": []
+  },
+  {
+    "version": "0.38.6",
+    "startClicks": 2,
+    "recordSetClicksWithValidPrefill": 1,
+    "firstLoadNeedsManualWeight": false,
+    "setupScreens": 5,
+    "setupQuestions": [
+      "先确认适合开始运动",
+      "你想怎么健身？",
+      "你之前有没有训练过？",
+      "你通常在哪里训练？",
+      "每周能留多少时间？"
+    ],
+    "automatedSetupMs": 948,
+    "resumeClicks": 1,
+    "noOverflow390": true,
+    "startButton": {
+      "height": 62.890625,
+      "bottom": 697
+    },
+    "errors": []
+  }
+]

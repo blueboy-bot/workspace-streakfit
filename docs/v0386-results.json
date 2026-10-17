@@ -1,0 +1,65 @@
+{
+  "rows": [
+    {
+      "lang": "zh",
+      "train": 0,
+      "rest": 7,
+      "saved": true,
+      "historyKept": true,
+      "backupRoundTrip": true,
+      "refresh": true,
+      "offline": true,
+      "xp": 30,
+      "noOverflow390": true
+    },
+    {
+      "lang": "zh",
+      "train": 7,
+      "rest": 0,
+      "saved": true,
+      "historyKept": true,
+      "backupRoundTrip": true,
+      "refresh": true,
+      "offline": true,
+      "xp": 30,
+      "noOverflow390": true
+    },
+    {
+      "lang": "en",
+      "train": 0,
+      "rest": 7,
+      "saved": true,
+      "historyKept": true,
+      "backupRoundTrip": true,
+      "refresh": true,
+      "offline": true,
+      "xp": 30,
+      "noOverflow390": true
+    },
+    {
+      "lang": "en",
+      "train": 7,
+      "rest": 0,
+      "saved": true,
+      "historyKept": true,
+      "backupRoundTrip": true,
+      "refresh": true,
+      "offline": true,
+      "xp": 30,
+      "noOverflow390": true
+    },
+    {
+      "lang": "zh",
+      "rejectBothZero": true,
+      "rejectOutOfRangeAndFractional": true,
+      "oldProfileKept": true
+    },
+    {
+      "lang": "en",
+      "rejectBothZero": true,
+      "rejectOutOfRangeAndFractional": true,
+      "oldProfileKept": true
+    }
+  ],
+  "errors": []
+}
