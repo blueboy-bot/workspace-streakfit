@@ -1,7 +1,7 @@
 // URLs resolve within this app's scope, including a GitHub Pages repository path.
 const SCOPE = self.registration.scope;
 const PREFIX = 'streakfit-shell-' + new URL(SCOPE).pathname + '-';
-const CACHE = PREFIX + 'v0388';
+const CACHE = PREFIX + 'v0389';
 const SHELL = ['./', './index.html', './app.js', './style.css', './foundation.css', './accounts.css', './visual.css', './typography.css', './assets/fonts/streakfit-han.woff2', './assets/fonts/streakfit-ui.woff2', './assets/fonts/streakfit-display.woff2', './visual-refresh.js', './preview-storage.js', './account-config.json',
   './manifest.webmanifest', './assets/icons/icon-192.png', './assets/icons/icon-512.png',
   './modules/localization.js', './modules/locales/en-ui.js', './modules/locales/en-movements.js', './modules/units.js', './modules/daily-overview.js', './modules/visual-planning.js', './assets/exercises/posture-reviewed.png', './assets/exercises/setups-reviewed.png', './assets/exercises/pulldown-reviewed.png', './assets/exercises/equipment-reviewed.png', './assets/exercises/positions-reviewed.png', './assets/exercises/recovery-walk.png', './assets/exercises/teaching-keyframes.png', './assets/exercises/overview-atlas.png', './assets/exercises/overview-atlas-2.png', './assets/exercises/overview-atlas-3.png', './modules/history-editing.js', './modules/rewards.js', './modules/learning.js', './modules/backup.js',

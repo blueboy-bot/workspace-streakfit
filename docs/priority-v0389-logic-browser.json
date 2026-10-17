@@ -1,0 +1,149 @@
+{
+  "rows": [
+    {
+      "lang": "zh",
+      "scenario": "normal",
+      "actualIds": [
+        "bench",
+        "fly",
+        "triceps"
+      ],
+      "previewReadOnly": true,
+      "mainSets": 3,
+      "restUnchanged": true,
+      "localized": true,
+      "persistedAfterReload": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "zh",
+      "scenario": "short",
+      "actualIds": [
+        "bench"
+      ],
+      "previewReadOnly": true,
+      "mainSets": 3,
+      "restUnchanged": true,
+      "localized": true,
+      "persistedAfterReload": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "zh",
+      "scenario": "place",
+      "actualIds": [
+        "pushup"
+      ],
+      "previewReadOnly": true,
+      "mainSets": 3,
+      "restUnchanged": true,
+      "localized": true,
+      "persistedAfterReload": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "zh",
+      "scenario": "good",
+      "actualIds": [
+        "bench",
+        "incline",
+        "fly",
+        "triceps"
+      ],
+      "previewReadOnly": true,
+      "mainSets": 3,
+      "restUnchanged": true,
+      "localized": true,
+      "persistedAfterReload": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "zh",
+      "scenario": "resume",
+      "actualIds": [
+        "bench",
+        "goblet",
+        "row"
+      ],
+      "previewReadOnly": true,
+      "mainSets": 2,
+      "restUnchanged": false,
+      "localized": true,
+      "persistedAfterReload": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "en",
+      "scenario": "normal",
+      "actualIds": [
+        "bench",
+        "fly",
+        "triceps"
+      ],
+      "previewReadOnly": true,
+      "mainSets": 3,
+      "restUnchanged": true,
+      "localized": true,
+      "persistedAfterReload": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "en",
+      "scenario": "short",
+      "actualIds": [
+        "bench"
+      ],
+      "previewReadOnly": true,
+      "mainSets": 3,
+      "restUnchanged": true,
+      "localized": true,
+      "persistedAfterReload": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "en",
+      "scenario": "place",
+      "actualIds": [
+        "pushup"
+      ],
+      "previewReadOnly": true,
+      "mainSets": 3,
+      "restUnchanged": true,
+      "localized": true,
+      "persistedAfterReload": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "en",
+      "scenario": "good",
+      "actualIds": [
+        "bench",
+        "incline",
+        "fly",
+        "triceps"
+      ],
+      "previewReadOnly": true,
+      "mainSets": 3,
+      "restUnchanged": true,
+      "localized": true,
+      "persistedAfterReload": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "en",
+      "scenario": "resume",
+      "actualIds": [
+        "bench",
+        "goblet",
+        "row"
+      ],
+      "previewReadOnly": true,
+      "mainSets": 2,
+      "restUnchanged": false,
+      "localized": true,
+      "persistedAfterReload": true,
+      "noOverflow": true
+    }
+  ],
+  "errors": []
+}

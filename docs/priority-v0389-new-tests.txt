@@ -1,0 +1,22 @@
+✔ normal readiness protects the main press, omits overlapping pressing and caps accessories instead of uniformly cutting sets (58.573213ms)
+✔ time constraint omits whole accessories before cutting the main exercise, and retains rest and order (16.272317ms)
+✔ feeling good or having more time never adds exercises, target sets or repetitions to the visible plan (16.066917ms)
+✔ normal readiness is idempotent, including toggling good and back; longer time does not refill omitted work (23.168946ms)
+✔ vertical and horizontal pulls remain distinct important movement patterns (17.040814ms)
+✔ arm-only sessions retain both elbow flexion and extension instead of treating all curls as main exercises (14.465219ms)
+✔ location changes use only an available member of the same replacement family; unmatched movements are omitted (33.111244ms)
+✔ logged targets and actual work remain exact even when the remaining plan exceeds the available time (20.13308ms)
+✔ remaining-time estimates count unilateral sides and exclude fully completed work (18.76281ms)
+✔ cardio-only budgets preserve warm-up and cool-down and shorten the main duration without inventing work (19.257402ms)
+✔ pain and unsafe screening take precedence over preferences and never recommend main exercises (50.210938ms)
+✔ preview, apply, refresh and backup keep user data and other dates; fatigue never records recovery (36.311483ms)
+✔ priority adjustments obey budget and non-increase invariants across seven plan families (1147.811965ms)
+✔ after a fatigue recovery recommendation, an explicit preview can resume a conservative plan without silently applying it (15.314583ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1598.668008
