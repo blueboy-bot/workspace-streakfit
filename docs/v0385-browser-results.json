@@ -1,0 +1,81 @@
+{
+  "rows": [
+    {
+      "offlineReload": true,
+      "lang": "zh",
+      "oneOptionalQuestion": true,
+      "selfReportOnly": true,
+      "typedDraftPreserved": true,
+      "noRepeatAfterRefresh": true,
+      "controlRequiresNewLoad": true,
+      "oldLogsRetained": true,
+      "actualNewRecordPrefills": true,
+      "completedXP": 30,
+      "weeklyCompleted": 1,
+      "backupRoundTrip": true,
+      "twoInputs": true
+    },
+    {
+      "offlineReload": true,
+      "lang": "en",
+      "oneOptionalQuestion": true,
+      "selfReportOnly": true,
+      "typedDraftPreserved": true,
+      "noRepeatAfterRefresh": true,
+      "controlRequiresNewLoad": true,
+      "oldLogsRetained": true,
+      "actualNewRecordPrefills": true,
+      "completedXP": 30,
+      "weeklyCompleted": 1,
+      "backupRoundTrip": true,
+      "twoInputs": true
+    },
+    {
+      "width": 320,
+      "skipIsUnknown": true,
+      "noOverflow": true
+    },
+    {
+      "width": 390,
+      "skipIsUnknown": true,
+      "noOverflow": true
+    },
+    {
+      "width": 1280,
+      "skipIsUnknown": true,
+      "noOverflow": true
+    },
+    {
+      "lang": "zh",
+      "dayOnlyDefault": true,
+      "rememberRequiresExplicitChoice": true,
+      "scopeRoundTrip": true
+    },
+    {
+      "lang": "en",
+      "dayOnlyDefault": true,
+      "rememberRequiresExplicitChoice": true,
+      "scopeRoundTrip": true
+    },
+    {
+      "status": "review",
+      "safetyNotBypassed": true
+    },
+    {
+      "status": "urgent",
+      "safetyNotBypassed": true
+    },
+    {
+      "lang": "zh",
+      "fiveStepSetup": true,
+      "requiredSafety": true
+    },
+    {
+      "lang": "en",
+      "fiveStepSetup": true,
+      "requiredSafety": true
+    }
+  ],
+  "errors": [],
+  "externalRequests": []
+}

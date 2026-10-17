@@ -420,3 +420,6 @@ button.plan-edit-link {margin:5px auto;text-align:center;}
 .data-privacy h3{font-size:16px;margin:16px 0 6px;}
 .data-privacy p{margin:0 0 12px;overflow-wrap:anywhere;}
 footer [data-open-privacy]{background:transparent;border:0;box-shadow:none;color:inherit;font:inherit;min-height:44px;text-decoration:underline;padding:8px;}
+
+/* Inline, optional movement context; never a blocking questionnaire. */
+.progressive-coach{margin:12px 0;min-width:0}.coach-question{border-left:3px solid var(--accent,#b9ed68);padding:4px 0 8px 12px}.coach-question p{margin:0 0 8px;font-size:16px}.coach-options{display:flex;flex-wrap:wrap;gap:8px}.coach-options button,.coach-preferences button{min-height:44px;font-size:15px;padding:8px 12px}.coach-preferences{margin-top:10px;font-size:15px}.coach-preferences p,.coach-hint{font-size:14px;line-height:1.5}.coach-hint button{min-height:44px}.coach-question small{display:block;margin-top:8px;font-size:13px;line-height:1.5}

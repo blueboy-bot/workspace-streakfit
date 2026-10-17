@@ -12,3 +12,32 @@ const familiar=new Set(Object.values(history).flatMap(d=>d.learnedMoves||[]));
 const eligible=ids.filter(id=>catalog[id]?.cues?.length);
 return eligible.find(id=>!familiar.has(id))||eligible[0]||null;
 }
+
+// Self-reported movement context, never a technical certification or XP source.
+export function validCoachingData(data,catalog){
+ const plain=x=>!!x&&typeof x==='object'&&!Array.isArray(x),date=x=>typeof x==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(x)&&Number.isFinite(Date.parse(x+'T12:00:00')),stamp=x=>typeof x==='string'&&Number.isFinite(Date.parse(x));
+ if(data===undefined)return true;if(!plain(data)||!plain(data.movements||{})||Object.keys(data.movements||{}).length>200)return false;
+ for(const [id,m]of Object.entries(data.movements||{})){if(!catalog[id]||!plain(m)||m.familiarity!==undefined&&!['frequent','learning','new','unknown'].includes(m.familiarity)||m.updatedAt!==undefined&&!stamp(m.updatedAt)||m.source!==undefined&&m.source!=='self'||m.feedback!==undefined&&(!plain(m.feedback)||!['easy','okay','control','unknown'].includes(m.feedback.value)||!stamp(m.feedback.at)||m.feedback.source!=='self'))return false;}
+ const q=data.question;if(q!==undefined&&(!plain(q)||!date(q.day)||!catalog[q.id]||!['familiarity','feedback'].includes(q.kind)||!['open','answered','skipped'].includes(q.status)))return false;return true;
+}
+export function createProgressiveCoach({getState,dateKey,catalog,esc,save,canTrain,enabled=true}){
+ let manual=null;
+ const valid=()=>validCoachingData(getState().coaching,catalog),knowledge=id=>valid()?getState().coaching?.movements?.[id]:undefined;
+ function ensure(){const s=getState();if(!valid())return null;s.coaching ||= {movements:{}};s.coaching.movements ||= {};return s.coaching;}
+ function loadReview(id,last){const m=knowledge(id);const at=m?.feedback?.value==='control'?m.feedback.at:['new','learning'].includes(m?.familiarity)?m.updatedAt:null;return !!at&&(!last?.recordedAt||!Number.isFinite(Date.parse(last.recordedAt))||Date.parse(last.recordedAt)<=Date.parse(at));}
+ function choose(id,hasLogs){const c=ensure();if(!c)return null;const q=c.question;if(q?.day===dateKey())return q.id===id&&q.status==='open'?q:null;if(!knowledge(id)?.familiarity||hasLogs&&!knowledge(id)?.feedback){c.question={day:dateKey(),id,kind:hasLogs?'feedback':'familiarity',status:'open'};save();return c.question;}return null;}
+ function panel(id,hasLogs){if(!enabled||!canTrain()||!catalog[id]||catalog[id].kind==='cardio'||catalog[id].mobility)return '';const q=choose(id,hasLogs),m=knowledge(id),kind=manual?.id===id?manual.kind:q?.kind;
+ const names={frequent:'经常练',learning:'做过但不熟',new:'没做过',unknown:'尚未确认'};
+ const prompt=kind==='familiarity'?`<p>这个动作你熟悉吗？</p><div class="coach-options">${[['frequent','经常练'],['learning','做过但不熟'],['new','没做过']].map(([value,label])=>`<button data-coach-familiarity="${value}" data-movement="${id}">${label}</button>`).join('')}<button data-coach-skip="${id}">暂不回答</button></div>`:kind==='feedback'?`<p>这次动作感觉怎样？</p><div class="coach-options">${[['easy','轻松'],['okay','合适'],['control','难控制'],['unknown','说不准']].map(([value,label])=>`<button data-coach-feedback="${value}" data-movement="${id}">${label}</button>`).join('')}<button data-coach-skip="${id}">暂不回答</button></div><small>热身不计工作组；疼痛或明显不适时停止，并记录身体反馈。</small>`:'';
+ const review=['new','learning'].includes(m?.familiarity)||m?.feedback?.value==='control';return `<div class="progressive-coach" data-coach-movement="${id}">${prompt?`<div class="coach-question" role="group" aria-label="动作了解">${prompt}</div>`:''}${review?`<p class="coach-hint">先看教学、轻负荷试做；难控制时先减轻负荷。<button data-lesson="${id}">查看动作教学</button></p>`:''}<details class="coach-preferences"><summary>动作提示与试做（可选）</summary><p>本人熟悉度：${names[m?.familiarity]||'尚未确认'}</p><button data-coach-open="familiarity" data-movement="${id}">修改熟悉度</button><button data-coach-open="feedback" data-movement="${id}">记录试做感受</button><p class="muted">仅用于这个动作的提示和负重重新确认，不代表技术认证，不增加 XP。</p></details></div>`;
+ }
+ function handle(button){const id=button.dataset.movement||button.dataset.coachSkip;if(!id||!catalog[id]||!canTrain())return false;const c=ensure();if(!c)return false;
+ if(button.dataset.coachOpen){manual={id,kind:button.dataset.coachOpen};return true;}
+ if(button.dataset.coachSkip){if(c.question?.id===id&&c.question.day===dateKey())c.question.status='skipped';manual=null;save();return true;}
+ const familiar=button.dataset.coachFamiliarity,feedback=button.dataset.coachFeedback;
+ if(!['frequent','learning','new','unknown'].includes(familiar)&&!['easy','okay','control','unknown'].includes(feedback))return false;
+ const m=c.movements[id] ||= {};if(familiar){m.familiarity=familiar;m.source='self';m.updatedAt=new Date().toISOString();}if(feedback)m.feedback={value:feedback,at:new Date().toISOString(),source:'self'};
+ if(c.question?.id===id&&c.question.day===dateKey())c.question.status='answered';manual=null;save();return true;
+ }
+ return {panel,handle,knowledge,loadReview};
+}
