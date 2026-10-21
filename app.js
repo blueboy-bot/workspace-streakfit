@@ -1370,10 +1370,12 @@ function overviewGraphic(id){if(commonStrengthArtwork[id])return `<span class="p
 // Other dates reuse today's exact artwork, but never today's progress or start action.
 function illustratedDatedPlan(d,plan){
  const ids=displayedWorkoutIds(d,plan).filter(id=>catalog[id]),progress=overviewProgressMap(ids,d),estimate=estimateOverviewMinutes(ids,progress,d.sessionEntries||plan.entries||[]);
+ const recovery=schedule(workoutDate())!=='training'||lightDay(workoutDate())||d.rest||plan.recoveryRecommended;
+ const emptyMessage=plan.recoveryRecommended?'建议恢复':recovery?'这一天是恢复日 · 不要求训练。':'当前没有训练动作，可检查器械或添加动作。';
  return `<div class="illustrated-today dated-plan"><div class="plan-heading"><p class="eyebrow">${workoutDateKey()} / 计划预览</p><h1>${esc(d.workoutTitle||plan.title)}</h1><p class="plan-meta">${ids.length} 个动作${estimate?` · 约 ${estimate} 分钟`:''}</p><p class="muted">仅预览与调整；到当天再记录。</p></div><div class="plan-list">${ids.map(id=>{
  const p=progress[id],perSide=p.kind==='strength'&&(p.perSide||exerciseTarget(id,d).quality||exerciseTarget(id,d).perSide),target=p.kind==='cardio'?`目标 ${p.goal} 分钟`:p.kind==='mobility'?`目标 ${p.goal} 组 · ${catalog[id].dose||'每侧 6–8 次，缓慢控制'}`:`目标 ${p.goal} 组 × ${p.min}–${p.max} ${perSide?'次 / 侧':'次'}`;
  return `<button class="plan-movement" data-dated-lesson="${id}">${overviewGraphic(id)}<span class="plan-movement-text"><span class="plan-movement-name">${esc(catalog[id].displayName)}</span><span class="plan-movement-target">${esc(target)}</span>${perSide?'<span class="plan-movement-progress">按每侧次数练习，动作稳定优先。</span>':''}</span><span class="plan-chevron" aria-hidden="true">›</span></button>`;
- }).join('')||`<p class="notice">${plan.recoveryRecommended?'建议恢复':'这一天是恢复日'} · 不要求训练。</p>`}</div><div class="plan-start-area"><button class="primary plan-start" data-dated-edit>调整这天的计划</button><button class="plan-edit-link" data-back-route>← 返回我的路线</button></div></div>`;
+ }).join('')||`<p class="notice">${esc(emptyMessage)}</p>`}</div><div class="plan-start-area"><button class="primary plan-start" data-dated-edit>调整这天的计划</button><button class="plan-edit-link" data-back-route>← 返回我的路线</button></div></div>`;
 }
 onContentClick(event=>{
  const button=event.target.closest('button');if(!button)return;
