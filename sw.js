@@ -2,7 +2,7 @@
 const SCOPE = self.registration.scope;
 const PREFIX = 'streakfit-shell-' + new URL(SCOPE).pathname + '-';
 const CACHE = PREFIX + 'v0391-account-first';
-const SHELL = ['./beta-tools.js','./assets/exercises/common-hipthrust.png','./assets/exercises/common-arms.png','./assets/exercises/common-lunge.png','./assets/exercises/common-incline.png','./assets/exercises/common-machines.png','./assets/exercises/common-squat-pullup.png','./assets/exercises/common-legcurl-plank.png','./assets/exercises/common-bird.png','./', './index.html', './app.js', './style.css', './foundation.css', './accounts.css', './visual.css', './typography.css', './assets/fonts/streakfit-han.woff2', './assets/fonts/streakfit-ui.woff2', './assets/fonts/streakfit-display.woff2', './visual-refresh.js', './preview-storage.js', './account-config.json',
+const SHELL = ['./beta-tools.js','./assets/exercises/common-hipthrust.png','./assets/exercises/common-arms.png','./assets/exercises/common-lunge.png','./assets/exercises/common-incline.png','./assets/exercises/common-machines.png','./assets/exercises/common-squat-pullup.png','./assets/exercises/common-legcurl-plank.png','./assets/exercises/common-bird.png','./', './index.html', './app.js?v=0391', './style.css?v=0391', './foundation.css', './accounts.css', './visual.css', './typography.css', './assets/fonts/streakfit-han.woff2', './assets/fonts/streakfit-ui.woff2', './assets/fonts/streakfit-display.woff2', './visual-refresh.js', './preview-storage.js', './account-config.json',
   './manifest.webmanifest', './assets/icons/icon-192.png', './assets/icons/icon-512.png',
   './modules/localization.js', './modules/locales/en-ui.js', './modules/locales/en-movements.js', './modules/units.js', './modules/daily-overview.js', './modules/visual-planning.js', './assets/exercises/posture-reviewed.png', './assets/exercises/setups-reviewed.png', './assets/exercises/pulldown-reviewed.png', './assets/exercises/equipment-reviewed.png', './assets/exercises/positions-reviewed.png', './assets/exercises/recovery-walk.png', './assets/exercises/teaching-keyframes.png', './assets/exercises/overview-atlas.png', './assets/exercises/overview-atlas-2.png', './assets/exercises/overview-atlas-3.png', './modules/history-editing.js', './modules/rewards.js', './modules/learning.js', './modules/backup.js',
   './modules/planning.js', './modules/insights.js', './modules/local-integrity.js',
@@ -11,7 +11,7 @@ const SHELL = ['./beta-tools.js','./assets/exercises/common-hipthrust.png','./as
 self.addEventListener('install', event => {
   // A failed download must not activate an incomplete shell. Updates wait until
   // existing app windows close, rather than interrupting an unfinished input.
-  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)));
+  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL.map(url=>new Request(url,{cache:'reload'})))));
 });
 self.addEventListener('activate', event => {
   event.waitUntil(caches.keys().then(keys => Promise.all(
@@ -25,10 +25,11 @@ self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
   if (url.origin !== self.location.origin) return;
   url.search = ''; url.hash = '';
-  if (!SHELL.includes(url.href)) return;
+  const shellURL=SHELL.find(path=>new URL(path).pathname===url.pathname);
+  if (!shellURL) return;
   // Serve HTML, CSS and modules from the same installed version, also offline.
   event.respondWith(caches.open(CACHE).then(async cache => {
-    const cached = await cache.match(url.href);
+    const cached = await cache.match(shellURL);
     return cached || fetch(event.request);
   }));
 });
