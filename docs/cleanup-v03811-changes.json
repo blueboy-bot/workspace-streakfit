@@ -1,0 +1,79 @@
+{
+  "removedFunctions": [
+    "dailyRouteTitle"
+  ],
+  "removedCss": {
+    "style.css": [
+      "nav svg{width:22px;height:22px}",
+      ".focus-training aside{display:none}",
+      ".session-mode .workout-card>.eyebrow{margin:4px 0}"
+    ],
+    "foundation.css": [
+      ".weekly-growth h3{font-size:21px}",
+      ".comfort-bar .comfort-feedback-button{margin-left:0}"
+    ],
+    "visual.css": [
+      ".header-brand {font-size:17px;}"
+    ]
+  },
+  "files": [
+    {
+      "file": "foundation.css",
+      "before": 5229,
+      "after": 5144
+    },
+    {
+      "file": "sw.js",
+      "before": 3080,
+      "after": 3080
+    },
+    {
+      "file": "app.js",
+      "before": 277803,
+      "after": 277630
+    },
+    {
+      "file": "visual.css",
+      "before": 37106,
+      "after": 37075
+    },
+    {
+      "file": "index.html",
+      "before": 17926,
+      "after": 17926
+    },
+    {
+      "file": "package.json",
+      "before": 256,
+      "after": 256
+    },
+    {
+      "file": "style.css",
+      "before": 42936,
+      "after": 42820
+    },
+    {
+      "file": "使用说明.txt",
+      "before": 2979,
+      "after": 3162
+    },
+    {
+      "file": "README.md",
+      "before": 29473,
+      "after": 29473
+    },
+    {
+      "file": "modules/experience-toolkit.js",
+      "before": 17457,
+      "after": 17425
+    },
+    {
+      "file": "scripts/build-preview.py",
+      "before": 4776,
+      "after": 4776
+    }
+  ],
+  "retainedForExistingTests": {
+    "streak": "test/app.test.mjs:7 calls streak() directly; original function restored, tests unchanged"
+  }
+}

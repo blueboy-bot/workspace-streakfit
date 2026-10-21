@@ -1,0 +1,1518 @@
+{
+  "results": [
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "beginner",
+      "family": "green",
+      "label": "today",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "beginner",
+      "family": "green",
+      "label": "settings",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "beginner",
+      "family": "green",
+      "label": "path",
+      "elements": 440,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "beginner",
+      "family": "green",
+      "label": "learn",
+      "elements": 891,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "beginner",
+      "family": "green",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "beginner",
+      "family": "green",
+      "label": "training",
+      "elements": 419,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "beginner",
+      "family": "green",
+      "label": "paused",
+      "elements": 420,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "today",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "settings",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "path",
+      "elements": 440,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "learn",
+      "elements": 891,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "training",
+      "elements": 419,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "paused",
+      "elements": 420,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "experienced",
+      "family": "green",
+      "label": "today",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "experienced",
+      "family": "green",
+      "label": "settings",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "experienced",
+      "family": "green",
+      "label": "path",
+      "elements": 434,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "experienced",
+      "family": "green",
+      "label": "learn",
+      "elements": 1056,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "experienced",
+      "family": "green",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "experienced",
+      "family": "green",
+      "label": "training",
+      "elements": 421,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "experienced",
+      "family": "green",
+      "label": "paused",
+      "elements": 422,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "today",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "settings",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "path",
+      "elements": 434,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "learn",
+      "elements": 1056,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "training",
+      "elements": 421,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "paused",
+      "elements": 422,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "beginner",
+      "family": "green",
+      "label": "today",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "beginner",
+      "family": "green",
+      "label": "settings",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "beginner",
+      "family": "green",
+      "label": "path",
+      "elements": 440,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "beginner",
+      "family": "green",
+      "label": "learn",
+      "elements": 891,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "beginner",
+      "family": "green",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "beginner",
+      "family": "green",
+      "label": "training",
+      "elements": 419,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "beginner",
+      "family": "green",
+      "label": "paused",
+      "elements": 420,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "today",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "settings",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "path",
+      "elements": 440,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "learn",
+      "elements": 891,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "training",
+      "elements": 419,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "paused",
+      "elements": 420,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "experienced",
+      "family": "green",
+      "label": "today",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "experienced",
+      "family": "green",
+      "label": "settings",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "experienced",
+      "family": "green",
+      "label": "path",
+      "elements": 434,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "experienced",
+      "family": "green",
+      "label": "learn",
+      "elements": 1056,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "experienced",
+      "family": "green",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "experienced",
+      "family": "green",
+      "label": "training",
+      "elements": 421,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "experienced",
+      "family": "green",
+      "label": "paused",
+      "elements": 422,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "today",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "settings",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "path",
+      "elements": 434,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "learn",
+      "elements": 1056,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "training",
+      "elements": 421,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "paused",
+      "elements": 422,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "green",
+      "label": "today",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "green",
+      "label": "settings",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "green",
+      "label": "path",
+      "elements": 440,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "green",
+      "label": "learn",
+      "elements": 891,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "green",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "green",
+      "label": "training",
+      "elements": 419,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "green",
+      "label": "paused",
+      "elements": 420,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "today",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "settings",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "path",
+      "elements": 440,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "learn",
+      "elements": 891,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "training",
+      "elements": 419,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "paused",
+      "elements": 420,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "green",
+      "label": "today",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "green",
+      "label": "settings",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "green",
+      "label": "path",
+      "elements": 434,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "green",
+      "label": "learn",
+      "elements": 1056,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "green",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "green",
+      "label": "training",
+      "elements": 421,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "green",
+      "label": "paused",
+      "elements": 422,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "today",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "settings",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "path",
+      "elements": 434,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "learn",
+      "elements": 1056,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "training",
+      "elements": 421,
+      "equal": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "paused",
+      "elements": 422,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "beginner",
+      "family": "green",
+      "label": "today",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "beginner",
+      "family": "green",
+      "label": "settings",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "beginner",
+      "family": "green",
+      "label": "path",
+      "elements": 440,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "beginner",
+      "family": "green",
+      "label": "learn",
+      "elements": 891,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "beginner",
+      "family": "green",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "beginner",
+      "family": "green",
+      "label": "training",
+      "elements": 419,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "beginner",
+      "family": "green",
+      "label": "paused",
+      "elements": 420,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "today",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "settings",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "path",
+      "elements": 440,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "learn",
+      "elements": 891,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "training",
+      "elements": 419,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "paused",
+      "elements": 420,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "experienced",
+      "family": "green",
+      "label": "today",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "experienced",
+      "family": "green",
+      "label": "settings",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "experienced",
+      "family": "green",
+      "label": "path",
+      "elements": 434,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "experienced",
+      "family": "green",
+      "label": "learn",
+      "elements": 1056,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "experienced",
+      "family": "green",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "experienced",
+      "family": "green",
+      "label": "training",
+      "elements": 421,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "experienced",
+      "family": "green",
+      "label": "paused",
+      "elements": 422,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "today",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "settings",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "path",
+      "elements": 434,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "learn",
+      "elements": 1056,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "training",
+      "elements": 421,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "paused",
+      "elements": 422,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "beginner",
+      "family": "green",
+      "label": "today",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "beginner",
+      "family": "green",
+      "label": "settings",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "beginner",
+      "family": "green",
+      "label": "path",
+      "elements": 440,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "beginner",
+      "family": "green",
+      "label": "learn",
+      "elements": 891,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "beginner",
+      "family": "green",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "beginner",
+      "family": "green",
+      "label": "training",
+      "elements": 419,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "beginner",
+      "family": "green",
+      "label": "paused",
+      "elements": 420,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "today",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "settings",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "path",
+      "elements": 440,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "learn",
+      "elements": 891,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "training",
+      "elements": 419,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "paused",
+      "elements": 420,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "experienced",
+      "family": "green",
+      "label": "today",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "experienced",
+      "family": "green",
+      "label": "settings",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "experienced",
+      "family": "green",
+      "label": "path",
+      "elements": 434,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "experienced",
+      "family": "green",
+      "label": "learn",
+      "elements": 1056,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "experienced",
+      "family": "green",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "experienced",
+      "family": "green",
+      "label": "training",
+      "elements": 421,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "experienced",
+      "family": "green",
+      "label": "paused",
+      "elements": 422,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "today",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "settings",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "path",
+      "elements": 434,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "learn",
+      "elements": 1056,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "training",
+      "elements": 421,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "paused",
+      "elements": 422,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "green",
+      "label": "today",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "green",
+      "label": "settings",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "green",
+      "label": "path",
+      "elements": 440,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "green",
+      "label": "learn",
+      "elements": 891,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "green",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "green",
+      "label": "training",
+      "elements": 419,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "green",
+      "label": "paused",
+      "elements": 420,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "today",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "settings",
+      "elements": 501,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "path",
+      "elements": 440,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "learn",
+      "elements": 891,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "training",
+      "elements": 419,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "beginner",
+      "family": "blue",
+      "label": "paused",
+      "elements": 420,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "green",
+      "label": "today",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "green",
+      "label": "settings",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "green",
+      "label": "path",
+      "elements": 434,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "green",
+      "label": "learn",
+      "elements": 1056,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "green",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "green",
+      "label": "training",
+      "elements": 421,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "green",
+      "label": "paused",
+      "elements": 422,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "today",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "settings",
+      "elements": 476,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "path",
+      "elements": 434,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "learn",
+      "elements": 1056,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "progress",
+      "elements": 633,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "training",
+      "elements": 421,
+      "equal": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "mode": "experienced",
+      "family": "blue",
+      "label": "paused",
+      "elements": 422,
+      "equal": true
+    }
+  ],
+  "errors": [],
+  "diffs": []
+}

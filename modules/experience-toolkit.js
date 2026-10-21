@@ -1,5 +1,5 @@
-import {uiText,currentLanguage} from './localization.js';
-import {behaviourAchievements,monthCells,trainingCSV,bestPerformance} from './insights.js';
+import {uiText} from './localization.js';
+import {behaviourAchievements,monthCells,trainingCSV} from './insights.js';
 export function createExperienceToolkit({getState,getLoadError,runtime,catalog,recordingMode,restSeconds=()=>90,updateRestClock,dateKey,dayIndex,esc,save,render,trained,schedule,beginnerExperience,formatMass,weeklyGrowth,openWorkoutDay,content,today,onContentClick,onContentChange}){
 const state=new Proxy({}, {get:(_,key)=>getState()[key],set:(_,key,value)=>{getState()[key]=value;return true;},deleteProperty:(_,key)=>{delete getState()[key];return true;}});
 

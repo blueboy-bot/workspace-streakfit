@@ -6,7 +6,6 @@ initializeLanguage();
 import {initialWorkspaceKey,startAccounts} from './modules/accounts-ui.js';
 import {isolateLocalRecords} from './modules/local-integrity.js';
 import {createExperienceToolkit} from './modules/experience-toolkit.js';
-import {behaviourAchievements,monthCells,trainingCSV,bestPerformance} from './modules/insights.js';
 import {parseBackupData} from './modules/backup.js';
 import {cycleSchedule,generatePrescription} from './modules/planning.js';
 import {toKilograms,fromKilograms} from './modules/units.js';
@@ -882,7 +881,6 @@ const dialog=document.querySelector('#dialog');const setup=document.querySelecto
 function refreshScheduleForm(){const frequency=document.querySelector('#setup-frequency');if(frequency)frequency.hidden=setup.elements.scheduleMode?.value==='cycle';const split=setup.elements.namedItem('split');if(split?.closest)split.closest('label').hidden=['提升心肺与耐力','灵活性与日常活动能力'].includes(setup.elements.namedItem('goal').value);const cycle=setup.elements.scheduleMode?.value==='cycle';document.querySelector('#weekly-settings').hidden=cycle;document.querySelector('#cycle-settings').hidden=!cycle;}
 setup.addEventListener('change',e=>{if(e.target.name==='days'){setup.elements.scheduleMode.value='weekly';const count=Number(e.target.value),start=(new Date().getDay()+6)%7;document.querySelectorAll('[name=weekdays]').forEach(input=>input.checked=!state.onboarded&&Number.isInteger(count)&&count>=1&&count<=7&&Array.from({length:count},(_,i)=>(start+Math.floor(i*7/count))%7).includes(Number(input.value)));refreshScheduleForm();updateSetupSummary();}if(e.target.name==='scheduleMode'||e.target.name==='goal')refreshScheduleForm();if(e.target.name==='cyclePreset'&&e.target.value!=='custom'){const [train,rest]=e.target.value.split('/');setup.elements.trainDays.value=train;setup.elements.restDays.value=rest;}if(e.target.name==='trainDays'||e.target.name==='restDays')setup.elements.cyclePreset.value='custom';});
 setup.addEventListener('click',e=>{const b=e.target.closest('[data-weekdays]');if(!b)return;document.querySelectorAll('[name=weekdays]').forEach(input=>input.checked=b.dataset.weekdays==='work'?Number(input.value)<5:b.dataset.weekdays==='weekend'?Number(input.value)>=5:false);});
-function dailyRouteTitle(plan){return today().workoutTitle||plan.title;}
 // View state is local to this workspace and date. Browsing never writes a workout.
 let routeWeekIndex=null,routeSelectedDate=null,routeViewContext='';
 function routeBlockStart(){const start=new Date(anchorDate()+'T12:00:00'),elapsed=dayIndex(new Date())-dayIndex(start);start.setDate(start.getDate()+Math.max(0,Math.floor(elapsed/28))*28);return start;}

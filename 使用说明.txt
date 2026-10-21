@@ -1,8 +1,11 @@
-STREAKFIT v0.38.10 — 动作名称统一
+本轮 v0.38.11：清理一个无调用函数、六处未使用导入、六组完全重复样式。
+界面与功能保持一致；记录、备份、安全筛查及旧版本保留。
+
+STREAKFIT v0.38.11 — 动作名称统一
 日期：2026-10-17（America/Toronto）。基准v0.38.9，另存新版本，旧版保留。
 
-中文（手机/电脑）：https://blueboy-bot.github.io/workspace-streakfit/preview/visual-v0.38.10/?lang=zh
-English: https://blueboy-bot.github.io/workspace-streakfit/preview/visual-v0.38.10/en/?lang=en
+中文（手机/电脑）：https://blueboy-bot.github.io/workspace-streakfit/preview/visual-v0.38.11/?lang=zh
+English: https://blueboy-bot.github.io/workspace-streakfit/preview/visual-v0.38.11/en/?lang=en
 
 本轮：全部138个动作统一名称格式，覆盖基础动作、握法变体、心肺与活动度。
 中文版：中文名 · English name，例如“卧推 · Barbell bench press”“哑铃杯式深蹲 · Dumbbell goblet squat”。

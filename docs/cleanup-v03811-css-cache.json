@@ -1,0 +1,246 @@
+{
+  "pages": [
+    {
+      "page": "today",
+      "overflow": false,
+      "mealInputs": 3,
+      "sleepInputs": 1,
+      "legacySets": 0
+    },
+    {
+      "page": "path",
+      "overflow": false,
+      "mealInputs": 0,
+      "sleepInputs": 0,
+      "legacySets": 0
+    },
+    {
+      "page": "learn",
+      "overflow": false,
+      "mealInputs": 0,
+      "sleepInputs": 0,
+      "legacySets": 0
+    },
+    {
+      "page": "progress",
+      "overflow": false,
+      "mealInputs": 3,
+      "sleepInputs": 0,
+      "legacySets": 0
+    },
+    {
+      "page": "today",
+      "overflow": false,
+      "mealInputs": 3,
+      "sleepInputs": 1,
+      "legacySets": 0
+    },
+    {
+      "page": "path",
+      "overflow": false,
+      "mealInputs": 0,
+      "sleepInputs": 0,
+      "legacySets": 0
+    },
+    {
+      "page": "learn",
+      "overflow": false,
+      "mealInputs": 0,
+      "sleepInputs": 0,
+      "legacySets": 0
+    },
+    {
+      "page": "progress",
+      "overflow": false,
+      "mealInputs": 3,
+      "sleepInputs": 0,
+      "legacySets": 0
+    }
+  ],
+  "errors": [],
+  "requestCount": 37,
+  "allRequestsSameOrigin": true,
+  "state": {
+    "cacheKeys": [
+      "streakfit-shell-/visual-v0.38.11-source/-v03811"
+    ],
+    "registration": {
+      "scope": "http://127.0.0.1:8891/visual-v0.38.11-source/",
+      "active": "http://127.0.0.1:8891/visual-v0.38.11-source/sw.js"
+    },
+    "loaded": [
+      {
+        "name": "/visual-v0.38.11-source/style.css",
+        "bytes": 42820
+      },
+      {
+        "name": "/visual-v0.38.11-source/foundation.css",
+        "bytes": 5144
+      },
+      {
+        "name": "/visual-v0.38.11-source/accounts.css",
+        "bytes": 999
+      },
+      {
+        "name": "/visual-v0.38.11-source/visual.css",
+        "bytes": 37075
+      },
+      {
+        "name": "/visual-v0.38.11-source/typography.css",
+        "bytes": 2777
+      },
+      {
+        "name": "/visual-v0.38.11-source/assets/fonts/streakfit-ui.woff2",
+        "bytes": 80864
+      },
+      {
+        "name": "/visual-v0.38.11-source/assets/fonts/streakfit-han.woff2",
+        "bytes": 1958848
+      },
+      {
+        "name": "/visual-v0.38.11-source/preview-storage.js",
+        "bytes": 789
+      },
+      {
+        "name": "/visual-v0.38.11-source/visual-refresh.js",
+        "bytes": 3429
+      },
+      {
+        "name": "/visual-v0.38.11-source/app.js",
+        "bytes": 277630
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/visual-planning.js",
+        "bytes": 7914
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/daily-overview.js",
+        "bytes": 4041
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/localization.js",
+        "bytes": 7690
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/accounts-ui.js",
+        "bytes": 17165
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/local-integrity.js",
+        "bytes": 4397
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/experience-toolkit.js",
+        "bytes": 17425
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/backup.js",
+        "bytes": 7533
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/planning.js",
+        "bytes": 2713
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/units.js",
+        "bytes": 223
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/rewards.js",
+        "bytes": 254
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/history-editing.js",
+        "bytes": 3452
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/learning.js",
+        "bytes": 7281
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/locales/en-ui.js",
+        "bytes": 117176
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/locales/en-movements.js",
+        "bytes": 70422
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/insights.js",
+        "bytes": 3541
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/account-rules.js",
+        "bytes": 2232
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/account-client.js",
+        "bytes": 5145
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/account-data.js",
+        "bytes": 618
+      },
+      {
+        "name": "/visual-v0.38.11-source/modules/account-sync.js",
+        "bytes": 2454
+      },
+      {
+        "name": "/visual-v0.38.11-source/assets/exercises/overview-atlas-2.png",
+        "bytes": 1817831
+      },
+      {
+        "name": "/visual-v0.38.11-source/assets/fonts/streakfit-display.woff2",
+        "bytes": 31116
+      },
+      {
+        "name": "/visual-v0.38.11-source/account-config.json",
+        "bytes": 153
+      },
+      {
+        "name": "/visual-v0.38.11-source/assets/icons/icon-192.png",
+        "bytes": 874
+      },
+      {
+        "name": "/visual-v0.38.11-source/assets/exercises/recovery-walk.png",
+        "bytes": 1601187
+      },
+      {
+        "name": "/visual-v0.38.11-source/assets/exercises/overview-atlas-3.png",
+        "bytes": 1600980
+      },
+      {
+        "name": "/visual-v0.38.11-source/assets/exercises/overview-atlas.png",
+        "bytes": 1729725
+      }
+    ],
+    "storageKeys": [
+      "streakfit-visual-v034:streakfit-theme-profile",
+      "streakfit-visual-v034:streakfit-view-mode",
+      "streakfit-visual-v034:streakfit-theme",
+      "streakfit-visual-v034:streakfit-v1"
+    ],
+    "warningVisible": false
+  },
+  "duplicateCss": {
+    "ruleCount": 1136,
+    "exactDuplicateGroups": []
+  },
+  "activationPolicy": {
+    "input": [
+      "streakfit-shell-/preview/visual-v0.38.10/-v0389",
+      "streakfit-shell-/preview/visual-v0.38.10/-v03811",
+      "streakfit-shell-/preview/visual-v0.38.9/-v0389",
+      "unrelated-cache"
+    ],
+    "deleted": [
+      "streakfit-shell-/preview/visual-v0.38.10/-v0389"
+    ],
+    "kept": [
+      "streakfit-shell-/preview/visual-v0.38.10/-v03811",
+      "streakfit-shell-/preview/visual-v0.38.9/-v0389",
+      "unrelated-cache"
+    ],
+    "test": "Actual sw.js activate handler in isolated VM; not a measurement of user devices"
+  }
+}

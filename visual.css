@@ -170,7 +170,7 @@ footer {font-size:12px; line-height:1.6; opacity:.8;}
 }
 @media(max-width:350px) {
   main {padding-left:16px; padding-right:16px;}
-  .header-brand {font-size:17px;}
+  
   .header-brand svg {width:16px; height:16px; margin-right:2px;}
   .header-actions {gap:6px;}
   .header-actions .theme-picker select,html[lang="en"] .header-actions .theme-picker select {min-width:64px; max-width:102px;}

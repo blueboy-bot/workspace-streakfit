@@ -1,0 +1,594 @@
+(node:3719) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/streakfit-preview/visual-v0.38.11-source/modules/account-rules.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/streakfit-preview/visual-v0.38.11-source/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ password boundaries and exact repeated-digit rule (1.45812ms)
+✔ identity uses normalized email or international phone; browser refuses private keys (0.536105ms)
+✔ workspace is account-bound; cloud snapshots omit photos and do not mutate originals (0.322104ms)
+✔ registration gateway validates password before issuing any ticket or provider request (15.786836ms)
+✔ valid signup passes only one-use ticket to provider and returns no secrets or session (6.02397ms)
+✔ gateway rejects unknown origins; password update authenticates user before forwarding (1.399593ms)
+✔ client uses verification endpoints, stores no passwords, and refuses another user write (1.38448ms)
+✔ offline writes remain pending and recover after reload (0.509045ms)
+✔ revision conflict keeps local edits and blocks repeat overwrite until explicit choice (0.410006ms)
+✔ edits during upload remain pending; closed account cannot apply a late reply (0.24004ms)
+✔ quota error and failed conflict read never claim synchronization success (0.187331ms)
+✔ JSONB key ordering cannot cause a false conflict; a clean baseline detects local edits (0.173481ms)
+✔ a late token refresh cannot restore a logged-out account session (0.506281ms)
+✔ training, recovery and repeated completions cannot inflate XP (30.74442ms)
+✔ saved progress survives reload and names are escaped (17.127311ms)
+✔ corrupt browser storage falls back to a usable empty profile (5.897421ms)
+✔ weekly schedule includes recovery days at each supported frequency (6.839745ms)
+✖ progression uses actual prior sets and requires every set to be easy (7.288069ms)
+✔ tracked completion uses the recorded workout snapshot (6.291132ms)
+✔ path, workout, lessons and tracking render without recorded history (28.356771ms)
+✔ equipment choices depend on location and preserve only compatible selections (7.604494ms)
+✔ plans require all real equipment instead of assuming a gym has everything (7.506278ms)
+✔ all weekly frequencies from one to seven have the requested number of days (7.639647ms)
+✔ legacy seven-day plans include lighter activity days (6.316559ms)
+✔ submitting onboarding with an optional empty name opens the generated route (11.599247ms)
+✔ generate button directly creates the route without native form submission (11.167567ms)
+✔ every major muscle group has a bodyweight fallback and valid teaching cues (19.015688ms)
+✔ long full-body workouts cover all groups without unavailable equipment (8.384606ms)
+✔ four-day plans alternate upper and lower body (7.76119ms)
+✔ deadlift requires experience and barbell, with optional platform (6.468057ms)
+✔ date cycles keep their pattern across weeks and months (9.399692ms)
+✔ explicit weekdays win over frequency and never force extra recovery days (6.536701ms)
+✔ split progression continues after cycle rest days without weekly reset (7.489842ms)
+✔ hypertrophy workouts recommend four sets of eight to twelve reps (7.549933ms)
+✔ custom targets persist and control completion without changing set records (15.077032ms)
+✔ progression never exceeds the configured repetition ceiling (7.3682ms)
+✔ full-body workout action limits scale with available minutes including exactly sixty (8.053951ms)
+✔ changing from 120 to 60 minutes reduces an unstarted workout to six actions (37.219297ms)
+✔ logged workouts stay intact when available time changes (21.495504ms)
+✔ bench can be replaced by dumbbell bench without losing recorded sets (7.164024ms)
+✔ replacement rejects wrong muscle group, missing equipment and duplicates (7.357223ms)
+✔ remembered replacement applies to future plans when equipment supports it (7.204614ms)
+✔ equipped 120 minute push day covers multiple patterns per muscle (7.289593ms)
+✔ push sessions scale with time and respect novice and equipment limits (6.886816ms)
+✔ adding and removing updates the workout without duplicates or lost records (8.4268ms)
+✔ empty workouts do not grant training XP and can be rebuilt (8.843056ms)
+✔ cardio goal overrides strength split and uses timed activities (15.215689ms)
+✔ cardio completion and XP require the actual duration and survive goal changes (7.725626ms)
+✔ strength main and accessory exercises use different targets and rest (9.743238ms)
+✔ screenshot configuration has upper/lower templates across Monday Wednesday Saturday Sunday (10.515082ms)
+(node:3721) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/streakfit-preview/visual-v0.38.11-source/modules/daily-overview.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/streakfit-preview/visual-v0.38.11-source/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ reviewed art is assigned only to exact catalog IDs with valid individual frame coordinates (25.383085ms)
+✔ ambiguous pulldown sequence stays withdrawn while its initial setup is labelled (6.994799ms)
+✔ single arm rowing uses its D-handle picture without changing records or other variation thumbnails (8.786801ms)
+✔ reviewed illustrations are cached for offline use and new cue is translated (0.447302ms)
+✔ all previously illustrated movements have an audit outcome and unapproved leg curl is visibly withheld (7.722272ms)
+✔ non-uniform panel crops preserve proportions and full selected bounds (6.94217ms)
+✔ storage failures stay visible and retries clear error (37.765377ms)
+✔ past days show actual snapshots and cannot mutate logs or create drafts (6.849921ms)
+✔ legacy history targets do not follow current global targets (8.52027ms)
+✔ backup validation and failed restore preserve existing state (8.104075ms)
+✔ automatic arms volume is capped while custom targets are preserved with warning (9.099552ms)
+✔ past uncompleted drafts do not count as actual load or specialty exposure (7.808501ms)
+✔ one-action arm plan explains incomplete coverage and recent volume reduces recommendations (7.56132ms)
+✔ video integration accepts HTTPS metadata and escapes displayed sources (12.745408ms)
+✔ replacing a strength main keeps it before technical assistance and preserves manual order (59.82619ms)
+✔ future recovery day explains light activity instead of exposing ineffective specialty controls (31.662569ms)
+✔ daily preview is read only and filters by temporary time and location (32.068218ms)
+✖ normal readiness reduces sets and obvious fatigue proposes recovery without credit (11.678771ms)
+✔ applying location or fatigue retains logged sets and other dates, and restricts add choices (16.525147ms)
+(node:3760) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/streakfit-preview/visual-v0.38.11-source/modules/daily-overview.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/streakfit-preview/visual-v0.38.11-source/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ mixed overview reports actual sets, minutes and mobility separately without mutating data (1.72359ms)
+✔ resume retains unfinished chosen exercise, skips completed or removed choices and handles empty plans (0.161123ms)
+✔ titles distinguish cardio, mobility and actual muscle focus; unsupported art never guesses another variation (0.170907ms)
+✔ today imports an arrived planned date before presenting exactly the same target as the recorder (31.118502ms)
+✔ defer creates a saved conservative default preview, never clearance or XP (40.94912ms)
+✔ skipped safety answers persist as a draft and never count as submitted confirmation (44.671322ms)
+✔ partial or complete reported risks remain blocked when setup is deferred (66.534569ms)
+✔ only explicit complete confirmation enables training, preserving plan and real logs (7.066506ms)
+✔ confirming no screening symptoms does not clear a recorded pain stop (6.790101ms)
+✔ quota failures leave onboarding and safety uncommitted, while preserving original records (12.429904ms)
+✔ default preview metadata round trips with old backups still accepted and bad drafts rejected (9.489307ms)
+✔ an existing onboarded plan is never reset by deferral (6.15657ms)
+✔ equipment details stay in advanced settings (1.456068ms)
+✔ gym setup cannot silently generate bodyweight plan without equipment confirmation (27.465813ms)
+✔ gym chest plan uses available weights and bodyweight plan avoids duplicate difficulty versions (9.064038ms)
+✔ gym defaults contain common weights while home remains bodyweight (7.070924ms)
+✔ variants preserve equipment, safe substitution targets and distinct histories (36.246686ms)
+✔ multiple variants can be manually combined without duplicate IDs or losing records (15.205594ms)
+✔ experienced back emphases choose different targets while novices and returning users stay basic (93.353259ms)
+✔ single-side variants retain units and count fresh records accurately (7.466607ms)
+✔ back emphasis strategies stay within time, experience and equipment limits (154.398813ms)
+✔ automatic back emphasis alternates across training dates and manual emphasis wins (8.3605ms)
+✔ same gym hypertrophy profile has experience-specific main choice and volume (44.910852ms)
+✔ limited equipment still preserves valid shared fundamentals and different volume (20.019076ms)
+✔ explicit target overrides remain authoritative across experience levels (6.945174ms)
+✔ all goals and durations remain valid under every experience level (93.069253ms)
+✔ cable fly substitutes use chest isolation rather than presses or push-ups (38.556095ms)
+✔ fly substitutions honor equipment, duplicates and absent alternatives (22.126452ms)
+✔ isolation substitutions work in both directions and preserve original logs (8.213829ms)
+✔ lower day offers lower muscle priorities and applying them changes first block (194.415182ms)
+✔ all split days expose only relevant options and stale selections become balanced (35.365322ms)
+✔ screening requires explicit answers and routes uncertainty to review (25.544337ms)
+✔ pain and urgent discomfort pause recommendation and do not complete training (8.238898ms)
+✔ participation rewards cap at 55 and habits or heavier weights add no XP (7.950945ms)
+✔ legacy historical XP remains unchanged when policy activates (6.208358ms)
+✔ weekly growth counts training, not rest, excludes future records and stages do not depend on XP (7.093888ms)
+✔ ten foundation movements share start error regression and stopping standards (7.093837ms)
+✔ urgent feedback remains paused after a general good-state report (6.507967ms)
+✔ deferring setup does not bypass screening before training (6.143861ms)
+✔ previous-day pain persists through plan editing and is cleared only by updated feedback (7.172035ms)
+✔ weekly recommendation follows calendar schedule and respects manual override (6.281287ms)
+✔ course progression requires correct understanding, persists independently of XP and never gates training (7.982373ms)
+✔ manual pause toggles recording permission without changing plans logs or XP (6.879215ms)
+✔ manual pause freezes an active rest but does not resume a previously paused timer (6.537732ms)
+✔ continue cannot dismiss pain or urgent feedback and discomfort clears held rest (7.958247ms)
+✔ pause survives storage reload is scoped to the day and cannot alter a preview (22.108214ms)
+✖ future day opens its own cycle and does not create completion history (77.172531ms)
+✖ future edits stay local to that date and survive reload (113.136661ms)
+✔ rest day preview contains no assigned heavy workout but allows local additions (47.855116ms)
+✔ today adopts a prepared plan without overwriting nutrition (6.711653ms)
+(node:3829) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/streakfit-preview/visual-v0.38.11-source/modules/insights.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/streakfit-preview/visual-v0.38.11-source/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ achievements reward participation learning and planned recovery independently of weight (6.013675ms)
+✔ calendar lays out Monday-first months including leap years (0.309836ms)
+✔ CSV preserves dumbbell basis and prevents spreadsheet formula injection (0.365289ms)
+✔ best records keep variants and old mass semantics separate (0.169925ms)
+✔ backup reminders require confirmation and personal records do not award XP (26.345801ms)
+✔ new backup validation rejects injected photo URLs and malformed body measurements (8.623456ms)
+✔ awarded achievements persist independently of weekly reset (13.819271ms)
+✔ CSV preserves unreported effort rather than inventing moderate effort (0.226049ms)
+✔ guided mode constrains experienced profile planning without changing personal experience (35.08539ms)
+✔ switching refreshes unstarted snapshots and preserves sessions with logged work (12.092859ms)
+✔ guided plan choices respect equipment and time across goals and splits (26.714584ms)
+(node:3842) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/streakfit-preview/visual-v0.38.11-source/modules/history-editing.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/streakfit-preview/visual-v0.38.11-source/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ editing a historical set preserves date-related metadata, targets, other sets and source snapshot (2.368618ms)
+✔ unchanged converted display does not round canonical load or rewrite entered unit (0.258619ms)
+✔ changed pounds convert once, while legacy dumbbell convention is not inferred (0.113972ms)
+✔ add and remove historical sets do not award extra XP or invent a current workout timestamp (0.136866ms)
+✔ bodyweight, cardio and mobility remain separate record types (0.200502ms)
+✔ blank or invalid values, future dates and duplicate source references leave input unchanged (0.35258ms)
+✔ saving an unchanged historical record does not create a revision or freeze rewards (0.103466ms)
+✔ hammer curls follow conventional curls and isolations follow compounds (26.874836ms)
+✔ saved and manually added actions use the same order without changing logs (21.938369ms)
+✔ deadlift day keeps main first and prescriptions distinguish main from assistance (102.462375ms)
+✔ lift specialties stay equipment aware and respect budgets across experience splits phases (95.362269ms)
+✔ lift choices exist only for strength and future choices do not grant completion (74.687207ms)
+(node:3858) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/streakfit-preview/visual-v0.38.11-source/modules/localization.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/streakfit-preview/visual-v0.38.11-source/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ every catalog movement and cue has an English translation with stable IDs (24.885717ms)
+✔ dynamic safety, load and schedule labels keep their numbers and units (2.976872ms)
+✔ CSV translation does not translate user authored setup or change canonical mass (0.298248ms)
+✔ language changes display without touching canonical records (6.130389ms)
+✔ onboarding questions and weekly workout counts translate as complete sentences (0.125449ms)
+✔ manual order overrides automatic grouping and persists without touching logs (62.054027ms)
+✔ future reorder is local and supports added and removed moves (36.19643ms)
+✔ kg/lb conversion preserves canonical mass and bodyweight across preferences (32.825656ms)
+✔ dumbbell per-hand semantics stay distinct from kg/lb preference (6.664392ms)
+✔ age and mass metadata roundtrip, old backups default to kg, invalid metadata is rejected (19.074356ms)
+✔ missing load remains unknown; recorded zero assistance remains explicit (27.259544ms)
+✔ drafts are isolated by day, movement, unit and account and never award XP (7.48194ms)
+✔ editing does not show premature pause; pain never invites a resume (6.201306ms)
+✔ removing an exercise leaves recorded sets and undo can restore its position (7.766418ms)
+✔ only incomplete target sets start another automatic rest; extra sets remain recordable (50.488051ms)
+✔ ordinary feedback cannot silently resume a manually paused session (7.263402ms)
+✔ returning users reassess recent old loads but can reuse newly confirmed logs (9.631581ms)
+✔ empty initialized days are not activity; explicit zero sleep remains a real entry (6.395989ms)
+✔ sixty minute mobility budget covers seven regions with movement-specific doses (44.924663ms)
+✔ mobility completion requires actual groups and cannot grant XP with no work (7.670054ms)
+✔ future old edits can be regenerated without deleting the previous draft (23.094196ms)
+✖ first-time questions put personal measurements after training preferences (26.872793ms)
+✔ display-unit changes preserve an unstarted customized day (10.881577ms)
+✔ interleaved saved workouts group muscles and respect daily focus (40.806065ms)
+✔ every generated muscle occupies one continuous block across splits and preferences (204.975677ms)
+✖ same upper-body pattern rotates heavy volume and light exposures (30.250167ms)
+✖ fourth calendar week deloads targets and custom values remain priority (7.649392ms)
+✔ beginner stays in technical adaptation rather than experienced heavy loading (6.618303ms)
+✖ cardio stays stable without completion evidence and deloads within budget (6.923572ms)
+✖ route displays all 28 days and a deload phase (11.006766ms)
+✔ automatic cycle split uses actual average frequency for repeated exposure (7.047919ms)
+✔ all goals and time budgets remain valid through deload and a new block (56.056126ms)
+(node:3920) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/streakfit-preview/visual-v0.38.11-source/modules/local-integrity.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/streakfit-preview/visual-v0.38.11-source/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ meal quota failure returns false retains pending input and retry never duplicates a meal (27.641297ms)
+✔ target discomfort and plan adjustments propagate persistence failure (9.387764ms)
+✔ startup isolates nonarray exercise lists and null logs preserves valid logs and original disk data (9.625682ms)
+✔ isolation never mutates source and keeps pain feedback when just its note is malformed (0.408494ms)
+✔ repair saves an untouched raw archive and never replaces original when archive cannot save (15.294257ms)
+✔ identical input selects distinct strength technique and hypertrophy muscle work (65.018211ms)
+✔ each powerlift day has one main and at most one technical variation with functional assistance (7.47457ms)
+✔ novice returning and limited kit do not get advanced paused barbell variations (11.936524ms)
+✔ single-muscle strength request keeps that muscle with only one advanced variation (8.97921ms)
+✔ technical variation history uses its own load and explicit cues rather than main weight (73.940886ms)
+✔ strength variations respect time deload equipment and non-repetition across dates (55.106391ms)
+✔ focus changes allocation and requested action count caps actual plans (30.989187ms)
+✔ all preferences respect time equipment uniqueness and split (434.205489ms)
+✔ daily choices stay local and preserve completed groups (168.930005ms)
+✔ normal readiness protects the main press, omits overlapping pressing and caps accessories instead of uniformly cutting sets (31.96271ms)
+✔ time constraint omits whole accessories before cutting the main exercise, and retains rest and order (8.693109ms)
+✔ feeling good or having more time never adds exercises, target sets or repetitions to the visible plan (8.344948ms)
+✔ normal readiness is idempotent, including toggling good and back; longer time does not refill omitted work (12.921392ms)
+✔ vertical and horizontal pulls remain distinct important movement patterns (8.890977ms)
+✔ arm-only sessions retain both elbow flexion and extension instead of treating all curls as main exercises (10.315407ms)
+✔ location changes use only an available member of the same replacement family; unmatched movements are omitted (16.467841ms)
+✔ logged targets and actual work remain exact even when the remaining plan exceeds the available time (10.376128ms)
+✔ remaining-time estimates count unilateral sides and exclude fully completed work (8.217747ms)
+✔ cardio-only budgets preserve warm-up and cool-down and shorten the main duration without inventing work (8.532549ms)
+✔ pain and unsafe screening take precedence over preferences and never recommend main exercises (33.940931ms)
+✔ preview, apply, refresh and backup keep user data and other dates; fatigue never records recovery (15.471644ms)
+✔ priority adjustments obey budget and non-increase invariants across seven plan families (449.708186ms)
+✔ after a fatigue recovery recommendation, an explicit preview can resume a conservative plan without silently applying it (7.547881ms)
+(node:3948) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/streakfit-preview/visual-v0.38.11-source/modules/learning.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/streakfit-preview/visual-v0.38.11-source/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ one automatic ordinary prompt per day, skipped is unknown and refresh cannot repeat it (1.180744ms)
+✔ self-report is movement specific and never creates working logs, XP or experience (0.278408ms)
+✔ practice difficulty requires reconfirmation, while easy feedback never increases any target (0.225218ms)
+✔ blocked safety cannot answer questions or record practice feedback (0.081362ms)
+✔ backup validation accepts old data but rejects malformed new movement metadata (29.135952ms)
+✔ today-only target edits preserve the default and future targets, actual volume stays recorded (9.360032ms)
+✔ day-only edits cannot seed a new automatic long-term target (7.012055ms)
+✔ successive remembered replacements update earlier aliases without deleting logs (7.402441ms)
+✔ recording units distinguish bodyweight, bands and weights (26.403323ms)
+✔ recommended set count never caps actual strength logs or increases XP (27.627822ms)
+(node:3962) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/streakfit-preview/visual-v0.38.11-source/modules/experience-toolkit.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/streakfit-preview/visual-v0.38.11-source/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ real toolkit module starts rest through injected clock and default daily reminder time is saved (0.816736ms)
+✔ rest pause freezes time, resumes the remaining duration, and survives panel rendering (0.423756ms)
+✔ adjusting paused rest keeps it paused, while reset and a new rest clear the pause (0.409535ms)
+✔ a two-week gap clears old load suggestions without changing records or targets (50.302259ms)
+✔ recent actual values remain convenient and are not silently increased (12.808296ms)
+✔ newly recorded actual values can be reused after restarting (8.555763ms)
+✔ recovery check-ins do not pretend that strength training resumed (6.652326ms)
+✔ assistance machines require the actual assistance setting after a gap (8.892829ms)
+✔ old pain continues to block starting; updated feedback does not auto-resume (10.8727ms)
+✔ no recorded training means first use, not a claimed break (12.266563ms)
+✔ short full-body plans cover push pull squat hinge across two weeks, even with actual logs (159.393516ms)
+✔ short fallback applies experience options and keeps remembered replacements (8.805838ms)
+✔ health time increase preserves strength coverage instead of stealing its budget (14.56282ms)
+✔ returning lifter remains in adaptation until six completed sessions (8.576554ms)
+✔ weighted back specialty does not spend capacity on prone W and includes loaded pulling (8.751218ms)
+✔ both A and B shoulder days honor recent chest load (14.894978ms)
+✔ capacity exhaustion presents recovery with honest cause (42.02285ms)
+✔ control actions use side-specific quality guidance and no RIR (32.170851ms)
+✖ today summary uses actual targets, restoration status and mobility units (11.848545ms)
+✔ cardio mode honors choice and progresses only from easy actual completion (7.297726ms)
+✔ daily preview explains realizable counts without saving preferences (46.935175ms)
+✔ partial or distant old sessions do not end returning adaptation (7.65441ms)
+✔ upper sessions prioritize chest and back and alternate shoulder emphasis (32.538694ms)
+✔ strength preserves bench while hypertrophy rotates pressing variants (8.990726ms)
+✔ novice keeps a variant for two exposures and explicit replacements win (8.8127ms)
+✔ first use has five screens and does not collect age or body weight (46.588955ms)
+✔ uncertain screening pauses training and excludes prescribed light activity (9.731923ms)
+✔ old sensitive records remain hidden until explicit opt-in and are never rewarded (14.25649ms)
+✔ old backup without opt-ins retains legacy data and starts with no sensitive inputs (12.647866ms)
+✔ sleep and body logs do not change readiness or training targets (7.067559ms)
+✔ plan save with no personal inputs preserves legacy profile and does not create body logs (8.930325ms)
+✔ A shoulder day uses three regional movements and nine work sets (38.187603ms)
+✔ B prioritizes side and rear and omits pressing after enough recorded chest work (53.483013ms)
+✖ time experience equipment and deload preserve valid shoulder doses (15.00229ms)
+✔ returning mixed-session completion never recursively generates another plan (52.437114ms)
+✔ mixed workout snapshot captures strength, cardio and mobility recommendations (8.071496ms)
+✔ stale load and ambiguous old dumbbell load are historical references, not prescriptions (8.942023ms)
+✔ core specialization is available on upper days and stays date-local (48.911271ms)
+✔ hardlift alternatives do not repeat the RDL family and platform is optional (6.458475ms)
+✔ reset removes custom targets, nutrition persists without changing rewards, unit volume is explicit (13.487205ms)
+✔ single muscle and arms plans generate only chosen muscles and allow manual additions (224.256702ms)
+✔ new library has valid metadata and enforces equipment combinations (7.859438ms)
+✔ isolated plans stay valid across time experience equipment goal and muscle (105.111674ms)
+✔ every catalog movement has an explicit substitution family or intentionally no alternative (30.691141ms)
+✔ substitutions preserve shoulder heads, back movement and elbow targets (42.101348ms)
+✔ lower body, core, technical variants and mobility do not cross purposes (47.400934ms)
+(node:4025) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/streakfit-preview/visual-v0.38.11-source/modules/visual-planning.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/streakfit-preview/visual-v0.38.11-source/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ candidate preserves logged sets, minutes, original targets and other day data without mutating the source (1.122034ms)
+✔ preview has no canonical changes and Apply uses the exact shown IDs and targets (32.116139ms)
+✔ saved UI and recorder use the same reduced unlogged target, not the old snapshot (7.34091ms)
+✔ stale proposals cannot overwrite a set recorded after preview (6.833328ms)
+✔ a quota failure rolls back the candidate and permits an exact retry (7.798786ms)
+✔ fatigue recommendation retains previous logs but never records recovery or completion (7.413558ms)
+✔ progress pips are decorative, bounded and based only on actual completed sets (0.274111ms)
+✔ new comparison and keyframe strings translate completely, including progress numerators (5.276901ms)
+(node:4032) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/streakfit-preview/visual-v0.38.11-source/modules/localization.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/streakfit-preview/visual-v0.38.11-source/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ route reads saved dates and exact variant artwork without writing plans, logs or XP (29.766822ms)
+✔ only real completed targets create completed status; recovery does not fabricate a workout (7.342052ms)
+✔ future edited recovery dates preserve their chosen movement and zero actions stay empty (6.64144ms)
+✔ cardio minutes and mobility groups use their date targets, not today recorder context (7.237313ms)
+✔ the active rolling four week block includes today even after the first 28 days (7.463833ms)
+✔ history uses saved targets and extra sets remain actual progress without changing XP (7.038416ms)
+✔ legacy history without exerciseIds shows only its actual movements, not a regenerated plan (6.333898ms)
+✔ route dates translate completely and the view does not require tutorial text (2.808005ms)
+(node:4033) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/streakfit-preview/visual-v0.38.11-source/modules/learning.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/streakfit-preview/visual-v0.38.11-source/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ daily knowledge follows actual movements and avoids already read items (1.476116ms)
+✔ daily movement panel teaches selected movement and recovery switches to learning route (25.773098ms)
+✔ weekly report separates reading from practice and stores adjustment reasons (13.085493ms)
+✔ new learning and adjustment fields survive backup validation while malformed fields fail (7.512958ms)
+(node:4046) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/streakfit-preview/visual-v0.38.11-source/modules/planning.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/streakfit-preview/visual-v0.38.11-source/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ all valid cycle pairs including one zero preserve dates and ordinals across months (67.721547ms)
+✔ zero is explicit, legacy missing fields retain defaults, malformed cycles fail closed (6.924284ms)
+✔ plan save accepts one zero, preserves actual logs and rejects invalid input without replacing profile (89.26832ms)
+✔ zero cycle backups round trip and invalid pairs cannot overwrite old saved state (29.313192ms)
+✔ weekly suggestions and plan frequency respect both zero boundaries without automatic XP (12.908407ms)
+✔ zero rest days never bypass screening or pain stops (32.188739ms)
+ℹ tests 284
+ℹ suites 0
+ℹ pass 273
+ℹ fail 11
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3190.331016
+
+✖ failing tests:
+
+test at test/app.test.mjs:10:1
+✖ progression uses actual prior sets and requires every set to be easy (7.288069ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  8 !== 9
+  
+      at TestContext.<anonymous> (file:///workspace/streakfit-preview/visual-v0.38.11-source/test/app.test.mjs:10:282)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 8,
+    expected: 9,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/daily-adjustment.test.mjs:4:1
+✖ normal readiness reduces sets and obvious fatigue proposes recovery without credit (11.678771ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  4 !== 3
+  
+      at TestContext.<anonymous> (file:///workspace/streakfit-preview/visual-v0.38.11-source/test/daily-adjustment.test.mjs:4:334)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 4,
+    expected: 3,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/future.test.mjs:3:1
+✖ future day opens its own cycle and does not create completion history (77.172531ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///workspace/streakfit-preview/visual-v0.38.11-source/test/future.test.mjs:3:263)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/future.test.mjs:4:1
+✖ future edits stay local to that date and survive reload (113.136661ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  4 !== 2
+  
+      at TestContext.<anonymous> (file:///workspace/streakfit-preview/visual-v0.38.11-source/test/future.test.mjs:4:769)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 4,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/onboarding-wizard.test.mjs:2:1
+✖ first-time questions put personal measurements after training preferences (26.872793ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   'safety',
+      'goal',
+  -   'safety',
+      'experience',
+      'place',
+      'minutes',
+  -   'review'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/streakfit-preview/visual-v0.38.11-source/test/onboarding-wizard.test.mjs:2:108)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'safety', 'goal', 'experience', 'place', 'minutes' ],
+    expected: [ 'goal', 'safety', 'experience', 'place', 'minutes', 'review' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test/periodization.test.mjs:3:1
+✖ same upper-body pattern rotates heavy volume and light exposures (30.250167ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      '重训练',
+  +   '重训练',
+  +   '重训练'
+  -   '训练量',
+  -   '技术轻练'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/streakfit-preview/visual-v0.38.11-source/test/periodization.test.mjs:3:255)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '重训练', '重训练', '重训练' ],
+    expected: [ '重训练', '训练量', '技术轻练' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test/periodization.test.mjs:4:1
+✖ fourth calendar week deloads targets and custom values remain priority (7.649392ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///workspace/streakfit-preview/visual-v0.38.11-source/test/periodization.test.mjs:4:341)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/periodization.test.mjs:6:1
+✖ cardio stays stable without completion evidence and deloads within budget (6.923572ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      12,
+      12,
+      12,
+  +   12
+  -   7
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/streakfit-preview/visual-v0.38.11-source/test/periodization.test.mjs:7:8)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 12, 12, 12, 12 ],
+    expected: [ 12, 12, 12, 7 ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test/periodization.test.mjs:8:1
+✖ route displays all 28 days and a deload phase (11.006766ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 28
+  
+      at TestContext.<anonymous> (file:///workspace/streakfit-preview/visual-v0.38.11-source/test/periodization.test.mjs:8:151)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 28,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/review-v016.test.mjs:13:1
+✖ today summary uses actual targets, restoration status and mobility units (11.848545ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(a.run("content.innerHTML.includes('力量工作组')"))
+  
+      at TestContext.<anonymous> (file:///workspace/streakfit-preview/visual-v0.38.11-source/test/review-v016.test.mjs:13:302)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/shoulder.test.mjs:6:1
+✖ time experience equipment and deload preserve valid shoulder doses (15.00229ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(a.run("Object.values(prescription(new Date(2026,9,26)).targets).every(t=>t.sets<=2)"))
+  
+      at TestContext.<anonymous> (file:///workspace/streakfit-preview/visual-v0.38.11-source/test/shoulder.test.mjs:6:577)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

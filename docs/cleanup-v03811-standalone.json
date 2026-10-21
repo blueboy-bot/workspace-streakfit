@@ -1,0 +1,18 @@
+[
+  {
+    "lang": "zh",
+    "setup": true,
+    "record": true,
+    "refresh": true,
+    "noOverflow": true,
+    "errors": []
+  },
+  {
+    "lang": "en",
+    "setup": true,
+    "record": true,
+    "refresh": true,
+    "noOverflow": true,
+    "errors": []
+  }
+]

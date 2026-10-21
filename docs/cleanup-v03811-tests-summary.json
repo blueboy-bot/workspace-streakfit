@@ -1,0 +1,24 @@
+{
+  "exit": 1,
+  "sameFailureNames": true,
+  "failures": [
+    "cardio stays stable without completion evidence and deloads within budget",
+    "first-time questions put personal measurements after training preferences",
+    "fourth calendar week deloads targets and custom values remain priority",
+    "future day opens its own cycle and does not create completion history",
+    "future edits stay local to that date and survive reload",
+    "normal readiness reduces sets and obvious fatigue proposes recovery without credit",
+    "progression uses actual prior sets and requires every set to be easy",
+    "route displays all 28 days and a deload phase",
+    "same upper-body pattern rotates heavy volume and light exposures",
+    "time experience equipment and deload preserve valid shoulder doses",
+    "today summary uses actual targets, restoration status and mobility units"
+  ],
+  "totals": [
+    "\u2139 tests 284",
+    "\u2139 pass 273",
+    "\u2139 fail 11",
+    "\u2139 cancelled 0",
+    "\u2139 skipped 0"
+  ]
+}
