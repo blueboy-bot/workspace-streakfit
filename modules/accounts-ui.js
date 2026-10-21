@@ -12,13 +12,13 @@ export function accountCloudData(value) {
   const data=structuredClone(value);delete data.progressPhotos;
   return data;
 }
-export function startAccounts({readState,replaceState,validate,freshState,onWorkspaceReady=()=>{},storage=localStorage,configPromise}) {
+export function startAccounts({readState,replaceState,validate,freshState,onWorkspaceReady=()=>{},needsWelcome=()=>false,storage=localStorage,configPromise}) {
   const escape=value=>String(value||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const button=document.createElement('button');button.id='account-entry';button.textContent='登录 / 注册';
-  (document.querySelector('#appearance-account')||document.querySelector('.header-actions'))?.append(button);
+  (document.querySelector('.header-actions')||document.querySelector('#appearance-account'))?.append(button);
   const dialog=document.createElement('dialog');dialog.id='account-dialog';dialog.className='account-dialog';document.body.append(dialog);
   let client=null,sync=null,activeUid=null,workspaceKey=initialWorkspaceKey(storage),view='login',channel='email',identity='',recovery=false,busy=false,available=false;
-  let status='本机保存',statusDetail='',remoteConflict=null,debounce=null,resendUntil=0,configError='',generation=0;
+  let status='本机保存',statusDetail='',remoteConflict=null,debounce=null,resendUntil=0,configError='',generation=0,phoneEnabled=true,registrationEnabled=true;
   const describe=()=>client?.user?.email||client?.user?.phone||'登录 / 注册';
   function updateStatus(kind,message='') {
     status={synced:'已同步到账号',pending:'已保存本机 · 待同步',conflict:'其他设备有更新',offline:'离线使用本机记录'}[kind]||kind;
@@ -31,7 +31,8 @@ export function startAccounts({readState,replaceState,validate,freshState,onWork
     const error='<p id="account-feedback" role="alert"></p>';
     const syncText=escape(status+(statusDetail?'：'+statusDetail:''));
     let html='';
-    if(!available&&['login','register','recover'].includes(view))html='<h2>账号同步尚未开放</h2><p>当前版本无需注册即可使用。记录保存在当前浏览器，换设备请通过JSON备份迁移。</p><p>邮箱、短信验证和跨设备同步尚未开放。详情见“偏好与设置 → 数据与隐私”。</p>';
+    if(view==='welcome')html=`<p class="eyebrow">WELCOME TO STREAKFIT</p><h2>每天，按自己的节奏前进</h2><p>注册账号，让训练记录随你保存。</p><button class="primary account-welcome-action" data-account="register" ${available?'':'disabled'}>注册账号</button><button class="account-welcome-action" data-account="login" ${available?'':'disabled'}>已有账号，登录</button><button class="account-welcome-action" data-account="guest">先以游客身份体验</button><p class="muted">游客记录仅保存在这台设备。${available?'注册或登录后可同步到账号。':'账号服务暂不可用，可先体验游客模式。'}</p>`;
+    else if(!available&&['login','register','recover'].includes(view))html='<h2>账号同步尚未开放</h2><p>当前版本无需注册即可使用。记录保存在当前浏览器，换设备请通过JSON备份迁移。</p><p>邮箱、短信验证和跨设备同步尚未开放。详情见“偏好与设置 → 数据与隐私”。</p>';
     else if(view==='loading')html='<h2>正在读取账号记录…</h2><p>本机记录与账号空间独立保存，请稍候。</p>';
     else if(view==='home')html=`<h2>我的账号</h2><p class="account-identity">${escape(describe())}</p><p data-sync-status role="status">${syncText}</p><p class="muted">资料、计划、训练与学习记录随账号同步。进度照保留在本机，JSON备份包含照片。</p><button class="primary" data-account="sync">立即同步</button><button data-account="change">修改密码</button><button data-account="logout">退出此设备</button>${error}`;
     else if(view==='import')html=`<h2>从哪里开始？</h2><p>这个账号还没有云端记录。是否把当前设备的访客记录导入账号？访客原始记录会保留。</p><button class="primary" data-account="import">导入本机访客记录</button><button data-account="fresh">建立新的账号计划</button>${error}`;
@@ -39,12 +40,12 @@ export function startAccounts({readState,replaceState,validate,freshState,onWork
     else if(view==='logout')html=`<h2>还有记录未同步</h2><p>退出后，未同步记录仍保留在这个账号的本机空间。再次登录同一账号后可继续同步。</p><button class="primary" data-account="sync">先同步</button><button data-account="logout-confirm">保留本机记录并退出</button>${error}`;
     else if(view==='verify')html=`<h2>验证${channel==='email'?'邮箱':'手机号'}</h2><p>请输入发送至 ${escape(identity)} 的6位验证码。</p><form data-account-form="verify"><label>验证码<input name="code" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required></label><button class="primary" type="submit">验证并继续</button></form><button data-account="resend">重新发送验证码</button><button data-account="login">返回登录</button>${error}`;
     else if(view==='reset')html=`<h2>设置新密码</h2><form data-account-form="reset">${formPassword(true)}<button class="primary" type="submit">保存新密码</button></form>${error}`;
-    else html=`<h2>${view==='register'?'创建账号':view==='recover'?'找回密码':'欢迎回来'}</h2><p>用邮箱或手机号登录，训练记录随账号保存。</p><div class="account-tabs"><button data-account="email" aria-pressed="${channel==='email'}">邮箱</button><button data-account="phone" aria-pressed="${channel==='phone'}">手机号</button></div><form data-account-form="${view}"><label>${channel==='email'?'邮箱地址':'手机号（含国家区号）'}<input name="identity" type="${channel==='email'?'email':'tel'}" autocomplete="username" value="${escape(identity)}" required maxlength="254" placeholder="${channel==='email'?'you@example.com':'+1 或 +86 开头'}"></label>${view==='recover'?'':formPassword(view==='register')}<button class="primary" type="submit" ${available?'':'disabled'}>${view==='register'?'注册并发送验证码':view==='recover'?'发送找回验证码':'登录'}</button></form>${error}${!available?`<p class="notice">${escape(configError||'账号服务尚未开通；当前记录继续保存在本机。')}</p>`:''}<div class="account-tabs"><button data-account="${view==='register'?'login':'register'}">${view==='register'?'已有账号，去登录':'创建账号'}</button><button data-account="recover">忘记密码</button></div>`;
-    dialog.innerHTML=closeButton+html;
+    else html=`<h2>${view==='register'?'创建账号':view==='recover'?'找回密码':'欢迎回来'}</h2>${view==='register'&&!registrationEnabled?'<p class="notice">邮箱注册暂未开放。你可以先以游客身份体验，已有账号仍可登录。</p>':''}<p>${phoneEnabled?'用邮箱或手机号登录':'用邮箱登录'}，训练记录随账号保存。</p><div class="account-tabs"><button data-account="email" aria-pressed="${channel==='email'}">邮箱</button>${phoneEnabled?`<button data-account="phone" aria-pressed="${channel==='phone'}">手机号</button>`:''}</div><form data-account-form="${view}"><label>${channel==='email'?'邮箱地址':'手机号（含国家区号）'}<input name="identity" type="${channel==='email'?'email':'tel'}" autocomplete="username" value="${escape(identity)}" required maxlength="254" placeholder="${channel==='email'?'you@example.com':'+1 或 +86 开头'}"></label>${view==='recover'?'':formPassword(view==='register')}<button class="primary" type="submit" ${available&&(view!=='register'||registrationEnabled)?'':'disabled'}>${view==='register'?'注册并发送验证码':view==='recover'?'发送找回验证码':'登录'}</button></form>${error}${!available?`<p class="notice">${escape(configError||'账号服务尚未开通；当前记录继续保存在本机。')}</p>`:''}<div class="account-tabs"><button data-account="${view==='register'?'login':'register'}">${view==='register'?'已有账号，去登录':'创建账号'}</button><button data-account="recover">忘记密码</button></div>`;
+    dialog.innerHTML=(view==='welcome'?'':closeButton)+html;
   }
   function show(next){view=next;display();if(!dialog.open)dialog.showModal();}
   function feedback(text){const el=dialog.querySelector('#account-feedback');if(el)el.textContent=text;}
-  function setBusy(value){busy=value;dialog.querySelectorAll('button,input').forEach(el=>el.disabled=value);if(!value&&!available)dialog.querySelector('[type=submit]')?.setAttribute('disabled','');}
+  function setBusy(value){busy=value;dialog.querySelectorAll('button,input').forEach(el=>el.disabled=value);if(!value&&(!available||view==='register'&&!registrationEnabled))dialog.querySelector('[type=submit]')?.setAttribute('disabled','');}
   function checkpoint(uid,reason,value){storage.setItem('streakfit-account-backup:'+uid+':'+reason,JSON.stringify(value));}
   function install(value,uid){
     const key=uid?'streakfit-v1:'+uid:'streakfit-v1';storage.setItem(key,JSON.stringify(value));
@@ -66,7 +67,7 @@ export function startAccounts({readState,replaceState,validate,freshState,onWork
     sync?.close();sync=createAccountSync({uid,storage,read:()=>client.readData(uid),write:(revision,data)=>client.writeData(revision,data,uid),onStatus:updateStatus,onConflict:resolveConflict});
   }
   async function bindUser({cached=false}={}){
-    show('loading');const uid=client.user.id,epoch=++generation;createSync(uid);activeUid=uid;
+    storage.setItem('streakfit-account-intro-v1','1');show('loading');const uid=client.user.id,epoch=++generation;createSync(uid);activeUid=uid;
     let local=null;
     try{
       try{local=localValue('streakfit-v1:'+uid);}catch{checkpoint(uid,'corrupt-original',storage.getItem('streakfit-v1:'+uid));}
@@ -96,10 +97,10 @@ export function startAccounts({readState,replaceState,validate,freshState,onWork
     await client.logout();const guest=localValue('streakfit-v1')||freshState();install(guest,null);updateStatus('本机保存');dialog.close();onWorkspaceReady();
   }
   button.addEventListener('click',()=>{show(remoteConflict?'conflict':activeUid?'home':'login');});
-  dialog.addEventListener('cancel',event=>{if(busy||['loading','import','conflict'].includes(view))event.preventDefault();});
+  dialog.addEventListener('cancel',event=>{if(busy||['welcome','loading','import','conflict'].includes(view))event.preventDefault();});
   dialog.addEventListener('input',event=>{if(event.target.name==='password'){const el=dialog.querySelector('[data-password-feedback]');if(el)el.textContent=passwordIssues(event.target.value).join('；')||'密码格式符合要求';}});
   dialog.addEventListener('submit',async event=>{
-    event.preventDefault();if(busy||!available)return;const form=event.target,fields=new FormData(form),kind=form.dataset.accountForm;
+    event.preventDefault();if(busy||!available||view==='register'&&!registrationEnabled)return;const form=event.target,fields=new FormData(form),kind=form.dataset.accountForm;
     try{
       if(['login','register','recover'].includes(kind))identity=accountIdentity(fields.get('identity'),channel).value;
       if(kind==='register'||kind==='reset'){const issues=passwordIssues(fields.get('password'));if(issues.length)throw Error(issues.join('；'));if(fields.get('password')!==fields.get('confirm'))throw Error('两次输入的密码不一致。');}
@@ -113,7 +114,8 @@ export function startAccounts({readState,replaceState,validate,freshState,onWork
   });
   dialog.addEventListener('click',async event=>{
     const action=event.target.closest('[data-account]')?.dataset.account;if(!action||busy)return;
-    if(action==='close'){if(['loading','import','conflict'].includes(view)){feedback('请先选择数据来源，或退出账号后继续使用访客记录。');return;}dialog.close();return;}
+    if(action==='guest'){storage.setItem('streakfit-account-intro-v1','1');dialog.close();onWorkspaceReady();return;}
+    if(action==='close'){if(['loading','import','conflict'].includes(view)){feedback('请先选择数据来源，或退出账号后继续使用访客记录。');return;}if(!activeUid&&needsWelcome()){show('welcome');return;}dialog.close();return;}
     if(['login','register','recover'].includes(action)){show(action);return;}
     if(action==='email'||action==='phone'){channel=action;identity='';display();return;}
     if(action==='show-password'){dialog.querySelectorAll('input[name=password],input[name=confirm]').forEach(el=>el.type=el.type==='password'?'text':'password');event.target.textContent=dialog.querySelector('input[name=password]').type==='text'?'隐藏密码':'显示密码';return;}
@@ -137,11 +139,13 @@ export function startAccounts({readState,replaceState,validate,freshState,onWork
   globalThis.addEventListener('storage',event=>{if(event.key==='streakfit-account-session-v1'||event.key===workspaceKey){generation++;sync?.close();sync=null;clearTimeout(debounce);location.reload();}});
   async function bootstrap(){
     try{
-      const raw=await configPromise;publicAccountConfig(raw);available=raw?.enabled===true;
+      const raw=await configPromise;publicAccountConfig(raw);available=raw?.enabled===true;phoneEnabled=raw?.phoneEnabled!==false;registrationEnabled=raw?.registrationEnabled!==false;
       client=createAccountClient(raw,{storage});
       if(available&&client.user){try{await client.restore();await bindUser({cached:true});}catch(error){if(error.status===401){await logout();}else{activeUid=client.user.id;createSync(activeUid);sync.attach(accountCloudData(readState()));updateStatus('offline',error.message);}}}
     }catch(error){configError='账号服务尚未连接：'+error.message;}
     updateStatus(status,statusDetail);
+    if(!activeUid&&needsWelcome())show('welcome');
+    else if(!activeUid&&!dialog.open)onWorkspaceReady();
     if(dialog.open&&['login','register','recover'].includes(view)){
       display();
     }
