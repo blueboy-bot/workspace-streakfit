@@ -1,0 +1,83 @@
+{
+  "rows": [
+    {
+      "lang": "zh",
+      "width": 320,
+      "exactThumbnails": 11,
+      "classroomImages": 11,
+      "checkedPairs": 11,
+      "modalSwitching": true,
+      "cropRatiosPreserved": true,
+      "historyUnchanged": true,
+      "offlineImages": true,
+      "noOverflow": true,
+      "safetyTextScrollableWithoutNavOverlap": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "exactThumbnails": 11,
+      "classroomImages": 11,
+      "checkedPairs": 11,
+      "modalSwitching": true,
+      "cropRatiosPreserved": true,
+      "historyUnchanged": true,
+      "offlineImages": true,
+      "noOverflow": true,
+      "safetyTextScrollableWithoutNavOverlap": true
+    },
+    {
+      "lang": "zh",
+      "width": 1280,
+      "exactThumbnails": 11,
+      "classroomImages": 11,
+      "checkedPairs": 11,
+      "modalSwitching": true,
+      "cropRatiosPreserved": true,
+      "historyUnchanged": true,
+      "offlineImages": true,
+      "noOverflow": true,
+      "safetyTextScrollableWithoutNavOverlap": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "exactThumbnails": 11,
+      "classroomImages": 11,
+      "checkedPairs": 11,
+      "modalSwitching": true,
+      "cropRatiosPreserved": true,
+      "historyUnchanged": true,
+      "offlineImages": true,
+      "noOverflow": true,
+      "safetyTextScrollableWithoutNavOverlap": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "exactThumbnails": 11,
+      "classroomImages": 11,
+      "checkedPairs": 11,
+      "modalSwitching": true,
+      "cropRatiosPreserved": true,
+      "historyUnchanged": true,
+      "offlineImages": true,
+      "noOverflow": true,
+      "safetyTextScrollableWithoutNavOverlap": true
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "exactThumbnails": 11,
+      "classroomImages": 11,
+      "checkedPairs": 11,
+      "modalSwitching": true,
+      "cropRatiosPreserved": true,
+      "historyUnchanged": true,
+      "offlineImages": true,
+      "noOverflow": true,
+      "safetyTextScrollableWithoutNavOverlap": true
+    }
+  ],
+  "errors": []
+}

@@ -39,5 +39,5 @@ export const reviewedArtwork={
  rdl:{file:'overview-atlas-2.png',columns:4,rows:4,column:1,row:2,crop:{x:316,y:630,width:309,height:277,sourceWidth:1254,sourceHeight:1254}}
 };
 
-// Retired ambiguous machine drawing; use a labelled neutral placeholder.
-export const withheldArtwork=['legcurl','bench','incline'];
+// Bench press still has unresolved visual issues; keep its labelled placeholder.
+export const withheldArtwork=['bench'];

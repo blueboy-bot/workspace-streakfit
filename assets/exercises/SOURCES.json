@@ -58,5 +58,27 @@
     "use": "Selected exact-ID crops: hip thrust endpoint, bird-dog setup, single-dumbbell supported calf raise, push-up upper position. Independently rechecked after crop fixes; not full motion approval.",
     "review": "Static positions only; no fixed-angle prescription or professional certification.",
     "status": "Independent AI visual/cue review completed; unsupported images/pairs withheld, no professional certification"
+  },
+  "commonStrengthV03812": {
+    "files": [
+      "common-arms.png",
+      "common-bird.png",
+      "common-hipthrust.png",
+      "common-incline.png",
+      "common-legcurl-plank.png",
+      "common-lunge.png",
+      "common-machines.png",
+      "common-squat-pullup.png"
+    ],
+    "source": "Original OpenAI image generation and corrective edits, 2026-10-21",
+    "mapping": "modules/visual-planning.js:commonStrengthArtwork, exact IDs only; no grip or equipment inheritance",
+    "layout": "Per-frame absolute pixel rectangles; nonuniform panel boundaries preserved, no source image resizing or distortion",
+    "purpose": "Eleven illustrative start/end position pairs; not video, complete motion analysis or professional certification",
+    "review": "REVIEW-common-v03812.json",
+    "excludedCells": {
+      "common-incline.png": "entire upper row",
+      "common-lunge.png": "entire upper row (bird dog candidate superseded)",
+      "common-legcurl-plank.png": "entire lower row: plank candidate has no exact current catalog ID and is not mapped"
+    }
   }
 }

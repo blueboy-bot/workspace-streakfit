@@ -1,0 +1,16 @@
+{
+  "total": 138,
+  "commonPairs": 11,
+  "allKeyframePairs": 12,
+  "counts": {
+    "movementStill": 39,
+    "setupOnly": 2,
+    "withheld": 1,
+    "generic": 96
+  },
+  "catalogUnchanged": true,
+  "initialStateUnchanged": true,
+  "noVariantInheritance": true,
+  "boundsAndTranslations": true,
+  "benchStillWithheld": true
+}

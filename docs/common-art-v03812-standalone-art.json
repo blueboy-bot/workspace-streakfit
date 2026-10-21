@@ -1,0 +1,14 @@
+[
+  {
+    "lang": "zh",
+    "embeddedPairs": 11,
+    "noOverflow": true,
+    "errors": []
+  },
+  {
+    "lang": "en",
+    "embeddedPairs": 11,
+    "noOverflow": true,
+    "errors": []
+  }
+]

@@ -438,3 +438,9 @@ footer [data-open-privacy]{background:transparent;border:0;box-shadow:none;color
 @media(max-width:650px){
  .illustrated-today:has(.daily-adjustment[open]) .plan-start-area{position:static;margin:16px 0;padding:0;border:0;border-radius:0;box-shadow:none;background:transparent;}
 }
+
+/* Exact common-movement artwork; preserve sprite proportions in classroom cards. */
+.illustration-common{padding:0;display:grid;place-items:center;height:190px;background:#14241c;overflow:hidden}
+.illustration-common>.plan-thumbnail{width:190px;max-width:100%;height:auto;aspect-ratio:1;border-radius:0}
+/* Keep the zoom action below new frames so feet and equipment stay visible. */
+.keyframe-grid button:has(>.teaching-frame-common)>.keyframe-zoom{position:static;display:block}
