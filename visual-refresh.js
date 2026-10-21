@@ -11,6 +11,7 @@ visualSettings?.addEventListener('click', event => {
   if (event.target.closest('#profile,#account-entry')) visualSettings.close();
 });
 
+const expandedRecordingOptions = new Map();
 function refreshTrainingPresentation() {
   for (const reminder of document.querySelectorAll('.backup-reminder')) {
     if (reminder.dataset.visualReady) continue;
@@ -58,10 +59,32 @@ function refreshTrainingPresentation() {
       rows[0].before(list);
       for (const row of rows) list.append(row);
     }
+    if (card.closest('.session-mode')) {
+      const title=card.querySelector('.exercise-heading h3');
+      if(title&&document.documentElement.lang!=='en')title.textContent=title.textContent.split(' · ')[0].replace(/\s*▷$/, '')+' ▷';
+      const id=record?.dataset.log||record?.dataset.logCardio||record?.dataset.logMobility;
+      const more=document.createElement('details');more.className='session-more';more.dataset.exerciseId=id||'';
+      more.open=expandedRecordingOptions.get(id)===true;
+      const heading=document.createElement('summary');heading.textContent=document.documentElement.lang==='en'?'More options':'更多选项';more.append(heading);
+      const setup=card.querySelector('.strength-input input[id^="setup-"]')?.closest('label');
+      if(setup&&!setup.textContent.includes('弹力带')){more.append(setup);card.querySelector('.strength-input')?.classList.add('record-single');}
+      for(const node of card.querySelectorAll('.coach-question,.coach-preferences,.exercise-details,.recorded-sets'))more.append(node);
+      if(more.children.length>1)card.append(more);
+      if(undo){undo.setAttribute('aria-label',document.documentElement.lang==='en'?'Undo last set':'撤回最后一组');undo.textContent=document.documentElement.lang==='en'?'Undo':'撤回';}
+    }
+  }
+  for(const session of document.querySelectorAll('.session-mode')){
+    if(session.dataset.compactReady)continue;session.dataset.compactReady='true';
+    const timer=session.querySelector('.rest-compact'),adjust=timer?.querySelector('.rest-adjust');
+    if(adjust){const options=document.createElement('details');options.className='rest-options';const summary=document.createElement('summary');summary.textContent=document.documentElement.lang==='en'?'Adjust':'调整休息';options.append(summary,adjust);const settings=timer.querySelector('.rest-settings');if(settings)options.append(settings);timer.append(options);}
+    const navigation=session.querySelector('.session-navigation');
+    if(timer&&navigation)navigation.before(timer);
+    if(navigation){const tools=document.createElement('details');tools.className='session-tools';const summary=document.createElement('summary');summary.textContent=document.documentElement.lang==='en'?'Plan options':'计划选项';tools.append(summary);navigation.before(tools);tools.append(navigation);}
   }
 }
 const visualContent = document.querySelector('#content');
 if (visualContent) {
+  visualContent.addEventListener('toggle',event=>{if(event.target.matches?.('details.session-more'))expandedRecordingOptions.set(event.target.dataset.exerciseId,event.target.open);},true);
   new MutationObserver(refreshTrainingPresentation).observe(visualContent, {childList: true, subtree: true});
   refreshTrainingPresentation();
 }
