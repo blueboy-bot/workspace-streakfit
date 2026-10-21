@@ -444,3 +444,41 @@ footer [data-open-privacy]{background:transparent;border:0;box-shadow:none;color
 .illustration-common>.plan-thumbnail{width:190px;max-width:100%;height:auto;aspect-ratio:1;border-radius:0}
 /* Keep the zoom action below new frames so feet and equipment stay visible. */
 .keyframe-grid button:has(>.teaching-frame-common)>.keyframe-zoom{position:static;display:block}
+
+/* Focused recording: one primary action, optional details behind one entry. */
+.session-mode{font-size:15px;line-height:1.5}
+.session-mode .session-title{font-size:22px;line-height:1.35;margin:4px 0}
+.session-mode .session-position{font-size:13px;margin:4px 0 10px}
+.session-mode .workout-card{padding:16px;border-radius:16px}
+.session-mode .workout-card .exercise-heading h3{font-size:20px;font-weight:600}
+.session-mode .workout-card .exercise-recovery{font-size:13px;margin:4px 0 10px}
+.session-mode .workout-card .exercise-goal{font-size:14px}
+.session-mode .workout-card .set-input input{min-height:48px;height:48px;padding:8px 12px;font-size:20px;line-height:1.3;border-radius:10px}
+.session-mode .workout-card .set-input label{font-size:14px;margin:0}
+.session-mode .workout-card>.strength-input.record-single{display:block}
+.session-mode .workout-card .record-single label{display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:16px}
+.session-mode .workout-card .record-single input{width:100px}
+.session-mode .record-actions{margin-top:12px;gap:8px}
+.session-mode .record-actions>button{min-height:48px;font-size:16px;padding:10px 14px;margin:0}
+.session-mode .record-actions>button[data-remove-log]{font-size:14px;min-width:52px}
+.session-mode .record-status{font-size:13px;margin:4px 0;color:var(--subtle)}
+.session-mode .session-more{margin-top:10px;border-top:1px solid var(--line)}
+.session-mode .session-more>summary,.session-mode .session-tools>summary,.session-mode .rest-options>summary{font-size:14px;line-height:20px;min-height:44px;padding:12px 0;box-sizing:border-box;color:var(--subtle);cursor:pointer}
+.session-mode .session-more>label{font-size:14px;margin:8px 0;display:block}
+.session-mode .session-more>label input{font-size:16px;min-height:44px;margin-top:6px}
+.session-mode .session-more .exercise-details{margin-top:8px;padding:0;border-top:0;display:block}
+.session-mode .session-more .recorded-sets{margin-top:4px}
+.session-mode .progressive-coach:empty{display:none}
+.session-mode .rest-compact{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:8px;margin:10px 0;padding:4px 0;border-bottom:0}
+.session-mode .rest-compact .rest-line{gap:8px;min-height:44px}
+.session-mode .rest-compact .rest-title,.session-mode .rest-compact .rest-actions>button{font-size:14px}
+.session-mode .rest-compact #rest-clock{font-size:18px;letter-spacing:0}
+.session-mode .rest-options{grid-column:1/-1}
+.session-mode .rest-options>summary{padding:4px 0;min-height:44px}
+.session-mode .session-tools{margin:0}
+.session-mode .session-navigation{gap:8px;margin:4px 0 10px}
+.session-mode .session-navigation button{font-size:14px;padding:8px 10px;min-height:44px}
+
+.session-mode>.eyebrow{display:none}
+.session-mode h1,.session-mode h3,.session-mode button,.session-mode input{font-family:var(--font-ui)}
+.session-mode .exercise-heading .muted{display:none}
