@@ -2,7 +2,7 @@ import re, json, base64
 from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 root=Path(__file__).resolve().parent.parent
-out=Path('/workspace/streakfit-preview/visual-v0.38.12-download');out.mkdir(exist_ok=True)
+out=Path('/workspace/streakfit-preview/visual-v0.38.13-download');out.mkdir(exist_ok=True)
 version=json.loads((root/'package.json').read_text())['version']
 font_css=(root/'typography.css').read_text()
 for file in (root/'assets/fonts').glob('*.woff2'):
@@ -13,7 +13,7 @@ app=modules+'\n'+re.sub(r'^import .*;$', '', (root/'app.js').read_text(),flags=r
 app="globalThis.STREAKFIT_ACCOUNT_CONFIG="+json.dumps(json.loads((root/'account-config.json').read_text()))+";\n"+app
 visual_css=(root/'visual.css').read_text().replace('./assets/exercises/recovery-walk.png','data:image/png;base64,'+base64.b64encode((root/'assets/exercises/recovery-walk.png').read_bytes()).decode()).replace('./assets/exercises/overview-atlas.png','data:image/png;base64,'+base64.b64encode((root/'assets/exercises/overview-atlas.png').read_bytes()).decode()).replace('./assets/exercises/overview-atlas-2.png','data:image/png;base64,'+base64.b64encode((root/'assets/exercises/overview-atlas-2.png').read_bytes()).decode()).replace('./assets/exercises/overview-atlas-3.png','data:image/png;base64,'+base64.b64encode((root/'assets/exercises/overview-atlas-3.png').read_bytes()).decode()).replace('./assets/exercises/teaching-keyframes.png','data:image/png;base64,'+base64.b64encode((root/'assets/exercises/teaching-keyframes.png').read_bytes()).decode())
 bundled_artwork={}
-for file in ['pulldown-reviewed.png','equipment-reviewed.png','positions-reviewed.png','setups-reviewed.png','posture-reviewed.png']+[p.name for p in (root/'assets/exercises').glob('common-*.png')]:
+for file in ['overview-atlas-2.png','pulldown-reviewed.png','equipment-reviewed.png','positions-reviewed.png','setups-reviewed.png','posture-reviewed.png']+[p.name for p in (root/'assets/exercises').glob('common-*.png')]:
  data_uri='data:image/png;base64,'+base64.b64encode((root/'assets/exercises'/file).read_bytes()).decode()
  visual_css=visual_css.replace('./assets/exercises/'+file,data_uri)
  bundled_artwork[file]=data_uri
