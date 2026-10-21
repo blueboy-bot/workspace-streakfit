@@ -1,0 +1,13 @@
+version,device,os,browser,mode,case,status,actual_tester,date,notes
+0.39.0,iPhone Safari,,,,setup,NOT_TESTED,,,
+0.39.0,iPhone Safari,,,,keyboard_layout,NOT_TESTED,,,
+0.39.0,iPhone Safari,,,,background_lock_resume,NOT_TESTED,,,
+0.39.0,iPhone Safari,,,,offline_reload,NOT_TESTED,,,
+0.39.0,iPhone Safari,,,,backup_restore,NOT_TESTED,,,
+0.39.0,iPhone Safari,,,,pause_timer,NOT_TESTED,,,
+0.39.0,Android Chrome,,,,setup,NOT_TESTED,,,
+0.39.0,Android Chrome,,,,keyboard_layout,NOT_TESTED,,,
+0.39.0,Android Chrome,,,,background_lock_resume,NOT_TESTED,,,
+0.39.0,Android Chrome,,,,offline_reload,NOT_TESTED,,,
+0.39.0,Android Chrome,,,,backup_restore,NOT_TESTED,,,
+0.39.0,Android Chrome,,,,pause_timer,NOT_TESTED,,,

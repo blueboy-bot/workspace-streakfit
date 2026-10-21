@@ -26,3 +26,15 @@ export function isolateLocalRecords(source,catalog){
  }return result;}
  return {history:collection(source.history,'history'),plannedWorkouts:collection(source.plannedWorkouts,'plannedWorkouts'),issues};
 }
+
+// A saved status is not enough: the underlying answers must agree with it.
+export function screeningAllowsTraining(safety){return safety?.status==='ready'&&safety.symptoms==='no'&&safety.review==='no';}
+export function persistUnchangedWorkspace(storage,key,expected,next){
+ if((storage.getItem(key)||'')!==expected){const error=new Error('其他页面的记录已变化，本页尚未覆盖。请先导出本页备份，再刷新读取已保存的记录。');error.code='WORKSPACE_CHANGED';throw error;}
+ storage.setItem(key,next);return next;
+}
+export function consistentEasySets(logs,target){
+ if(!Array.isArray(logs)||!Number.isInteger(target?.sets)||logs.length<target.sets)return false;
+ const last=logs.at(-1);if(!last||!Number.isFinite(last.weight))return false;
+ return logs.every(log=>log.easy===true&&Number.isInteger(log.reps)&&log.reps>=target.min&&log.weight===last.weight&&log.weightUnit===last.weightUnit);
+}

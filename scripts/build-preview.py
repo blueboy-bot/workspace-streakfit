@@ -2,7 +2,7 @@ import re, json, base64
 from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 root=Path(__file__).resolve().parent.parent
-out=Path('/workspace/streakfit-preview/visual-v0.38.13-download');out.mkdir(exist_ok=True)
+out=Path('/workspace/streakfit-preview/visual-v0.39.0-download');out.mkdir(exist_ok=True)
 version=json.loads((root/'package.json').read_text())['version']
 font_css=(root/'typography.css').read_text()
 for file in (root/'assets/fonts').glob('*.woff2'):
@@ -20,13 +20,14 @@ for file in ['overview-atlas-2.png','pulldown-reviewed.png','equipment-reviewed.
 app="const bundledArtwork="+json.dumps(bundled_artwork)+";\n"+app.replace("./assets/exercises/${reviewed.file}","${bundledArtwork[reviewed.file]}").replace("./assets/exercises/${pair.file}","${bundledArtwork[pair.file]}")
 html=(root/'index.html').read_text().replace('<link rel="stylesheet" href="./style.css">','<style>'+(root/'style.css').read_text()+'</style>').replace('<link rel="stylesheet" href="./foundation.css">','<style>'+(root/'foundation.css').read_text()+'</style>').replace('<link rel="stylesheet" href="./accounts.css">','<style>'+(root/'accounts.css').read_text()+'</style>').replace('<link rel="stylesheet" href="./visual.css">','<style>'+visual_css+'</style>').replace('<script src="./preview-storage.js"></script>','<script>'+(root/'preview-storage.js').read_text()+'</script>').replace('<script type="module" src="./app.js"></script>','<script>'+app+'</script>').replace('<script type="module" src="./visual-refresh.js"></script>','<script>'+(root/'visual-refresh.js').read_text()+'</script>')
 html=html.replace('<link rel="stylesheet" href="./typography.css">','<style>'+font_css+'</style>').replace('<link rel="preload" href="./assets/fonts/streakfit-han.woff2" as="font" type="font/woff2" crossorigin>','').replace('<link rel="preload" href="./assets/fonts/streakfit-ui.woff2" as="font" type="font/woff2" crossorigin>','').replace('</head>','<!-- Bundled font licenses\n'+font_licenses+'\n--></head>')
+html=html.replace('<script src="./beta-tools.js" defer></script>','<script>'+(root/'beta-tools.js').read_text()+'</script>')
 html=html.replace('rel="icon" type="image/png" href="./assets/icons/icon-192.png"','rel="icon" type="image/png" href="data:image/png;base64,'+base64.b64encode((root/'assets/icons/icon-192.png').read_bytes()).decode()+'"')
 (out/'STREAKFIT.html').write_text(html)
 english=html.replace('<script>'+app, '<script>globalThis.STREAKFIT_LANGUAGE="en";'+app)
 (out/f'STREAKFIT-v{version}-English.html').write_text(english)
 (out/f'STREAKFIT-v{version}.html').write_text(html)
 with ZipFile(out/'streakfit-website.zip','w',ZIP_DEFLATED) as z:
- for file in ['index.html','app.js','style.css','foundation.css','accounts.css','visual.css','typography.css','visual-refresh.js','preview-storage.js','account-config.json','manifest.webmanifest','sw.js','server.mjs','package.json','README.md','使用说明.txt']:
+ for file in ['beta-tools.js','index.html','app.js','style.css','foundation.css','accounts.css','visual.css','typography.css','visual-refresh.js','preview-storage.js','account-config.json','manifest.webmanifest','sw.js','server.mjs','package.json','README.md','使用说明.txt']:
   z.write(root/file,arcname=file)
  for folder in ['modules','assets','docs']:
   for file in (root/folder).rglob('*'):

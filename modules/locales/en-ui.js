@@ -1,4 +1,9 @@
 export const englishUI = {
+ '此内测候选版首次复制旧版预览记录，之后保存到独立工作区，不改写旧版数据。两边后续修改不会自动合并，切换版本前请导出备份。':'This beta candidate copies legacy preview records once, then saves to a separate workspace without changing older versions. Later edits are not merged between versions. Export a backup before switching versions.',
+ '为更新与误操作恢复，本机会在 IndexedDB 按工作区保留最多 3 份未加密副本，不自动上传。删除主记录不会自动删除旧副本；可在“帮助与恢复”清除。清理网站数据会同时删除副本。':'For recovery after updates or mistakes, IndexedDB keeps up to 3 unencrypted copies per workspace on this device, without automatic upload. Deleting a main record does not delete older copies; clear them in Help and recovery. Clearing website data also removes the copies.',
+ "帮助与恢复":"Help and recovery",
+ "其他页面的记录已变化，本页尚未覆盖。请先导出本页备份，再刷新读取已保存的记录。":"Records changed in another tab. This page did not overwrite them. Export this page’s backup, then reload to read saved records.",
+ "运动前确认与答案不一致，请重新确认后再备份":"Pre-exercise status and answers do not match. Complete the check again before backing up.",
  "当前没有训练动作，可检查器械或添加动作。":"No exercises are planned. Check the equipment or add an exercise.",
  "这一天是恢复日 · 不要求训练。":"Recovery day · Training is optional.",
  "每侧 6–8 次，缓慢控制":"6–8 reps per side, slow and controlled",

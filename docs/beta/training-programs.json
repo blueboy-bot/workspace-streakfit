@@ -1,0 +1,1126 @@
+{
+  "version": "0.39.0",
+  "purpose": "Review generated output; not an approved individual prescription",
+  "professional_review": "pending",
+  "rows": [
+    {
+      "group": "臀腿",
+      "experience": "初学者",
+      "title": "下肢 + 核心 · 增肌重点",
+      "estimated_minutes": 30,
+      "notes": "在动作稳定的基础上增加次数，达到上限后再评估负重。 经验适配：初学者；优先稳定支撑与技术练习，基础动作默认不超过 3 组 保留约 3 次余力；目标不随日历自动增加，调整前先确认实际完成情况。 股四头肌近期直接组数达到自动推荐上限 自动推荐容量是产品默认规则，可按个人恢复情况手动调整，不是统一的专业上限。",
+      "entries": [
+        {
+          "id": "goblet",
+          "name": "哑铃杯式深蹲 · Dumbbell goblet squat",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "哑铃靠近胸前",
+            "膝盖跟随脚尖",
+            "下蹲至舒适深度"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "lunge",
+          "name": "后撤箭步蹲 · Reverse lunge",
+          "equipment": "无器械",
+          "setup_and_cues": [
+            "可扶墙保持平衡",
+            "向后迈至能稳定下蹲的步幅",
+            "前脚稳定支撑"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": true
+        },
+        {
+          "id": "rdl",
+          "name": "哑铃罗马尼亚硬拉 · Dumbbell Romanian deadlift",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "膝盖微屈",
+            "髋部向后推",
+            "背部中立、哑铃靠近腿"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "hipthrust",
+          "name": "哑铃臀桥 · Weighted glute bridge",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "哑铃稳定垫在髋部",
+            "脚掌贴地",
+            "收紧臀部而非过伸腰部"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": true
+        }
+      ],
+      "status": "not_professionally_reviewed"
+    },
+    {
+      "group": "胸",
+      "experience": "初学者",
+      "title": "胸部专项 · 增肌重点",
+      "estimated_minutes": 18,
+      "notes": "在动作稳定的基础上增加次数，达到上限后再评估负重。 经验适配：初学者；优先稳定支撑与技术练习，基础动作默认不超过 3 组 保留约 3 次余力；目标不随日历自动增加，调整前先确认实际完成情况。 胸部近期直接组数达到自动推荐上限 自动推荐容量是产品默认规则，可按个人恢复情况手动调整，不是统一的专业上限。",
+      "entries": [
+        {
+          "id": "dbpress",
+          "name": "哑铃地板卧推 · Dumbbell floor press",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "上臂轻触地面",
+            "手腕保持中立",
+            "控制下降速度"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "fly",
+          "name": "绳索夹胸 · Cable chest fly",
+          "equipment": "龙门架 / 绳索器械",
+          "setup_and_cues": [
+            "肘部轻微弯曲",
+            "缓慢合拢双臂",
+            "避免过度拉伸"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        }
+      ],
+      "status": "not_professionally_reviewed"
+    },
+    {
+      "group": "背",
+      "experience": "初学者",
+      "title": "背部专项 · 基础练习 · 增肌重点",
+      "estimated_minutes": 17,
+      "notes": "在动作稳定的基础上增加次数，达到上限后再评估负重。 基础垂直拉与水平拉，优先稳定支撑、可控负重与恢复，不细分握距或区域重点。 经验适配：初学者；优先稳定支撑与技术练习，基础动作默认不超过 3 组 保留约 3 次余力；目标不随日历自动增加，调整前先确认实际完成情况。 背部近期直接组数达到自动推荐上限 自动推荐容量是产品默认规则，可按个人恢复情况手动调整，不是统一的专业上限。",
+      "entries": [
+        {
+          "id": "pulldown",
+          "name": "高位下拉（常规正握） · Lat pulldown (standard overhand)",
+          "equipment": "高位下拉机",
+          "setup_and_cues": [
+            "大腿固定在垫下",
+            "拉向上胸而非颈后",
+            "缓慢回放"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        },
+        {
+          "id": "chestsupported",
+          "name": "胸托哑铃划船 · Chest-supported dumbbell row",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "胸部贴斜凳",
+            "肘部向后拉",
+            "不耸肩"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": true
+        }
+      ],
+      "status": "not_professionally_reviewed"
+    },
+    {
+      "group": "手臂",
+      "experience": "初学者",
+      "title": "手臂专项 · 增肌重点",
+      "estimated_minutes": 28,
+      "notes": "在动作稳定的基础上增加次数，达到上限后再评估负重。 经验适配：初学者；优先稳定支撑与技术练习，基础动作默认不超过 3 组 保留约 3 次余力；目标不随日历自动增加，调整前先确认实际完成情况。 肱二头肌近期直接组数达到自动推荐上限 自动推荐容量是产品默认规则，可按个人恢复情况手动调整，不是统一的专业上限。",
+      "entries": [
+        {
+          "id": "curl",
+          "name": "哑铃弯举 · Dumbbell biceps curl",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "上臂靠近身体",
+            "不借力摆动",
+            "缓慢伸展肘部"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        },
+        {
+          "id": "hammer",
+          "name": "哑铃锤式弯举 · Dumbbell hammer curl",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "掌心相对",
+            "上臂保持稳定",
+            "不摆动身体借力"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": true
+        },
+        {
+          "id": "overheadtriceps",
+          "name": "哑铃过顶臂屈伸 · Overhead dumbbell triceps extension",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "轻重量双手握稳",
+            "上臂保持稳定",
+            "在无痛范围内屈伸肘部"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        },
+        {
+          "id": "triceps",
+          "name": "直杆三头下压（正握） · Straight-bar triceps pushdown (overhand)",
+          "equipment": "杠铃及拉力器",
+          "setup_and_cues": [
+            "上臂靠近身体",
+            "肘部保持稳定",
+            "缓慢回到起点"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        }
+      ],
+      "status": "not_professionally_reviewed"
+    },
+    {
+      "group": "肩",
+      "experience": "初学者",
+      "title": "肩部专项 · A 日 · 增肌重点",
+      "estimated_minutes": 17,
+      "notes": "在动作稳定的基础上增加次数，达到上限后再评估负重。 A 日肩推 → 侧束 → 后束；B 日侧束 → 后束优先。 默认每个侧/后束动作 10–20 次，不叠加多个同类动作凑数量。器械不足时仅显示可完成项目；无器械肩部控制不等同于负重增肌课。 经验适配：初学者；优先稳定支撑与技术练习，基础动作默认不超过 3 组 保留约 3 次余力；目标不随日历自动增加，调整前先确认实际完成情况。",
+      "entries": [
+        {
+          "id": "shoulderpress",
+          "name": "哑铃肩推 · Dumbbell shoulder press",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "躯干稳定，肩胛随抬臂自然上转",
+            "手腕位于肘部上方",
+            "避免腰部过度后仰"
+          ],
+          "target": {
+            "sets": 2,
+            "min": 6,
+            "max": 10,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "lateral",
+          "name": "哑铃侧平举 · Dumbbell lateral raise",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "轻重量开始",
+            "肘部微屈",
+            "抬至舒适高度，避免缩颈耸肩"
+          ],
+          "target": {
+            "sets": 2,
+            "min": 10,
+            "max": 20,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        },
+        {
+          "id": "reversefly",
+          "name": "哑铃反向飞鸟 · Dumbbell reverse fly",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "髋部后移保持背部中立",
+            "肘部微屈向两侧打开",
+            "轻重量避免甩动"
+          ],
+          "target": {
+            "sets": 2,
+            "min": 10,
+            "max": 20,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": true
+        }
+      ],
+      "status": "not_professionally_reviewed"
+    },
+    {
+      "group": "推类",
+      "experience": "初学者",
+      "title": "推 · 胸肩三头 · 增肌重点",
+      "estimated_minutes": 36,
+      "notes": "在动作稳定的基础上增加次数，达到上限后再评估负重。 经验适配：初学者；优先稳定支撑与技术练习，基础动作默认不超过 3 组 保留约 3 次余力；目标不随日历自动增加，调整前先确认实际完成情况。",
+      "entries": [
+        {
+          "id": "dbpress",
+          "name": "哑铃地板卧推 · Dumbbell floor press",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "上臂轻触地面",
+            "手腕保持中立",
+            "控制下降速度"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "fly",
+          "name": "绳索夹胸 · Cable chest fly",
+          "equipment": "龙门架 / 绳索器械",
+          "setup_and_cues": [
+            "肘部轻微弯曲",
+            "缓慢合拢双臂",
+            "避免过度拉伸"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        },
+        {
+          "id": "shoulderpress",
+          "name": "哑铃肩推 · Dumbbell shoulder press",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "躯干稳定，肩胛随抬臂自然上转",
+            "手腕位于肘部上方",
+            "避免腰部过度后仰"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "overheadtriceps",
+          "name": "哑铃过顶臂屈伸 · Overhead dumbbell triceps extension",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "轻重量双手握稳",
+            "上臂保持稳定",
+            "在无痛范围内屈伸肘部"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        },
+        {
+          "id": "triceps",
+          "name": "直杆三头下压（正握） · Straight-bar triceps pushdown (overhand)",
+          "equipment": "杠铃及拉力器",
+          "setup_and_cues": [
+            "上臂靠近身体",
+            "肘部保持稳定",
+            "缓慢回到起点"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        }
+      ],
+      "status": "not_professionally_reviewed"
+    },
+    {
+      "group": "拉类",
+      "experience": "初学者",
+      "title": "拉 · 背部二头 · 增肌重点",
+      "estimated_minutes": 30,
+      "notes": "在动作稳定的基础上增加次数，达到上限后再评估负重。 经验适配：初学者；优先稳定支撑与技术练习，基础动作默认不超过 3 组 保留约 3 次余力；目标不随日历自动增加，调整前先确认实际完成情况。 背部近期直接组数达到自动推荐上限 自动推荐容量是产品默认规则，可按个人恢复情况手动调整，不是统一的专业上限。",
+      "entries": [
+        {
+          "id": "pulldown",
+          "name": "高位下拉（常规正握） · Lat pulldown (standard overhand)",
+          "equipment": "高位下拉机",
+          "setup_and_cues": [
+            "大腿固定在垫下",
+            "拉向上胸而非颈后",
+            "缓慢回放"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "chestsupported",
+          "name": "胸托哑铃划船 · Chest-supported dumbbell row",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "胸部贴斜凳",
+            "肘部向后拉",
+            "不耸肩"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": true
+        },
+        {
+          "id": "reversefly",
+          "name": "哑铃反向飞鸟 · Dumbbell reverse fly",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "髋部后移保持背部中立",
+            "肘部微屈向两侧打开",
+            "轻重量避免甩动"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": true
+        },
+        {
+          "id": "curl",
+          "name": "哑铃弯举 · Dumbbell biceps curl",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "上臂靠近身体",
+            "不借力摆动",
+            "缓慢伸展肘部"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        }
+      ],
+      "status": "not_professionally_reviewed"
+    },
+    {
+      "group": "臀腿",
+      "experience": "有规律训练经验",
+      "title": "下肢 + 核心 · 增肌重点",
+      "estimated_minutes": 44,
+      "notes": "在动作稳定的基础上增加次数，达到上限后再评估负重。 经验适配：有规律训练经验；保留主项与相关辅助，依据实际记录提出建议，调整需手动确认 保留约 3 次余力；目标不随日历自动增加，调整前先确认实际完成情况。 股四头肌推荐组数已按容量缩减 自动推荐容量是产品默认规则，可按个人恢复情况手动调整，不是统一的专业上限。",
+      "entries": [
+        {
+          "id": "goblet",
+          "name": "哑铃杯式深蹲 · Dumbbell goblet squat",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "哑铃靠近胸前",
+            "膝盖跟随脚尖",
+            "下蹲至舒适深度"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "legpress",
+          "name": "腿举 · Leg press",
+          "equipment": "腿举机",
+          "setup_and_cues": [
+            "腰背贴住靠垫",
+            "膝盖朝脚尖方向",
+            "控制伸膝，不用重量冲击关节末端"
+          ],
+          "target": {
+            "sets": 2,
+            "min": 8,
+            "max": 12,
+            "rir": 3,
+            "capacityAdjusted": true
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "lunge",
+          "name": "后撤箭步蹲 · Reverse lunge",
+          "equipment": "无器械",
+          "setup_and_cues": [
+            "可扶墙保持平衡",
+            "向后迈至能稳定下蹲的步幅",
+            "前脚稳定支撑"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": true
+        },
+        {
+          "id": "rdl",
+          "name": "哑铃罗马尼亚硬拉 · Dumbbell Romanian deadlift",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "膝盖微屈",
+            "髋部向后推",
+            "背部中立、哑铃靠近腿"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "hipthrust",
+          "name": "哑铃臀桥 · Weighted glute bridge",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "哑铃稳定垫在髋部",
+            "脚掌贴地",
+            "收紧臀部而非过伸腰部"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": true
+        }
+      ],
+      "status": "not_professionally_reviewed"
+    },
+    {
+      "group": "胸",
+      "experience": "有规律训练经验",
+      "title": "胸部专项 · 增肌重点",
+      "estimated_minutes": 28,
+      "notes": "在动作稳定的基础上增加次数，达到上限后再评估负重。 经验适配：有规律训练经验；保留主项与相关辅助，依据实际记录提出建议，调整需手动确认 保留约 3 次余力；目标不随日历自动增加，调整前先确认实际完成情况。 胸部推荐组数已按容量缩减 胸部近期直接组数达到自动推荐上限 自动推荐容量是产品默认规则，可按个人恢复情况手动调整，不是统一的专业上限。",
+      "entries": [
+        {
+          "id": "bench",
+          "name": "卧推 · Barbell bench press",
+          "equipment": "杠铃及拉力器",
+          "setup_and_cues": [
+            "肩胛稳定贴凳",
+            "双脚稳固支撑",
+            "使用保护架或保护者"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "incline",
+          "name": "上斜哑铃卧推 · Incline dumbbell press",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "凳面适度倾斜",
+            "手腕保持稳定",
+            "控制下降幅度"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": true
+        },
+        {
+          "id": "fly",
+          "name": "绳索夹胸 · Cable chest fly",
+          "equipment": "龙门架 / 绳索器械",
+          "setup_and_cues": [
+            "肘部轻微弯曲",
+            "缓慢合拢双臂",
+            "避免过度拉伸"
+          ],
+          "target": {
+            "sets": 2,
+            "min": 8,
+            "max": 12,
+            "rir": 3,
+            "capacityAdjusted": true
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        }
+      ],
+      "status": "not_professionally_reviewed"
+    },
+    {
+      "group": "背",
+      "experience": "有规律训练经验",
+      "title": "背部专项 · 背阔肌侧重 · 增肌重点",
+      "estimated_minutes": 28,
+      "notes": "在动作稳定的基础上增加次数，达到上限后再评估负重。 自动交替背阔肌侧重与上背/肩胛控制侧重。同日可安排不同握法和路径的变体；宽握下拉仍训练背阔肌与大圆肌，不等于专练小圆肌。中斜方肌与菱形肌以可控划船侧重，下斜方肌加入 Y 字控制练习。推荐组数结合近期整个背部容量，不因增加变体而重复加量。 经验适配：有规律训练经验；保留主项与相关辅助，依据实际记录提出建议，调整需手动确认 保留约 3 次余力；目标不随日历自动增加，调整前先确认实际完成情况。 背部推荐组数已按容量缩减 背部近期直接组数达到自动推荐上限 自动推荐容量是产品默认规则，可按个人恢复情况手动调整，不是统一的专业上限。",
+      "entries": [
+        {
+          "id": "pulldownNeutral",
+          "name": "高位下拉（窄距中立握） · Lat pulldown (close neutral grip)",
+          "equipment": "高位下拉机",
+          "setup_and_cues": [
+            "使用窄距中立握把手，掌心相对",
+            "肘部向髋部方向下拉",
+            "保持躯干稳定，控制回放"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "pulldownWide",
+          "name": "高位下拉（宽距正握） · Lat pulldown (wide overhand grip)",
+          "equipment": "高位下拉机",
+          "setup_and_cues": [
+            "采用舒适的较宽正握，不追求极宽",
+            "肘部向身体两侧下拉至上胸附近",
+            "避免颈后下拉及大幅后仰"
+          ],
+          "target": {
+            "sets": 2,
+            "min": 8,
+            "max": 12,
+            "rir": 3,
+            "capacityAdjusted": true
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "cablerow",
+          "name": "坐姿绳索划船（窄距中立握） · Seated cable row (close neutral grip)",
+          "equipment": "龙门架 / 绳索器械",
+          "setup_and_cues": [
+            "双脚稳定支撑",
+            "肘部向后拉",
+            "避免躯干前后甩动"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        }
+      ],
+      "status": "not_professionally_reviewed"
+    },
+    {
+      "group": "手臂",
+      "experience": "有规律训练经验",
+      "title": "手臂专项 · 增肌重点",
+      "estimated_minutes": 44,
+      "notes": "在动作稳定的基础上增加次数，达到上限后再评估负重。 经验适配：有规律训练经验；保留主项与相关辅助，依据实际记录提出建议，调整需手动确认 保留约 3 次余力；目标不随日历自动增加，调整前先确认实际完成情况。 肱二头肌推荐组数已按容量缩减 肱三头肌推荐组数已按容量缩减 自动推荐容量是产品默认规则，可按个人恢复情况手动调整，不是统一的专业上限。",
+      "entries": [
+        {
+          "id": "curl",
+          "name": "哑铃弯举 · Dumbbell biceps curl",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "上臂靠近身体",
+            "不借力摆动",
+            "缓慢伸展肘部"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        },
+        {
+          "id": "cablecurl",
+          "name": "绳索弯举 · Cable biceps curl",
+          "equipment": "龙门架 / 绳索器械",
+          "setup_and_cues": [
+            "低位滑轮",
+            "固定肘部位置",
+            "控制回程"
+          ],
+          "target": {
+            "sets": 2,
+            "min": 8,
+            "max": 12,
+            "rir": 3,
+            "capacityAdjusted": true
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        },
+        {
+          "id": "hammer",
+          "name": "哑铃锤式弯举 · Dumbbell hammer curl",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "掌心相对",
+            "上臂保持稳定",
+            "不摆动身体借力"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": true
+        },
+        {
+          "id": "skullcrusher",
+          "name": "仰卧哑铃臂屈伸 · Lying dumbbell triceps extension",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "上臂稳定",
+            "控制下降",
+            "避免砸向头部"
+          ],
+          "target": {
+            "sets": 2,
+            "min": 8,
+            "max": 12,
+            "rir": 3,
+            "capacityAdjusted": true
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        },
+        {
+          "id": "overheadtriceps",
+          "name": "哑铃过顶臂屈伸 · Overhead dumbbell triceps extension",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "轻重量双手握稳",
+            "上臂保持稳定",
+            "在无痛范围内屈伸肘部"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        },
+        {
+          "id": "triceps",
+          "name": "直杆三头下压（正握） · Straight-bar triceps pushdown (overhand)",
+          "equipment": "杠铃及拉力器",
+          "setup_and_cues": [
+            "上臂靠近身体",
+            "肘部保持稳定",
+            "缓慢回到起点"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        }
+      ],
+      "status": "not_professionally_reviewed"
+    },
+    {
+      "group": "肩",
+      "experience": "有规律训练经验",
+      "title": "肩部专项 · A 日 · 增肌重点",
+      "estimated_minutes": 24,
+      "notes": "在动作稳定的基础上增加次数，达到上限后再评估负重。 A 日肩推 → 侧束 → 后束；B 日侧束 → 后束优先。 默认每个侧/后束动作 10–20 次，不叠加多个同类动作凑数量。器械不足时仅显示可完成项目；无器械肩部控制不等同于负重增肌课。 经验适配：有规律训练经验；保留主项与相关辅助，依据实际记录提出建议，调整需手动确认 保留约 3 次余力；目标不随日历自动增加，调整前先确认实际完成情况。",
+      "entries": [
+        {
+          "id": "shoulderpress",
+          "name": "哑铃肩推 · Dumbbell shoulder press",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "躯干稳定，肩胛随抬臂自然上转",
+            "手腕位于肘部上方",
+            "避免腰部过度后仰"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 6,
+            "max": 10,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "lateral",
+          "name": "哑铃侧平举 · Dumbbell lateral raise",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "轻重量开始",
+            "肘部微屈",
+            "抬至舒适高度，避免缩颈耸肩"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 10,
+            "max": 20,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        },
+        {
+          "id": "reversefly",
+          "name": "哑铃反向飞鸟 · Dumbbell reverse fly",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "髋部后移保持背部中立",
+            "肘部微屈向两侧打开",
+            "轻重量避免甩动"
+          ],
+          "target": {
+            "sets": 3,
+            "min": 10,
+            "max": 20,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": true
+        }
+      ],
+      "status": "not_professionally_reviewed"
+    },
+    {
+      "group": "推类",
+      "experience": "有规律训练经验",
+      "title": "推 · 胸肩三头 · 增肌重点",
+      "estimated_minutes": 45,
+      "notes": "在动作稳定的基础上增加次数，达到上限后再评估负重。 经验适配：有规律训练经验；保留主项与相关辅助，依据实际记录提出建议，调整需手动确认 保留约 3 次余力；目标不随日历自动增加，调整前先确认实际完成情况。 胸部推荐组数已按容量缩减 自动推荐容量是产品默认规则，可按个人恢复情况手动调整，不是统一的专业上限。",
+      "entries": [
+        {
+          "id": "bench",
+          "name": "卧推 · Barbell bench press",
+          "equipment": "杠铃及拉力器",
+          "setup_and_cues": [
+            "肩胛稳定贴凳",
+            "双脚稳固支撑",
+            "使用保护架或保护者"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "incline",
+          "name": "上斜哑铃卧推 · Incline dumbbell press",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "凳面适度倾斜",
+            "手腕保持稳定",
+            "控制下降幅度"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": true
+        },
+        {
+          "id": "fly",
+          "name": "绳索夹胸 · Cable chest fly",
+          "equipment": "龙门架 / 绳索器械",
+          "setup_and_cues": [
+            "肘部轻微弯曲",
+            "缓慢合拢双臂",
+            "避免过度拉伸"
+          ],
+          "target": {
+            "sets": 2,
+            "min": 8,
+            "max": 12,
+            "rir": 3,
+            "capacityAdjusted": true
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        },
+        {
+          "id": "shoulderpress",
+          "name": "哑铃肩推 · Dumbbell shoulder press",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "躯干稳定，肩胛随抬臂自然上转",
+            "手腕位于肘部上方",
+            "避免腰部过度后仰"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "triceps",
+          "name": "直杆三头下压（正握） · Straight-bar triceps pushdown (overhand)",
+          "equipment": "杠铃及拉力器",
+          "setup_and_cues": [
+            "上臂靠近身体",
+            "肘部保持稳定",
+            "缓慢回到起点"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        }
+      ],
+      "status": "not_professionally_reviewed"
+    },
+    {
+      "group": "拉类",
+      "experience": "有规律训练经验",
+      "title": "拉 · 背部二头 · 增肌重点",
+      "estimated_minutes": 43,
+      "notes": "在动作稳定的基础上增加次数，达到上限后再评估负重。 经验适配：有规律训练经验；保留主项与相关辅助，依据实际记录提出建议，调整需手动确认 保留约 3 次余力；目标不随日历自动增加，调整前先确认实际完成情况。 背部推荐组数已按容量缩减 自动推荐容量是产品默认规则，可按个人恢复情况手动调整，不是统一的专业上限。",
+      "entries": [
+        {
+          "id": "pulldown",
+          "name": "高位下拉（常规正握） · Lat pulldown (standard overhand)",
+          "equipment": "高位下拉机",
+          "setup_and_cues": [
+            "大腿固定在垫下",
+            "拉向上胸而非颈后",
+            "缓慢回放"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "row",
+          "name": "哑铃划船 · Dumbbell row",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "保持背部中立",
+            "肘部向髋部移动",
+            "避免甩动身体"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 120,
+          "art_is_teaching": false
+        },
+        {
+          "id": "cablerow",
+          "name": "坐姿绳索划船（窄距中立握） · Seated cable row (close neutral grip)",
+          "equipment": "龙门架 / 绳索器械",
+          "setup_and_cues": [
+            "双脚稳定支撑",
+            "肘部向后拉",
+            "避免躯干前后甩动"
+          ],
+          "target": {
+            "sets": 2,
+            "min": 8,
+            "max": 12,
+            "rir": 3,
+            "capacityAdjusted": true
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        },
+        {
+          "id": "reversefly",
+          "name": "哑铃反向飞鸟 · Dumbbell reverse fly",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "髋部后移保持背部中立",
+            "肘部微屈向两侧打开",
+            "轻重量避免甩动"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": true
+        },
+        {
+          "id": "curl",
+          "name": "哑铃弯举 · Dumbbell biceps curl",
+          "equipment": "哑铃",
+          "setup_and_cues": [
+            "上臂靠近身体",
+            "不借力摆动",
+            "缓慢伸展肘部"
+          ],
+          "target": {
+            "sets": 4,
+            "min": 8,
+            "max": 12,
+            "rir": 3
+          },
+          "rest_seconds": 90,
+          "art_is_teaching": false
+        }
+      ],
+      "status": "not_professionally_reviewed"
+    }
+  ]
+}

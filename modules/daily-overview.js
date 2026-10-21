@@ -3,7 +3,7 @@ export function overviewProgress(id,day,{catalog,target,minutes}){
  const movement=catalog[id],logs=Array.isArray(day.logs?.[id])?day.logs[id]:[];
  if(movement.mobility){const goal=day.mobilityTargets?.[id]||2,done=logs.filter(log=>log.mobilitySets).length;return {kind:'mobility',goal,done,complete:done>=goal};}
  if(movement.kind==='cardio'){const goal=minutes(id,day),done=logs.reduce((sum,log)=>sum+(Number(log.minutes)||0),0);return {kind:'cardio',goal,done,complete:done>=goal};}
- const prescription=target(id,day);return {kind:'strength',goal:prescription.sets,min:prescription.min,max:prescription.max,perSide:!!movement.perSide,done:logs.length,complete:logs.length>=prescription.sets};
+ const prescription=target(id,day);return {kind:'strength',goal:prescription.sets,min:prescription.min,max:prescription.max,perSide:!!(movement.perSide||prescription.perSide||prescription.quality),done:logs.length,complete:logs.length>=prescription.sets};
 }
 export function overviewResume(ids,progress,lastId){
  if(ids.includes(lastId)&&!progress[lastId]?.complete)return lastId;
