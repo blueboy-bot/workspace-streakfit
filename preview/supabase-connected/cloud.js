@@ -76,7 +76,7 @@ document.querySelector('#account-form').onsubmit=async event=>{
  try{
   const form=new FormData(event.target),email=form.get('email'),password=form.get('password');
   const signup=submit.value==='signup';
-  const result=await request(signup?'/auth/v1/signup':'/auth/v1/token?grant_type=password',{method:'POST',body:JSON.stringify({email,password})});
+  const result=await request(signup?'/auth/v1/signup?redirect_to='+encodeURIComponent(new URL('./',location.href).href):'/auth/v1/token?grant_type=password',{method:'POST',body:JSON.stringify({email,password})});
   if(!result.access_token){say('注册成功，请检查邮箱并验证后登录。');return;}
   localStorage.setItem(SESSION,JSON.stringify(result));localStorage.setItem(ACTIVE,result.user.id);location.reload();
  }catch(error){say(`操作失败：${error.message}`);}finally{submit.disabled=false;}
