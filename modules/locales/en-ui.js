@@ -1,4 +1,5 @@
 export const englishUI = {
+ "上一组负重缺失或口径不明，请填写本次实际重量。":"The previous load is missing or its basis is unclear. Enter the actual load for this set.",
  '此内测候选版首次复制旧版预览记录，之后保存到独立工作区，不改写旧版数据。两边后续修改不会自动合并，切换版本前请导出备份。':'This beta candidate copies legacy preview records once, then saves to a separate workspace without changing older versions. Later edits are not merged between versions. Export a backup before switching versions.',
  '为更新与误操作恢复，本机会在 IndexedDB 按工作区保留最多 3 份未加密副本，不自动上传。删除主记录不会自动删除旧副本；可在“帮助与恢复”清除。清理网站数据会同时删除副本。':'For recovery after updates or mistakes, IndexedDB keeps up to 3 unencrypted copies per workspace on this device, without automatic upload. Deleting a main record does not delete older copies; clear them in Help and recovery. Clearing website data also removes the copies.',
  "帮助与恢复":"Help and recovery",
