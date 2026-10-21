@@ -1,4 +1,6 @@
 export const englishUI = {
+ "当前没有训练动作，可检查器械或添加动作。":"No exercises are planned. Check the equipment or add an exercise.",
+ "这一天是恢复日 · 不要求训练。":"Recovery day · Training is optional.",
  "每侧 6–8 次，缓慢控制":"6–8 reps per side, slow and controlled",
  "历史记录":"Training history",
  "已保存的历史记录":"Saved training history",
