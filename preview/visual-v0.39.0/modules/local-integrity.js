@@ -38,3 +38,8 @@ export function consistentEasySets(logs,target){
  const last=logs.at(-1);if(!last||!Number.isFinite(last.weight))return false;
  return logs.every(log=>log.easy===true&&Number.isInteger(log.reps)&&log.reps>=target.min&&log.weight===last.weight&&log.weightUnit===last.weightUnit);
 }
+export function currentRecordedWeight(log,{dumbbell=false}={}){
+ if(!Number.isFinite(log?.weight)||log.weight<0)return '';
+ if(dumbbell&&log.weightUnit!=='per-dumbbell')return '';
+ return log.weight;
+}
