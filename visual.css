@@ -518,3 +518,62 @@ footer [data-open-privacy]{background:transparent;border:0;box-shadow:none;color
 
 /* Minimal training and video presentation. */
 .minimal-video video{display:block;width:100%;max-height:65vh;border-radius:16px}.minimal-video{padding:24px}.session-mode .session-title{font-size:22px}.session-mode .exercise-heading h3{font-size:22px;line-height:1.35}.session-mode .workout-card{padding:20px}.session-mode .exercise-goal{font-size:14px}.session-mode .exercise-recovery{font-size:13px}.session-mode .strength-input input,.session-mode .strength-input select{min-height:48px;font-size:20px}.session-mode .record-actions button{font-size:16px;min-height:48px}.session-mode .eyebrow{display:none}.session-mode .session-position{font-size:13px}.session-mode .session-more summary{font-size:14px}
+
+/* Focused workout: fewer labels, a large readable circular rest clock. */
+.training-focus header,.training-focus nav,.training-focus footer{display:none}
+.training-focus main{max-width:480px;padding:12px 16px max(20px,env(safe-area-inset-bottom));margin:auto}
+.training-focus .comfort-bar{padding:0;margin:0 0 8px;border:0;background:none}
+.training-focus .workout-control-heading{gap:8px}
+.training-focus .workout-state{font-size:12px}.training-focus .comfort-bar button{font-size:12px;padding:6px 10px;min-height:44px}
+.session-topline{display:flex;align-items:center;justify-content:space-between;position:relative;min-height:40px}
+.session-topline .session-position{margin:0;font-size:13px}
+.session-mode .session-tools{position:relative}
+.session-mode .session-tools>summary{list-style:none;font-size:16px;letter-spacing:2px;min-width:44px;min-height:44px;text-align:center;padding:10px;line-height:24px;border-radius:12px}
+.session-tools>summary::-webkit-details-marker{display:none}
+.session-mode .session-tools[open]{z-index:5}
+.session-mode .session-tools[open]>:not(summary){position:relative;background:var(--paper);padding:8px 12px;margin:0;border:1px solid var(--line)}
+.session-mode .session-tools[open]{position:absolute;right:0;top:0;width:min(260px,80vw);background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 28px #0003}
+.session-mode .session-tools[open]>summary{margin-left:auto;width:44px}
+.session-mode .session-tools .session-navigation{display:flex;flex-wrap:wrap}
+.session-mode>progress{height:4px;margin:0 0 12px}
+.session-mode .workout-card{padding:16px;margin-bottom:0}
+.session-mode .exercise-heading h3{font-size:22px}
+.session-mode .exercise-goal{margin:4px 0 14px;gap:12px;align-items:center;justify-content:space-between;font-size:14px}
+.session-mode .inline-weight{position:relative;display:block}
+.session-mode .inline-weight input{width:100%;padding-right:40px!important;margin:0}
+.input-unit{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--subtle);pointer-events:none}
+.reps-unit{position:absolute;right:36px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--subtle);pointer-events:none}
+.session-mode .workout-card .reps-picker select{padding-right:70px;height:48px;margin:0}
+.session-mode .workout-card>.strength-input.record-single{display:block}
+.session-mode .workout-card .record-single .reps-picker{width:100%}
+.session-mode .record-status{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.session-mode .record-utilities{min-height:0;margin:0}
+.session-mode .record-utilities>button{min-height:36px;padding:4px 0}
+.session-mode .session-step-status{display:none}
+.session-mode .rest-circular{display:flex;flex-direction:column;align-items:center;border:0;background:none;margin:20px 0 0;padding:0;gap:14px}
+.rest-dial{position:relative;width:min(78vw,300px);height:auto;aspect-ratio:1}
+.rest-dial>svg{display:block;width:100%;height:100%;transform:rotate(-90deg);overflow:visible}
+.rest-dial circle{fill:none;stroke-width:4;stroke-linecap:round}
+.rest-track{stroke:var(--line)}
+.rest-ring{stroke:var(--accent,#b8ed61);stroke-dasharray:100;stroke-dashoffset:0;transition:stroke-dashoffset .2s linear}
+.rest-dial-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.session-mode .rest-circular #rest-clock{font-family:var(--font-ui);font-size:clamp(54px,17vw,76px);font-weight:600;line-height:1.1;letter-spacing:-2px;font-variant-numeric:tabular-nums;color:var(--ink)}
+#rest-caption{font-size:13px;color:var(--subtle)}
+.rest-circle-controls{display:grid;grid-template-columns:1fr 1.3fr 1fr;align-items:start;width:100%;gap:10px;max-width:360px}
+.rest-circle-controls>button,.rest-duration-options>summary{min-height:48px;margin:0;padding:12px 8px;text-align:center;font-size:15px;line-height:24px;border-radius:14px;box-sizing:border-box}
+.rest-circle-controls>[hidden]{display:none!important}
+.rest-duration-options{position:relative}
+.rest-duration-options>summary{list-style:none;color:var(--subtle);cursor:pointer}
+.rest-duration-options>summary::-webkit-details-marker{display:none}
+.rest-duration-options[open]{grid-column:1/-1;order:3;background:var(--paper);border:1px solid var(--line);border-radius:16px}
+.rest-duration-options[open]>summary{padding:8px;min-height:44px}
+.rest-presets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:0 10px 8px}
+.rest-presets button,.rest-fine-adjust button{min-height:44px;font-size:13px;padding:8px 2px;margin:0}
+.rest-presets [aria-pressed=true]{background:var(--accent,#b8ed61);color:var(--accent-ink,#18352a)}
+.rest-fine-adjust{display:flex;justify-content:center;gap:12px;padding:0 8px 10px}.rest-fine-adjust button{flex:1}
+@media(prefers-reduced-motion:reduce){.rest-ring{transition:none}}
+
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+.rest-circle-controls>[data-start-rest],.rest-circle-controls>[data-pause-rest]{grid-column:2}.rest-circle-controls>.rest-skip{grid-column:3}.rest-circle-controls>.rest-duration-options{grid-column:1}.rest-circle-controls>.rest-duration-options[open]{grid-column:1/-1}
+
+.session-mode .qualified-weight input{padding-right:74px!important}.qualified-weight .input-unit{font-size:12px}

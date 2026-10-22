@@ -13,6 +13,7 @@ visualSettings?.addEventListener('click', event => {
 
 const expandedRecordingOptions = new Map();
 function refreshTrainingPresentation() {
+  document.body.classList.toggle('training-focus',!!document.querySelector('.session-mode'));
   for (const reminder of document.querySelectorAll('.backup-reminder')) {
     if (reminder.dataset.visualReady) continue;
     reminder.dataset.visualReady = 'true';
@@ -66,9 +67,21 @@ function refreshTrainingPresentation() {
       const title=card.querySelector('.exercise-heading h3');
       if(title&&document.documentElement.lang!=='en')title.textContent=title.textContent.split(' · ')[0].replace(/\s*▷$/, '')+' ▷';
       const id=record?.dataset.log||record?.dataset.logCardio||record?.dataset.logMobility;
+      card.querySelector('.exercise-recovery')?.remove();
+      card.querySelector('.load-comparison')?.remove();
+      const goal=card.querySelector('.exercise-goal>span:first-child');if(goal)goal.textContent=goal.textContent.replace(/^目标\s*/, '');
+      const count=card.querySelector('.workout-progress-visual>span:last-child');if(count)count.classList.add('sr-only');
+      const weight=card.querySelector('input[id^="weight-"]');
+      if(weight){const label=weight.closest('label'),description=weight.getAttribute('aria-label')||'',unit=description.match(/\((kg|lb)\)/)?.[1]||'kg';
+        for(const child of [...label.childNodes])if(child.nodeType===3)child.remove();
+        label.classList.add('inline-weight');weight.placeholder=description.includes('辅助')?'辅助重量':description.includes('单只')?'单只重量':'重量';
+        const suffix=document.createElement('span');suffix.className='input-unit';suffix.textContent=description.includes('单只')?unit+'/只':description.includes('辅助')?'辅助 '+unit:unit;label.classList.toggle('qualified-weight',description.includes('单只')||description.includes('辅助')); suffix.setAttribute('aria-hidden','true');label.append(suffix);
+      }
+      const reps=card.querySelector('.reps-picker');if(reps){const label=reps.closest('label'),perSide=label.textContent.includes('侧');for(const child of [...label.childNodes])if(child.nodeType===3)child.remove();const unit=document.createElement('span');unit.className='reps-unit';unit.textContent=perSide?'次/侧':'次';unit.setAttribute('aria-hidden','true');reps.append(unit);}
+
       const more=document.createElement('details');more.className='session-more';more.dataset.exerciseId=id||'';
       more.open=expandedRecordingOptions.get(id)===true;
-      const heading=document.createElement('summary');heading.textContent=document.documentElement.lang==='en'?'More':'更多';more.append(heading);
+      const heading=document.createElement('summary');heading.textContent=document.documentElement.lang==='en'?'Sets':'组记录';more.append(heading);
       const setup=card.querySelector('.strength-input input[id^="setup-"]')?.closest('label');
       if(setup&&!setup.textContent.includes('弹力带'))setup.remove();
       if(card.querySelectorAll('.strength-input>label').length===1)card.querySelector('.strength-input')?.classList.add('record-single');
@@ -80,11 +93,15 @@ function refreshTrainingPresentation() {
   }
   for(const session of document.querySelectorAll('.session-mode')){
     if(session.dataset.compactReady)continue;session.dataset.compactReady='true';
-    const timer=session.querySelector('.rest-compact'),adjust=timer?.querySelector('.rest-adjust');
-    if(adjust){const options=document.createElement('details');options.className='rest-options';const summary=document.createElement('summary');summary.textContent=document.documentElement.lang==='en'?'Adjust':'调整';options.append(summary,adjust);const settings=timer.querySelector('.rest-settings');if(settings)options.append(settings);timer.append(options);}
-    const navigation=session.querySelector('.session-navigation');
+    const timer=session.querySelector('.rest-circular'),navigation=session.querySelector('.session-navigation');
     if(timer&&navigation)navigation.before(timer);
-    if(navigation){const tools=document.createElement('details');tools.className='session-tools';const summary=document.createElement('summary');summary.textContent=document.documentElement.lang==='en'?'Plan':'计划设置';tools.append(summary);navigation.before(tools);tools.append(navigation);}
+    const tools=document.createElement('details');tools.className='session-tools';
+    const summary=document.createElement('summary');summary.textContent='•••';summary.setAttribute('aria-label',document.documentElement.lang==='en'?'Training menu':'训练菜单');tools.append(summary);
+    const position=session.querySelector('.session-position');if(position){const top=document.createElement('div');top.className='session-topline';position.before(top);top.append(position,tools);}
+    for(const nav of [...session.querySelectorAll('.session-navigation')])tools.append(nav);
+    const sets=session.querySelector('.session-more');if(sets)tools.append(sets);
+    session.querySelector('.session-title')?.remove();
+
   }
 }
 const visualContent = document.querySelector('#content');
