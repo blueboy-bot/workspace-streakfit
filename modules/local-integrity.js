@@ -43,3 +43,27 @@ export function currentRecordedWeight(log,{dumbbell=false}={}){
  if(dumbbell&&log.weightUnit!=='per-dumbbell')return '';
  return log.weight;
 }
+
+// Compatibility for hypertrophy-v1: secondary-muscle accounting accidentally
+// leaked half-set allowances into generated targets. Recognize the generator's
+// exact metadata before repairing; never coerce arbitrary malformed records.
+export function normalizeGeneratedSetTargets(source,catalog){
+ if(!plain(source))return {data:source,repairs:[]};
+ const data=JSON.parse(JSON.stringify(source)),repairs=[];
+ for(const collection of ['history','plannedWorkouts']){
+  if(!plain(data[collection]))continue;
+  for(const [date,d] of Object.entries(data[collection])){
+   if(!plain(d)||!plain(d.targets)||!Array.isArray(d.sessionEntries))continue;
+   for(const [id,target] of Object.entries(d.targets)){
+    if(!catalog[id]||!plain(target)||!Number.isFinite(target.sets)||target.sets<1||target.sets>10||target.sets%1!==.5)continue;
+    if(!Number.isInteger(target.min)||!Number.isInteger(target.max)||target.min<1||target.max<target.min||target.max>100)continue;
+    const entry=d.sessionEntries.find(e=>plain(e)&&e.id===id);
+    if(!entry||entry.sets!==target.sets||entry.transitionSeconds!==90||![45,90].includes(entry.workSeconds)||![60,90,150].includes(entry.rest)||![2,3].includes(target.rir)||d.targetScopes?.[id]==='day')continue;
+    const sets=Math.floor(target.sets);
+    repairs.push({path:collection+'.'+date+'.targets.'+id+'.sets',before:target.sets,after:sets});
+    target.sets=sets;entry.sets=sets;
+   }
+  }
+ }
+ return {data,repairs};
+}
