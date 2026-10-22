@@ -60,6 +60,9 @@ function refreshTrainingPresentation() {
       for (const row of rows) list.append(row);
     }
     if (card.closest('.session-mode')) {
+      const step=card.querySelector('.session-step-actions>button'),actions=card.querySelector('.record-actions');
+      if(step&&actions){if(undo)undo.remove();actions.append(step);actions.classList.add('record-actions-paired');const status=card.querySelector('.record-status');if(undo||status){const utilities=document.createElement('div');utilities.className='record-utilities';actions.after(utilities);if(status)utilities.append(status);if(undo)utilities.append(undo);}}
+
       const title=card.querySelector('.exercise-heading h3');
       if(title&&document.documentElement.lang!=='en')title.textContent=title.textContent.split(' · ')[0].replace(/\s*▷$/, '')+' ▷';
       const id=record?.dataset.log||record?.dataset.logCardio||record?.dataset.logMobility;
