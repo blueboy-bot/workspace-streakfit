@@ -496,3 +496,22 @@ footer [data-open-privacy]{background:transparent;border:0;box-shadow:none;color
 .session-mode .record-utilities:has(>.record-status:empty):not(:has(>button)){display:none}
 .session-mode .session-step-actions:empty{display:none}
 .session-mode .session-step-status{font-size:13px;color:var(--subtle);margin:4px 0 8px}
+
+.records-page>h1{font-family:var(--font-ui);font-size:24px;font-weight:600;margin:4px 0 6px}
+.records-week-summary{font-size:14px;color:var(--subtle);margin:0 0 20px}
+.records-section-title{font-size:16px;font-weight:600;margin:0 0 12px}
+.record-day-card{padding:14px 16px;border-radius:16px;margin:0 0 12px}
+.record-day-card .record-day-header{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;margin:0 0 6px;padding:0;font-size:15px;font-weight:600}
+.record-day-status{font-size:13px;font-weight:400;color:var(--subtle);white-space:nowrap}
+.record-day-status>span{margin-left:8px;font-size:20px}
+.record-movement{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0;font-size:14px;line-height:1.5}
+.record-movement>span{min-width:0;overflow-wrap:anywhere}.record-movement>b{font-size:13px;font-weight:500;white-space:nowrap;color:var(--subtle)}
+.record-day-note{font-size:13px;margin:6px 0;color:var(--subtle)}
+.record-day-details{border-top:1px solid var(--line);margin-top:10px}
+.record-day-details>summary,.records-tool>summary{font-size:14px;min-height:44px;line-height:20px;padding:12px 0;box-sizing:border-box;cursor:pointer;color:var(--subtle)}
+.record-movement-detail h3{font-family:var(--font-ui);font-size:14px;font-weight:600;margin:8px 0}
+.record-movement-detail p,.record-day-details p{font-size:14px;line-height:1.5;margin:4px 0 8px}
+.records-page>.records-tool{padding:4px 16px;border-radius:14px;margin:10px 0}
+.records-tool>.card{border:0;box-shadow:none;padding:10px 0}
+.records-page>#backup-tools{padding:4px 16px;border-radius:14px;margin:10px 0}
+.records-page>#backup-tools>summary{font-size:14px;min-height:44px;padding:12px 0;box-sizing:border-box}
