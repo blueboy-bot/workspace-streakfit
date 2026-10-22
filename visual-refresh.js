@@ -65,7 +65,7 @@ function refreshTrainingPresentation() {
       const id=record?.dataset.log||record?.dataset.logCardio||record?.dataset.logMobility;
       const more=document.createElement('details');more.className='session-more';more.dataset.exerciseId=id||'';
       more.open=expandedRecordingOptions.get(id)===true;
-      const heading=document.createElement('summary');heading.textContent=document.documentElement.lang==='en'?'More options':'更多选项';more.append(heading);
+      const heading=document.createElement('summary');heading.textContent=document.documentElement.lang==='en'?'More':'更多';more.append(heading);
       const setup=card.querySelector('.strength-input input[id^="setup-"]')?.closest('label');
       if(setup&&!setup.textContent.includes('弹力带')){more.append(setup);card.querySelector('.strength-input')?.classList.add('record-single');}
       for(const node of card.querySelectorAll('.coach-question,.coach-preferences,.exercise-details,.recorded-sets'))more.append(node);
@@ -76,10 +76,10 @@ function refreshTrainingPresentation() {
   for(const session of document.querySelectorAll('.session-mode')){
     if(session.dataset.compactReady)continue;session.dataset.compactReady='true';
     const timer=session.querySelector('.rest-compact'),adjust=timer?.querySelector('.rest-adjust');
-    if(adjust){const options=document.createElement('details');options.className='rest-options';const summary=document.createElement('summary');summary.textContent=document.documentElement.lang==='en'?'Adjust':'调整休息';options.append(summary,adjust);const settings=timer.querySelector('.rest-settings');if(settings)options.append(settings);timer.append(options);}
+    if(adjust){const options=document.createElement('details');options.className='rest-options';const summary=document.createElement('summary');summary.textContent=document.documentElement.lang==='en'?'Adjust':'调整';options.append(summary,adjust);const settings=timer.querySelector('.rest-settings');if(settings)options.append(settings);timer.append(options);}
     const navigation=session.querySelector('.session-navigation');
     if(timer&&navigation)navigation.before(timer);
-    if(navigation){const tools=document.createElement('details');tools.className='session-tools';const summary=document.createElement('summary');summary.textContent=document.documentElement.lang==='en'?'Plan options':'计划选项';tools.append(summary);navigation.before(tools);tools.append(navigation);}
+    if(navigation){const tools=document.createElement('details');tools.className='session-tools';const summary=document.createElement('summary');summary.textContent=document.documentElement.lang==='en'?'Plan':'计划设置';tools.append(summary);navigation.before(tools);tools.append(navigation);}
   }
 }
 const visualContent = document.querySelector('#content');
