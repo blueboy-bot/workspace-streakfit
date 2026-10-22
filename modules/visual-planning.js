@@ -13,7 +13,7 @@ export function adjustedWorkoutDay(day,plan,value,{catalog,targetFor,defaultTarg
  next.workoutTitle=plan.title;delete next.manualOrder;delete next.cycle;delete next.specialtyMain;delete next.targetSets;
  return next;
 }
-export function estimateOverviewMinutes(ids,progress,entries=[]){return ids.length?Math.ceil(5+ids.reduce((sum,id)=>{const p=progress[id];if(p.kind==='cardio')return sum+p.goal;if(p.kind==='mobility')return sum+p.goal;const rest=entries.find(e=>e.id===id)?.rest||90;return sum+(p.goal*35*(p.perSide?2:1)+Math.max(0,p.goal-1)*rest+60)/60;},0)):0;}
+export function estimateOverviewMinutes(ids,progress,entries=[]){return ids.length?Math.ceil((entries.length?Math.max(...entries.map(e=>e.warmupMinutes??5)):5)+ids.reduce((sum,id)=>{const p=progress[id];if(p.kind==='cardio')return sum+p.goal;if(p.kind==='mobility')return sum+p.goal;const entry=entries.find(e=>e.id===id),rest=entry?.rest||90;return sum+(p.goal*(entry?.workSeconds??35*(p.perSide?2:1))+Math.max(0,p.goal-1)*rest+(entry?.transitionSeconds??60))/60;},0)):0;}
 
 // A conservative edit of the visible workout, not a new template or a fitness test.
 // Accessory caps and time estimates are product defaults, not individual clinical limits.
@@ -444,6 +444,6 @@ export const teachingKeyframes={
 
 export function estimateRemainingOverviewMinutes(ids,progress,entries=[]){
  const active=ids.filter(id=>progress[id].goal>progress[id].done);
- const warm=active.some(id=>progress[id].kind==='strength')?5:0;
- return Math.ceil(warm+active.reduce((n,id)=>{const p=progress[id],left=p.goal-p.done;if(p.kind!=='strength')return n+left;const rest=entries.find(e=>e.id===id)?.rest||90;return n+(left*35*(p.perSide?2:1)+Math.max(0,left-1)*rest+(p.done?0:60))/60;},0));
+ const warm=active.some(id=>progress[id].kind==='strength')?(entries.length?Math.max(...entries.map(e=>e.warmupMinutes??5)):5):0;
+ return Math.ceil(warm+active.reduce((n,id)=>{const p=progress[id],left=p.goal-p.done;if(p.kind!=='strength')return n+left;const entry=entries.find(e=>e.id===id),rest=entry?.rest||90;return n+(left*(entry?.workSeconds??35*(p.perSide?2:1))+Math.max(0,left-1)*rest+(p.done?0:entry?.transitionSeconds??60))/60;},0));
 }
