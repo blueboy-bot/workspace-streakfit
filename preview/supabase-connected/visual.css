@@ -515,3 +515,6 @@ footer [data-open-privacy]{background:transparent;border:0;box-shadow:none;color
 .records-tool>.card{border:0;box-shadow:none;padding:10px 0}
 .records-page>#backup-tools{padding:4px 16px;border-radius:14px;margin:10px 0}
 .records-page>#backup-tools>summary{font-size:14px;min-height:44px;padding:12px 0;box-sizing:border-box}
+
+/* Minimal training and video presentation. */
+.minimal-video video{display:block;width:100%;max-height:65vh;border-radius:16px}.minimal-video{padding:24px}.session-mode .session-title{font-size:22px}.session-mode .exercise-heading h3{font-size:22px;line-height:1.35}.session-mode .workout-card{padding:20px}.session-mode .exercise-goal{font-size:14px}.session-mode .exercise-recovery{font-size:13px}.session-mode .strength-input input,.session-mode .strength-input select{min-height:48px;font-size:20px}.session-mode .record-actions button{font-size:16px;min-height:48px}.session-mode .eyebrow{display:none}.session-mode .session-position{font-size:13px}.session-mode .session-more summary{font-size:14px}
