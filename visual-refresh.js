@@ -70,8 +70,10 @@ function refreshTrainingPresentation() {
       more.open=expandedRecordingOptions.get(id)===true;
       const heading=document.createElement('summary');heading.textContent=document.documentElement.lang==='en'?'More':'更多';more.append(heading);
       const setup=card.querySelector('.strength-input input[id^="setup-"]')?.closest('label');
-      if(setup&&!setup.textContent.includes('弹力带')){more.append(setup);card.querySelector('.strength-input')?.classList.add('record-single');}
-      for(const node of card.querySelectorAll('.coach-question,.coach-preferences,.exercise-details,.recorded-sets'))more.append(node);
+      if(setup&&!setup.textContent.includes('弹力带'))setup.remove();
+      if(card.querySelectorAll('.strength-input>label').length===1)card.querySelector('.strength-input')?.classList.add('record-single');
+      card.querySelector('.exercise-details')?.remove();
+      for(const node of card.querySelectorAll('.recorded-sets'))more.append(node);
       if(more.children.length>1)card.append(more);
       if(undo){undo.setAttribute('aria-label',document.documentElement.lang==='en'?'Undo last set':'撤回最后一组');undo.textContent=document.documentElement.lang==='en'?'Undo':'撤回';}
     }
