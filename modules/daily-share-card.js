@@ -1,6 +1,15 @@
+import {overviewArtwork,reviewedArtwork} from './daily-overview.js';
+import {commonStrengthArtwork} from './visual-planning.js';
 // Read-only summaries: only submitted logs, never prescribed repetitions or loads.
 import {fromKilograms} from './units.js';
-export const shareArtwork={pushup:[0,0,'upper'],row:[1,0,'upper'],shoulderpress:[0,1,'upper'],deadbug:[1,1,'upper'],squat:[0,0,'lower'],bridge:[1,0,'lower'],hinge:[0,1,'lower'],plank:[1,1,'lower']};
+export const shareArtwork={bench:[0,0,'gym',2,3],chestsupported:[1,0,'gym',2,3],pulldown:[0,1,'gym',2,3],fly:[1,1,'gym',2,3],lateral:[0,2,'gym',2,3],curl:[1,2,'gym',2,3],pushup:[0,0,'upper'],row:[1,0,'upper'],shoulderpress:[0,1,'upper'],deadbug:[1,1,'upper'],squat:[0,0,'lower'],bridge:[1,0,'lower'],hinge:[0,1,'lower'],plank:[1,1,'lower']};
+function shareMovementArt(id){
+ if(shareArtwork[id])return shareArtwork[id];
+ const common=commonStrengthArtwork[id];if(common){const c=common.frames[common.thumbnail||0].crop;return [0,0,common.file,1,1,c];}
+ const r=reviewedArtwork[id];if(r)return [r.column,r.row,r.file,r.columns,r.rows,r.crop];
+ if(Object.hasOwn(overviewArtwork,id)){const n=overviewArtwork[id],tile=n>=32?n-32:n%16,grid=n>=32?2:4;return [tile%grid,Math.floor(tile/grid),n>=32?'overview-atlas-3.png':n>=16?'overview-atlas-2.png':'overview-atlas.png',grid,grid];}
+ return null;
+}
 const positive=value=>typeof value==='number'&&Number.isFinite(value)&&value>0;
 export function dailyShareModel(day={},catalog={},options={}){
  const en=options.language==='en',rows=[];
@@ -22,7 +31,7 @@ export function dailyShareModel(day={},catalog={},options={}){
    const amount=Math.round(fromKilograms(log.weight,options.unit)*10)/10;
    return `${amount} ${options.unit==='lb'?'lb':'kg'}${log.weightUnit==='per-dumbbell'?(en?' / dumbbell':' / 单只'):''}`;
   }):[];
-  rows.push({id,name,english:en?'':parts.slice(1).join(' · '),kind,amount,sets,minutes,weights:weights.length?[...new Set(weights)].join(' · '):'',muscle:move.muscle||'',art:shareArtwork[id]||null});
+  rows.push({id,name,english:en?'':parts.slice(1).join(' · '),kind,amount,sets,minutes,weights:weights.length?[...new Set(weights)].join(' · '):'',muscle:move.muscle||'',art:shareMovementArt(id)});
  }
  return {date:options.date||'',complete:!!options.complete,en,dark:!!options.dark,colorFamily:options.colorFamily||'green',rows,sets:rows.reduce((n,r)=>n+r.sets,0),minutes:rows.reduce((n,r)=>n+r.minutes,0),muscles:[...new Set(rows.map(r=>r.muscle).filter(Boolean))]};
 }
@@ -39,10 +48,7 @@ function lines(ctx,text,x,y,width,size=25,maxLines=3){
 }
 function loadShareImage(url){return new Promise(resolve=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=()=>resolve(null);img.src=url;});}
 // Layout depends on recorded content, so one movement never occupies one corner of a four-cell sheet.
-export function dailyShareLayout(rows){
- const dataOnly=rows.every(row=>!row.art),columns=rows.length===1||dataOnly?1:2;
- return {columns,dataOnly,rowCount:Math.ceil(rows.length/columns)};
-}
+export function dailyShareLayout(rows){const columns=rows.length===1?1:2;return {columns,dataOnly:false,rowCount:Math.ceil(rows.length/columns)};}
 function shareCutout(image){
  if(!image)return null;
  const canvas=document.createElement('canvas');canvas.width=image.width;canvas.height=image.height;
@@ -53,10 +59,9 @@ function shareCutout(image){
 }
 export async function renderDailyShareCards(model,{story=false}={}){
  await document.fonts?.ready;
- const upper=model.rows.some(r=>r.art?.[2]==='upper')?await loadShareImage(new URL('../assets/exercises/share-blue-upper.png',import.meta.url).href):null;
- const lower=model.rows.some(r=>r.art?.[2]==='lower')?await loadShareImage(new URL('../assets/exercises/share-blue-lower.png',import.meta.url).href):null;
- const images={upper:model.dark?shareCutout(upper):upper,lower:model.dark?shareCutout(lower):lower};
- const canvases=[],pages=Math.ceil(model.rows.length/4),bg=model.dark?'#111c18':'#ffffff',ink=model.dark?'#f0f5f1':'#14221b',muted=model.dark?'#acbeb3':'#596171',accent=model.dark?(model.colorFamily==='blue'?'#a9d9ff':'#b6e86b'):'#1555ff',line=model.dark?'#34463c':'#dce3e0';
+ const images={};
+ for(const key of new Set(model.rows.filter(r=>r.art).map(r=>r.art[2]))){const file={upper:'share-blue-upper.png',lower:'share-blue-lower.png',gym:'share-blue-gym.png'}[key]||key;const img=await loadShareImage(new URL('../assets/exercises/'+file,import.meta.url).href);images[key]=model.dark&&['upper','lower','gym'].includes(key)?shareCutout(img):img;}
+ const canvases=[],pages=Math.ceil(model.rows.length/6),bg=model.dark?'#111c18':'#ffffff',ink=model.dark?'#f0f5f1':'#14221b',muted=model.dark?'#acbeb3':'#596171',accent=model.dark?(model.colorFamily==='blue'?'#a9d9ff':'#b6e86b'):'#1555ff';
  for(let page=0;page<pages;page++){
   const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=story?1920:1350;
   const ctx=canvas.getContext('2d');ctx.fillStyle=bg;ctx.fillRect(0,0,1080,canvas.height);
@@ -66,22 +71,27 @@ export async function renderDailyShareCards(model,{story=false}={}){
   ctx.font=`900 ${model.en?56:78}px system-ui`;ctx.fillStyle=ink;ctx.fillText(shareText(model,model.complete?'今日训练完成':'本次训练记录',model.complete?'WORKOUT COMPLETE':'WORKOUT RECORDED'),60,204);
   ctx.fillStyle=muted;ctx.font='500 25px system-ui';ctx.fillText(model.date+(pages>1?`  /  ${page+1} of ${pages}`:''),62,252);
   ctx.fillStyle=accent;ctx.font='700 30px system-ui';ctx.fillText(`${model.rows.length} ${shareText(model,'个动作','exercises')}  ·  ${model.sets} ${shareText(model,'组记录','sets logged')}${model.minutes?`  ·  ${model.minutes} ${shareText(model,'分钟有氧','cardio min')}`:''}`,62,303);
-  const pageRows=model.rows.slice(page*4,page*4+4),layout=dailyShareLayout(pageRows),rowHeight=740/layout.rowCount;
+  const pageRows=model.rows.slice(page*6,page*6+6),layout=dailyShareLayout(pageRows),rowHeight=740/layout.rowCount;
   for(let index=0;index<pageRows.length;index++){
    const row=pageRows[index],single=pageRows.length===1,wide=layout.columns===1||(pageRows.length===3&&index===2),x=60+(index%layout.columns)*490,y=350+Math.floor(index/layout.columns)*rowHeight,width=wide?960:470;
    ctx.fillStyle=model.dark?'#1c2b23':'#f4f6f7';ctx.fillRect(x,y,width,rowHeight-18);
-   ctx.fillStyle=accent;ctx.font='700 24px system-ui';ctx.fillText(String(page*4+index+1).padStart(2,'0'),x+25,y+45);
+   ctx.fillStyle=accent;ctx.font='700 24px system-ui';ctx.fillText(String(page*6+index+1).padStart(2,'0'),x+25,y+45);
    const art=row.art,img=art?images[art[2]]:null,hasImage=!!(art&&img);
    if(hasImage){
-    const sw=img.width/2,sh=img.height/2,sx=art[2]==='upper'&&art[1]===1?(art[0]===0?0:img.width*.45):art[0]*sw,cropWidth=art[2]==='upper'&&art[1]===1?img.width*(art[0]===0?.45:.55):sw;
-    const h=single?420:Math.min(rowHeight*.49,300),w=Math.min(width-70,h*1.25);
-    ctx.drawImage(img,sx,art[1]*sh,cropWidth,sh,x+(width-w)/2,y+40,w,h);
+    const sw=img.width/(art[3]||2),sh=img.height/(art[4]||2);let sx=art[0]*sw,sy=art[1]*sh,cw=sw,ch=sh;
+    if(art[5]){const c=art[5];sx=c.x*img.width/c.sourceWidth;sy=c.y*img.height/c.sourceHeight;cw=c.width*img.width/c.sourceWidth;ch=c.height*img.height/c.sourceHeight;}
+    else if(art[2]==='gym'){const c=[[60,0,535,385],[700,0,440,390],[165,394,390,410],[695,394,525,415],[115,810,430,440],[785,810,340,440]][art[1]*2+art[0]];sx=c[0]*img.width/1254;sy=c[1]*img.height/1254;cw=c[2]*img.width/1254;ch=c[3]*img.height/1254;}
+    else if(art[2]==='upper'&&art[1]===1){sx=art[0]===0?0:img.width*.45;cw=img.width*(art[0]===0?.45:.55);}
+    const maxH=single?420:rowHeight*(row.weights?.43:.56),maxW=width-60,scale=Math.min(maxW/cw,maxH/ch),w=cw*scale,h=ch*scale;
+    ctx.drawImage(img,sx,sy,cw,ch,x+(width-w)/2,y+(rowHeight<300?15:34),w,h);
+   }else{ // Labelled body diagram keeps the pictorial card without inventing an exercise pose.
+    ctx.fillStyle=accent;ctx.beginPath();ctx.arc(x+width/2,y+rowHeight*.25,17,0,Math.PI*2);ctx.fill();ctx.fillRect(x+width/2-23,y+rowHeight*.25+25,46,55);ctx.lineWidth=12;ctx.strokeStyle=accent;ctx.beginPath();ctx.moveTo(x+width/2-23,y+rowHeight*.25+35);ctx.lineTo(x+width/2-52,y+rowHeight*.25+75);ctx.moveTo(x+width/2+23,y+rowHeight*.25+35);ctx.lineTo(x+width/2+52,y+rowHeight*.25+75);ctx.stroke();ctx.fillStyle=muted;ctx.font='16px system-ui';ctx.fillText(shareText(model,'部位示意 · 动作图待补','AREA DIAGRAM'),x+24,y+rowHeight*.57);
    }
-   const textY=hasImage?y+(single?500:rowHeight*.58):y+(single?125:60);
-   ctx.fillStyle=ink;lines(ctx,row.name,x+28,textY,width-56,single?54:30,2);
-   ctx.fillStyle=accent;lines(ctx,row.amount,x+28,textY+(single?100:54),width-56,single?36:24,layout.dataOnly&&!single?1:2);
-   if(row.weights){ctx.fillStyle=muted;lines(ctx,row.weights,x+28,textY+(single?165:96),width-56,layout.dataOnly&&!single?18:20,1);}
-   if(!hasImage&&single){ctx.fillStyle=accent;ctx.font='850 200px system-ui';ctx.fillText(String(row.kind==='cardio'?row.minutes:row.sets),x+40,y+490);ctx.font='600 40px system-ui';ctx.fillText(shareText(model,row.kind==='cardio'?'分钟已记录':'组已记录',row.kind==='cardio'?'MIN LOGGED':'SETS LOGGED'),x+300,y+465);ctx.fillStyle=muted;ctx.font='500 23px system-ui';ctx.fillText(shareText(model,'实际完成 · '+(row.muscle||'训练'),'LOGGED WORK · '+(model.en?'':row.muscle)),x+28,y+rowHeight-48);}
+   const textY=y+(single?500:rowHeight*(rowHeight<300?(row.weights?.62:.74):.67));
+   ctx.fillStyle=ink;lines(ctx,row.name,x+28,textY,width-56,single?48:rowHeight<300?23:29,1);
+   ctx.fillStyle=accent;lines(ctx,row.amount,x+28,textY+(single?100:rowHeight<300?34:54),width-56,single?36:rowHeight<300?18:23,1);
+   if(row.weights){ctx.fillStyle=muted;lines(ctx,row.weights,x+28,textY+(single?165:rowHeight<300?62:96),width-56,rowHeight<300?16:20,1);}
+
   }
   ctx.fillStyle=muted;ctx.font='600 23px system-ui';ctx.fillText(shareText(model,'本次训练涉及部位','TRAINED AREAS'),62,1145);
   const names={'胸部':'Chest','背部':'Back','肩部':'Shoulders','核心':'Core','臀部':'Glutes','股四头肌':'Quads','腘绳肌':'Hamstrings','肱二头肌':'Biceps','肱三头肌':'Triceps','心肺':'Cardio','活动度':'Mobility','小腿':'Calves'};
