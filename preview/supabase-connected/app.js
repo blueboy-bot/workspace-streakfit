@@ -682,14 +682,14 @@ function periodizePlan(base,at){
  if(goal==='提升力量'&&role==='technique'){target={sets:3,min:3,max:5};rest=150;}else if(goal==='提升力量'&&role==='assistance'){target={sets:3,min:strengthMainIds.has(id)||id==='splitSquat'?6:8,max:strengthMainIds.has(id)||id==='splitSquat'?10:12};rest=90;}
  
  target.rir=goal==='增肌与体型塑造'?(p.experience==='有一些经验 / 重新开始'?2:3):goal==='提升力量'?(c.session==='回归适应'||p.experience==='初学者'?4:2):3;
- if(['deadbug','bird','proneW','wallslide','pallof','bandpallof'].includes(id)){target={...target,sets:Math.min(target.sets,3),min:6,max:8,rir:undefined,quality:true};rest=60;}if(goal==='提升力量'&&role==='technique')target.rir=3;if(catalog[id].perSide)target.perSide=true;const custom=state.exerciseTargets?.[id];if(custom)target={...target,...custom};else{const prior=relevantEarlierDays(at).filter(x=>!x.planned&&x.record.logs?.[id]?.length&&x.record.targets?.[id]&&x.record.targetScopes?.[id]!=='day').sort((a,b)=>b.date.localeCompare(a.date))[0];const held=prior?.record.targets[id];if(held){for(const field of ['sets','min','max'])if(Number.isFinite(held[field]))target[field]=Math.min(target[field],held[field]);if(Number.isFinite(held.rir)&&Number.isFinite(target.rir))target.rir=Math.max(target.rir,held.rir);const heldRest=prior.record.sessionEntries?.find(e=>e.id===id)?.rest;if(Number.isFinite(heldRest))rest=Math.max(rest,heldRest);}}
+ if(['deadbug','bird','proneW','wallslide','pallof','bandpallof'].includes(id)){target={...target,sets:Math.min(target.sets,3),min:6,max:8,rir:undefined,quality:true};rest=60;}if(goal==='提升力量'&&role==='technique')target.rir=3;if(catalog[id].perSide)target.perSide=true;const custom=state.exerciseTargets?.[id];if(custom)target={...target,...custom};else{const prior=relevantEarlierDays(at).filter(x=>!x.planned&&x.record.logs?.[id]?.length&&x.record.targets?.[id]&&x.record.targetScopes?.[id]!=='day').sort((a,b)=>b.date.localeCompare(a.date))[0];const held=prior?.record.targets[id];if(held){for(const field of ['sets','min','max'])if(Number.isFinite(held[field])&&!(field==='sets'&&held[field]<2))target[field]=Math.min(target[field],held[field]);if(Number.isFinite(held.rir)&&Number.isFinite(target.rir))target.rir=Math.max(target.rir,held.rir);const heldRest=prior.record.sessionEntries?.find(e=>e.id===id)?.rest;if(Number.isFinite(heldRest))rest=Math.max(rest,heldRest);}}
  const muscle=catalog[id].muscle,used=muscleSets[muscle]||0,remaining=Math.min(singleLimit-used,weeklyLimit-(recent[muscle]||0)-used);
- if(!custom){if(remaining<=0){capacityNotes.push(muscle+'近期直接组数达到自动推荐上限');continue;}if(target.sets>remaining){target.sets=remaining;target.capacityAdjusted=true;capacityNotes.push(muscle+'推荐组数已按容量缩减');}}
+ if(!custom){if(remaining<2){capacityNotes.push(muscle+'近期直接组数达到自动推荐上限');continue;}if(target.sets>remaining){target.sets=remaining;target.capacityAdjusted=true;capacityNotes.push(muscle+'推荐组数已按容量缩减');}}
  else if(target.sets>remaining){target.capacityWarning=true;capacityNotes.push(muscle+'自定义组数超过自动推荐范围');}
  const cost=(target.sets*35+(target.sets-1)*rest+60)/60;
  const cardioBudget=base.ids.filter(x=>catalog[x].kind==='cardio').reduce((n,x)=>n+(base.durations?.[x]||0),0);
  if(ids.filter(x=>catalog[x].kind!=='cardio').length&&elapsed+cost>time-cardioBudget)continue;
- let actualCost=cost;if(elapsed+cost>time-cardioBudget){if(custom){target.timeWarning=true;}else{const fitting=Math.floor(((time-cardioBudget-elapsed)*60-60+rest)/(35+rest));target.sets=Math.max(1,Math.min(target.sets,fitting));actualCost=(target.sets*35+(target.sets-1)*rest+60)/60;target.timeAdjusted=true;}}
+ let actualCost=cost;if(elapsed+cost>time-cardioBudget){if(custom){target.timeWarning=true;}else{const fitting=Math.floor(((time-cardioBudget-elapsed)*60-60+rest)/(35+rest));if(fitting<2){capacityNotes.push('可用时间不足以安排完整组数');continue;}target.sets=Math.min(target.sets,fitting);actualCost=(target.sets*35+(target.sets-1)*rest+60)/60;target.timeAdjusted=true;}}
  ids.push(id);muscleSets[muscle]=used+target.sets;elapsed+=actualCost;result.targets[id]=target;result.entries.push({id,sets:target.sets,rest,label:id==='wallslide'?'肩部活动控制 · 滑臂':base.entries?.find(e=>e.id===id)?.label||catalog[id].muscle,role});
  }
  result.capacityNotes=[...new Set(capacityNotes)];result.recoveryRecommended=base.ids.length>0&&!ids.length&&capacityNotes.length>0;if(result.capacityNotes.length)result.selectionInfo='已按近期实际训练量调整推荐容量。';if(result.recoveryRecommended){result.title='恢复建议 · 近期容量已达推荐范围';result.selectionInfo='当前部位近期直接组数已达自动推荐范围，建议恢复或改练其他部位。';}result.ids=ids;const timedTotal=ids.filter(id=>catalog[id].kind==='cardio').reduce((n,id)=>n+result.durations[id],0);result.estimated=Math.ceil((ids.every(id=>catalog[id].kind==='cardio')?0:elapsed)+timedTotal);
@@ -779,7 +779,7 @@ function hypertrophyPrescription(at){
  if(focusMuscles[focus]){
   const muscles=focusedMuscles(focus);
   slots=[press,slot('incline',['incline','inclinebar','dbbench'],true,2),fly,row,vertical,rear,side,slot('shoulder-press',['shoulderpress','shouldermachine','barohp'],true,2),squat,extension,hinge,legcurl,slot('hip',['hipthrust','barhip','bridge']),calf,core,curl,triceps].map(s=>({...s,options:s.options.filter(id=>muscles.includes(catalog[id]?.muscle))})).filter(s=>s.options.length);
-  title=(focus==='arms'?'手臂':focusMuscles[focus])+'增肌';
+  if(focus==='shoulders')slots.sort((a,b)=>['side','rear','shoulder-press'].indexOf(a.pattern)-['side','rear','shoulder-press'].indexOf(b.pattern));title=(focus==='arms'?'手臂':focusMuscles[focus])+'增肌';
  }
  const recent={},lastExposure={},date=at.toLocaleDateString('en-CA');
  // Actual logs only. Future unperformed plans must not masquerade as recovery evidence.
@@ -794,8 +794,8 @@ function hypertrophyPrescription(at){
  const weeklyLimit=beginner?8:12;
  const weekStart=new Date(at);weekStart.setDate(weekStart.getDate()-(weekStart.getDay()+6)%7);
  let exposures=0;
- for(let i=0;i<7;i++){const day=new Date(weekStart);day.setDate(day.getDate()+i);if(schedule(day)!=='training')continue;const n=trainingOrdinal(day);if(focusMuscles[focus]||split==='full'||split==='upperlower'&&n%2===ordinal%2||split==='ppl'&&n%3===ordinal%3)exposures++;}
- const sessionLimit=Math.min(beginner?4:6,Math.max(1,Math.floor(weeklyLimit/Math.max(1,exposures))));
+ for(let i=0;i<7;i++){const day=new Date(weekStart);day.setDate(day.getDate()+i);if(schedule(day)!=='training')continue;const n=trainingOrdinal(day);if((focusMuscles[focus]&&(day.toLocaleDateString('en-CA')===at.toLocaleDateString('en-CA')||(state.history[day.toLocaleDateString('en-CA')]||state.plannedWorkouts?.[day.toLocaleDateString('en-CA')])?.trainingPreferences?.muscleFocus===focus))||(!focusMuscles[focus]&&(split==='full'||split==='upperlower'&&n%2===ordinal%2||split==='ppl'&&n%3===ordinal%3)))exposures++;}
+ const sessionLimit=Math.min(beginner?4:focusMuscles[focus]?10:6,Math.max(1,Math.floor(weeklyLimit/Math.max(1,exposures))));
  const ids=[],entries=[],targets={},usedMuscles={},usedPatterns=new Set(),notes=[];
  const limit=Math.min(requestedCount()||6,beginner?5:6,minutes<30?3:minutes<45?4:6);
  let estimated=Math.min(8,minutes*.2);
@@ -806,16 +806,16 @@ function hypertrophyPrescription(at){
   const muscle=catalog[id].muscle,pattern=s.pattern;
   if(usedPatterns.has(pattern))continue;
   const custom=state.exerciseTargets?.[id],control=['deadbug','bird','proneW','wallslide','pallof','bandpallof'].includes(id);
-  let target={sets:s.sets,min:control?6:s.compound?6:10,max:control?8:s.compound?10:15,rir:control?undefined:beginner?3:2,...(control?{quality:true}:{}),...(catalog[id].perSide?{perSide:true}:{}),...custom};
+  let target={sets:s.sets,min:control?6:['lateral','cablelateral','reversefly','rearpec'].includes(id)?12:s.compound?6:10,max:control?8:['lateral','cablelateral','reversefly','rearpec'].includes(id)?20:s.compound?10:15,rir:control?undefined:beginner?3:2,...(control?{quality:true}:{}),...(catalog[id].perSide?{perSide:true}:{}),...custom};
   let rest=control?60:s.compound?(beginner?120:150):90;
   // Do not re-prescribe a hard exposure on consecutive dates. The date-level
   // approximation cannot establish an exact 48-hour interval.
   if(lastExposure[muscle]===1&&!custom){notes.push(muscle+'安排恢复');continue;}
   const perSet=hypertrophyLoad(id,1);
-  const muscleSessionLimit=split==='ppl'&&muscle==='肩部'?Math.min(sessionLimit,ordinal%3===0?(beginner?3:4):(beginner?1:2)):sessionLimit;
+  const muscleSessionLimit=split==='ppl'&&!focusMuscles[focus]&&muscle==='肩部'?Math.min(sessionLimit,ordinal%3===0?(beginner?3:4):(beginner?1:2)):sessionLimit;
   let allowance=Math.min(target.sets,Math.floor(muscleSessionLimit-(usedMuscles[muscle]||0)));
   for(const [group,n] of Object.entries(perSet))allowance=Math.min(allowance,Math.floor((weeklyLimit-(recent[group]||0)-(usedMuscles[group]||0))/n));
-  if(!custom){if(allowance<1){notes.push(muscle+'近期训练量充足');continue;}target.sets=Math.min(target.sets,allowance);}else if(target.sets>allowance)target.capacityWarning=true;
+  if(!custom){if(allowance<2){notes.push(muscle+'近期训练量充足');continue;}target.sets=Math.min(target.sets,allowance);}else if(target.sets>allowance)target.capacityWarning=true;
   const seconds=45*(catalog[id].perSide?2:1);
   const cost=sets=>(sets*seconds+Math.max(0,sets-1)*rest+90)/60;
   if(estimated+cost(target.sets)>minutes){
@@ -825,7 +825,7 @@ function hypertrophyPrescription(at){
   ids.push(id);usedPatterns.add(pattern);targets[id]=target;entries.push({id,sets:target.sets,rest,role:control?'control':s.compound?'main':'assistance',label:muscle,workSeconds:seconds,transitionSeconds:90,warmupMinutes:Math.min(8,minutes*.2)});estimated+=cost(target.sets);
   for(const [group,n] of Object.entries(hypertrophyLoad(id,target.sets)))usedMuscles[group]=(usedMuscles[group]||0)+n;
  }
- return {title:ids.length?title:'恢复日',ids,entries,targets,sets:beginner?2:3,estimated:ids.length?Math.ceil(estimated):0,hypertrophy:true,planningVersion:'hypertrophy-v1',recoveryRecommended:!ids.length,capacityNotes:[...new Set(notes)],weeklyEquivalentSets:recent,sessionEquivalentSets:usedMuscles,overBudget:estimated>minutes,note:'按每周训练量与恢复分配互补动作；主项 6–10 次、辅助 10–15 次，保留余力。热身、组间休息与换器械计入时间；不因日期推进自动加重。'};
+ return {title:ids.length?title:'恢复日',ids,entries,targets,sets:beginner?2:3,estimated:ids.length?Math.ceil(estimated):0,hypertrophy:true,planningVersion:'hypertrophy-v2',recoveryRecommended:!ids.length,capacityNotes:[...new Set(notes)],weeklyEquivalentSets:recent,sessionEquivalentSets:usedMuscles,overBudget:estimated>minutes,note:'按每周训练量与恢复分配互补动作；主项 6–10 次、辅助 10–15 次，保留余力。热身、组间休息与换器械计入时间；不因日期推进自动加重。'};
 }
 
 function basePrescription(at=new Date()){
@@ -851,7 +851,7 @@ function recentMuscleVolume(at){const volume={};for(const {date,record:d,planned
 const chestPressIds=new Set(['bench','dbbench','dbpress','incline','inclinebar','smithbench','chestmachine','pushup','push']);
 for(const variant of exerciseVariants)if(chestPressIds.has(variant.variantOf))chestPressIds.add(variant.id);
 function shoulderContext(at){let exposure=0,chestSets=0;for(const {date,record:d,planned} of relevantEarlierDays(at)){if(d.trainingPreferences?.muscleFocus==='shoulders'&&(planned||actualWork(d)))exposure++;if(dayIndex(at)-dayIndex(date)>7)continue;for(const id of chestPressIds){chestSets+=planned&&d.exerciseIds?.includes(id)?d.targets?.[id]?.sets||4:d.logs?.[id]?.length||0;}}return {variant:exposure%2?'B':'A',chestSets,forecast:at.toLocaleDateString('en-CA')>dateKey()};}
-function shoulderSession(at){const context=shoulderContext(at),beginner=state.profile.experience==='初学者',sets=beginner?2:3;const push={label:'前束 · 肩推',options:['shoulderpress','shouldermachine','barohp'],target:{sets,min:6,max:10},rest:120},side={label:'侧束 · 外展',options:['lateral','cablelateral'],target:{sets,min:10,max:20},rest:90},rear={label:'后束 · 水平外展',options:['reversefly','rearpec','facepull'],target:{sets,min:10,max:20},rest:90};const slots=context.variant==='A'?[...(context.chestSets<6?[push]:[]),side,rear]:[side,rear,...(context.chestSets<6?[{...push,target:{sets:beginner?1:2,min:8,max:12}}]:[])];const limit=requestedCount()||3,entries=[],targets={};for(const slot of slots){const id=experienceOptions(slot.options).find(id=>supports(id));if(!id||entries.length>=limit)continue;entries.push({id,label:slot.label,rest:slot.rest,sets:slot.target.sets});targets[id]=slot.target;}if(!entries.length&&supports('wallslide')){entries.push({id:'wallslide',label:'无器械 · 肩部控制基础',rest:60,sets:2});targets.wallslide={sets:2,min:8,max:12};}return {title:'肩部专项 · '+context.variant+' 日',ids:entries.map(e=>e.id),entries,targets,sets,shoulderSession:context.variant,note:'A 日肩推 → 侧束 → 后束；B 日侧束 → 后束优先。'+(context.chestSets>=6?'近 7 天'+(context.forecast?'实际及未来预计':'实际完成')+'胸部推举达 '+context.chestSets+' 组，本日不再追加肩推。':context.variant==='B'?'近期纳入判断的胸部推举较少，可保留少量肩推。':'')+' 默认每个侧/后束动作 10–20 次，不叠加多个同类动作凑数量。器械不足时仅显示可完成项目；无器械肩部控制不等同于负重增肌课。'};}
+function shoulderSession(at){const context=shoulderContext(at),beginner=state.profile.experience==='初学者',sets=beginner?2:3;const push={label:'前束 · 肩推',options:['shoulderpress','shouldermachine','barohp'],target:{sets,min:6,max:10},rest:120},side={label:'侧束 · 外展',options:['lateral','cablelateral'],target:{sets,min:12,max:20},rest:90},rear={label:'后束 · 水平外展',options:['reversefly','rearpec','facepull'],target:{sets,min:10,max:20},rest:90};const slots=context.variant==='A'?[...(context.chestSets<6?[push]:[]),side,rear]:[side,rear,...(context.chestSets<6?[{...push,target:{sets:2,min:8,max:12}}]:[])];const limit=requestedCount()||3,entries=[],targets={};for(const slot of slots){const id=experienceOptions(slot.options).find(id=>supports(id));if(!id||entries.length>=limit)continue;entries.push({id,label:slot.label,rest:slot.rest,sets:slot.target.sets});targets[id]=slot.target;}if(!entries.length&&supports('wallslide')){entries.push({id:'wallslide',label:'无器械 · 肩部控制基础',rest:60,sets:2});targets.wallslide={sets:2,min:8,max:12};}return {title:'肩部专项 · '+context.variant+' 日',ids:entries.map(e=>e.id),entries,targets,sets,shoulderSession:context.variant,note:'A 日肩推 → 侧束 → 后束；B 日侧束 → 后束优先。'+(context.chestSets>=6?'近 7 天'+(context.forecast?'实际及未来预计':'实际完成')+'胸部推举达 '+context.chestSets+' 组，本日不再追加肩推。':context.variant==='B'?'近期纳入判断的胸部推举较少，可保留少量肩推。':'')+' 默认每个侧/后束动作 10–20 次，不叠加多个同类动作凑数量。器械不足时仅显示可完成项目；无器械肩部控制不等同于负重增肌课。'};}
 function detailedBackAvailable(at=workoutDate()){return !beginnerExperience()&&state.profile.experience==='有规律训练经验'&&state.profile.trainingRecency!=='停练后重新开始'&&cycleContext(at).session!=='回归适应';}
 function backSession(at){
  const p=state.profile,level=p.experience,beginner=level==='初学者',split=p.split||'auto';if(!detailedBackAvailable(at)){const ids=[...new Set(experienceOptions(['pulldown','chestsupported','cablerow','row','bandrow','proneW']))].filter(id=>supports(id));const selected=ids.slice(0,Math.min(requestedCount()||4,5));return {title:'背部专项 · 基础练习',ids:selected,sets:3,entries:selected.map(id=>({id,rest:90,label:'背部 · 基础拉力练习',role:'assistance'})),note:'基础垂直拉与水平拉，优先稳定支撑、可控负重与恢复，不细分握距或区域重点。'};}
