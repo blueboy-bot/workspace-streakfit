@@ -592,3 +592,5 @@ footer [data-open-privacy]{background:transparent;border:0;box-shadow:none;color
 :root[data-theme^="dark"] .route-visual-day>.plan-thumbnail{background:#14241c}
 :root[data-theme^="dark"] .route-recovery-art{background-color:#647969;background-blend-mode:multiply}
 @media(max-width:600px){.daily-share-dialog{padding:16px}.daily-share-options{align-items:flex-start;flex-direction:column}}
+
+.body-focus-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px}.body-focus-tabs button{flex:1;min-width:48px;min-height:44px;background:var(--soft);color:var(--ink);border:1px solid var(--line)}.body-focus-tabs button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent-edge)}.route-body-focus{display:block;width:100%;margin:12px 0 18px;min-height:48px;background:var(--soft);color:var(--ink);border:1px solid var(--line);font-size:14px}
