@@ -1,3 +1,5 @@
+import {dailyShareModel,createDailyShareDialog} from './modules/daily-share-card.js';
+import {currentLanguage} from './modules/localization.js';
 import {adjustedWorkoutDay,prioritizeWorkoutAdjustment,estimateRemainingOverviewMinutes,estimateOverviewMinutes,setProgressMarkup,teachingKeyframes,commonStrengthArtwork} from './modules/visual-planning.js';
 import {overviewProgress,overviewResume,overviewTitle,overviewArtwork,reviewedArtwork,withheldArtwork} from './modules/daily-overview.js';
 const appStorage=globalThis.STREAKFIT_STORAGE||localStorage;
@@ -66,7 +68,7 @@ if(page==='workout')body=`<p class="eyebrow">TODAY’S SESSION</p><h1>全身基�
 if(page==='path')body=`<p class="eyebrow">YOUR FITNESS JOURNEY</p><h1>先打基础，再慢慢变强。</h1><p>${esc(state.profile.goal)} · 每周 ${esc(state.profile.days)} 天 · ${esc(state.profile.place)} · 每次 ${esc(state.profile.minutes)} 分钟</p><p class="notice">目前仅开放 15 分钟无器械入门课。上述偏好已保存；完整个性化排课将在正式版本接入。</p>${['01 · 建立习惯 / 当前可体验','02 · 基础力量 / 规划中','03 · 稳定进阶 / 规划中','04 · 专属目标 / 规划中'].map((s,i)=>`<div class="path-node"><h3>${s}</h3><p>${i?'完成前一阶段后逐步增加难度，后续版本开放。':'从椅子深蹲、墙壁俯卧撑和臀桥开始。'}</p>${i?'':'<button class="primary" data-action="workout">进入今日训练 →</button>'}</div>`).join('')}`;
 if(page==='learn')body=`<p class="eyebrow">MOVE WITH CONFIDENCE</p><h1>动作课堂</h1><p>先学会怎么做，再追求做多少。</p><p class="notice">当前为文字教学；真实的 10–30 秒动作视频待拍摄或获得授权后接入。</p><div class="learn-grid">${moves.map(m=>`<div class="card"><div class="illustration">${m[1]}</div><h3>${m[0]}</h3><p>${m[2]}</p><span class="muted">入门 · 无器械</span></div>`).join('')}</div>`;
 if(page==='progress')body=`<p class="eyebrow">CONSISTENCY ADDS UP</p><h1>每一点努力，都算数。</h1><div class="tasks"><div class="card"><p>累计经验</p><div class="stat">${total()} XP</div></div><div class="card"><p>本周已完成训练</p><div class="stat">${weeklyGrowth().completed} 次</div></div></div><div class="section-head"><h3>真实的每一天</h3></div><div class="card">${Object.entries(state.history).sort(([a],[b])=>b.localeCompare(a)).map(([day,v])=>`<div class="exercise"><span>${esc(day)}</span><b>${points(v)} XP</b></div>`).join('')}</div><p>排行榜、好友和联赛将在后续版本开放，只比较习惯行为。</p>`;
-content.innerHTML=enhance(body,d);if(storageDirty)content.innerHTML=content.innerHTML.replaceAll('进度已保存','进度仅暂存在页面').replaceAll('已保存的训练安排','暂存在页面的训练安排');if(page==='today'){if(!beginnerExperience())content.innerHTML=safetyStatusPanel()+content.innerHTML;const badges=content.querySelector?.('.badges');if(badges){const w=weeklyGrowth();badges.innerHTML=`<div class="badge">${w.completed} / ${w.target}<small>本周训练</small></div><div class="badge">LV. ${Math.floor(total()/100)+1}<small>${total()} XP</small></div>`;}}if(page==='workout'){content.innerHTML=safetyStatusPanel()+comfortPanel()+removalNotice()+content.innerHTML;syncWorkoutPauseUI();}if(page==='today'){decorateDailyTasks(d);}content.insertAdjacentHTML?.('afterbegin','<p id="action-status" class="record-status" role="status" aria-live="polite"></p>');restoreWorkoutInputs();rememberOverviewPosition();localizeDocument();}
+content.innerHTML=enhance(body,d);if(storageDirty)content.innerHTML=content.innerHTML.replaceAll('进度已保存','进度仅暂存在页面').replaceAll('已保存的训练安排','暂存在页面的训练安排');if(page==='today'){if(!beginnerExperience())content.innerHTML=safetyStatusPanel()+content.innerHTML;const badges=content.querySelector?.('.badges');if(badges){const w=weeklyGrowth();badges.innerHTML=`<div class="badge">${w.completed} / ${w.target}<small>本周训练</small></div><div class="badge">LV. ${Math.floor(total()/100)+1}<small>${total()} XP</small></div>`;}}if(page==='workout'){content.innerHTML=safetyStatusPanel()+comfortPanel()+removalNotice()+content.innerHTML;syncWorkoutPauseUI();}if(page==='today'){decorateDailyTasks(d);}content.insertAdjacentHTML?.('afterbegin','<p id="action-status" class="record-status" role="status" aria-live="polite"></p>');restoreWorkoutInputs();rememberOverviewPosition();appendDailyShareEntry();localizeDocument();}
 const catalog={
  squat:{name:'椅子深蹲',cues:['髋部向后坐','膝盖朝脚尖','缓慢站起'],gear:'无器械'},
  push:{name:'墙壁俯卧撑',cues:['双手撑墙','身体保持直线','缓慢屈肘再推回'],gear:'无器械'},
@@ -1540,3 +1542,29 @@ if(typeof document.createElement==='function')globalThis.STREAKFIT_BETA_BRIDGE={
  validate:text=>parseBackupData(text,{goalRules,dayIndex,catalog}),
  exportCurrent:()=>JSON.stringify({format:'streakfit-backup',version:1,data:state},null,2)
 };
+
+
+// Sharing reads only the selected date's submitted history. It never changes a plan.
+function dailyCardModel(date,options={}){
+ const day=state.history[date]||{};
+ const ids=[...new Set([...(day.exerciseIds||[]),...Object.keys(day.logs||{})])].filter(id=>catalog[id]);
+ return dailyShareModel(day,catalog,{date,complete:ids.length>0&&trained({...day,exerciseIds:ids}),language:currentLanguage(),unit:preferredMassUnit(),...options});
+}
+function appendDailyShareEntry(){
+ if(typeof dailyShareModel!=='function'||!['today','workout'].includes(page))return;
+ const date=page==='workout'?workoutDateKey():dateKey();if(date>dateKey())return;
+ const model=dailyCardModel(date);if(!model.rows.length)return;
+ const en=model.en;
+ content.insertAdjacentHTML?.('afterbegin',`<section class="card daily-share-entry"><div><p class="eyebrow">YOUR WORKOUT, YOUR RECORD</p><h2>${en?'Keep a record of today':'为今天的训练，留下一张卡片'}</h2><p>${date} · ${model.rows.length} ${en?'exercises logged':'个动作有实际记录'}</p></div><button type="button" class="primary" data-daily-share="${date}">${en?'Generate share card':'生成训练分享卡'}</button></section>`);
+}
+if(typeof document.createElement==='function'){
+ let dailyShareDate=dateKey();
+ const dailyShare=createDailyShareDialog({getModel:options=>dailyCardModel(dailyShareDate,options)});
+ onContentClick(event=>{const button=event.target.closest('[data-daily-share]');if(!button)return;dailyShareDate=button.dataset.dailyShare;if(dailyShareDate<=dateKey())dailyShare.open();});
+ // Capture the date before the session handler returns to Today; cancelled ends stay in Workout.
+ content.addEventListener('click',event=>{
+  const button=event.target.closest('[data-end-session],[data-finish-exercise]');if(!button||page!=='workout')return;
+  const date=workoutDateKey();
+  setTimeout(()=>{if(page!=='today'||date>dateKey()||!dailyCardModel(date).rows.length)return;dailyShareDate=date;dailyShare.open();},0);
+ },true);
+}
