@@ -578,11 +578,17 @@ footer [data-open-privacy]{background:transparent;border:0;box-shadow:none;color
 
 .session-mode .qualified-weight input{padding-right:74px!important}.qualified-weight .input-unit{font-size:12px}
 
-/* Locally rendered share cards; controls stay outside the exported PNG. */
-.daily-share-entry{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-block:16px;background:#f4f7ff!important;border:1px solid #dce5ff!important}
-.daily-share-entry h2{font-size:20px;margin:6px 0}.daily-share-entry p{margin:4px 0}.daily-share-entry button{flex-shrink:0}
-.daily-share-dialog{width:min(720px,calc(100vw - 24px));max-height:90dvh;box-sizing:border-box;overflow:auto;border:0;border-radius:20px;padding:24px;color:#151b29;background:#f8f9fc}
-.daily-share-dialog::backdrop{background:#101b35aa}.daily-share-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.daily-share-heading h2{margin:0;font-size:22px}.daily-share-heading button{font-size:25px;min-width:44px;min-height:44px}
-.daily-share-options{display:flex;align-items:center;flex-wrap:wrap;gap:16px;margin:20px 0}.daily-share-options label{display:flex;align-items:center;gap:8px}.daily-share-options input{width:20px;height:20px}.daily-share-options select{width:auto}
-.daily-share-dialog figure{margin:20px 0}.daily-share-dialog figure img{display:block;width:100%;height:auto;border:1px solid #e0e3e8;border-radius:4px}.daily-share-dialog figure a{display:inline-block;padding:12px;color:#174ad8}.daily-share-actions{display:flex;flex-wrap:wrap;gap:10px;padding-top:12px}.daily-share-actions button{min-height:44px}.daily-share-dialog [data-card-status]{font-size:14px;line-height:1.6}
-@media(max-width:600px){.daily-share-entry{align-items:stretch;flex-direction:column}.daily-share-entry button{width:100%}.daily-share-dialog{padding:16px}.daily-share-options{align-items:flex-start;flex-direction:column}}
+
+/* Share controls follow the current palette, including explicit form and text contrast. */
+.daily-share-dialog{width:min(720px,calc(100vw - 24px));max-height:90dvh;box-sizing:border-box;overflow:auto;border:1px solid var(--line);border-radius:20px;padding:24px;color:var(--ink);background:var(--paper);color-scheme:light}
+:root[data-theme^="dark"] .daily-share-dialog{color-scheme:dark}
+.daily-share-dialog::backdrop{background:#07100ccc}
+.daily-share-dialog h2,.daily-share-dialog label{color:var(--ink)}
+.daily-share-dialog p{color:var(--subtle)}
+.daily-share-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.daily-share-heading h2{margin:0;font-size:22px}.daily-share-heading button{font-size:25px;min-width:44px;min-height:44px}
+.daily-share-options{display:flex;align-items:center;flex-wrap:wrap;gap:16px;margin:20px 0}.daily-share-options label{display:flex;align-items:center;gap:8px}.daily-share-options input{width:20px;height:20px;accent-color:var(--accent)}.daily-share-options select{width:auto;color:var(--ink);background:var(--soft)}
+.daily-share-dialog figure{margin:20px 0}.daily-share-dialog figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px}.daily-share-dialog figure a{display:inline-block;padding:12px;color:var(--ink);text-decoration:underline}.daily-share-actions{display:flex;flex-wrap:wrap;gap:10px;padding-top:12px}.daily-share-actions button{min-height:44px;color:var(--ink);background:var(--soft);border:1px solid var(--line)}.daily-share-dialog [data-card-status]{font-size:14px;line-height:1.6}
+/* Avoid the pale letterboxing visible around square artwork in tall route tiles. */
+:root[data-theme^="dark"] .route-visual-day>.plan-thumbnail{background:#14241c}
+:root[data-theme^="dark"] .route-recovery-art{background-color:#647969;background-blend-mode:multiply}
+@media(max-width:600px){.daily-share-dialog{padding:16px}.daily-share-options{align-items:flex-start;flex-direction:column}}
