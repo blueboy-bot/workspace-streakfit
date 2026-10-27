@@ -6,7 +6,7 @@ The end-session flow opens a local PNG preview. Today and the selected recorded 
 - Recorded sets/reps, per-side dose, cardio minutes and mobility sets use their own units. Variable reps remain visible; weights are opt-in and retain per-dumbbell and kg/lb semantics.
 - No account information, name, body measurements, photos, notes or calorie estimates are included.
 - Native file sharing is user initiated; unsupported browsers offer PNG download. Each page has its own download link, avoiding blocked multiple automatic downloads.
-- New same-origin artwork: blue 3D models with black tank tops and shorts for push-up, dumbbell row, dumbbell shoulder press, dead bug, bodyweight squat, glute bridge, hip hinge and forearm plank. Exact IDs only; other movements have labelled data tiles. Images are static AI-generated illustrations, not technique certification or a claim of actual user form. No runtime image-generation API is used.
+- New same-origin artwork: blue 3D models with black tank tops and shorts for push-up, dumbbell row, dumbbell shoulder press, dead bug, chair squat, glute bridge, hip hinge and forearm plank. Exact IDs only; other movements have labelled data tiles. Images are static AI-generated illustrations, not technique certification or a claim of actual user form. No runtime image-generation API is used.
 - Existing account configuration, storage namespaces and prior preview URLs remain unchanged. The service worker cache revision includes the new module and image files.
 
 ## Validation
