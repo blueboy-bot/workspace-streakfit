@@ -828,7 +828,7 @@ function hypertrophyPrescription(at){
   ids.push(id);usedPatterns.add(pattern);targets[id]=target;entries.push({id,sets:target.sets,rest,role:control?'control':s.compound?'main':'assistance',label:muscle,workSeconds:seconds,transitionSeconds:90,warmupMinutes:Math.min(8,minutes*.2)});estimated+=cost(target.sets);
   directSets[muscle]=(directSets[muscle]||0)+target.sets;for(const [group,n] of Object.entries(hypertrophyLoad(id,target.sets)))usedMuscles[group]=(usedMuscles[group]||0)+n;
  }
- return {title:ids.length?title:'恢复日',ids,entries,targets,sets:beginner?2:3,estimated:ids.length?Math.ceil(estimated):0,hypertrophy:true,planningVersion:'four-set-v1',recoveryRecommended:!ids.length,capacityNotes:[...new Set(notes)],weeklyEquivalentSets:recent,sessionEquivalentSets:usedMuscles,overBudget:estimated>minutes,note:'按每周训练量与恢复分配互补动作；默认每个力量动作4组，复合动作8–12次、孤立动作15–20次；负重按实际能力选择并保留余力。热身、组间休息与换器械计入时间；不因日期推进自动加重。'};
+ return {title:ids.length?title:'恢复日',ids,entries,targets,sets:4,estimated:ids.length?Math.ceil(estimated):0,hypertrophy:true,planningVersion:'four-set-v1',recoveryRecommended:!ids.length,capacityNotes:[...new Set(notes)],weeklyEquivalentSets:recent,sessionEquivalentSets:usedMuscles,overBudget:estimated>minutes,note:'按每周训练量与恢复分配互补动作；默认每个力量动作4组，复合动作8–12次、孤立动作15–20次；负重按实际能力选择并保留余力。热身、组间休息与换器械计入时间；不因日期推进自动加重。'};
 }
 
 function basePrescription(at=new Date()){
@@ -1574,7 +1574,7 @@ onContentClick(event=>{
 
 function completeWorkoutSession(date=workoutDateKey()){restUntil=0;restPausedMs=0;restHeldByWorkout=false;restAlertSent=true;selectedWorkoutDate=null;page='today';render();if(typeof CustomEvent==='function')document.dispatchEvent(new CustomEvent('streakfit:session-ended',{detail:{date}}));}
 
-function applyFourSetTemplate(){if(isPast())return false;const d=workoutDay();if(trained(d))return false;const ids=d.exerciseIds||selectedPrescription().ids;if(!ids.some(id=>catalog[id]&&catalog[id].kind!=='cardio'))return false;state.archivedPlannedWorkouts ||= {};state.archivedPlannedWorkouts[workoutDateKey()] ||= [];state.archivedPlannedWorkouts[workoutDateKey()].push(JSON.parse(JSON.stringify(d)));d.targets ||= {};for(const id of ids){if(!catalog[id]||catalog[id].kind==='cardio')continue;d.targets[id]={...d.targets[id],...fourSetTarget(id)};}d.planningVersion='four-set-v1';const saved=save();render();return saved;}
+function applyFourSetTemplate(){if(isPast())return false;const d=workoutDay();if(trained(d))return false;const ids=d.exerciseIds||selectedPrescription().ids;if(!ids.some(id=>catalog[id]&&catalog[id].kind!=='cardio'))return false;state.archivedPlannedWorkouts ||= {};state.archivedPlannedWorkouts[workoutDateKey()] ||= [];state.archivedPlannedWorkouts[workoutDateKey()].push(JSON.parse(JSON.stringify(d)));d.targets ||= {};for(const id of ids){if(!catalog[id]||catalog[id].kind==='cardio')continue;d.targets[id]={...d.targets[id],...fourSetTarget(id)};}delete d.targetSets;d.planningVersion='four-set-v1';const saved=save();render();return saved;}
 onContentClick(event=>{if(event.target.closest('[data-apply-four-set-template]'))applyFourSetTemplate();});
 
 function needsFourSetTemplate(d,ids){return ids.some(id=>{if(!catalog[id]||catalog[id].kind==='cardio')return false;const old=d.targets?.[id]||(d.targetSets?{sets:d.targetSets,min:8,max:12}:state.exerciseTargets?.[id]);if(!old)return false;const next=fourSetTarget(id);return ['sets','min','max'].some(field=>old[field]!==next[field]);});}
