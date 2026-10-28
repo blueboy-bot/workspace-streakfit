@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {dailyShareModel,shareArtwork,dailyShareLayout} from '../modules/daily-share-card.js';
+import {dailyShareModel,shareArtwork,dailyShareLayout,shareMuscleRegions} from '../modules/daily-share-card.js';
 const catalog={pushup:{name:'俯卧撑',displayName:'俯卧撑 · Push-up',muscle:'胸部'},row:{name:'单臂划船',muscle:'背部',perSide:true},run:{name:'快走',kind:'cardio',muscle:'心肺'},mob:{name:'活动度',mobility:true,muscle:'活动度'},other:{name:'其他动作',muscle:'肩部'}};
 test('shares actual logs, preserves variable reps and sides, excludes unperformed plans and all personal data',()=>{
  const day={exerciseIds:['pushup','row','other'],targets:{pushup:{sets:4,min:12}},bodyweight:80,photos:['private'],logs:{pushup:[{reps:10,weight:12,weightUnit:'per-dumbbell'},{reps:8,weight:10,weightUnit:'per-dumbbell'}],row:[{reps:11,recordedSides:2}],run:[{minutes:8},{minutes:6}],mob:[{mobilitySets:1}],other:[]}},before=structuredClone(day);
@@ -18,3 +18,5 @@ test('card titles use explicit completion and exact art mapping, unknown variant
 });
 
 test('cards preserve the pictorial grid even when an exact exercise image is unavailable',()=>{assert.deepEqual(dailyShareLayout([{art:null}]),{columns:1,dataOnly:false,rowCount:1});assert.deepEqual(dailyShareLayout(Array.from({length:4},()=>({art:null}))),{columns:2,dataOnly:false,rowCount:2});assert.deepEqual(dailyShareLayout(Array.from({length:3},()=>({art:[0,0,'upper']}))),{columns:2,dataOnly:false,rowCount:2});});
+
+test('reference card muscle highlights follow logged body parts and ignore non-muscle activities',()=>{assert.deepEqual(shareMuscleRegions(['胸部','胸部','心肺','活动度','unknown']),['胸部']);assert.deepEqual(shareMuscleRegions(['股四头肌','腘绳肌','臀部','小腿']),['股四头肌','腘绳肌','臀部','小腿']);const model=dailyShareModel({targets:{pushup:{sets:4}},logs:{pushup:[{reps:12},{reps:12},{reps:12},{reps:12},{reps:9}],other:[]}},catalog);assert.deepEqual(shareMuscleRegions(model.muscles),['胸部']);assert.equal(model.sets,5);assert.match(model.rows[0].amount,/12 \/ 12 \/ 12 \/ 12 \/ 9/);assert.equal(model.demo,false);});
