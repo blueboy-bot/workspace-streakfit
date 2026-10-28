@@ -70,7 +70,7 @@ function refreshTrainingPresentation() {
       card.querySelector('.exercise-recovery')?.remove();
       card.querySelector('.load-comparison')?.remove();
       const goal=card.querySelector('.exercise-goal>span:first-child');if(goal)goal.textContent=goal.textContent.replace(/^目标\s*/, '');
-      const count=card.querySelector('.workout-progress-visual>span:last-child');if(count)count.classList.add('sr-only');
+      const count=card.querySelector('.workout-progress-visual>span:last-child');if(count)count.classList.add('set-count');
       const weight=card.querySelector('input[id^="weight-"]');
       if(weight){const label=weight.closest('label'),description=weight.getAttribute('aria-label')||'',unit=description.match(/\((kg|lb)\)/)?.[1]||'kg';
         for(const child of [...label.childNodes])if(child.nodeType===3)child.remove();
