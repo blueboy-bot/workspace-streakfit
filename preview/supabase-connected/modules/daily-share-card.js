@@ -2,7 +2,7 @@ import {overviewArtwork,reviewedArtwork} from './daily-overview.js';
 import {commonStrengthArtwork} from './visual-planning.js';
 // Read-only summaries: only submitted logs, never prescribed repetitions or loads.
 import {fromKilograms} from './units.js';
-export const shareArtwork={bench:[0,0,'gym',2,3],chestsupported:[1,0,'gym',2,3],pulldown:[0,1,'gym',2,3],fly:[1,1,'gym',2,3],lateral:[0,2,'gym',2,3],curl:[1,2,'gym',2,3],pushup:[0,0,'upper'],row:[1,0,'upper'],shoulderpress:[0,1,'upper'],deadbug:[1,1,'upper'],squat:[0,0,'lower'],bridge:[1,0,'lower'],hinge:[0,1,'lower'],plank:[1,1,'lower']};
+export const shareArtwork={incline:[0,0,'finish',2,1,{x:50,y:150,width:800,height:700,sourceWidth:1774,sourceHeight:887}],ropepush:[1,0,'finish',2,1,{x:1110,y:0,width:610,height:845,sourceWidth:1774,sourceHeight:887}],bench:[0,0,'gym',2,3],chestsupported:[1,0,'gym',2,3],pulldown:[0,1,'gym',2,3],fly:[1,1,'gym',2,3],lateral:[0,2,'gym',2,3],curl:[1,2,'gym',2,3],pushup:[0,0,'upper'],row:[1,0,'upper'],shoulderpress:[0,1,'upper'],deadbug:[1,1,'upper'],squat:[0,0,'lower'],bridge:[1,0,'lower'],hinge:[0,1,'lower'],plank:[1,1,'lower']};
 function shareMovementArt(id){
  if(shareArtwork[id])return shareArtwork[id];
  const common=commonStrengthArtwork[id];if(common){const c=common.frames[common.thumbnail||0].crop;return [0,0,common.file,1,1,c];}
@@ -54,13 +54,13 @@ function shareCutout(image){
  const canvas=document.createElement('canvas');canvas.width=image.width;canvas.height=image.height;
  const ctx=canvas.getContext('2d');ctx.drawImage(image,0,0);
  const pixels=ctx.getImageData(0,0,canvas.width,canvas.height);
- for(let i=0;i<pixels.data.length;i+=4){const white=Math.min(pixels.data[i],pixels.data[i+1],pixels.data[i+2]);pixels.data[i+3]*=Math.min(1,(225-white)/25);}
+ for(let i=0;i<pixels.data.length;i+=4){const r=pixels.data[i],g=pixels.data[i+1],b=pixels.data[i+2],white=Math.min(r,g,b);const green=g>r*1.12&&g>b*1.08&&g-r>3;pixels.data[i+3]*=green?0:Math.min(1,(225-white)/25);}
  ctx.putImageData(pixels,0,0);return canvas;
 }
 export async function renderDailyShareCards(model,{story=false}={}){
  await document.fonts?.ready;
  const images={};
- for(const key of new Set(model.rows.filter(r=>r.art).map(r=>r.art[2]))){const file={upper:'share-blue-upper.png',lower:'share-blue-lower.png',gym:'share-blue-gym.png'}[key]||key;const img=await loadShareImage(new URL('../assets/exercises/'+file,import.meta.url).href);images[key]=model.dark&&['upper','lower','gym'].includes(key)?shareCutout(img):img;}
+ for(const key of new Set(model.rows.filter(r=>r.art).map(r=>r.art[2]))){const file={upper:'share-blue-upper.png',lower:'share-blue-lower.png',gym:'share-blue-gym.png',finish:'share-blue-finish.png'}[key]||key;const img=await loadShareImage(new URL('../assets/exercises/'+file,import.meta.url).href);images[key]=shareCutout(img);}
  const canvases=[],pages=Math.ceil(model.rows.length/6),bg=model.dark?'#111c18':'#ffffff',ink=model.dark?'#f0f5f1':'#14221b',muted=model.dark?'#acbeb3':'#596171',accent=model.dark?(model.colorFamily==='blue'?'#a9d9ff':'#b6e86b'):'#1555ff';
  for(let page=0;page<pages;page++){
   const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=story?1920:1350;
@@ -116,9 +116,9 @@ export function createDailyShareDialog({getModel}){
    const blobs=await Promise.all(canvases.map(canvas=>new Promise((resolve,reject)=>canvas.toBlob(blob=>blob?resolve(blob):reject(Error('PNG encoding failed')),'image/png'))));
    if(ticket!==generation||!dialog.open)return;
    files=blobs.map((blob,index)=>new File([blob],`STREAKFIT-${model.date}-${index+1}.png`,{type:'image/png'}));
-   blobs.forEach((blob,index)=>{const url=URL.createObjectURL(blob);urls.push(url);const figure=document.createElement('figure'),img=document.createElement('img'),link=document.createElement('a');img.src=url;img.alt=t(`训练分享卡，第 ${index+1} 张`,`Workout share card ${index+1}`);link.href=url;link.download=files[index].name;link.textContent=t(`保存第 ${index+1} 张 PNG`,`Save PNG ${index+1}`);figure.append(img,link);dialog.querySelector('[data-card-previews]').append(figure);});
+   blobs.forEach((blob,index)=>{const url=URL.createObjectURL(blob);urls.push(url);const figure=document.createElement('figure'),img=document.createElement('img'),link=document.createElement('a');img.src=url;img.alt=t(`训练分享卡，第 ${index+1} 张`,`Workout share card ${index+1}`);link.href=url;link.hidden=blobs.length===1;link.download=files[index].name;link.textContent=t(`保存第 ${index+1} 张 PNG`,`Save PNG ${index+1}`);figure.append(img,link);dialog.querySelector('[data-card-previews]').append(figure);});
    dialog.querySelector('[data-card-save]').disabled=false;dialog.querySelector('[data-card-share]').disabled=false;
-   status(t(`已生成 ${files.length} 张卡片。仅包含实际训练记录，不含姓名、身体或账号信息。`,`${files.length} cards ready. Actual workout logs only; no name, body or account information.`));
+   status(t(`已生成 ${files.length} 张`,`${files.length} cards ready`));
   }catch{if(ticket===generation)status(t('图片生成失败，请重试。','Could not generate images. Please retry.'));}
  }
  dialog.addEventListener('change',generate);
@@ -134,5 +134,5 @@ export function createDailyShareDialog({getModel}){
    try{await navigator.share({files,title:'STREAKFIT'});}catch(error){if(error.name!=='AbortError')status(t('未能分享，请保存图片后发布。','Sharing failed. Save the image and post it manually.'));}
   }
  });
- return {open(){opener=document.activeElement;const model=getModel({}),t=(zh,en)=>shareText(model,zh,en);dialog.innerHTML=`<div class="daily-share-heading"><h2>${t('我的训练分享卡','My workout share card')}</h2><button type="button" data-card-close aria-label="${t('关闭','Close')}">×</button></div><p>${t('记录今天的训练，保存或分享这一刻。','Keep a record of today. Save or share your workout.')}</p><div class="daily-share-options"><label>${t('图片比例','Image format')}<select data-card-format><option value="feed">4:5 · ${t('动态','Feed')}</option><option value="story">9:16 · Story</option></select></label><label><input type="checkbox" data-card-weights>${t('显示实际负重（默认隐藏）','Include actual weights (hidden by default)')}</label></div><p data-card-status role="status" aria-live="polite"></p><div data-card-previews></div><div class="daily-share-actions"><button type="button" data-card-save disabled>${t('保存 PNG','Save PNG')}</button><button type="button" data-card-share disabled>${t('分享图片','Share images')}</button><button type="button" data-card-retry>${t('重新生成','Regenerate')}</button></div>`;dialog.showModal();generate();}};
+ return {open(){opener=document.activeElement;const model=getModel({}),t=(zh,en)=>shareText(model,zh,en);dialog.innerHTML=`<div class="daily-share-heading"><h2>${t('训练卡','Workout card')}</h2><button type="button" data-card-close aria-label="${t('关闭','Close')}">×</button></div><div class="daily-share-options"><label><select data-card-format aria-label="${t('图片比例','Image format')}"><option value="feed">4:5 · ${t('动态','Feed')}</option><option value="story">9:16 · Story</option></select></label><label><input type="checkbox" data-card-weights>${t('显示重量','Show weights')}</label></div><p data-card-status role="status" aria-live="polite"></p><div data-card-previews></div><div class="daily-share-actions"><button type="button" data-card-save disabled>${t('保存 PNG','Save PNG')}</button><button type="button" data-card-share disabled>${t('分享图片','Share images')}</button><button type="button" data-card-retry>${t('重新生成','Regenerate')}</button></div>`;dialog.showModal();generate();}};
 }

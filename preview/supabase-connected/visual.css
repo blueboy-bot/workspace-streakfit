@@ -594,3 +594,11 @@ footer [data-open-privacy]{background:transparent;border:0;box-shadow:none;color
 @media(max-width:600px){.daily-share-dialog{padding:16px}.daily-share-options{align-items:flex-start;flex-direction:column}}
 
 .body-focus-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px}.body-focus-tabs button{flex:1;min-width:48px;min-height:44px;background:var(--soft);color:var(--ink);border:1px solid var(--line)}.body-focus-tabs button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent-edge)}.route-body-focus{display:block;width:100%;margin:12px 0 18px;min-height:48px;background:var(--soft);color:var(--ink);border:1px solid var(--line);font-size:14px}
+
+/* Compact share settings: one control row and a short status. */
+.daily-share-dialog .daily-share-options{flex-direction:row;align-items:center;justify-content:space-between;gap:12px;margin:10px 0 4px}
+.daily-share-dialog .daily-share-options label{margin:0;gap:7px;font-size:14px;min-height:40px}
+.daily-share-dialog .daily-share-options select{margin:0;padding:6px 10px;min-height:38px;font-size:14px}
+.daily-share-dialog .daily-share-options input{margin:0;padding:0;width:18px;height:18px;min-height:18px;box-shadow:none;flex-shrink:0}
+.daily-share-dialog [data-card-status]{margin:4px 0 10px;font-size:12px;line-height:1.4}
+.daily-share-dialog figure{margin:0 0 12px}.daily-share-dialog figure a[hidden]{display:none}
