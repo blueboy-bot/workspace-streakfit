@@ -801,7 +801,7 @@ function hypertrophyPrescription(at){
  let estimated=Math.min(8,minutes*.2);
  for(const s of slots){
   if(ids.length>=limit)break;
-  let id=experienceOptions(s.options).find(id=>catalog[id]&&supports(id,gear)&&!ids.includes(id));if(!id){notes.push('器材不足：'+s.pattern);continue;}
+  let id=experienceOptions(s.options).find(id=>catalog[id]&&supports(id,gear)&&!ids.includes(id));if(!id){notes.push('缺少适用器材：'+(catalog[s.options[0]]?.displayName||'该动作'));continue;}
   const replacement=state.exerciseReplacements?.[id];if(replacement&&replacementFamily(id)?.ids.includes(replacement)&&supports(replacement,gear)&&!ids.includes(replacement))id=replacement;
   const muscle=catalog[id].muscle,pattern=s.pattern;
   if(usedPatterns.has(pattern))continue;
