@@ -602,3 +602,20 @@ footer [data-open-privacy]{background:transparent;border:0;box-shadow:none;color
 .daily-share-dialog .daily-share-options input{margin:0;padding:0;width:18px;height:18px;min-height:18px;box-shadow:none;flex-shrink:0}
 .daily-share-dialog [data-card-status]{margin:4px 0 10px;font-size:12px;line-height:1.4}
 .daily-share-dialog figure{margin:0 0 12px}.daily-share-dialog figure a[hidden]{display:none}
+/* Shared modal surfaces follow the selected light/dark and green/blue palette. */
+dialog{color-scheme:light;box-sizing:border-box!important;border:1px solid var(--line)!important;border-radius:24px!important;background:var(--paper)!important;color:var(--ink)!important;box-shadow:0 24px 80px #0005!important;max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain}
+dialog::backdrop{background:#07100bb8!important;backdrop-filter:blur(6px)}
+dialog :is(h1,h2,h3,label,legend){color:var(--ink)}
+dialog :is(p,small,.muted){color:var(--subtle)}
+dialog button{min-height:44px;border-radius:12px;box-shadow:none}
+dialog button:not(.primary):not([data-dialog-confirm]){background:var(--soft);color:var(--ink);border:1px solid var(--line)}
+dialog .primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent-edge)}
+dialog :is(input:not([type=checkbox]):not([type=radio]):not([type=range]),select,textarea){background:var(--canvas);color:var(--ink);border:1px solid var(--line);border-radius:12px}
+:root[data-theme^=dark] dialog{color-scheme:dark}
+.app-confirm{width:min(440px,calc(100vw - 32px));padding:26px!important}
+.app-confirm h2{font-size:22px;line-height:1.35;letter-spacing:-.4px;margin:0 0 12px}
+.app-confirm p{font-size:15px;line-height:1.7;margin:0 0 24px;white-space:pre-line}
+.app-confirm-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.app-confirm-actions button{margin:0;padding:12px 16px;font-size:16px;font-weight:700;min-height:48px}
+.app-confirm [data-danger=true]{background:#b83232!important;color:#fff!important;border-color:#b83232!important}
+@media(max-width:600px){dialog{border-radius:20px!important}.app-confirm{padding:22px!important}.app-confirm h2{font-size:21px}}

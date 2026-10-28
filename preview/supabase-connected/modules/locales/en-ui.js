@@ -1,4 +1,9 @@
 export const englishUI = {
+ "结束本次训练？":"End this workout?",
+ "还有未完成的组。已记录的训练会保留，未完成的组不会计入。":"Some sets are unfinished. Logged work will remain; unfinished sets will not count.",
+ "移出这个动作？":"Remove this exercise?",
+ "已记录的训练会保留，仅从当前计划移出。":"Logged work will remain. Only remove this exercise from the current plan.",
+ "移出动作":"Remove exercise",
  "每次可用时间（上限）":"Available time per session (maximum)",
  "可用 10–180 分钟；实际训练用时按动作、组数与休息估算":"10–180 minutes available; workout duration is estimated from exercises, sets and rest.",
  "按部位训练":"Train by body part",
