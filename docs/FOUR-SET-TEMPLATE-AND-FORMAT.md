@@ -1,0 +1,9 @@
+# Four-set preference and in-app image-format controls
+
+The share format control is now two theme-aware buttons, with a hidden canonical value for the existing renderer. No native select menu is invoked. Feed was relabelled Post: 4:5 is 1080 × 1350, while Story is 1080 × 1920. Both exports are static PNGs; there is no animation or automatic social-media posting.
+
+The requested new strength defaults are four work sets per movement. Compound movements use 8–12 reps and isolation movements use 15–20. The classification uses movement identity and its variant root, not an arbitrary kilogram threshold. Actual load remains user-entered. Conditioning and mobility retain duration/activity dosing. Explicit manual overrides remain user-controlled.
+
+Automatic capacity and time checks accept complete four-set blocks or omit a movement; they do not silently shorten the new default to one, two or three sets. Existing safety/recovery checks remain. New plans are tagged four-set-v1. Historical targets and submitted logs are not overwritten. A selected unfinished workout can apply the four-set template through an explicit editor action, archiving its prior snapshot and retaining real weights and repetitions. Completed historical workouts are excluded from this action.
+
+Validation: 17 relevant tests pass, including compound/isolation examples, 120 goal/focus/time combinations, historical and cardio preservation, applying the template with a prior log, volume/time constraints, body-part choices and share data. Mobile Chromium verifies the two format buttons with no native select, exact feed/Story image heights, PNG download and weight options; a second flow applies the template to a partial workout, preserves the existing 6-rep entry and updates bench to 4 × 8–12 and pushdown to 4 × 15–20 without page errors. Screenshots and PNG use synthetic old records, intentionally unchanged by new defaults.
