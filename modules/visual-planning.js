@@ -1,3 +1,4 @@
+import {MIN_STRENGTH_SETS,strengthTarget,enforcePlanStrengthMinimum} from './strength-protocol.js';
 // Build the exact candidate used by both the comparison and Apply. No source mutation.
 export function adjustedWorkoutDay(day,plan,value,{catalog,targetFor,defaultTarget,minutesFor=()=>15}){
  const next=JSON.parse(JSON.stringify(day)),logged=Object.keys(day.logs||{}).filter(id=>catalog[id]&&Array.isArray(day.logs[id])&&day.logs[id].length);
@@ -7,16 +8,16 @@ export function adjustedWorkoutDay(day,plan,value,{catalog,targetFor,defaultTarg
  for(const id of ids){const m=catalog[id],recorded=logged.includes(id);
   if(m.mobility)next.mobilityTargets[id]=recorded?(day.mobilityTargets?.[id]||2):(plan.mobilityTargets?.[id]||2);
   else if(m.kind==='cardio')next.cardioTargets[id]=recorded?(day.cardioTargets?.[id]||minutesFor(id,day)):(plan.durations?.[id]||15);
-  else next.targets[id]={...(recorded?targetFor(id,day):plan.targets?.[id]||defaultTarget(id))};
+  else next.targets[id]=strengthTarget(recorded?targetFor(id,day):plan.targets?.[id]||defaultTarget(id));
  }
- next.sessionEntries=[...(plan.entries||[]),...(day.sessionEntries||[]).filter(e=>logged.includes(e.id)&&!(plan.entries||[]).some(x=>x.id===e.id))];
+ next.sessionEntries=[...(plan.entries||[]),...(day.sessionEntries||[]).filter(e=>logged.includes(e.id)&&!(plan.entries||[]).some(x=>x.id===e.id))].map(e=>next.targets[e.id]?{...e,sets:next.targets[e.id].sets}:e);
  next.workoutTitle=plan.title;delete next.manualOrder;delete next.cycle;delete next.specialtyMain;delete next.targetSets;
  return next;
 }
 export function estimateOverviewMinutes(ids,progress,entries=[]){return ids.length?Math.ceil((entries.length?Math.max(...entries.map(e=>e.warmupMinutes??5)):5)+ids.reduce((sum,id)=>{const p=progress[id];if(p.kind==='cardio')return sum+p.goal;if(p.kind==='mobility')return sum+p.goal;const entry=entries.find(e=>e.id===id),rest=entry?.rest||90;return sum+(p.goal*(entry?.workSeconds??35*(p.perSide?2:1))+Math.max(0,p.goal-1)*rest+(entry?.transitionSeconds??60))/60;},0)):0;}
 
 // A conservative edit of the visible workout, not a new template or a fitness test.
-// Accessory caps and time estimates are product defaults, not individual clinical limits.
+// Keep at least four sets per strength movement; omit whole movements when time is short.
 export function prioritizeWorkoutAdjustment(basis,day,value,{catalog,available,family,mainIds}){
  const plan=JSON.parse(JSON.stringify(basis)),changes={},used=new Set(),seen=new Set();
  plan.ids=[];plan.entries=[];plan.targets={};plan.durations={};plan.mobilityTargets={};
@@ -53,9 +54,8 @@ export function prioritizeWorkoutAdjustment(basis,day,value,{catalog,available,f
   if(m.mobility)plan.mobilityTargets[id]=basis.mobilityTargets?.[oldId]||2;
   else if(m.kind==='cardio')plan.durations[id]=basis.durations?.[oldId]||15;
   else{
-   const t={...basis.targets[oldId]};
+   const t=strengthTarget(basis.targets[oldId]);
    if(value.readiness==='normal'&&!recorded(id)){
-    if(!primary)t.sets=Math.min(t.sets,2);
     if(!t.quality)t.rir=Math.max(t.rir||0,3);
    }
    plan.targets[id]=t;
@@ -85,8 +85,9 @@ export function prioritizeWorkoutAdjustment(basis,day,value,{catalog,available,f
   if(cost()<=value.minutes)break;
   if(recorded(id))continue;
   if(plan.targets[id]){
-   while(cost()>value.minutes&&plan.targets[id].sets>1)plan.targets[id].sets--;
+   while(cost()>value.minutes&&plan.targets[id].sets>MIN_STRENGTH_SETS)plan.targets[id].sets--;
    if(plan.targets[id].sets!==basis.targets[id]?.sets)changes[id]={reason:'main-time'};
+   if(cost()>value.minutes)remove(id);
   }else if(plan.durations[id]&&id!=='warmwalk'&&id!=='cooldown'){
    plan.durations[id]=Math.max(1,plan.durations[id]-(cost()-value.minutes));changes[id]={reason:'duration'};
   }
@@ -94,8 +95,9 @@ export function prioritizeWorkoutAdjustment(basis,day,value,{catalog,available,f
  for(const map of ['targets','durations','mobilityTargets'])for(const id of Object.keys(plan[map]))if(!plan.ids.includes(id))delete plan[map][id];
  plan.adjustmentMainIds=plan.entries.filter(e=>e.adjustmentPrimary&&plan.ids.includes(e.id)).map(e=>e.id);
  plan.entries=plan.entries.filter(e=>plan.ids.includes(e.id)).map(({adjustmentPrimary,...e})=>({...e,...(plan.targets[e.id]?{sets:plan.targets[e.id].sets}:{})}));
+ if(!plan.ids.length&&basis.ids.length){plan.insufficientTime=true;plan.note='每个力量动作至少4组，当前时间不足以安排完整动作，请增加时间。';}
  plan.remainingMinutes=cost();plan.estimated=plan.remainingMinutes;plan.overBudget=plan.remainingMinutes>value.minutes;plan.adjustmentChanges=changes;plan.adjustment=value;
- return plan;
+ return enforcePlanStrengthMinimum(plan,catalog);
 }
 export function setProgressMarkup(done,goal){
  if(!Number.isFinite(done)||!Number.isFinite(goal)||goal<=0)return '';
