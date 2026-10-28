@@ -1,4 +1,6 @@
 export const englishUI = {
+ "每次可用时间（上限）":"Available time per session (maximum)",
+ "可用 10–180 分钟；实际训练用时按动作、组数与休息估算":"10–180 minutes available; workout duration is estimated from exercises, sets and rest.",
  "按部位训练":"Train by body part",
  "按部位训练 · 胸 / 背 / 腿 / 肩 / 手臂":"Train by body part \u00b7 Chest / Back / Legs / Shoulders / Arms",
  "选择训练部位":"Choose a body part",
