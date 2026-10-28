@@ -2,7 +2,7 @@ import {overviewArtwork,reviewedArtwork} from './daily-overview.js';
 import {commonStrengthArtwork} from './visual-planning.js';
 // Read-only summaries: only submitted logs, never prescribed repetitions or loads.
 import {fromKilograms} from './units.js';
-export const shareArtwork={incline:[0,0,'finish',2,1,{x:50,y:150,width:800,height:700,sourceWidth:1774,sourceHeight:887}],ropepush:[1,0,'finish',2,1,{x:1110,y:0,width:610,height:845,sourceWidth:1774,sourceHeight:887}],bench:[0,0,'gym',2,3],chestsupported:[1,0,'gym',2,3],pulldown:[0,1,'gym',2,3],fly:[1,1,'gym',2,3],lateral:[0,2,'gym',2,3],curl:[1,2,'gym',2,3],pushup:[0,0,'upper'],row:[1,0,'upper'],shoulderpress:[0,1,'upper'],deadbug:[1,1,'upper'],squat:[0,0,'lower'],bridge:[1,0,'lower'],hinge:[0,1,'lower'],plank:[1,1,'lower']};
+export const shareArtwork={incline:[0,0,'finish',2,1,{x:50,y:150,width:800,height:700,sourceWidth:1774,sourceHeight:887}],ropepush:[1,0,'finish',2,1,{x:1110,y:0,width:610,height:845,sourceWidth:1774,sourceHeight:887}],bench:[0,0,'gym',2,3],chestsupported:[1,0,'gym',2,3],pulldown:[0,1,'gym',2,3],fly:[1,1,'gym',2,3],lateral:[0,2,'gym',2,3],curl:[1,2,'gym',2,3],pushup:[0,0,'upper',2,2,{x:20,y:268,width:580,height:245,sourceWidth:1254,sourceHeight:1254}],row:[1,0,'upper',2,2,{x:680,y:95,width:545,height:465,sourceWidth:1254,sourceHeight:1254}],shoulderpress:[0,1,'upper',2,2,{x:120,y:635,width:430,height:550,sourceWidth:1254,sourceHeight:1254}],deadbug:[1,1,'upper',2,2,{x:600,y:770,width:640,height:335,sourceWidth:1254,sourceHeight:1254}],squat:[0,0,'lower'],bridge:[1,0,'lower'],hinge:[0,1,'lower'],plank:[1,1,'lower']};
 function shareMovementArt(id){
  if(shareArtwork[id])return shareArtwork[id];
  const common=commonStrengthArtwork[id];if(common){const c=common.frames[common.thumbnail||0].crop;return [0,0,common.file,1,1,c];}
@@ -25,15 +25,15 @@ export function dailyShareModel(day={},catalog={},options={}){
   let amount,sets=0,minutes=0;
   if(kind==='cardio'){minutes=valid.reduce((n,l)=>n+l.minutes,0);amount=`${minutes} ${en?'min logged':'分钟已记录'}`;}
   else if(kind==='mobility'){sets=valid.reduce((n,l)=>n+l.mobilitySets,0);amount=`${sets} ${en?'mobility sets':'组活动度记录'}`;}
-  else{sets=valid.length;const reps=valid.map(l=>l.reps);amount=(perSide?(en?'Per side · ':'每侧 · '):'')+`${sets} ${en?'sets':'组'} · `+(new Set(reps).size===1?`${reps[0]} ${en?'reps / set':'次 / 组'}`:`${reps.join(' / ')} ${en?'reps':'次'}`);}
+  else{sets=valid.length;const reps=valid.map(l=>l.reps);amount=(perSide?(en?'Per side · ':'每侧'):'')+`${sets}${en?' sets':'组'}`+(new Set(reps).size===1?` × ${reps[0]}${en?' reps':'次'}`:` · ${reps.join(' / ')}${en?' reps':'次'}`);}
   const weights=options.showWeights&&kind==='strength'?valid.map(log=>{
    if(!positive(log.weight))return en?'No external load':'无外加负重';
    const amount=Math.round(fromKilograms(log.weight,options.unit)*10)/10;
    return `${amount} ${options.unit==='lb'?'lb':'kg'}${log.weightUnit==='per-dumbbell'?(en?' / dumbbell':' / 单只'):''}`;
   }):[];
-  rows.push({id,name,english:en?'':parts.slice(1).join(' · '),kind,amount,sets,minutes,weights:weights.length?[...new Set(weights)].join(' · '):'',muscle:move.muscle||'',art:shareMovementArt(id)});
+  rows.push({id,name,english:en?'':parts.slice(1).join(' · '),kind,amount,sets,minutes,varyingReps:kind==='strength'&&new Set(valid.map(log=>log.reps)).size>1,weights:weights.length?[...new Set(weights)].join(' · '):'',muscle:move.muscle||'',art:shareMovementArt(id)});
  }
- return {date:options.date||'',complete:!!options.complete,en,dark:!!options.dark,colorFamily:options.colorFamily||'green',rows,sets:rows.reduce((n,r)=>n+r.sets,0),minutes:rows.reduce((n,r)=>n+r.minutes,0),muscles:[...new Set(rows.map(r=>r.muscle).filter(Boolean))]};
+ return {date:options.date||'',demo:options.demo===true,complete:!!options.complete,en,dark:!!options.dark,colorFamily:options.colorFamily||'green',rows,sets:rows.reduce((n,r)=>n+r.sets,0),minutes:rows.reduce((n,r)=>n+r.minutes,0),muscles:[...new Set(rows.map(r=>r.muscle).filter(Boolean))]};
 }
 const shareText=(model,zh,en)=>model.en?en:zh;
 function lines(ctx,text,x,y,width,size=25,maxLines=3){
@@ -57,47 +57,141 @@ function shareCutout(image){
  for(let i=0;i<pixels.data.length;i+=4){const r=pixels.data[i],g=pixels.data[i+1],b=pixels.data[i+2],white=Math.min(r,g,b);const green=g>r*1.12&&g>b*1.08&&g-r>3;pixels.data[i+3]*=green?0:Math.min(1,(225-white)/25);}
  ctx.putImageData(pixels,0,0);return canvas;
 }
-export async function renderDailyShareCards(model,{story=false}={}){
- await document.fonts?.ready;
- const images={};
- for(const key of new Set(model.rows.filter(r=>r.art).map(r=>r.art[2]))){const file={upper:'share-blue-upper.png',lower:'share-blue-lower.png',gym:'share-blue-gym.png',finish:'share-blue-finish.png'}[key]||key;const img=await loadShareImage(new URL('../assets/exercises/'+file,import.meta.url).href);images[key]=shareCutout(img);}
- const canvases=[],pages=Math.ceil(model.rows.length/6),bg=model.dark?'#111c18':'#ffffff',ink=model.dark?'#f0f5f1':'#14221b',muted=model.dark?'#acbeb3':'#596171',accent=model.dark?(model.colorFamily==='blue'?'#a9d9ff':'#b6e86b'):'#1555ff';
- for(let page=0;page<pages;page++){
-  const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=story?1920:1350;
-  const ctx=canvas.getContext('2d');ctx.fillStyle=bg;ctx.fillRect(0,0,1080,canvas.height);
-  ctx.save();ctx.translate(0,story?245:0);
-  ctx.fillStyle=ink;ctx.font='900 italic 44px system-ui';ctx.fillText('STREAKFIT',48,74);ctx.font='500 22px system-ui';ctx.fillStyle=muted;ctx.textAlign='right';ctx.fillText(model.date,1032,70);ctx.textAlign='left';
-  ctx.fillStyle=accent;ctx.fillRect(48,94,150,5);
-  ctx.font=`900 ${model.en?56:78}px system-ui`;ctx.fillStyle=ink;ctx.fillText(shareText(model,model.complete?'今日训练完成':'本次训练记录',model.complete?'WORKOUT COMPLETE':'WORKOUT RECORDED'),48,180);
-  if(pages>1){ctx.font='500 20px system-ui';ctx.fillStyle=muted;ctx.textAlign='right';ctx.fillText(`${page+1} / ${pages}`,1032,240);ctx.textAlign='left';}
-  ctx.fillStyle=accent;ctx.font='700 30px system-ui';ctx.fillText(`${model.rows.length} ${shareText(model,'个动作','exercises')}  ·  ${model.sets} ${shareText(model,'组记录','sets logged')}${model.minutes?`  ·  ${model.minutes} ${shareText(model,'分钟有氧','cardio min')}`:''}`,50,245);
-  const pageRows=model.rows.slice(page*6,page*6+6),layout=dailyShareLayout(pageRows),rowHeight=820/layout.rowCount;
-  for(let index=0;index<pageRows.length;index++){
-   const row=pageRows[index],single=pageRows.length===1,wide=layout.columns===1||(pageRows.length===3&&index===2),x=48+(index%layout.columns)*501,y=285+Math.floor(index/layout.columns)*rowHeight,width=wide?984:483;
-   ctx.fillStyle=model.dark?'#1c2b23':'#f4f6f7';ctx.beginPath();if(ctx.roundRect)ctx.roundRect(x,y,width,rowHeight-18,20);else ctx.rect(x,y,width,rowHeight-18);ctx.fill();ctx.strokeStyle=model.dark?'#2c3e33':'#e4eae7';ctx.lineWidth=1;ctx.stroke();
-   ctx.fillStyle=accent;ctx.font='650 20px system-ui';ctx.fillText(String(page*6+index+1).padStart(2,'0'),x+20,y+36);
-   const art=row.art,img=art?images[art[2]]:null,hasImage=!!(art&&img);
-   if(hasImage){
-    const sw=img.width/(art[3]||2),sh=img.height/(art[4]||2);let sx=art[0]*sw,sy=art[1]*sh,cw=sw,ch=sh;
-    if(art[5]){const c=art[5];sx=c.x*img.width/c.sourceWidth;sy=c.y*img.height/c.sourceHeight;cw=c.width*img.width/c.sourceWidth;ch=c.height*img.height/c.sourceHeight;}
-    else if(art[2]==='gym'){const c=[[60,0,535,385],[700,0,440,390],[165,394,390,410],[695,394,525,415],[115,810,430,440],[785,810,340,440]][art[1]*2+art[0]];sx=c[0]*img.width/1254;sy=c[1]*img.height/1254;cw=c[2]*img.width/1254;ch=c[3]*img.height/1254;}
-    else if(art[2]==='upper'&&art[1]===1){sx=art[0]===0?0:img.width*.45;cw=img.width*(art[0]===0?.45:.55);}
-    const maxH=single?420:rowHeight*(row.weights?.46:.58),maxW=width-60,scale=Math.min(maxW/cw,maxH/ch),w=cw*scale,h=ch*scale;
-    ctx.drawImage(img,sx,sy,cw,ch,x+(width-w)/2,y+14,w,h);
-   }else{ // Labelled body diagram keeps the pictorial card without inventing an exercise pose.
-    ctx.fillStyle=accent;ctx.beginPath();ctx.arc(x+width/2,y+rowHeight*.25,17,0,Math.PI*2);ctx.fill();ctx.fillRect(x+width/2-23,y+rowHeight*.25+25,46,55);ctx.lineWidth=12;ctx.strokeStyle=accent;ctx.beginPath();ctx.moveTo(x+width/2-23,y+rowHeight*.25+35);ctx.lineTo(x+width/2-52,y+rowHeight*.25+75);ctx.moveTo(x+width/2+23,y+rowHeight*.25+35);ctx.lineTo(x+width/2+52,y+rowHeight*.25+75);ctx.stroke();ctx.fillStyle=muted;ctx.font='16px system-ui';ctx.fillText(shareText(model,'部位示意 · 动作图待补','AREA DIAGRAM'),x+24,y+rowHeight*.57);
-   }
-   const textY=y+(single?500:rowHeight*(row.weights?.63:.73));
-   ctx.fillStyle=ink;lines(ctx,row.name,x+28,textY,width-56,single?48:rowHeight<300?23:29,1);
-   ctx.fillStyle=accent;lines(ctx,row.amount,x+28,textY+(single?100:rowHeight<300?34:50),width-56,single?36:rowHeight<300?18:23,1);
-   if(row.weights){ctx.fillStyle=muted;lines(ctx,row.weights,x+28,textY+(single?165:rowHeight<300?63:91),width-56,rowHeight<300?16:20,1);}
-
+const CARD_BLUE='#0750ff',CARD_INK='#080a0d',CARD_MUTED='#626975';
+const CARD_UI='"Streakfit UI","Streakfit Han",system-ui,sans-serif';
+const CARD_HAN='"Streakfit Han",system-ui,sans-serif';
+function cardFont(ctx,size,weight=700,display=false){ctx.font=`${weight} ${size}px ${display?'"Streakfit Display",'+CARD_UI:CARD_HAN}`;}
+function cardText(ctx,text,x,y,maxWidth,size,weight=700,color=CARD_INK,display=false){
+ ctx.fillStyle=color;cardFont(ctx,size,weight,display);while(size>12&&ctx.measureText(text).width>maxWidth)cardFont(ctx,--size,weight,display);ctx.fillText(text,x,y);
+}
+function cardBrand(ctx,x,y,size,width){cardText(ctx,'STREAKFIT',x,y,width,size,900);ctx.strokeStyle=CARD_INK;ctx.lineWidth=1.2;ctx.strokeText('STREAKFIT',x,y);}
+function cardRule(ctx,x1,y1,x2,y2){ctx.strokeStyle='#8c929c';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();}
+const MUSCLE_NAMES={'胸部':'Chest','背部':'Back','肩部':'Shoulders','核心':'Core','臀部':'Glutes','股四头肌':'Quads','腘绳肌':'Hamstrings','肱二头肌':'Biceps','肱三头肌':'Triceps','心肺':'Cardio','活动度':'Mobility','小腿':'Calves'};
+export function shareMuscleRegions(muscles=[]){return [...new Set(muscles)].filter(m=>Object.hasOwn(MUSCLE_NAMES,m)&&!['心肺','活动度'].includes(m));}
+function shareSessionName(model){
+ const groups=model.muscles,upper=['胸部','背部','肩部','肱二头肌','肱三头肌'],lower=['股四头肌','腘绳肌','臀部','小腿'];
+ if(groups.length===1)return model.en?(MUSCLE_NAMES[groups[0]]||groups[0])+' SESSION':groups[0]+'训练';
+ if(groups.every(m=>upper.includes(m)||m==='核心'))return shareText(model,groups.includes('核心')?'上肢与核心':'上肢训练',groups.includes('核心')?'UPPER BODY & CORE':'UPPER BODY');
+ if(groups.every(m=>lower.includes(m)||m==='核心'))return shareText(model,'下肢训练','LOWER BODY');
+ return shareText(model,'本次训练','TRAINING SESSION');
+}
+// Schematic front/back anatomy. Only muscle groups attached to actual logged
+// movements are highlighted; this is not a measurement of muscle activation.
+function drawShareMuscles(ctx,muscles,x,y,width,height){
+ const active=new Set(shareMuscleRegions(muscles));
+ const body='M76 64 Q63 64 55 72 Q43 76 42 97 L34 142 L22 188 Q17 208 24 213 Q32 219 38 202 L49 169 L57 144 L67 114 L74 151 L69 180 Q61 199 64 225 L68 270 L64 304 L62 349 L54 368 Q51 377 65 377 L82 376 L88 351 L93 303 L96 268 L100 224 L104 268 L107 303 L112 351 L118 376 L135 377 Q149 377 146 368 L138 349 L136 304 L132 270 L136 225 Q139 199 131 180 L126 151 L133 114 L143 144 L151 169 L162 202 Q168 219 176 213 Q183 208 178 188 L166 142 L158 97 Q157 76 145 72 Q137 64 124 64 L112 57 L88 57 Z';
+ const chest=['M72 81 Q85 73 98 82 L98 109 Q79 116 69 103 Z','M128 81 Q115 73 102 82 L102 109 Q121 116 131 103 Z'];
+ const shoulders=['M58 76 Q68 70 73 79 L66 102 Q52 106 47 96 Q47 83 58 76 Z','M142 76 Q132 70 127 79 L134 102 Q148 106 153 96 Q153 83 142 76 Z'];
+ const biceps=['M49 105 Q62 102 63 114 L53 144 Q43 146 42 137 Z','M151 105 Q138 102 137 114 L147 144 Q157 146 158 137 Z'];
+ const quads=['M75 192 Q92 185 96 205 L88 262 Q79 274 71 262 L69 218 Z','M125 192 Q108 185 104 205 L112 262 Q121 274 129 262 L131 218 Z'];
+ const calves=['M72 283 Q84 278 89 294 L82 335 Q77 348 69 336 L68 307 Z','M128 283 Q116 278 111 294 L118 335 Q123 348 131 336 L132 307 Z'];
+ const back=['M75 78 L96 68 L99 100 L76 112 L68 97 Z','M125 78 L104 68 L101 100 L124 112 L132 97 Z','M70 110 L97 104 L95 153 L81 167 L74 140 Z','M130 110 L103 104 L105 153 L119 167 L126 140 Z'];
+ const glutes=['M76 173 Q88 168 98 180 L97 202 Q80 214 70 201 Z','M124 173 Q112 168 102 180 L103 202 Q120 214 130 201 Z'];
+ const scale=Math.min(width/410,height/395);
+ ctx.save();ctx.translate(x+(width-410*scale)/2,y);ctx.scale(scale,scale);
+ for(let side=0;side<2;side++){
+  ctx.save();ctx.translate(side*210,0);
+  const base=ctx.createLinearGradient(42,0,159,0);base.addColorStop(0,'#c4ced9');base.addColorStop(.48,'#f1f4f7');base.addColorStop(1,'#a7b5c5');
+  ctx.fillStyle=base;ctx.strokeStyle='#9caebf';ctx.lineWidth=1;ctx.fill(new Path2D(body));ctx.stroke(new Path2D(body));
+  ctx.beginPath();ctx.ellipse(100,29,18,24,0,0,Math.PI*2);ctx.fill();ctx.stroke();
+  const blue=ctx.createLinearGradient(55,0,143,0);blue.addColorStop(0,'#0041d5');blue.addColorStop(.5,'#4f94ff');blue.addColorStop(1,'#064cdb');
+  const region=(group,paths)=>{ctx.fillStyle=active.has(group)?blue:'#c7d3df';ctx.strokeStyle='#eff4fa';ctx.lineWidth=1.3;for(const path of paths){const shape=new Path2D(path);ctx.fill(shape);ctx.stroke(shape);}};
+  region('肩部',shoulders);region(side?'肱三头肌':'肱二头肌',biceps);region('小腿',calves);
+  if(side){region('背部',back);region('臀部',glutes);region('腘绳肌',quads);}
+  else{
+   region('胸部',chest);region('股四头肌',quads);
+   const abs=[];for(let i=0;i<4;i++){const top=116+i*13;abs.push(`M87 ${top} Q93 ${top-2} 98 ${top} L98 ${top+10} Q90 ${top+13} 85 ${top+8} Z`,`M113 ${top} Q107 ${top-2} 102 ${top} L102 ${top+10} Q110 ${top+13} 115 ${top+8} Z`);}region('核心',abs);
   }
-  ctx.fillStyle=muted;ctx.font='600 23px system-ui';ctx.fillText(shareText(model,'本次训练涉及部位','TRAINED AREAS'),50,1150);
-  const names={'胸部':'Chest','背部':'Back','肩部':'Shoulders','核心':'Core','臀部':'Glutes','股四头肌':'Quads','腘绳肌':'Hamstrings','肱二头肌':'Biceps','肱三头肌':'Triceps','心肺':'Cardio','活动度':'Mobility','小腿':'Calves'};
-  ctx.fillStyle=accent;lines(ctx,model.muscles.map(m=>model.en?(names[m]||m):m).join(' · '),50,1195,980,26,2);
-  ctx.strokeStyle=model.dark?'#34463c':'#dce3df';ctx.beginPath();ctx.moveTo(48,1255);ctx.lineTo(1032,1255);ctx.stroke();ctx.fillStyle=muted;ctx.font='20px system-ui';ctx.fillText(shareText(model,'为今天的自己，留下一份记录。','A record of showing up for yourself.'),50,1300);ctx.font='600 15px system-ui';ctx.textAlign='right';ctx.fillText('MOVE AT YOUR OWN PACE',1032,1300);ctx.textAlign='left';
-  ctx.restore();canvases.push(canvas);
+  ctx.restore();
+ }
+ ctx.restore();
+}
+function shareMuscleMap(image,muscles){
+ if(!image)return null;
+ const regions={
+  胸部:['M312 224 Q363 213 423 239 L422 319 Q386 348 325 327 Q297 301 312 224 Z','M548 224 Q497 213 437 239 L438 319 Q474 348 535 327 Q563 301 548 224 Z'],
+  肩部:['M307 214 Q264 207 247 253 L244 306 L270 325 L307 271 L344 232 Z','M553 214 Q596 207 613 253 L616 306 L590 325 L553 271 L516 232 Z','M918 214 Q874 207 850 254 L842 304 L871 324 L911 271 L948 231 Z','M1130 214 Q1174 207 1198 254 L1206 304 L1177 324 L1137 271 L1100 231 Z'],
+  核心:['M368 341 Q429 327 492 341 L503 394 L482 475 L430 536 L377 475 L356 394 Z'],
+  背部:['M1006 157 L1042 157 L1084 192 L1134 218 L1133 273 L1150 315 L1120 411 L1091 468 L1024 512 L957 468 L928 411 L898 315 L915 273 L914 218 L964 192 Z'],
+  肱二头肌:['M245 311 L282 294 L306 331 Q296 380 267 410 L224 424 L219 397 Z','M615 311 L578 294 L554 331 Q564 380 593 410 L636 424 L641 397 Z'],
+  肱三头肌:['M845 304 L879 295 L905 327 L885 382 L856 420 L814 419 L809 391 Z','M1203 304 L1169 295 L1143 327 L1163 382 L1192 420 L1234 419 L1239 391 Z'],
+  臀部:['M936 468 Q984 449 1019 494 L1020 569 Q988 621 936 615 L905 579 L908 522 Z','M1112 468 Q1064 449 1029 494 L1028 569 Q1060 621 1112 615 L1143 579 L1140 522 Z'],
+  股四头肌:['M327 559 Q375 571 420 614 L409 708 L382 763 L352 776 Q313 747 304 679 L307 608 Z','M533 559 Q485 571 440 614 L451 708 L478 763 L508 776 Q547 747 556 679 L553 608 Z'],
+  腘绳肌:['M921 610 Q971 628 1012 617 L1000 695 L967 773 L928 797 L907 738 L901 679 Z','M1127 610 Q1077 628 1036 617 L1048 695 L1081 773 L1120 797 L1141 738 L1147 679 Z'],
+  小腿:['M324 784 L373 777 L377 836 L357 928 L329 983 L308 970 L307 882 Z','M536 784 L487 777 L483 836 L503 928 L531 983 L552 970 L553 882 Z','M908 801 L965 792 L979 844 L964 917 L928 1002 L897 986 L887 914 L889 853 Z','M1140 801 L1083 792 L1069 844 L1084 917 L1120 1002 L1151 986 L1161 914 L1159 853 Z']
+ };
+ const canvas=document.createElement('canvas'),mask=document.createElement('canvas');canvas.width=mask.width=image.width;canvas.height=mask.height=image.height;
+ const ctx=canvas.getContext('2d'),m=mask.getContext('2d');ctx.drawImage(image,0,0);m.scale(image.width/1448,image.height/1086);m.fillStyle='#fff';
+ for(const group of shareMuscleRegions(muscles))for(const path of regions[group]||[])m.fill(new Path2D(path));
+ const pixels=ctx.getImageData(0,0,canvas.width,canvas.height),marked=m.getImageData(0,0,mask.width,mask.height).data;
+ for(let i=0;i<pixels.data.length;i+=4){if(!pixels.data[i+3]||!marked[i+3])continue;const a=marked[i+3]/255,light=pixels.data[i]*.2126+pixels.data[i+1]*.7152+pixels.data[i+2]*.0722;const blue=[light*.065,light*.38,Math.min(255,light*1.32)];for(let c=0;c<3;c++)pixels.data[i+c]=pixels.data[i+c]*(1-a)+blue[c]*a;}
+ ctx.putImageData(pixels,0,0);return canvas;
+}
+function drawMuscleMap(ctx,image,muscles,x,y,width,height){
+ if(!image){drawShareMuscles(ctx,muscles,x,y,width,height);return;}
+ const scale=Math.min(width/image.width,height/image.height),w=image.width*scale,h=image.height*scale;ctx.drawImage(image,x+(width-w)/2,y,w,h);
+}
+function drawShareArtwork(ctx,row,images,x,y,width,height){
+ const art=row.art,img=art?images[art[2]]:null;if(!art||!img)return false;
+ const sw=img.width/(art[3]||2),sh=img.height/(art[4]||2);let sx=art[0]*sw,sy=art[1]*sh,cw=sw,ch=sh;
+ if(art[5]){const c=art[5];sx=c.x*img.width/c.sourceWidth;sy=c.y*img.height/c.sourceHeight;cw=c.width*img.width/c.sourceWidth;ch=c.height*img.height/c.sourceHeight;}
+ else if(art[2]==='gym'){const c=[[60,0,535,385],[700,0,440,390],[165,394,390,410],[695,394,525,415],[115,810,430,440],[785,810,340,440]][art[1]*2+art[0]];sx=c[0]*img.width/1254;sy=c[1]*img.height/1254;cw=c[2]*img.width/1254;ch=c[3]*img.height/1254;}
+ const scale=Math.min(width/cw,height/ch),w=cw*scale,h=ch*scale;
+ ctx.drawImage(img,sx,sy,cw,ch,x+(width-w)/2,y+height-h,w,h);return true;
+}
+export async function renderDailyShareCards(model,{story=false}={}){
+ if(!model.rows.length)return [];
+ await Promise.allSettled([document.fonts?.load('700 88px "Streakfit Han"'),document.fonts?.load('700 44px "Streakfit UI"'),document.fonts?.load('600 44px "Streakfit Display"')]);await document.fonts?.ready;
+ const images={};
+ for(const key of new Set(model.rows.filter(r=>r.art).map(r=>r.art[2]))){const file={upper:'share-blue-upper.png',lower:'share-blue-lower.png',gym:'share-blue-gym.png',finish:'share-blue-finish.png'}[key]||key;images[key]=shareCutout(await loadShareImage(new URL('../assets/exercises/'+file,import.meta.url).href));}
+ const muscleImage=shareMuscleMap(await loadShareImage(new URL('../assets/exercises/share-muscle-neutral.png',import.meta.url).href),model.muscles);
+ const canvases=[],perPage=4,pages=Math.ceil(model.rows.length/perPage);
+ for(let page=0;page<pages;page++){
+  const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1350;
+  const ctx=canvas.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,1080,canvas.height);
+  cardBrand(ctx,40,54,42,430);ctx.fillStyle=CARD_BLUE;ctx.fillRect(42,69,188,7);
+  cardRule(ctx,575,66,1040,66);
+  if(pages>1||model.demo){ctx.textAlign='right';cardText(ctx,model.demo?shareText(model,'示例数据 / DEMO','DEMO DATA'):`${page+1} / ${pages}`,1040,45,400,19,600,CARD_MUTED);ctx.textAlign='left';}
+  const title=shareText(model,model.complete?'今日训练完成':'本次训练记录',model.complete?'WORKOUT COMPLETE':'WORKOUT RECORDED');
+  cardText(ctx,title,40,174,595,model.en?46:91,900);
+  if(!model.en)cardText(ctx,model.complete?'WORKOUT COMPLETE':'WORKOUT RECORDED',44,229,580,43,600,CARD_INK,true);
+  cardText(ctx,[shareSessionName(model),model.date.replaceAll('-','.')].filter(Boolean).join('  ·  '),44,274,580,27,700);
+  cardRule(ctx,660,106,660,268);cardRule(ctx,858,126,858,256);
+  ctx.textAlign='center';cardText(ctx,String(model.rows.length),758,216,165,124,900,CARD_BLUE,true);cardText(ctx,shareText(model,'个动作','EXERCISES'),758,260,176,28,700);
+  cardText(ctx,String(model.sets||model.minutes),960,216,165,124,900,CARD_BLUE,true);cardText(ctx,model.sets?shareText(model,'组记录','SETS LOGGED'):shareText(model,'分钟记录','MINUTES'),960,260,180,28,700);ctx.textAlign='left';
+  const pageRows=model.rows.slice(page*perPage,page*perPage+perPage),layout=dailyShareLayout(pageRows),gridTop=301,footerTop=canvas.height-300,rowHeight=(footerTop-gridTop)/layout.rowCount;
+  cardRule(ctx,22,gridTop,1058,gridTop);
+  for(let index=0;index<pageRows.length;index++){
+   const row=pageRows[index],wide=layout.columns===1||(pageRows.length===3&&index===2),x=22+(index%layout.columns)*518,y=gridTop+Math.floor(index/layout.columns)*rowHeight,width=wide?1036:518;
+   ctx.save();ctx.beginPath();ctx.rect(x+1,y+1,width-2,rowHeight-2);ctx.clip();
+   const horizontal=['pushup','deadbug','bench','dbbench','dbpress','incline','chestsupported','bridge','hipthrust','barhip','rdl','barRdl'].includes(row.id),single=pageRows.length===1;
+   const detailed=!!(row.weights||row.varyingReps);
+   const maxArtW=horizontal?width-34:width*.62,maxArtH=horizontal?rowHeight*(single?.62:detailed?.36:.54):rowHeight-32;
+   const artX=horizontal?x+17:x+width*.37,artY=horizontal?y+rowHeight-maxArtH-16:y+16;
+   if(!drawShareArtwork(ctx,row,images,artX,artY,maxArtW,maxArtH)){
+    drawShareMuscles(ctx,[row.muscle],x+width*.43,y+70,width*.55,rowHeight-100);
+    cardText(ctx,shareText(model,'部位示意','MUSCLE AREA'),x+width*.52,y+rowHeight-18,width*.44,17,500,CARD_MUTED);
+   }
+   cardText(ctx,String(page*perPage+index+1).padStart(2,'0'),x+23,y+97,width*.45,102,900,'#d9dce1',true);
+   const textWidth=horizontal?(detailed?width*.66:width-45):width*.43,nameY=y+143;
+   cardText(ctx,row.name,x+25,nameY,textWidth,single?40:32,800);
+   if(row.english)cardText(ctx,row.english.toUpperCase(),x+25,nameY+28,textWidth,20,600,CARD_MUTED,true);
+   ctx.fillStyle=CARD_BLUE;lines(ctx,row.amount,x+25,nameY+(row.english?64:42),textWidth,single?30:25,2);
+   if(row.weights){ctx.fillStyle=CARD_MUTED;lines(ctx,row.weights,x+25,nameY+(row.english?118:96),textWidth,18,2);}
+   ctx.restore();
+   if(index%layout.columns===0&&index+1<pageRows.length)cardRule(ctx,540,y,540,y+rowHeight);
+   if(index%layout.columns===layout.columns-1||index===pageRows.length-1)cardRule(ctx,22,y+rowHeight,1058,y+rowHeight);
+  }
+  cardRule(ctx,22,footerTop,1058,footerTop);
+  cardText(ctx,shareText(model,'本次训练涉及肌群 /','TRAINED MUSCLE GROUPS /'),44,footerTop+55,490,25,700);
+  const muscleNames=model.muscles.map(m=>model.en?(MUSCLE_NAMES[m]||m):m);
+  ctx.fillStyle=CARD_INK;lines(ctx,muscleNames.join(' · '),44,footerTop+105,500,34,2);
+  cardRule(ctx,45,footerTop+163,490,footerTop+163);
+  cardText(ctx,shareText(model,'为今天的自己，留下一份记录。','A record of showing up for yourself.'),45,footerTop+205,480,22,500,CARD_MUTED);
+  cardBrand(ctx,44,footerTop+260,31,430);cardText(ctx,'MOVE AT YOUR OWN PACE.',46,footerTop+285,430,15,500,CARD_MUTED,true);
+  drawMuscleMap(ctx,muscleImage,model.muscles,560,footerTop+12,475,275);
+  cardText(ctx,shareText(model,'肌群示意','MUSCLE MAP'),970,canvas.height-10,100,12,500,CARD_MUTED);
+  if(story){const frame=document.createElement('canvas');frame.width=1080;frame.height=1920;const f=frame.getContext('2d');f.fillStyle='#fff';f.fillRect(0,0,1080,1920);f.drawImage(canvas,0,285);canvases.push(frame);}else canvases.push(canvas);
  }return canvases;
 }
 export function createDailyShareDialog({getModel}){

@@ -80,5 +80,10 @@
       "common-lunge.png": "entire upper row (bird dog candidate superseded)",
       "common-legcurl-plank.png": "entire lower row: plank candidate has no exact current catalog ID and is not mapped"
     }
+  },
+  "share-muscle-neutral.png": {
+    "source": "OpenAI image generation, adapted from user-provided card reference",
+    "purpose": "Neutral front/back muscle illustration with data-driven schematic highlighting; not measured muscle activation",
+    "reference": "exec-c7db3d27-4314-4607-87fa-410440fb388e.png"
   }
 }
