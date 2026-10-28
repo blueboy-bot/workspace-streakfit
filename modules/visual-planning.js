@@ -1,4 +1,4 @@
-import {MIN_STRENGTH_SETS,strengthTarget,enforcePlanStrengthMinimum} from './strength-protocol.js';
+import {MIN_STRENGTH_SETS,strengthTarget,enforcePlanStrengthMinimum} from './strength-protocol.js?v=minimum-four9';
 // Build the exact candidate used by both the comparison and Apply. No source mutation.
 export function adjustedWorkoutDay(day,plan,value,{catalog,targetFor,defaultTarget,minutesFor=()=>15}){
  const next=JSON.parse(JSON.stringify(day)),logged=Object.keys(day.logs||{}).filter(id=>catalog[id]&&Array.isArray(day.logs[id])&&day.logs[id].length);
