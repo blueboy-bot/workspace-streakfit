@@ -1,3 +1,5 @@
+import {installDoubleTapGuard} from './modules/touch-gestures.js';
+installDoubleTapGuard(document);
 // Presentation only: leave plans, submitted logs, units and rewards untouched.
 const visualSettings = document.querySelector('#appearance-dialog');
 document.querySelector('#appearance-open')?.addEventListener('click', () => visualSettings.showModal());
