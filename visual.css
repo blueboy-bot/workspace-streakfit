@@ -631,3 +631,5 @@ dialog :is(input:not([type=checkbox]):not([type=radio]):not([type=range]),select
 .session-mode .workout-progress-visual{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
 .session-mode .workout-progress-visual .set-count{font-size:13px;line-height:1.5;color:var(--subtle);white-space:nowrap}
 .session-mode .record-actions>button[data-log]:not(:disabled){border-color:var(--accent-edge);color:var(--ink)}
+
+.session-mode .record-utilities>.record-status{position:static;width:auto;height:auto;overflow:visible;clip-path:none}
