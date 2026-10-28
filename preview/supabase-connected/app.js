@@ -1077,7 +1077,7 @@ function strengthWorkoutCard(id,d,plan){
  const loadHelp=mode==='weighted'&&id==='assistpull'?'辅助越大，通常越容易。':'';
  return `<section class="card workout-card">
  <button class="exercise-heading" data-lesson="${id}"><h3>${esc(m.displayName)} ▷</h3><span class="muted">${esc(m.muscle)}</span></button>
- <div class="exercise-goal"><span>目标 ${target.sets} 组 × ${target.min}–${target.max} ${target.quality||target.perSide?'次 / 侧':'次'}</span><span class="workout-progress-visual">${setProgressMarkup(logs.length,target.sets)}<span>已记录 ${logs.length} / ${target.sets} 组</span></span></div>
+ <div class="exercise-goal"><span>目标 ${target.sets} 组 × ${target.min}–${target.max} ${target.quality||target.perSide?'次 / 侧':'次'}</span><span class="workout-progress-visual">${setProgressMarkup(logs.length,target.sets)}<span>${logs.length>target.sets?`已记录 ${logs.length} 组 · 加练 ${logs.length-target.sets} 组`:`已记录 ${logs.length} / ${target.sets} 组`}</span></span></div>
  <p class="exercise-recovery">休息 ${rest} 秒</p>
  ${target.timeAdjusted?'<p class="load-help">已按时间预算缩减组数。</p>':''}
  ${target.timeWarning?'<p class="notice">自定义训练量超过可用时间，请调整。</p>':''}
@@ -1086,7 +1086,7 @@ function strengthWorkoutCard(id,d,plan){
  ${loadNotice?`<p class="load-intro">${esc(loadNotice)}</p>`:''}
  <div class="set-input strength-input">${recordingMode(id)==='weighted'?`<label>${id==='assistpull'?'辅助重量':'重量'} (${preferredMassUnit()})<input id="weight-${id}" type="number" required inputmode="decimal" min="0" max="${massInput(500)}" step="any" placeholder="填写重量" aria-label="${esc(weightLabel(id))}" ${loadHelp?`aria-describedby="load-help-${id}"`:""} value="${massInput(hint.weight)}"></label>`:mode==='band'?`<label>${setupLabel(id)}<input id="setup-${id}" ${['push','closepush'].includes(id)?'type="number" min="0" max="300" step="1"':'type="text" maxlength="80"'} value="${esc(hint.setup||'')}"></label>`:''}<label>${target.quality||target.perSide?'次数 / 侧':'次数'}<span class="reps-picker"><select id="reps-${id}" required aria-label="${target.quality||target.perSide?'每侧次数':'次数'}">${Array.from({length:100},(_,i)=>`<option value="${i+1}" ${i+1===Number(hint.reps)?'selected':''}>${i+1}</option>`).join('')}</select></span></label></div>
  ${loadHelp?`<p id="load-help-${id}" class="load-help">${esc(loadHelp)}</p>`:''}
- <button class="primary" data-log="${id}" ${isPreview()||!supports(id,workoutEquipment())?'disabled':''}>${logs.length>=target.sets?'再记一组':'完成本组'}</button>
+ <button class="primary" data-log="${id}" ${isPreview()||!supports(id,workoutEquipment())?'disabled':''}>${logs.length>=target.sets?'记录加练组':'完成本组'}</button>
  ${logs.length?`<button data-remove-log="${id}" ${isPreview()?'disabled':''} aria-label="撤回最后一组">撤回</button>`:''}
  <p id="log-feedback-${id}" role="alert" class="field-feedback"></p><p id="record-status-${id}" role="status" aria-live="polite" class="record-status"></p>
  <div class="exercise-details">
@@ -1481,7 +1481,7 @@ if(typeof document.createElement==='function') {
 
 // Explicit navigation changes focus; ordinary set recording does not jump the page.
 function focusCurrentExercise(){const heading=content.querySelector?.('.session-mode .exercise-heading, .session-mode .workout-card h3');if(!heading)return;heading.setAttribute?.('tabindex','-1');heading.focus?.({preventScroll:true});heading.scrollIntoView?.({block:'start',behavior:'instant'});}
-function announceRecord(id,persisted){const status=document.querySelector('#record-status-'+id);if(status)status.textContent=uiText(persisted?'已保存':'仅暂存在页面，尚未保存。');const restoreFocus=()=>{if(page==='workout')document.querySelector('[data-log="'+id+'"]')?.focus?.({preventScroll:true});};if(globalThis.requestAnimationFrame)requestAnimationFrame(restoreFocus);else restoreFocus();}
+function announceRecord(id,persisted){const status=document.querySelector('#record-status-'+id);if(status){const count=workoutDay().logs?.[id]?.length||0;status.textContent=uiText(persisted?`第 ${count} 组已保存`:'仅暂存在页面，尚未保存。');}const restoreFocus=()=>{if(page==='workout')document.querySelector('[data-log="'+id+'"]')?.focus?.({preventScroll:true});};if(globalThis.requestAnimationFrame)requestAnimationFrame(restoreFocus);else restoreFocus();}
 // Illustrated Today overview; old recovery, editor and recording views stay available.
 function commonArtworkTile(id,position,thumbnail=false){const pair=commonStrengthArtwork[id],frame=pair?.frames[position];if(!frame)return '';const c=frame.crop,w=thumbnail?Math.max(c.width,c.height):c.width,h=thumbnail?w:c.height,ox=(w-c.width)/2,oy=(h-c.height)/2,x=c.sourceWidth===w?0:(c.x-ox)/(c.sourceWidth-w)*100,y=c.sourceHeight===h?0:(c.y-oy)/(c.sourceHeight-h)*100;return `<span class="${thumbnail?'plan-art plan-art-common':'teaching-frame-image teaching-frame-common'}" style="background-image:url('./assets/exercises/${pair.file}');background-size:${c.sourceWidth/w*100}% ${c.sourceHeight/h*100}%;background-position:${x}% ${y}%;${thumbnail?`clip-path:inset(${oy/h*100}% ${ox/w*100}%);`:`aspect-ratio:${c.width}/${c.height};`}" aria-hidden="true"></span>`;}
 function keyframeTile(id,position){if(commonStrengthArtwork[id])return commonArtworkTile(id,position);if(!teachingKeyframes[id])return '';const row=teachingKeyframes[id]?.row||0;return `<span class="teaching-frame-image" style="background-position:${position*100}% ${row*100}%" aria-hidden="true"></span>`;}
