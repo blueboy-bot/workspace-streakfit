@@ -85,5 +85,22 @@
     "source": "OpenAI image generation, adapted from user-provided card reference",
     "purpose": "Neutral front/back muscle illustration with data-driven schematic highlighting; not measured muscle activation",
     "reference": "exec-c7db3d27-4314-4607-87fa-410440fb388e.png"
+  },
+  "supplementalIllustrations": {
+    "source": "Original OpenAI image generation using existing STREAKFIT art as style references",
+    "mapping": "modules/supplemental-artwork.js",
+    "review": "REVIEW-supplemental.json",
+    "files": [
+      "supplement-bench.png",
+      "supplement-basics.png",
+      "supplement-arms.png",
+      "supplement-press.png",
+      "supplement-legs.png",
+      "supplement-variants-a.png",
+      "supplement-variants-b.png",
+      "supplement-activity.png",
+      "supplement-corrections.png"
+    ],
+    "use": "Exact movement illustrations; pause/tempo aliases retain timing in text, single frames labelled as illustrations"
   }
 }

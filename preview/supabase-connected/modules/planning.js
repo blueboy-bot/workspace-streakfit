@@ -1,4 +1,4 @@
-import {enforcePlanStrengthMinimum} from './strength-protocol.js?v=minimum-four9';
+import {enforcePlanStrengthMinimum} from './strength-protocol.js?v=artwork10';
 import {screeningAllowsTraining} from './local-integrity.js';
 // Preserve explicit zero; absent legacy fields keep the original 3/1 defaults.
 export function cycleSchedule(profile){

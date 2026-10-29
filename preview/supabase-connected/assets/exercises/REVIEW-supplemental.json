@@ -1,0 +1,692 @@
+{
+  "scope": "Static exercise-identification imagery; not a motion capture or specialist technique certification",
+  "style": "Blue 3D mannequin, black tank/shorts/trainers, green studio, gray equipment",
+  "seams": "Source cell bounds inspected; narrow borders excluded; no runtime auto-cropping guesses",
+  "timingAliases": {
+    "pausebench": "bench bottom pose; pause described in text",
+    "tempobench": "bench positions; tempo described in text",
+    "pausesquat": "reviewed back-squat bottom pose",
+    "temposquat": "reviewed back-squat positions"
+  },
+  "rows": [
+    {
+      "id": "bench",
+      "sheet": "supplement-bench.png",
+      "cell": 0,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "bench",
+      "sheet": "supplement-bench.png",
+      "cell": 1,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "barrow",
+      "sheet": "supplement-basics.png",
+      "cell": 0,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "machinerow",
+      "sheet": "supplement-basics.png",
+      "cell": 1,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "assistpull",
+      "sheet": "supplement-basics.png",
+      "cell": 2,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "barohp",
+      "sheet": "supplement-basics.png",
+      "cell": 3,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "cablelateral",
+      "sheet": "supplement-basics.png",
+      "cell": 4,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "rearpec",
+      "sheet": "supplement-basics.png",
+      "cell": 5,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "proneW",
+      "sheet": "supplement-basics.png",
+      "cell": 6,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "proneY",
+      "sheet": "supplement-basics.png",
+      "cell": 7,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "wallslide",
+      "sheet": "supplement-basics.png",
+      "cell": 8,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "bandrow",
+      "sheet": "supplement-basics.png",
+      "cell": 9,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "bandcurl",
+      "sheet": "supplement-basics.png",
+      "cell": 10,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "selfcurl",
+      "sheet": "supplement-basics.png",
+      "cell": 11,
+      "status": "superseded",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "closepush",
+      "sheet": "supplement-basics.png",
+      "cell": 12,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "dbtriceps",
+      "sheet": "supplement-basics.png",
+      "cell": 13,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "hinge",
+      "sheet": "supplement-basics.png",
+      "cell": 14,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "calf",
+      "sheet": "supplement-basics.png",
+      "cell": 15,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "preacher",
+      "sheet": "supplement-arms.png",
+      "cell": 0,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "dbpreacher",
+      "sheet": "supplement-arms.png",
+      "cell": 1,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "cablecurl",
+      "sheet": "supplement-arms.png",
+      "cell": 2,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "inclinecurl",
+      "sheet": "supplement-arms.png",
+      "cell": 3,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "concentration",
+      "sheet": "supplement-arms.png",
+      "cell": 4,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "barcurl",
+      "sheet": "supplement-arms.png",
+      "cell": 5,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "ropehammer",
+      "sheet": "supplement-arms.png",
+      "cell": 6,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "cableoverhead",
+      "sheet": "supplement-arms.png",
+      "cell": 7,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "skullcrusher",
+      "sheet": "supplement-arms.png",
+      "cell": 8,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "pallof",
+      "sheet": "supplement-arms.png",
+      "cell": 9,
+      "status": "superseded",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "bandpallof",
+      "sheet": "supplement-arms.png",
+      "cell": 10,
+      "status": "superseded",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "bandfly",
+      "sheet": "supplement-arms.png",
+      "cell": 11,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "bandtriceps",
+      "sheet": "supplement-arms.png",
+      "cell": 12,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "seatedcalf",
+      "sheet": "supplement-arms.png",
+      "cell": 13,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "cablecrunch",
+      "sheet": "supplement-arms.png",
+      "cell": 14,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "crunch",
+      "sheet": "supplement-arms.png",
+      "cell": 15,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "closebench",
+      "sheet": "supplement-press.png",
+      "cell": 0,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "dbfly",
+      "sheet": "supplement-press.png",
+      "cell": 1,
+      "status": "superseded",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "pecdeck",
+      "sheet": "supplement-press.png",
+      "cell": 2,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "smithbench",
+      "sheet": "supplement-press.png",
+      "cell": 3,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "inclinebar",
+      "sheet": "supplement-press.png",
+      "cell": 4,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "overheadtriceps",
+      "sheet": "supplement-press.png",
+      "cell": 5,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "triceps",
+      "sheet": "supplement-press.png",
+      "cell": 6,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "benchWide",
+      "sheet": "supplement-press.png",
+      "cell": 7,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "frontsquat",
+      "sheet": "supplement-legs.png",
+      "cell": 0,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "bulgarian",
+      "sheet": "supplement-legs.png",
+      "cell": 1,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "hack",
+      "sheet": "supplement-legs.png",
+      "cell": 2,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "smithsquat",
+      "sheet": "supplement-legs.png",
+      "cell": 3,
+      "status": "superseded",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "cablekick",
+      "sheet": "supplement-legs.png",
+      "cell": 4,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "abduction",
+      "sheet": "supplement-legs.png",
+      "cell": 5,
+      "status": "superseded",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "reversecrunch",
+      "sheet": "supplement-legs.png",
+      "cell": 6,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "pausedeadlift",
+      "sheet": "supplement-legs.png",
+      "cell": 7,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "bridgeSingle",
+      "sheet": "supplement-legs.png",
+      "cell": 8,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "pulldownWide",
+      "sheet": "supplement-variants-a.png",
+      "cell": 0,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "pulldownSupinated",
+      "sheet": "supplement-variants-a.png",
+      "cell": 1,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "pulldownSingle",
+      "sheet": "supplement-variants-a.png",
+      "cell": 2,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "cablerowWide",
+      "sheet": "supplement-variants-a.png",
+      "cell": 3,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "cablerowSupinated",
+      "sheet": "supplement-variants-a.png",
+      "cell": 4,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "barrowSupinated",
+      "sheet": "supplement-variants-a.png",
+      "cell": 5,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "chestsupportedWide",
+      "sheet": "supplement-variants-a.png",
+      "cell": 6,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "pullupWide",
+      "sheet": "supplement-variants-a.png",
+      "cell": 7,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "chinup",
+      "sheet": "supplement-variants-a.png",
+      "cell": 8,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "dbbenchNeutral",
+      "sheet": "supplement-variants-a.png",
+      "cell": 9,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "inclineNeutral",
+      "sheet": "supplement-variants-a.png",
+      "cell": 10,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "flyLow",
+      "sheet": "supplement-variants-a.png",
+      "cell": 11,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "flyHigh",
+      "sheet": "supplement-variants-a.png",
+      "cell": 12,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "shoulderpressNeutral",
+      "sheet": "supplement-variants-a.png",
+      "cell": 13,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "cablelateralBehind",
+      "sheet": "supplement-variants-a.png",
+      "cell": 14,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "legpressHigh",
+      "sheet": "supplement-variants-a.png",
+      "cell": 15,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "barcurlWide",
+      "sheet": "supplement-variants-b.png",
+      "cell": 0,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "barcurlNarrow",
+      "sheet": "supplement-variants-b.png",
+      "cell": 1,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "reversecurl",
+      "sheet": "supplement-variants-b.png",
+      "cell": 2,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "reversecablecurl",
+      "sheet": "supplement-variants-b.png",
+      "cell": 3,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "cablecurlBehind",
+      "sheet": "supplement-variants-b.png",
+      "cell": 4,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "tricepsV",
+      "sheet": "supplement-variants-b.png",
+      "cell": 5,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "tricepsSupinated",
+      "sheet": "supplement-variants-b.png",
+      "cell": 6,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "legpressNarrow",
+      "sheet": "supplement-variants-b.png",
+      "cell": 7,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "legextensionSingle",
+      "sheet": "supplement-variants-b.png",
+      "cell": 8,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "legcurlSingle",
+      "sheet": "supplement-variants-b.png",
+      "cell": 9,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "dbcalfSingle",
+      "sheet": "supplement-variants-b.png",
+      "cell": 10,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "cablecrunchStanding",
+      "sheet": "supplement-variants-b.png",
+      "cell": 11,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "briskwalk",
+      "sheet": "supplement-activity.png",
+      "cell": 0,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "march",
+      "sheet": "supplement-activity.png",
+      "cell": 1,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "treadmill",
+      "sheet": "supplement-activity.png",
+      "cell": 2,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "bike",
+      "sheet": "supplement-activity.png",
+      "cell": 3,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "elliptical",
+      "sheet": "supplement-activity.png",
+      "cell": 4,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "rowing",
+      "sheet": "supplement-activity.png",
+      "cell": 5,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "thoracic",
+      "sheet": "supplement-activity.png",
+      "cell": 6,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "ankle",
+      "sheet": "supplement-activity.png",
+      "cell": 7,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "hipmob",
+      "sheet": "supplement-activity.png",
+      "cell": 8,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "hamStretch",
+      "sheet": "supplement-activity.png",
+      "cell": 9,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "calfStretch",
+      "sheet": "supplement-activity.png",
+      "cell": 10,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "hipFlexor",
+      "sheet": "supplement-activity.png",
+      "cell": 11,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "dbfly",
+      "sheet": "supplement-corrections.png",
+      "cell": 0,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "selfcurl",
+      "sheet": "supplement-corrections.png",
+      "cell": 1,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "pallof",
+      "sheet": "supplement-corrections.png",
+      "cell": 2,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "bandpallof",
+      "sheet": "supplement-corrections.png",
+      "cell": 3,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "smithsquat",
+      "sheet": "supplement-corrections.png",
+      "cell": 4,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    },
+    {
+      "id": "abduction",
+      "sheet": "supplement-corrections.png",
+      "cell": 5,
+      "status": "accepted",
+      "purpose": "static movement-identification illustration"
+    }
+  ]
+}
