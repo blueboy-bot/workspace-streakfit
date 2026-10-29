@@ -1,6 +1,6 @@
 import {MIN_STRENGTH_SETS,isStrengthMovement,strengthTarget,enforceDayStrengthMinimum} from './modules/strength-protocol.js?v=artwork10';
 import {appConfirm} from './modules/dialogs.js';
-import {dailyShareModel,createDailyShareDialog} from './modules/daily-share-card.js?v=artwork10';
+import {dailyShareModel,createDailyShareDialog} from './modules/daily-share-card.js?v=single-card11';
 import {currentLanguage} from './modules/localization.js';
 import {adjustedWorkoutDay,prioritizeWorkoutAdjustment,estimateRemainingOverviewMinutes,estimateOverviewMinutes,setProgressMarkup,teachingKeyframes,commonStrengthArtwork} from './modules/visual-planning.js?v=artwork10';
 import {overviewProgress,overviewResume,overviewTitle,overviewArtwork,reviewedArtwork,withheldArtwork} from './modules/daily-overview.js?v=artwork10';

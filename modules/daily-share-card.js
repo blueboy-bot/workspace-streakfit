@@ -49,8 +49,14 @@ function lines(ctx,text,x,y,width,size=25,maxLines=3){
  }
 }
 function loadShareImage(url){return new Promise(resolve=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=()=>resolve(null);img.src=url;});}
-// Layout depends on recorded content, so one movement never occupies one corner of a four-cell sheet.
-export function dailyShareLayout(rows){const columns=rows.length===1?1:2;return {columns,dataOnly:false,rowCount:Math.ceil(rows.length/columns)};}
+// A session is one image. More movements add balanced rows instead of pages.
+export function dailyShareLayout(rows){const columns=rows.length===1?1:rows.length>=7?3:2;return {columns,dataOnly:false,rowCount:Math.ceil(rows.length/columns)};}
+export function dailyShareDimensions(rows,{story=false}={}){
+ const layout=dailyShareLayout(rows),detailHeight=rows.some(row=>row.weights||row.varyingReps)?60:0;
+ const contentHeight=Math.max(1350,601+layout.rowCount*((layout.columns===3?380:360)+detailHeight));
+ const height=story?Math.max(1920,contentHeight+192):contentHeight;
+ return {...layout,width:1080,height,contentHeight,offset:Math.floor((height-contentHeight)/2)};
+}
 function shareCutout(image){
  if(!image)return null;
  const canvas=document.createElement('canvas');canvas.width=image.width;canvas.height=image.height;
@@ -148,13 +154,13 @@ export async function renderDailyShareCards(model,{story=false}={}){
  const images={};
  for(const key of new Set(model.rows.filter(r=>r.art).map(r=>r.art[2]))){const file={upper:'share-blue-upper.png',lower:'share-blue-lower.png',gym:'share-blue-gym.png',finish:'share-blue-finish.png'}[key]||key;images[key]=shareCutout(await loadShareImage(new URL('../assets/exercises/'+file,import.meta.url).href));}
  const muscleImage=shareMuscleMap(await loadShareImage(new URL('../assets/exercises/share-muscle-neutral.png',import.meta.url).href),model.muscles);
- const canvases=[],perPage=4,pages=Math.ceil(model.rows.length/perPage);
- for(let page=0;page<pages;page++){
-  const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1350;
+ const layout=dailyShareDimensions(model.rows,{story});
+  const canvas=document.createElement('canvas');canvas.width=layout.width;canvas.height=layout.height;
   const ctx=canvas.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,1080,canvas.height);
+  ctx.translate(0,layout.offset);
   cardBrand(ctx,40,54,42,430);ctx.fillStyle=CARD_BLUE;ctx.fillRect(42,69,188,7);
   cardRule(ctx,575,66,1040,66);
-  if(pages>1||model.demo){ctx.textAlign='right';cardText(ctx,model.demo?shareText(model,'示例数据 / DEMO','DEMO DATA'):`${page+1} / ${pages}`,1040,45,400,19,600,CARD_MUTED);ctx.textAlign='left';}
+  if(model.demo){ctx.textAlign='right';cardText(ctx,shareText(model,'示例数据 / DEMO','DEMO DATA'),1040,45,400,19,600,CARD_MUTED);ctx.textAlign='left';}
   const title=shareText(model,model.complete?'今日训练完成':'本次训练记录',model.complete?'WORKOUT COMPLETE':'WORKOUT RECORDED');
   cardText(ctx,title,40,174,595,model.en?46:91,900);
   if(!model.en)cardText(ctx,model.complete?'WORKOUT COMPLETE':'WORKOUT RECORDED',44,229,580,43,600,CARD_INK,true);
@@ -162,28 +168,32 @@ export async function renderDailyShareCards(model,{story=false}={}){
   cardRule(ctx,660,106,660,268);cardRule(ctx,858,126,858,256);
   ctx.textAlign='center';cardText(ctx,String(model.rows.length),758,216,165,124,900,CARD_BLUE,true);cardText(ctx,shareText(model,'个动作','EXERCISES'),758,260,176,28,700);
   cardText(ctx,String(model.sets||model.minutes),960,216,165,124,900,CARD_BLUE,true);cardText(ctx,model.sets?shareText(model,'组记录','SETS LOGGED'):shareText(model,'分钟记录','MINUTES'),960,260,180,28,700);ctx.textAlign='left';
-  const pageRows=model.rows.slice(page*perPage,page*perPage+perPage),layout=dailyShareLayout(pageRows),gridTop=301,footerTop=canvas.height-300,rowHeight=(footerTop-gridTop)/layout.rowCount;
+  const gridTop=301,footerTop=layout.contentHeight-300,rowHeight=(footerTop-gridTop)/layout.rowCount;
   cardRule(ctx,22,gridTop,1058,gridTop);
-  for(let index=0;index<pageRows.length;index++){
-   const row=pageRows[index],wide=layout.columns===1||(pageRows.length===3&&index===2),x=22+(index%layout.columns)*518,y=gridTop+Math.floor(index/layout.columns)*rowHeight,width=wide?1036:518;
+  let index=0;
+  for(let gridRow=0;gridRow<layout.rowCount;gridRow++){
+   const cells=Math.ceil((model.rows.length-index)/(layout.rowCount-gridRow)),width=1036/cells,y=gridTop+gridRow*rowHeight;
+   for(let column=0;column<cells;column++,index++){
+   const row=model.rows[index],x=22+column*width,compact=layout.columns===3;
    ctx.save();ctx.beginPath();ctx.rect(x+1,y+1,width-2,rowHeight-2);ctx.clip();
-   const horizontal=['pushup','deadbug','bench','dbbench','dbpress','incline','chestsupported','bridge','hipthrust','barhip','rdl','barRdl'].includes(row.id),single=pageRows.length===1;
+   const horizontal=['pushup','deadbug','bench','dbbench','dbpress','incline','chestsupported','bridge','hipthrust','barhip','rdl','barRdl'].includes(row.id),single=model.rows.length===1;
    const detailed=!!(row.weights||row.varyingReps);
-   const maxArtW=horizontal?width-34:width*.62,maxArtH=horizontal?rowHeight*(single?.62:detailed?.36:.48):rowHeight-32;
-   const artX=horizontal?x+17:x+width*.37,artY=horizontal?y+rowHeight-maxArtH-16:y+16;
+   const maxArtW=compact?width-36:horizontal?width-34:width*.62,maxArtH=compact?rowHeight-(row.weights?242:detailed?212:177):horizontal?rowHeight*(single?.62:detailed?.36:.48):rowHeight-32;
+   const artX=compact?x+18:horizontal?x+17:x+width*.37,artY=compact||horizontal?y+rowHeight-maxArtH-16:y+16;
    if(!drawShareArtwork(ctx,row,images,artX,artY,maxArtW,maxArtH)){
-    drawShareMuscles(ctx,[row.muscle],x+width*.43,y+70,width*.55,rowHeight-100);
-    cardText(ctx,shareText(model,'部位示意','MUSCLE AREA'),x+width*.52,y+rowHeight-18,width*.44,17,500,CARD_MUTED);
+    drawShareMuscles(ctx,[row.muscle],artX,artY,maxArtW,maxArtH-18);
+    cardText(ctx,shareText(model,'部位示意','MUSCLE AREA'),artX,y+rowHeight-18,maxArtW,17,500,CARD_MUTED);
    }
-   cardText(ctx,String(page*perPage+index+1).padStart(2,'0'),x+23,y+97,width*.45,102,900,'#d9dce1',true);
-   const textWidth=horizontal?(detailed?width*.66:width-45):width*.43,nameY=y+143;
-   cardText(ctx,row.name,x+25,nameY,textWidth,single?40:32,800);
-   if(row.english)cardText(ctx,row.english.toUpperCase(),x+25,nameY+28,textWidth,20,600,CARD_MUTED,true);
-   ctx.fillStyle=CARD_BLUE;lines(ctx,row.amount,x+25,nameY+(row.english?64:42),textWidth,single?30:25,2);
-   if(row.weights){ctx.fillStyle=CARD_MUTED;lines(ctx,row.weights,x+25,nameY+(row.english?118:96),textWidth,18,2);}
+   cardText(ctx,String(index+1).padStart(2,'0'),x+23,y+(compact?56:97),width*.45,compact?57:102,900,'#d9dce1',true);
+   const textWidth=compact?width-50:horizontal?(detailed?width*.66:width-45):width*.43,nameY=y+(compact?91:143);
+   cardText(ctx,row.name,x+25,nameY,textWidth,compact?27:single?40:32,800);
+   if(row.english)cardText(ctx,row.english.toUpperCase(),x+25,nameY+(compact?23:28),textWidth,compact?16:20,600,CARD_MUTED,true);
+   ctx.fillStyle=CARD_BLUE;lines(ctx,row.amount,x+25,nameY+(row.english?(compact?52:64):compact?32:42),textWidth,compact?22:single?30:25,2);
+   if(row.weights){ctx.fillStyle=CARD_MUTED;lines(ctx,row.weights,x+25,nameY+(row.english?(compact?104:118):compact?84:96),textWidth,compact?16:18,2);}
    ctx.restore();
-   if(index%layout.columns===0&&index+1<pageRows.length)cardRule(ctx,540,y,540,y+rowHeight);
-   if(index%layout.columns===layout.columns-1||index===pageRows.length-1)cardRule(ctx,22,y+rowHeight,1058,y+rowHeight);
+   if(column<cells-1)cardRule(ctx,x+width,y,x+width,y+rowHeight);
+   }
+   cardRule(ctx,22,y+rowHeight,1058,y+rowHeight);
   }
   cardRule(ctx,22,footerTop,1058,footerTop);
   cardText(ctx,shareText(model,'本次训练涉及肌群 /','TRAINED MUSCLE GROUPS /'),44,footerTop+55,490,25,700);
@@ -193,9 +203,8 @@ export async function renderDailyShareCards(model,{story=false}={}){
   cardText(ctx,shareText(model,'为今天的自己，留下一份记录。','A record of showing up for yourself.'),45,footerTop+205,480,22,500,CARD_MUTED);
   cardBrand(ctx,44,footerTop+260,31,430);cardText(ctx,'MOVE AT YOUR OWN PACE.',46,footerTop+285,430,15,500,CARD_MUTED,true);
   drawMuscleMap(ctx,muscleImage,model.muscles,560,footerTop+12,475,275);
-  cardText(ctx,shareText(model,'肌群示意','MUSCLE MAP'),970,canvas.height-10,100,12,500,CARD_MUTED);
-  if(story){const frame=document.createElement('canvas');frame.width=1080;frame.height=1920;const f=frame.getContext('2d');f.fillStyle='#fff';f.fillRect(0,0,1080,1920);f.drawImage(canvas,0,285);canvases.push(frame);}else canvases.push(canvas);
- }return canvases;
+  cardText(ctx,shareText(model,'肌群示意','MUSCLE MAP'),970,layout.contentHeight-10,100,12,500,CARD_MUTED);
+ return [canvas];
 }
 export function createDailyShareDialog({getModel}){
  const dialog=document.createElement('dialog');dialog.className='daily-share-dialog';dialog.setAttribute('aria-label','STREAKFIT · 训练分享卡');document.body.append(dialog);
@@ -212,10 +221,10 @@ export function createDailyShareDialog({getModel}){
    const canvases=await renderDailyShareCards(model,{story:dialog.querySelector('[data-card-format]').value==='story'});
    const blobs=await Promise.all(canvases.map(canvas=>new Promise((resolve,reject)=>canvas.toBlob(blob=>blob?resolve(blob):reject(Error('PNG encoding failed')),'image/png'))));
    if(ticket!==generation||!dialog.open)return;
-   files=blobs.map((blob,index)=>new File([blob],`STREAKFIT-${model.date}-${index+1}.png`,{type:'image/png'}));
-   blobs.forEach((blob,index)=>{const url=URL.createObjectURL(blob);urls.push(url);const figure=document.createElement('figure'),img=document.createElement('img'),link=document.createElement('a');img.src=url;img.alt=t(`训练分享卡，第 ${index+1} 张`,`Workout share card ${index+1}`);link.href=url;link.hidden=blobs.length===1;link.download=files[index].name;link.textContent=t(`保存第 ${index+1} 张 PNG`,`Save PNG ${index+1}`);figure.append(img,link);dialog.querySelector('[data-card-previews]').append(figure);});
+   files=blobs.map((blob,index)=>new File([blob],`STREAKFIT-${model.date}.png`,{type:'image/png'}));
+   blobs.forEach((blob,index)=>{const url=URL.createObjectURL(blob);urls.push(url);const figure=document.createElement('figure'),img=document.createElement('img'),link=document.createElement('a');img.src=url;img.alt=t('完整训练分享卡','Complete workout share card');link.href=url;link.hidden=blobs.length===1;link.download=files[index].name;link.textContent=t(`保存第 ${index+1} 张 PNG`,`Save PNG ${index+1}`);figure.append(img,link);dialog.querySelector('[data-card-previews]').append(figure);});
    dialog.querySelector('[data-card-save]').disabled=false;dialog.querySelector('[data-card-share]').disabled=false;
-   status(t(`已生成 ${files.length} 张`,`${files.length} cards ready`));
+   status(t(`${model.rows.length} 个动作 · 1 张完整训练卡`,`${model.rows.length} exercises · 1 complete card`));
   }catch{if(ticket===generation)status(t('图片生成失败，请重试。','Could not generate images. Please retry.'));}
  }
  dialog.addEventListener('change',generate);
@@ -225,12 +234,12 @@ export function createDailyShareDialog({getModel}){
   const model=getModel({}),t=(zh,en)=>shareText(model,zh,en);
   if(button.hasAttribute('data-card-close'))dialog.close();
   if(button.hasAttribute('data-card-retry'))generate();
-  if(button.hasAttribute('data-card-save')){dialog.querySelector('[data-card-previews] a')?.click();if(files.length>1)status(t('第一张已开始下载，其余图片请点击各图下方的保存链接。','First download started. Save remaining images using their links.'));}
+  if(button.hasAttribute('data-card-save'))dialog.querySelector('[data-card-previews] a')?.click();
   if(button.hasAttribute('data-card-share')){
    if(!files.length)return;
    if(!navigator.canShare?.({files})||!navigator.share){status(t('此浏览器不支持图片分享，请保存 PNG 后到社交平台发布。','Image sharing is unavailable. Save the PNG and post it in your social app.'));return;}
    try{await navigator.share({files,title:'STREAKFIT'});}catch(error){if(error.name!=='AbortError')status(t('未能分享，请保存图片后发布。','Sharing failed. Save the image and post it manually.'));}
   }
  });
- return {open(){opener=document.activeElement;const model=getModel({}),t=(zh,en)=>shareText(model,zh,en);dialog.innerHTML=`<div class="daily-share-heading"><h2>${t('训练卡','Workout card')}</h2><button type="button" data-card-close aria-label="${t('关闭','Close')}">×</button></div><div class="daily-share-options"><div class="share-format-tabs" role="group" aria-label="${t('图片比例','Image format')}"><input type="hidden" data-card-format value="feed"><button type="button" data-format-choice="feed" aria-pressed="true">4:5 · ${t('帖子','Post')}</button><button type="button" data-format-choice="story" aria-pressed="false">9:16 · Story</button></div><label><input type="checkbox" data-card-weights>${t('显示重量','Show weights')}</label></div><p data-card-status role="status" aria-live="polite"></p><div data-card-previews></div><div class="daily-share-actions"><button type="button" data-card-save disabled>${t('保存 PNG','Save PNG')}</button><button type="button" data-card-share disabled>${t('分享图片','Share images')}</button><button type="button" data-card-retry>${t('重新生成','Regenerate')}</button></div>`;dialog.showModal();generate();}};
+ return {open(){opener=document.activeElement;const model=getModel({}),t=(zh,en)=>shareText(model,zh,en);dialog.innerHTML=`<div class="daily-share-heading"><h2>${t('训练卡','Workout card')}</h2><button type="button" data-card-close aria-label="${t('关闭','Close')}">×</button></div><div class="daily-share-options"><div class="share-format-tabs" role="group" aria-label="${t('图片比例','Image format')}"><input type="hidden" data-card-format value="feed"><button type="button" data-format-choice="feed" aria-pressed="true">${t('完整卡片','Full card')}</button><button type="button" data-format-choice="story" aria-pressed="false">Story · ${t('留白','Padded')}</button></div><label><input type="checkbox" data-card-weights>${t('显示重量','Show weights')}</label></div><p data-card-status role="status" aria-live="polite"></p><div data-card-previews></div><div class="daily-share-actions"><button type="button" data-card-save disabled>${t('保存 PNG','Save PNG')}</button><button type="button" data-card-share disabled>${t('分享图片','Share images')}</button><button type="button" data-card-retry>${t('重新生成','Regenerate')}</button></div>`;dialog.showModal();generate();}};
 }
