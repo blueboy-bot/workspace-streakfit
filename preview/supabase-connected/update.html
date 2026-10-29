@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111c16">
+<title>STREAKFIT</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100dvh;display:grid;place-items:center;padding:24px;background:#111c16;color:#f1f5ef;font:16px/1.6 system-ui,sans-serif}main{width:min(100%,400px);padding:32px;border:1px solid #34483b;border-radius:24px;background:#1b2921}h1{margin:0 0 24px;font-size:26px;letter-spacing:-.5px}p{color:#b8c5ba;margin:0}button{margin-top:24px;border:0;border-radius:12px;padding:12px 24px;background:#bdea67;color:#142015;font:600 16px system-ui;cursor:pointer}
+</style>
+<main><h1>↗ STREAKFIT</h1><p role="status" aria-live="polite">正在打开最新版…</p><button hidden type="button">重试</button></main>
+<script>
+(async()=>{
+ const status=document.querySelector('[role=status]'),retry=document.querySelector('button');
+ retry.addEventListener('click',()=>location.reload());
+ try{
+  if('serviceWorker' in navigator){
+   const registration=await navigator.serviceWorker.register(new URL('./sw.js',location.href),{updateViaCache:'none'});
+   await registration.update();
+   const worker=registration.installing||registration.waiting||registration.active;
+   if(worker&&worker.state!=='activated')await new Promise((resolve,reject)=>{
+    const changed=()=>{if(worker.state==='activated')resolve();else if(worker.state==='redundant')reject(Error('Update unavailable'));};
+    worker.addEventListener('statechange',changed);changed();
+   });
+  }
+  location.replace(new URL('./?v=clean-art12',location.href).href);
+ }catch{status.textContent='暂时无法更新，请检查网络后重试。';retry.hidden=false;}
+})();
+</script>
+</html>

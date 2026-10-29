@@ -3,13 +3,13 @@ import {appConfirm} from './modules/dialogs.js';
 import {dailyShareModel,createDailyShareDialog} from './modules/daily-share-card.js?v=single-card11';
 import {currentLanguage} from './modules/localization.js';
 import {adjustedWorkoutDay,prioritizeWorkoutAdjustment,estimateRemainingOverviewMinutes,estimateOverviewMinutes,setProgressMarkup,teachingKeyframes,commonStrengthArtwork} from './modules/visual-planning.js?v=artwork10';
-import {overviewProgress,overviewResume,overviewTitle,overviewArtwork,reviewedArtwork,withheldArtwork} from './modules/daily-overview.js?v=artwork10';
+import {overviewProgress,overviewResume,overviewTitle,overviewArtwork,reviewedArtwork} from './modules/daily-overview.js?v=artwork10';
 const appStorage=globalThis.STREAKFIT_STORAGE||localStorage;
 import {initializeLanguage,localizeDocument,uiText,applyMovementDisplayNames} from './modules/localization.js';
 initializeLanguage();
 import {initialWorkspaceKey,startAccounts} from './modules/accounts-ui.js';
 import {isolateLocalRecords,normalizeGeneratedSetTargets,screeningAllowsTraining,persistUnchangedWorkspace,consistentEasySets,currentRecordedWeight} from './modules/local-integrity.js';
-import {createExperienceToolkit} from './modules/experience-toolkit.js';
+import {createExperienceToolkit} from './modules/experience-toolkit.js?v=clean-art12';
 import {parseBackupData} from './modules/backup.js';
 import {cycleSchedule,generatePrescription} from './modules/planning.js?v=artwork10';
 import {toKilograms,fromKilograms} from './modules/units.js';
@@ -1506,8 +1506,8 @@ function rememberOverviewPosition(){
  try{appStorage.setItem(overviewPositionKey(),JSON.stringify(position));}catch{/* Resume remains available this visit. */}
 }
 function overviewProgressMap(ids,d){return Object.fromEntries(ids.map(id=>[id,overviewProgress(id,d,{catalog,target:exerciseTarget,minutes:cardioTarget})]));}
-function overviewGraphic(id){if(commonStrengthArtwork[id])return `<span class="plan-thumbnail" aria-hidden="true">${commonArtworkTile(id,commonStrengthArtwork[id].thumbnail,true)}</span>`;const reviewed=reviewedArtwork[id];if(reviewed){const x=reviewed.columns>1?reviewed.column*100/(reviewed.columns-1):0,y=reviewed.rows>1?reviewed.row*100/(reviewed.rows-1):0;let cropStyle='';if(reviewed.crop){const c=reviewed.crop,l=Math.max(c.width,c.height),px=((l-c.width)/2-c.x)/(l-c.sourceWidth)*100,py=((l-c.height)/2-c.y)/(l-c.sourceHeight)*100;cropStyle=`background-size:${c.sourceWidth/l*100}% ${c.sourceHeight/l*100}%;background-position:${px}% ${py}%;clip-path:inset(${(l-c.height)/2/l*100}% ${(l-c.width)/2/l*100}%);`;}return `<span class="plan-thumbnail" aria-hidden="true"><span class="plan-art plan-art-reviewed" style="--reviewed-art:url('./assets/exercises/${reviewed.file}');background-size:${reviewed.columns*100}% ${reviewed.rows*100}%;background-position:${x}% ${y}%;${cropStyle}"></span>${reviewed.setup?'<span class="plan-art-label">准备姿势</span>':''}</span>`;}const exact=Object.hasOwn(overviewArtwork,id),art=exact?overviewArtwork[id]:15,tile=art>=32?art-32:art%16,grid=art>=32?2:4,x=(tile%grid)*100/(grid-1),y=Math.floor(tile/grid)*100/(grid-1);
- return `<span class="plan-thumbnail" aria-hidden="true"><span class="plan-art ${art>=32?'plan-art-third':art>=16?'plan-art-second':''}" style="background-position:${x}% ${y}%"></span>${exact?'':`<span class="plan-art-label">${withheldArtwork.includes(id)?'动作图待更新':'部位示意'}</span>`}</span>`;}
+function overviewGraphic(id){if(commonStrengthArtwork[id])return `<span class="plan-thumbnail" aria-hidden="true">${commonArtworkTile(id,commonStrengthArtwork[id].thumbnail,true)}</span>`;const reviewed=reviewedArtwork[id];if(reviewed){const x=reviewed.columns>1?reviewed.column*100/(reviewed.columns-1):0,y=reviewed.rows>1?reviewed.row*100/(reviewed.rows-1):0;let cropStyle='';if(reviewed.crop){const c=reviewed.crop,l=Math.max(c.width,c.height),px=((l-c.width)/2-c.x)/(l-c.sourceWidth)*100,py=((l-c.height)/2-c.y)/(l-c.sourceHeight)*100;cropStyle=`background-size:${c.sourceWidth/l*100}% ${c.sourceHeight/l*100}%;background-position:${px}% ${py}%;clip-path:inset(${(l-c.height)/2/l*100}% ${(l-c.width)/2/l*100}%);`;}return `<span class="plan-thumbnail" aria-hidden="true"><span class="plan-art plan-art-reviewed" style="--reviewed-art:url('./assets/exercises/${reviewed.file}');background-size:${reviewed.columns*100}% ${reviewed.rows*100}%;background-position:${x}% ${y}%;${cropStyle}"></span></span>`;}const exact=Object.hasOwn(overviewArtwork,id),art=exact?overviewArtwork[id]:15,tile=art>=32?art-32:art%16,grid=art>=32?2:4,x=(tile%grid)*100/(grid-1),y=Math.floor(tile/grid)*100/(grid-1);
+ return `<span class="plan-thumbnail" aria-hidden="true"><span class="plan-art ${art>=32?'plan-art-third':art>=16?'plan-art-second':''}" style="background-position:${x}% ${y}%"></span></span>`;}
 // Other dates reuse today's exact artwork, but never today's progress or start action.
 function illustratedDatedPlan(d,plan){
  const ids=displayedWorkoutIds(d,plan).filter(id=>catalog[id]),progress=overviewProgressMap(ids,d),estimate=estimateOverviewMinutes(ids,progress,d.sessionEntries||plan.entries||[]);

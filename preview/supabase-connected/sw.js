@@ -1,17 +1,20 @@
 // URLs resolve within this app's scope, including a GitHub Pages repository path.
 const SCOPE = self.registration.scope;
 const PREFIX = 'streakfit-shell-' + new URL(SCOPE).pathname + '-';
-const CACHE = PREFIX + 'v0391-single-card11';
-const SHELL = ['./modules/supplemental-artwork.js?v=artwork10','./assets/exercises/supplement-activity.png','./assets/exercises/supplement-arms.png','./assets/exercises/supplement-basics.png','./assets/exercises/supplement-bench.png','./assets/exercises/supplement-corrections.png','./assets/exercises/supplement-legs.png','./assets/exercises/supplement-press.png','./assets/exercises/supplement-variants-a.png','./assets/exercises/supplement-variants-b.png','./modules/strength-protocol.js?v=artwork10','./modules/touch-gestures.js','./assets/exercises/share-muscle-neutral.png','./modules/dialogs.js','./assets/exercises/share-blue-finish.png','./assets/exercises/share-blue-gym.png','./modules/daily-share-card.js?v=single-card11','./assets/exercises/share-blue-upper.png','./assets/exercises/share-blue-lower.png','./beta-tools.js','./assets/exercises/common-hipthrust.png','./assets/exercises/common-arms.png','./assets/exercises/common-lunge.png','./assets/exercises/common-incline.png','./assets/exercises/common-machines.png','./assets/exercises/common-squat-pullup.png','./assets/exercises/common-legcurl-plank.png','./assets/exercises/common-bird.png','./', './index.html', './app.js?v=0391-single-card11', './style.css?v=0391', './foundation.css', './accounts.css', './visual.css?v=0391-artwork10', './typography.css', './assets/fonts/streakfit-han.woff2', './assets/fonts/streakfit-ui.woff2', './assets/fonts/streakfit-display.woff2', './visual-refresh.js?v=0391-artwork10', './preview-storage.js', './account-config.json',
+const CACHE = PREFIX + 'v0391-clean-art12';
+const SHELL = ['./modules/supplemental-artwork.js?v=artwork10','./assets/exercises/supplement-activity.png','./assets/exercises/supplement-arms.png','./assets/exercises/supplement-basics.png','./assets/exercises/supplement-bench.png','./assets/exercises/supplement-corrections.png','./assets/exercises/supplement-legs.png','./assets/exercises/supplement-press.png','./assets/exercises/supplement-variants-a.png','./assets/exercises/supplement-variants-b.png','./modules/strength-protocol.js?v=artwork10','./modules/touch-gestures.js','./assets/exercises/share-muscle-neutral.png','./modules/dialogs.js','./assets/exercises/share-blue-finish.png','./assets/exercises/share-blue-gym.png','./modules/daily-share-card.js?v=single-card11','./assets/exercises/share-blue-upper.png','./assets/exercises/share-blue-lower.png','./beta-tools.js','./assets/exercises/common-hipthrust.png','./assets/exercises/common-arms.png','./assets/exercises/common-lunge.png','./assets/exercises/common-incline.png','./assets/exercises/common-machines.png','./assets/exercises/common-squat-pullup.png','./assets/exercises/common-legcurl-plank.png','./assets/exercises/common-bird.png','./', './index.html', './app.js?v=0391-clean-art12', './style.css?v=0391', './foundation.css', './accounts.css', './visual.css?v=0391-artwork10', './typography.css', './assets/fonts/streakfit-han.woff2', './assets/fonts/streakfit-ui.woff2', './assets/fonts/streakfit-display.woff2', './visual-refresh.js?v=0391-artwork10', './preview-storage.js', './account-config.json',
   './manifest.webmanifest', './assets/icons/icon-192.png', './assets/icons/icon-512.png',
   './modules/localization.js', './modules/locales/en-ui.js', './modules/locales/en-movements.js', './modules/units.js', './modules/daily-overview.js?v=artwork10', './modules/visual-planning.js?v=artwork10', './assets/exercises/posture-reviewed.png', './assets/exercises/setups-reviewed.png', './assets/exercises/pulldown-reviewed.png', './assets/exercises/equipment-reviewed.png', './assets/exercises/positions-reviewed.png', './assets/exercises/recovery-walk.png', './assets/exercises/teaching-keyframes.png', './assets/exercises/overview-atlas.png', './assets/exercises/overview-atlas-2.png', './assets/exercises/overview-atlas-3.png', './modules/history-editing.js', './modules/rewards.js', './modules/learning.js', './modules/backup.js',
   './modules/planning.js?v=artwork10', './modules/insights.js', './modules/local-integrity.js',
-  './modules/experience-toolkit.js', './modules/account-rules.js', './modules/account-data.js', './modules/account-client.js', './modules/account-sync.js', './modules/accounts-ui.js'].map(path => new URL(path, SCOPE).href);
+  './modules/experience-toolkit.js?v=clean-art12', './modules/account-rules.js', './modules/account-data.js', './modules/account-client.js', './modules/account-sync.js', './modules/accounts-ui.js'].map(path => new URL(path, SCOPE).href);
 
 self.addEventListener('install', event => {
-  // A failed download must not activate an incomplete shell. Updates wait until
-  // existing app windows close, rather than interrupting an unfinished input.
-  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL.map(url=>new Request(url,{cache:'reload'})))));
+  // Activate only after the complete shell is available, including its artwork.
+  // Existing screens keep their inputs; their next navigation uses this version,
+  // even when another app tab remains open.
+  event.waitUntil(caches.open(CACHE)
+    .then(cache => cache.addAll(SHELL.map(url=>new Request(url,{cache:'reload'}))))
+    .then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', event => {
   event.waitUntil(caches.keys().then(keys => Promise.all(
@@ -24,10 +27,11 @@ self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
   const url = new URL(event.request.url);
   if (url.origin !== self.location.origin) return;
-  url.search = ''; url.hash = '';
-  const shellURL=SHELL.find(path=>new URL(path).pathname===url.pathname);
+  url.hash = '';
+  const shellURL=SHELL.find(path=>path===url.href)||
+    ((event.request.mode==='navigate'||!url.search)&&SHELL.find(path=>new URL(path).pathname===url.pathname));
   if (!shellURL) return;
-  // Serve HTML, CSS and modules from the same installed version, also offline.
+  // Never substitute another version's cached module for an explicit URL.
   event.respondWith(caches.open(CACHE).then(async cache => {
     const cached = await cache.match(shellURL);
     return cached || fetch(event.request);
