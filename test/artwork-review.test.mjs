@@ -10,8 +10,8 @@ test('reviewed art is assigned only to exact catalog IDs with valid individual f
  for(const id of ['pulldownWide','pulldownSingle','cablerowWide'])assert.equal(Object.hasOwn(reviewedArtwork,id),false,id);
 });
 
-test('ambiguous pulldown sequence stays withdrawn while its initial setup is labelled',()=>{
- const a=app();assert.match(a.run(`overviewGraphic('pulldown')`),/pulldown-reviewed\.png/);assert.match(a.run(`overviewGraphic('pulldown')`),/准备姿势/);assert.equal(a.run(`keyframeTeaching('pulldown')`),'');assert.equal(a.run(`keyframeTile('pulldown',1)`),'');assert.match(a.run(`keyframeTeaching('chestsupported')`),/胸部不离垫/);
+test('pulldown keeps its reviewed setup image without a thumbnail caption',()=>{
+ const a=app();assert.match(a.run(`overviewGraphic('pulldown')`),/pulldown-reviewed\.png/);assert.doesNotMatch(a.run(`overviewGraphic('pulldown')`),/plan-art-label|准备姿势/);assert.equal(a.run(`keyframeTeaching('pulldown')`),'');assert.equal(a.run(`keyframeTile('pulldown',1)`),'');assert.match(a.run(`keyframeTeaching('chestsupported')`),/胸部不离垫/);
 });
 
 test('single arm rowing uses its D-handle picture without changing records or other variation thumbnails',()=>{
@@ -23,7 +23,7 @@ test('reviewed illustrations are cached for offline use and new cue is translate
 });
 
 test('the original review remains traceable while subsequently replaced images use their approved assets',()=>{
- const audit=JSON.parse(readFileSync(new URL('../assets/exercises/REVIEW.json',import.meta.url)));assert.equal(audit.movementIdsChecked,34);assert.equal(audit.rows.length,34);assert.equal(audit.decisions.replaced,12);assert.equal(audit.decisions.withheld,3);const a=app();assert.equal(Object.hasOwn(overviewArtwork,'legcurl'),false);assert.match(a.run(`overviewGraphic('legcurl')`),/common-legcurl-plank/);assert.doesNotMatch(a.run(`overviewGraphic('legcurl')`),/equipment-reviewed|setups-reviewed/);for(const id of ['bench','incline']){assert.equal(Object.hasOwn(overviewArtwork,id),false);assert.doesNotMatch(a.run(`overviewGraphic('${id}')`),/动作图待更新|部位示意/);}assert.match(a.run(`overviewGraphic('deadbug')`),/准备姿势/);assert.match(a.run(`overviewGraphic('bird')`),/common-bird/);
+ const audit=JSON.parse(readFileSync(new URL('../assets/exercises/REVIEW.json',import.meta.url)));assert.equal(audit.movementIdsChecked,34);assert.equal(audit.rows.length,34);assert.equal(audit.decisions.replaced,12);assert.equal(audit.decisions.withheld,3);const a=app();assert.equal(Object.hasOwn(overviewArtwork,'legcurl'),false);assert.match(a.run(`overviewGraphic('legcurl')`),/common-legcurl-plank/);assert.doesNotMatch(a.run(`overviewGraphic('legcurl')`),/equipment-reviewed|setups-reviewed/);for(const id of ['bench','incline']){assert.equal(Object.hasOwn(overviewArtwork,id),false);assert.doesNotMatch(a.run(`overviewGraphic('${id}')`),/动作图待更新|部位示意/);}assert.doesNotMatch(a.run(`overviewGraphic('deadbug')`),/plan-art-label|准备姿势/);assert.match(a.run(`overviewGraphic('bird')`),/common-bird/);
 });
 
 test('non-uniform panel crops preserve proportions and full selected bounds',()=>{
