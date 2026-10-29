@@ -1,4 +1,5 @@
-import {MIN_STRENGTH_SETS,strengthTarget,enforcePlanStrengthMinimum} from './strength-protocol.js?v=minimum-four9';
+import {supplementalArtwork} from './supplemental-artwork.js?v=artwork10';
+import {MIN_STRENGTH_SETS,strengthTarget,enforcePlanStrengthMinimum} from './strength-protocol.js?v=artwork10';
 // Build the exact candidate used by both the comparison and Apply. No source mutation.
 export function adjustedWorkoutDay(day,plan,value,{catalog,targetFor,defaultTarget,minutesFor=()=>15}){
  const next=JSON.parse(JSON.stringify(day)),logged=Object.keys(day.logs||{}).filter(id=>catalog[id]&&Array.isArray(day.logs[id])&&day.logs[id].length);
@@ -439,6 +440,9 @@ export const commonStrengthArtwork={
  }
 };
 
+Object.assign(commonStrengthArtwork,supplementalArtwork);
+// Pauses and tempo change timing, while the reviewed back-squat positions stay the same.
+for(const id of ['pausesquat','temposquat'])commonStrengthArtwork[id]={...commonStrengthArtwork.barsquat,frames:commonStrengthArtwork.barsquat.frames.map(frame=>({...frame,cue:id==='pausesquat'?'在可控深度短暂停顿，保持稳定，再起身。':'按文字节奏缓慢下蹲，保持稳定，再起身。'}))};
 export const teachingKeyframes={
  ...commonStrengthArtwork,
  chestsupported:{row:1,frames:[{label:'起始位置',cue:'胸部贴垫，手臂自然下垂。'},{label:'划船位置',cue:'肘部沿躯干向后，胸部不离垫。'}]}

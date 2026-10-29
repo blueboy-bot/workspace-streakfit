@@ -633,3 +633,7 @@ dialog :is(input:not([type=checkbox]):not([type=radio]):not([type=range]),select
 .session-mode .record-actions>button[data-log]:not(:disabled){border-color:var(--accent-edge);color:var(--ink)}
 
 .session-mode .record-utilities>.record-status{position:static;width:auto;height:auto;overflow:visible;clip-path:none}
+
+.keyframe-grid.keyframe-grid-single{grid-template-columns:minmax(0,1fr);max-width:560px}
+
+.lesson-overview-art>.plan-thumbnail{display:block;width:min(100%,320px);height:auto;aspect-ratio:1;margin:16px auto}.lesson-cues{margin-top:18px}.lesson-cues li{margin:8px 0;line-height:1.6}

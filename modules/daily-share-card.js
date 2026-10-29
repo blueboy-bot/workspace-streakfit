@@ -1,9 +1,11 @@
-import {overviewArtwork,reviewedArtwork} from './daily-overview.js';
-import {commonStrengthArtwork} from './visual-planning.js';
+import {supplementalArtwork} from './supplemental-artwork.js?v=artwork10';
+import {overviewArtwork,reviewedArtwork} from './daily-overview.js?v=artwork10';
+import {commonStrengthArtwork} from './visual-planning.js?v=artwork10';
 // Read-only summaries: only submitted logs, never prescribed repetitions or loads.
 import {fromKilograms} from './units.js';
 export const shareArtwork={incline:[0,0,'finish',2,1,{x:50,y:150,width:800,height:700,sourceWidth:1774,sourceHeight:887}],ropepush:[1,0,'finish',2,1,{x:1110,y:0,width:610,height:845,sourceWidth:1774,sourceHeight:887}],bench:[0,0,'gym',2,3],chestsupported:[1,0,'gym',2,3],pulldown:[0,1,'gym',2,3],fly:[1,1,'gym',2,3],lateral:[0,2,'gym',2,3],curl:[1,2,'gym',2,3],pushup:[0,0,'upper',2,2,{x:20,y:268,width:580,height:245,sourceWidth:1254,sourceHeight:1254}],row:[1,0,'upper',2,2,{x:680,y:95,width:545,height:465,sourceWidth:1254,sourceHeight:1254}],shoulderpress:[0,1,'upper',2,2,{x:120,y:635,width:430,height:550,sourceWidth:1254,sourceHeight:1254}],deadbug:[1,1,'upper',2,2,{x:600,y:770,width:640,height:335,sourceWidth:1254,sourceHeight:1254}],squat:[0,0,'lower'],bridge:[1,0,'lower'],hinge:[0,1,'lower'],plank:[1,1,'lower']};
 function shareMovementArt(id){
+ const added=supplementalArtwork[id];if(added){const c=added.frames[added.thumbnail||0].crop;return [0,0,added.file,1,1,c];}
  if(shareArtwork[id])return shareArtwork[id];
  const common=commonStrengthArtwork[id];if(common){const c=common.frames[common.thumbnail||0].crop;return [0,0,common.file,1,1,c];}
  const r=reviewedArtwork[id];if(r)return [r.column,r.row,r.file,r.columns,r.rows,r.crop];
@@ -62,7 +64,8 @@ const CARD_UI='"Streakfit UI","Streakfit Han",system-ui,sans-serif';
 const CARD_HAN='"Streakfit Han",system-ui,sans-serif';
 function cardFont(ctx,size,weight=700,display=false){ctx.font=`${weight} ${size}px ${display?'"Streakfit Display",'+CARD_UI:CARD_HAN}`;}
 function cardText(ctx,text,x,y,maxWidth,size,weight=700,color=CARD_INK,display=false){
- ctx.fillStyle=color;cardFont(ctx,size,weight,display);while(size>12&&ctx.measureText(text).width>maxWidth)cardFont(ctx,--size,weight,display);ctx.fillText(text,x,y);
+ ctx.fillStyle=color;cardFont(ctx,size,weight,display);while(size>12&&ctx.measureText(text).width>maxWidth)cardFont(ctx,--size,weight,display);
+ if(ctx.measureText(text).width>maxWidth){while(text&&ctx.measureText(text+'…').width>maxWidth)text=text.slice(0,-1);text+='…';}ctx.fillText(text,x,y);
 }
 function cardBrand(ctx,x,y,size,width){cardText(ctx,'STREAKFIT',x,y,width,size,900);ctx.strokeStyle=CARD_INK;ctx.lineWidth=1.2;ctx.strokeText('STREAKFIT',x,y);}
 function cardRule(ctx,x1,y1,x2,y2){ctx.strokeStyle='#8c929c';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();}
@@ -166,7 +169,7 @@ export async function renderDailyShareCards(model,{story=false}={}){
    ctx.save();ctx.beginPath();ctx.rect(x+1,y+1,width-2,rowHeight-2);ctx.clip();
    const horizontal=['pushup','deadbug','bench','dbbench','dbpress','incline','chestsupported','bridge','hipthrust','barhip','rdl','barRdl'].includes(row.id),single=pageRows.length===1;
    const detailed=!!(row.weights||row.varyingReps);
-   const maxArtW=horizontal?width-34:width*.62,maxArtH=horizontal?rowHeight*(single?.62:detailed?.36:.54):rowHeight-32;
+   const maxArtW=horizontal?width-34:width*.62,maxArtH=horizontal?rowHeight*(single?.62:detailed?.36:.48):rowHeight-32;
    const artX=horizontal?x+17:x+width*.37,artY=horizontal?y+rowHeight-maxArtH-16:y+16;
    if(!drawShareArtwork(ctx,row,images,artX,artY,maxArtW,maxArtH)){
     drawShareMuscles(ctx,[row.muscle],x+width*.43,y+70,width*.55,rowHeight-100);
